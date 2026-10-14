@@ -55,6 +55,15 @@ jobs:
       - name: Build, test (incl. live ET) and install
         run: deploy/coda/install_gemfilter.sh --prefix "$RUNNER_TEMP/gf" --mode fetch --live-test -j 4
 
+      - name: Report live ET checks as annotations
+        run: |
+          rc=0
+          ctest --test-dir build-deploy -N | grep -E "et_live|kit_live"
+          ctest --test-dir build-deploy -R "coda.et_live|deploy.kit_live" -V > live.txt 2>&1 || rc=$?
+          msg=$(grep -E "^[0-9]+: (ok|FAIL|PASS|input)|tests passed|tests failed" live.txt | sed 's/^[0-9]*: //' | awk '{printf "%s%%0A", $0}')
+          echo "::notice title=live-et::$msg"
+          exit $rc
+
       - name: Preflight on the installed prefix
         run: |
           source "$RUNNER_TEMP/gf/etc/setup_gemfilter.sh"
