@@ -1,0 +1,2211 @@
+## DB for GEp focal plane polarimeter tracker. Consists of 8 UVA XY layers.
+# Layer 0: UVaXY (L8)
+# Layer 1: UVaXY (L9)
+# Layer 2: UVaXY (L10)
+# Layer 3: UVaXY (L11)                                                                                                                                                                                                                                                                                                                                                                                
+# Layer 4: UVaXY (L12)
+# Layer 5: UVaXY (L13)
+# Layer 6: UVaXY (L14)
+# Layer 7: UVaXY (L15)
+
+# Start database just before the first cosmic data is collected with the front tracker. 
+-------[ 2024-11-06 00:00:00 ] 
+# Database format: the tracker consists of a collection of modules: 
+# database properties will be organized by module, not by "plane" as in old SBS-offline
+ 
+# Define ALL the independent GEM modules used in the tracker.
+sbs.gemFPP.modules = m0 m1 m2 m3   m4 m5 m6 m7   m8 m9 m10 m11   m12 m13 m14 m15   m16 m17 m18 m19   m20 m21 m22 m23   m24 m25 m26 m27   m28 m29 m30 m31
+
+# Define to which layer each individual GEM module belongs to.
+sbs.gemFPP.m0.layer = 0
+sbs.gemFPP.m1.layer = 0
+sbs.gemFPP.m2.layer = 0
+sbs.gemFPP.m3.layer = 0
+
+sbs.gemFPP.m4.layer = 1
+sbs.gemFPP.m5.layer = 1
+sbs.gemFPP.m6.layer = 1
+sbs.gemFPP.m7.layer = 1
+
+sbs.gemFPP.m8.layer = 2
+sbs.gemFPP.m9.layer = 2
+sbs.gemFPP.m10.layer = 2
+sbs.gemFPP.m11.layer = 2
+
+sbs.gemFPP.m12.layer = 3
+sbs.gemFPP.m13.layer = 3
+sbs.gemFPP.m14.layer = 3
+sbs.gemFPP.m15.layer = 3
+
+sbs.gemFPP.m16.layer = 4
+sbs.gemFPP.m17.layer = 4
+sbs.gemFPP.m18.layer = 4
+sbs.gemFPP.m19.layer = 4
+
+sbs.gemFPP.m20.layer = 5
+sbs.gemFPP.m21.layer = 5
+sbs.gemFPP.m22.layer = 5
+sbs.gemFPP.m23.layer = 5
+
+sbs.gemFPP.m24.layer = 6
+sbs.gemFPP.m25.layer = 6
+sbs.gemFPP.m26.layer = 6
+sbs.gemFPP.m27.layer = 6
+
+sbs.gemFPP.m28.layer = 7
+sbs.gemFPP.m29.layer = 7
+sbs.gemFPP.m30.layer = 7
+sbs.gemFPP.m31.layer = 7
+
+
+# Define APV mapping configurations: 0 = INFN, 1 = UVA X/Y, 2 = UVA U/V or X/W
+sbs.gemFPP.m0.apvmap = 1
+sbs.gemFPP.m1.apvmap = 1
+sbs.gemFPP.m2.apvmap = 1
+sbs.gemFPP.m3.apvmap = 1
+
+sbs.gemFPP.m4.apvmap = 1
+sbs.gemFPP.m5.apvmap = 1
+sbs.gemFPP.m6.apvmap = 1
+sbs.gemFPP.m7.apvmap = 1
+
+sbs.gemFPP.m8.apvmap = 1
+sbs.gemFPP.m9.apvmap = 1
+sbs.gemFPP.m10.apvmap = 1
+sbs.gemFPP.m11.apvmap = 1
+
+sbs.gemFPP.m12.apvmap = 1
+sbs.gemFPP.m13.apvmap = 1
+sbs.gemFPP.m14.apvmap = 1
+sbs.gemFPP.m15.apvmap = 1
+
+sbs.gemFPP.m16.apvmap = 1
+sbs.gemFPP.m17.apvmap = 1
+sbs.gemFPP.m18.apvmap = 1
+sbs.gemFPP.m19.apvmap = 1
+
+sbs.gemFPP.m20.apvmap = 1
+sbs.gemFPP.m21.apvmap = 1
+sbs.gemFPP.m22.apvmap = 1
+sbs.gemFPP.m23.apvmap = 1
+
+sbs.gemFPP.m24.apvmap = 1
+sbs.gemFPP.m25.apvmap = 1
+sbs.gemFPP.m26.apvmap = 1
+sbs.gemFPP.m27.apvmap = 1
+
+sbs.gemFPP.m28.apvmap = 1
+sbs.gemFPP.m29.apvmap = 1
+sbs.gemFPP.m30.apvmap = 1
+sbs.gemFPP.m31.apvmap = 1
+
+
+# Define initial guess values for GEM detector position and angle based on engineering drawings and tape measurements.
+# Positions in internal GEM coordinate system.
+# During alignment, let's fix the module m1 and align all the other modules w.r.t. that.
+
+# First railing - type B layer
+#sbs.gemFPP.m0.position = -0.768  0  0.032
+#sbs.gemFPP.m1.position = -0.256  0  0
+#sbs.gemFPP.m2.position =  0.256  0  0.032
+#sbs.gemFPP.m3.position =  0.768  0  0
+
+# First railing - type A layer
+#sbs.gemFPP.m4.position = -0.768  0  0.076
+#sbs.gemFPP.m5.position = -0.256  0  0.044
+#sbs.gemFPP.m6.position =  0.256  0  0.076
+#sbs.gemFPP.m7.position =  0.768  0  0.044
+
+# Second railing - type B layer
+#sbs.gemFPP.m8.position  = -0.768  0   0.261
+#sbs.gemFPP.m9.position  = -0.256  0   0.229
+#sbs.gemFPP.m10.position =  0.256  0   0.261
+#sbs.gemFPP.m11.position =  0.768  0   0.229
+
+# Second railing - type A layer
+#sbs.gemFPP.m12.position = -0.768  0    0.305
+#sbs.gemFPP.m13.position = -0.256  0    0.273
+#sbs.gemFPP.m14.position =  0.256  0    0.305
+#sbs.gemFPP.m15.position =  0.768  0    0.273
+
+# Third railing - type B layer
+#sbs.gemFPP.m16.position = -0.768  0    0.464
+#sbs.gemFPP.m17.position = -0.256  0    0.496
+#sbs.gemFPP.m18.position =  0.256  0    0.464
+#sbs.gemFPP.m19.position =  0.768 0    0.496
+
+# Third railing - type A layer
+#sbs.gemFPP.m20.position = -0.768  0    0.508
+#sbs.gemFPP.m21.position = -0.256  0    0.540
+#sbs.gemFPP.m22.position =  0.256  0    0.508
+#sbs.gemFPP.m23.position =  0.768  0    0.540
+
+# Fourth railing - type B layer
+#sbs.gemFPP.m24.position = -0.768  0    0.693
+#sbs.gemFPP.m25.position = -0.256  0    0.725
+#sbs.gemFPP.m26.position =  0.256  0    0.693
+#sbs.gemFPP.m27.position =  0.768  0    0.725
+
+# Fourth railing - type A layer
+#sbs.gemFPP.m28.position = -0.768  0    0.737
+#sbs.gemFPP.m29.position = -0.256  0    0.769
+#sbs.gemFPP.m30.position =  0.256  0    0.737
+#sbs.gemFPP.m31.position =  0.768  0    0.769
+
+
+
+# First railing - type B layer
+sbs.gemFPP.m0.position = -0.768  0  0
+sbs.gemFPP.m1.position = -0.256  0  -0.044
+sbs.gemFPP.m2.position =  0.256  0  0
+sbs.gemFPP.m3.position =  0.768  0  -0.044
+
+# First railing - type A layer
+sbs.gemFPP.m4.position = -0.768  0  0.077
+sbs.gemFPP.m5.position = -0.256  0  0.04
+sbs.gemFPP.m6.position =  0.256  0  0.077
+sbs.gemFPP.m7.position =  0.768  0  0.04
+
+# Second railing - type B layer
+sbs.gemFPP.m8.position  = -0.768  0   0.232
+sbs.gemFPP.m9.position  = -0.256  0   0.195
+sbs.gemFPP.m10.position =  0.256  0   0.232
+sbs.gemFPP.m11.position =  0.768  0   0.195
+
+# Second railing - type A layer
+sbs.gemFPP.m12.position = -0.768  0    0.316
+sbs.gemFPP.m13.position = -0.256  0    0.272
+sbs.gemFPP.m14.position =  0.256  0    0.316
+sbs.gemFPP.m15.position =  0.768  0    0.272
+
+# Third railing - type B layer
+sbs.gemFPP.m16.position = -0.768  0    0.388
+sbs.gemFPP.m17.position = -0.256  0    0.432
+sbs.gemFPP.m18.position =  0.256  0    0.388
+sbs.gemFPP.m19.position =  0.768  0    0.432
+
+# Third railing - type A layer
+sbs.gemFPP.m20.position = -0.768  0    0.476
+sbs.gemFPP.m21.position = -0.256  0    0.520
+sbs.gemFPP.m22.position =  0.256  0    0.476
+sbs.gemFPP.m23.position =  0.768  0    0.520
+
+# Fourth railing - type B layer
+sbs.gemFPP.m24.position = -0.768  0    0.62
+sbs.gemFPP.m25.position = -0.256  0    0.664
+sbs.gemFPP.m26.position =  0.256  0    0.62
+sbs.gemFPP.m27.position =  0.768  0    0.664
+
+# Fourth railing - type A layer
+sbs.gemFPP.m28.position = -0.768  0    0.708
+sbs.gemFPP.m29.position = -0.256  0    0.752
+sbs.gemFPP.m30.position =  0.256  0    0.708
+sbs.gemFPP.m31.position =  0.768  0    0.752
+
+
+# Angles: assume zero for ALL.
+sbs.gemFPP.m0.angle =      0     0     0
+sbs.gemFPP.m1.angle =      0     0     0
+sbs.gemFPP.m2.angle =      0     0     0
+sbs.gemFPP.m3.angle =      0     0     0
+
+sbs.gemFPP.m4.angle =      0     0     0
+sbs.gemFPP.m5.angle =      0     0     0
+sbs.gemFPP.m6.angle =      0     0     0
+sbs.gemFPP.m7.angle =      0     0     0
+
+sbs.gemFPP.m8.angle =      0     0     0
+sbs.gemFPP.m9.angle =      0     0     0
+sbs.gemFPP.m10.angle =     0     0     0
+sbs.gemFPP.m11.angle =     0     0     0
+
+sbs.gemFPP.m12.angle =     0     0     0
+sbs.gemFPP.m13.angle =     0     0     0
+sbs.gemFPP.m14.angle =     0     0     0
+sbs.gemFPP.m15.angle =     0     0     0
+
+sbs.gemFPP.m16.angle =     0     0     0
+sbs.gemFPP.m17.angle =     0     0     0
+sbs.gemFPP.m18.angle =     0     0     0
+sbs.gemFPP.m19.angle =     0     0     0
+
+sbs.gemFPP.m20.angle =     0     0     0
+sbs.gemFPP.m21.angle =     0     0     0
+sbs.gemFPP.m22.angle =     0     0     0
+sbs.gemFPP.m23.angle =     0     0     0
+
+sbs.gemFPP.m24.angle =     0     0     0
+sbs.gemFPP.m25.angle =     0     0     0
+sbs.gemFPP.m26.angle =     0     0     0
+sbs.gemFPP.m27.angle =     0     0     0
+
+sbs.gemFPP.m28.angle =     0     0     0
+sbs.gemFPP.m29.angle =     0     0     0
+sbs.gemFPP.m30.angle =     0     0     0
+sbs.gemFPP.m31.angle =     0     0     0
+
+# Final alignment results from run 1092.
+sbs.gemFPP.m0.position =      -0.7663359   -0.0004350632     0.002237633
+sbs.gemFPP.m0.angle =     -0.02967402       0.2295009      0.03423989
+sbs.gemFPP.m1.position =      -0.2560391   -0.0002563608     -0.04154502
+sbs.gemFPP.m1.angle =     -0.02796533       0.1961287      0.02491093
+sbs.gemFPP.m2.position =           0.256               0               0
+sbs.gemFPP.m2.angle =               0               0               0
+sbs.gemFPP.m3.position =       0.7663576   -0.0003653485     -0.04185465
+sbs.gemFPP.m3.angle =     -0.09966025      -0.2328191      0.04418698
+sbs.gemFPP.m4.position =      -0.7677605    -5.48359e-06      0.08240806
+sbs.gemFPP.m4.angle =      -0.1131893       0.1160486      0.09367043
+sbs.gemFPP.m5.position =      -0.2562459     0.001675526      0.04753358
+sbs.gemFPP.m5.angle =      0.06775245       0.2126272    -0.005882869
+sbs.gemFPP.m6.position =       0.2562917   -0.0001049082      0.08000745
+sbs.gemFPP.m6.angle =      0.05286221      -0.1519242       0.3108089
+sbs.gemFPP.m7.position =       0.7650688     0.001549707      0.04779954
+sbs.gemFPP.m7.angle =     -0.01973342      -0.1179835     -0.04044394
+sbs.gemFPP.m8.position =      -0.7667472    -0.003006286       0.2170957
+sbs.gemFPP.m8.angle =     -0.05970909     0.002600315        0.138048
+sbs.gemFPP.m9.position =      -0.2546831    -0.001008667       0.1812348
+sbs.gemFPP.m9.angle =     -0.07244483      -0.1018599       0.2262181
+sbs.gemFPP.m10.position =       0.2564468    0.0008960705       0.2169934
+sbs.gemFPP.m10.angle =     -0.07437135      -0.2726634       0.1513268
+sbs.gemFPP.m11.position =       0.7667115      0.00143477        0.185693
+sbs.gemFPP.m11.angle =     -0.02379694      -0.4110734      0.06628138
+sbs.gemFPP.m12.position =      -0.7666349    -0.002285523       0.3002663
+sbs.gemFPP.m12.angle =    -0.009900148      -0.1060034       0.1368728
+sbs.gemFPP.m13.position =      -0.2558517      -0.0019141       0.2589454
+sbs.gemFPP.m13.angle =     -0.06270485     -0.06152921      0.06872797
+sbs.gemFPP.m14.position =       0.2560792    0.0001902784       0.3046378
+sbs.gemFPP.m14.angle =    -0.006797875      -0.3081731       0.1056229
+sbs.gemFPP.m15.position =       0.7662516    0.0004529886       0.2636471
+sbs.gemFPP.m15.angle =      -0.1229112      -0.2768044      0.08838332
+sbs.gemFPP.m16.position =      -0.7656045      0.00284642       0.3957021
+sbs.gemFPP.m16.angle =     -0.07897387       0.2432293     -0.06368269
+sbs.gemFPP.m17.position =      -0.2557861      0.00242638       0.4363323
+sbs.gemFPP.m17.angle =      -0.1076448       0.0193506     -0.06852189
+sbs.gemFPP.m18.position =       0.2566846     0.001496404       0.3943045
+sbs.gemFPP.m18.angle =      -0.1478085      -0.1940007     -0.08794699
+sbs.gemFPP.m19.position =        0.767382      0.00158558       0.4439128
+sbs.gemFPP.m19.angle =      -0.1083207      -0.2085965      -0.1063691
+sbs.gemFPP.m20.position =      -0.7747221     0.003423139       0.4871551
+sbs.gemFPP.m20.angle =      0.08860053     -0.05075921     -0.06717321
+sbs.gemFPP.m21.position =      -0.2606342     0.002741479       0.5321433
+sbs.gemFPP.m21.angle =       0.1735536         0.10066      -0.1152081
+sbs.gemFPP.m22.position =        0.248822    0.0006484704       0.4908102
+sbs.gemFPP.m22.angle =     -0.04633296    -0.009084464       -0.112742
+sbs.gemFPP.m23.position =       0.7624669    0.0002063936       0.5325478
+sbs.gemFPP.m23.angle =      0.02150639       0.1175362      -0.1508782
+sbs.gemFPP.m24.position =      -0.7655582    -0.003400392       0.6159586
+sbs.gemFPP.m24.angle =     -0.09761821      0.03850521       0.1278825
+sbs.gemFPP.m25.position =      -0.2531086    -0.002608222       0.6568829
+sbs.gemFPP.m25.angle =      0.07033168     0.007283773      0.07281569
+sbs.gemFPP.m26.position =       0.2582321    -0.003324788        0.615599
+sbs.gemFPP.m26.angle =     -0.08824788      -0.1781859       0.0954785
+sbs.gemFPP.m27.position =       0.7695623    -0.001292019        0.659871
+sbs.gemFPP.m27.angle =      0.01532663      -0.3322665      0.03791894
+sbs.gemFPP.m28.position =      -0.7664827   -0.0008659623       0.7069365
+sbs.gemFPP.m28.angle =      0.03156721     -0.04431076      0.01539185
+sbs.gemFPP.m29.position =      -0.2535557    -0.002058443       0.7497708
+sbs.gemFPP.m29.angle =       0.1447626      -0.2570411     -0.02414272
+sbs.gemFPP.m30.position =       0.2698642   -0.0005867897       0.7080747
+sbs.gemFPP.m30.angle =     -0.01887398     -0.09674663     0.002383507
+sbs.gemFPP.m31.position =       0.7817482   -0.0007638796       0.7530173
+sbs.gemFPP.m31.angle =     -0.02864608      -0.1066674     -0.06502048
+
+#sbs.gemFPP.m30.position =       0.258   -0.0005867897       0.7080747
+#sbs.gemFPP.m31.position =       0.770   -0.0007638796       0.7530173
+
+sbs.gemFPP.m28.position =      -0.7554827   -0.0008659623       0.7069365
+sbs.gemFPP.m29.position =      -0.2425557    -0.002058443       0.7497708
+# Define module sizes. Set to nominal sizes.
+sbs.gemFPP.m0.size = 0.512 0.6144 0.001
+sbs.gemFPP.m1.size = 0.512 0.6144 0.001
+sbs.gemFPP.m2.size = 0.512 0.6144 0.001
+sbs.gemFPP.m3.size = 0.512 0.6144 0.001
+
+sbs.gemFPP.m4.size = 0.512 0.6144 0.001
+sbs.gemFPP.m5.size = 0.512 0.6144 0.001
+sbs.gemFPP.m6.size = 0.512 0.6144 0.001
+sbs.gemFPP.m7.size = 0.512 0.6144 0.001
+
+sbs.gemFPP.m8.size = 0.512 0.6144 0.001
+sbs.gemFPP.m9.size = 0.512 0.6144 0.001
+sbs.gemFPP.m10.size = 0.512 0.6144 0.001
+sbs.gemFPP.m11.size = 0.512 0.6144 0.001
+
+sbs.gemFPP.m12.size = 0.512 0.6144 0.001
+sbs.gemFPP.m13.size = 0.512 0.6144 0.001
+sbs.gemFPP.m14.size = 0.512 0.6144 0.001
+sbs.gemFPP.m15.size = 0.512 0.6144 0.001
+
+sbs.gemFPP.m16.size = 0.512 0.6144 0.001
+sbs.gemFPP.m17.size = 0.512 0.6144 0.001
+sbs.gemFPP.m18.size = 0.512 0.6144 0.001
+sbs.gemFPP.m19.size = 0.512 0.6144 0.001
+
+sbs.gemFPP.m20.size = 0.512 0.6144 0.001
+sbs.gemFPP.m21.size = 0.512 0.6144 0.001
+sbs.gemFPP.m22.size = 0.512 0.6144 0.001
+sbs.gemFPP.m23.size = 0.512 0.6144 0.001
+
+sbs.gemFPP.m24.size = 0.512 0.6144 0.001
+sbs.gemFPP.m25.size = 0.512 0.6144 0.001
+sbs.gemFPP.m26.size = 0.512 0.6144 0.001
+sbs.gemFPP.m27.size = 0.512 0.6144 0.001
+
+sbs.gemFPP.m28.size = 0.512 0.6144 0.001
+sbs.gemFPP.m29.size = 0.512 0.6144 0.001
+sbs.gemFPP.m30.size = 0.512 0.6144 0.001
+sbs.gemFPP.m31.size = 0.512 0.6144 0.001
+
+
+# Define strip angles as measured w.r.t. +X direction of the internal GEM coordinate system (X-down along the GEM plane, Z-particle motion direction, Y-"left" to form a RH coordinate sys.) 
+# This is where we will account for the orientation of each GEM layer w.r.t to the vertical axis, X.
+# For the UVA X/Y modules, their "X/U" axis coincides with the direction of GEM coordinate system "X" axis. For GEM layers that are oriented so that the beam is hitting the R/O board first, "Y/V" axis is rotaed by -90 degrees w.r.t GEM coordinate sys. "X" axis and for the GEM layers that are oriented so that the beam is hitting the gas window first, "Y/V" axis is rotaded by +90 degrees w.r.t GEM coordinate sys. "X" axis.
+
+# Layer 0 (UVAXY) - beam hits gas window first
+sbs.gemFPP.m0.uangle = 0.0
+sbs.gemFPP.m0.vangle = 90.0
+sbs.gemFPP.m1.uangle = 0.0
+sbs.gemFPP.m1.vangle = 90.0
+sbs.gemFPP.m2.uangle = 0.0
+sbs.gemFPP.m2.vangle = 90.0
+sbs.gemFPP.m3.uangle = 0.0
+sbs.gemFPP.m3.vangle = 90.0
+
+# Layer 1 (UVAXY) - beam hits r/o board first
+sbs.gemFPP.m4.uangle = 0.0
+sbs.gemFPP.m4.vangle = -90.0
+sbs.gemFPP.m5.uangle = 0.0
+sbs.gemFPP.m5.vangle = -90.0
+sbs.gemFPP.m6.uangle = 0.0
+sbs.gemFPP.m6.vangle = -90.0
+sbs.gemFPP.m7.uangle = 0.0
+sbs.gemFPP.m7.vangle = -90.0
+
+# Layer 2 (UVAXY) - beam hits gas window first
+sbs.gemFPP.m8.uangle = 0.0
+sbs.gemFPP.m8.vangle = 90.0
+sbs.gemFPP.m9.uangle = 0.0
+sbs.gemFPP.m9.vangle = 90.0
+sbs.gemFPP.m10.uangle = 0.0
+sbs.gemFPP.m10.vangle = 90.0
+sbs.gemFPP.m11.uangle = 0.0
+sbs.gemFPP.m11.vangle = 90.0
+
+# Layer 3 (UVAXY) - beam hits r/o board first
+sbs.gemFPP.m12.uangle = 0.0
+sbs.gemFPP.m12.vangle = -90.0
+sbs.gemFPP.m13.uangle = 0.0
+sbs.gemFPP.m13.vangle = -90.0
+sbs.gemFPP.m14.uangle = 0.0
+sbs.gemFPP.m14.vangle = -90.0
+sbs.gemFPP.m15.uangle = 0.0
+sbs.gemFPP.m15.vangle = -90.0
+
+# Layer 4 (UVAXY) - beam hits gas window first
+sbs.gemFPP.m16.uangle = 0.0
+sbs.gemFPP.m16.vangle = 90.0
+sbs.gemFPP.m17.uangle = 0.0
+sbs.gemFPP.m17.vangle = 90.0
+sbs.gemFPP.m18.uangle = 0.0
+sbs.gemFPP.m18.vangle = 90.0
+sbs.gemFPP.m19.uangle = 0.0
+sbs.gemFPP.m19.vangle = 90.0
+
+# Layer 5 (UVAXY) - beam hits r/o board first
+sbs.gemFPP.m20.uangle = 0.0
+sbs.gemFPP.m20.vangle = -90.0
+sbs.gemFPP.m21.uangle = 0.0
+sbs.gemFPP.m21.vangle = -90.0
+sbs.gemFPP.m22.uangle = 0.0
+sbs.gemFPP.m22.vangle = -90.0
+sbs.gemFPP.m23.uangle = 0.0
+sbs.gemFPP.m23.vangle = -90.0
+
+# Layer 6 (UVAXY) - beam hits gas window first
+sbs.gemFPP.m24.uangle = 0.0
+sbs.gemFPP.m24.vangle = 90.0
+sbs.gemFPP.m25.uangle = 0.0
+sbs.gemFPP.m25.vangle = 90.0
+sbs.gemFPP.m26.uangle = 0.0
+sbs.gemFPP.m26.vangle = 90.0
+sbs.gemFPP.m27.uangle = 0.0
+sbs.gemFPP.m27.vangle = 90.0
+
+# Layer 7 (UVAXY) - beam hits r/o board first
+sbs.gemFPP.m28.uangle = 0.0
+sbs.gemFPP.m28.vangle = -90.0
+sbs.gemFPP.m29.uangle = 0.0
+sbs.gemFPP.m29.vangle = -90.0
+sbs.gemFPP.m30.uangle = 0.0
+sbs.gemFPP.m30.vangle = -90.0
+sbs.gemFPP.m31.uangle = 0.0
+sbs.gemFPP.m31.vangle = -90.0
+
+
+# Define U/V strip offsets: for X/Y GEMS, strip offsets are zero --> (0,0).
+# UV and XW strip GEMs, the needed offsets are non-zero.
+
+# U offsets:
+sbs.gemFPP.m0.uoffset = 0.0
+sbs.gemFPP.m1.uoffset = 0.0
+sbs.gemFPP.m2.uoffset  = 0.0
+sbs.gemFPP.m3.uoffset  = 0.0
+
+sbs.gemFPP.m4.uoffset = 0.0
+sbs.gemFPP.m5.uoffset = 0.0
+sbs.gemFPP.m6.uoffset = 0.0
+sbs.gemFPP.m7.uoffset = 0.0
+
+sbs.gemFPP.m8.uoffset = 0.0
+sbs.gemFPP.m9.uoffset = 0.0
+sbs.gemFPP.m10.uoffset = 0.0
+sbs.gemFPP.m11.uoffset = 0.0
+
+sbs.gemFPP.m12.uoffset = 0.0
+sbs.gemFPP.m13.uoffset = 0.0
+sbs.gemFPP.m14.uoffset = 0.0
+sbs.gemFPP.m15.uoffset = 0.0
+
+sbs.gemFPP.m16.uoffset = 0.0
+sbs.gemFPP.m17.uoffset = 0.0
+sbs.gemFPP.m18.uoffset = 0.0
+sbs.gemFPP.m19.uoffset = 0.0
+
+sbs.gemFPP.m20.uoffset = 0.0
+sbs.gemFPP.m21.uoffset = 0.0
+sbs.gemFPP.m22.uoffset = 0.0
+sbs.gemFPP.m23.uoffset = 0.0
+
+sbs.gemFPP.m24.uoffset = 0.0
+sbs.gemFPP.m25.uoffset = 0.0
+sbs.gemFPP.m26.uoffset = 0.0
+sbs.gemFPP.m27.uoffset = 0.0
+
+sbs.gemFPP.m28.uoffset = 0.0
+sbs.gemFPP.m29.uoffset = 0.0
+sbs.gemFPP.m30.uoffset = 0.0
+sbs.gemFPP.m31.uoffset = 0.0
+
+# V offsets
+sbs.gemFPP.m0.voffset = 0.0
+sbs.gemFPP.m1.voffset = 0.0
+sbs.gemFPP.m2.voffset  = 0.0
+sbs.gemFPP.m3.voffset  = 0.0
+
+sbs.gemFPP.m4.voffset = 0.0
+sbs.gemFPP.m5.voffset = 0.0
+sbs.gemFPP.m6.voffset = 0.0
+sbs.gemFPP.m7.voffset = 0.0
+
+sbs.gemFPP.m8.voffset = 0.0
+sbs.gemFPP.m9.voffset = 0.0
+sbs.gemFPP.m10.voffset = 0.0
+sbs.gemFPP.m11.voffset = 0.0
+
+sbs.gemFPP.m12.voffset = 0.0
+sbs.gemFPP.m13.voffset = 0.0
+sbs.gemFPP.m14.voffset = 0.0
+sbs.gemFPP.m15.voffset = 0.0
+
+sbs.gemFPP.m16.voffset = 0.0
+sbs.gemFPP.m17.voffset = 0.0
+sbs.gemFPP.m18.voffset = 0.0
+sbs.gemFPP.m19.voffset = 0.0
+
+sbs.gemFPP.m20.voffset = 0.0
+sbs.gemFPP.m21.voffset = 0.0
+sbs.gemFPP.m22.voffset = 0.0
+sbs.gemFPP.m23.voffset = 0.0
+
+sbs.gemFPP.m24.voffset = 0.0
+sbs.gemFPP.m25.voffset = 0.0
+sbs.gemFPP.m26.voffset = 0.0
+sbs.gemFPP.m27.voffset = 0.0
+
+sbs.gemFPP.m28.voffset = 0.0
+sbs.gemFPP.m29.voffset = 0.0
+sbs.gemFPP.m30.voffset = 0.0
+sbs.gemFPP.m31.voffset = 0.0
+
+
+# Define strip counts:
+sbs.gemFPP.m0.nstripsu = 1280
+sbs.gemFPP.m0.nstripsv = 1536
+sbs.gemFPP.m1.nstripsu = 1280
+sbs.gemFPP.m1.nstripsv = 1536
+sbs.gemFPP.m2.nstripsu = 1280
+sbs.gemFPP.m2.nstripsv = 1536
+sbs.gemFPP.m3.nstripsu = 1280
+sbs.gemFPP.m3.nstripsv = 1536
+
+sbs.gemFPP.m4.nstripsu = 1280
+sbs.gemFPP.m4.nstripsv = 1536
+sbs.gemFPP.m5.nstripsu = 1280
+sbs.gemFPP.m5.nstripsv = 1536
+sbs.gemFPP.m6.nstripsu = 1280
+sbs.gemFPP.m6.nstripsv = 1536
+sbs.gemFPP.m7.nstripsu = 1280
+sbs.gemFPP.m7.nstripsv = 1536
+
+sbs.gemFPP.m8.nstripsu = 1280
+sbs.gemFPP.m8.nstripsv = 1536
+sbs.gemFPP.m9.nstripsu = 1280
+sbs.gemFPP.m9.nstripsv = 1536
+sbs.gemFPP.m10.nstripsu = 1280
+sbs.gemFPP.m10.nstripsv = 1536
+sbs.gemFPP.m11.nstripsu = 1280
+sbs.gemFPP.m11.nstripsv = 1536
+
+sbs.gemFPP.m12.nstripsu = 1280
+sbs.gemFPP.m12.nstripsv = 1536
+sbs.gemFPP.m13.nstripsu = 1280
+sbs.gemFPP.m13.nstripsv = 1536
+sbs.gemFPP.m14.nstripsu = 1280
+sbs.gemFPP.m14.nstripsv = 1536
+sbs.gemFPP.m15.nstripsu = 1280
+sbs.gemFPP.m15.nstripsv = 1536
+
+sbs.gemFPP.m16.nstripsu = 1280
+sbs.gemFPP.m16.nstripsv = 1536
+sbs.gemFPP.m17.nstripsu = 1280
+sbs.gemFPP.m17.nstripsv = 1536
+sbs.gemFPP.m18.nstripsu = 1280
+sbs.gemFPP.m18.nstripsv = 1536
+sbs.gemFPP.m19.nstripsu = 1280
+sbs.gemFPP.m19.nstripsv = 1536
+
+sbs.gemFPP.m20.nstripsu = 1280
+sbs.gemFPP.m20.nstripsv = 1536
+sbs.gemFPP.m21.nstripsu = 1280
+sbs.gemFPP.m21.nstripsv = 1536
+sbs.gemFPP.m22.nstripsu = 1280
+sbs.gemFPP.m22.nstripsv = 1536
+sbs.gemFPP.m23.nstripsu = 1280
+sbs.gemFPP.m23.nstripsv = 1536
+
+sbs.gemFPP.m24.nstripsu = 1280
+sbs.gemFPP.m24.nstripsv = 1536
+sbs.gemFPP.m25.nstripsu = 1280
+sbs.gemFPP.m25.nstripsv = 1536
+sbs.gemFPP.m26.nstripsu = 1280
+sbs.gemFPP.m26.nstripsv = 1536
+sbs.gemFPP.m27.nstripsu = 1280
+sbs.gemFPP.m27.nstripsv = 1536
+
+sbs.gemFPP.m28.nstripsu = 1280
+sbs.gemFPP.m28.nstripsv = 1536
+sbs.gemFPP.m29.nstripsu = 1280
+sbs.gemFPP.m29.nstripsv = 1536
+sbs.gemFPP.m30.nstripsu = 1280
+sbs.gemFPP.m30.nstripsv = 1536
+sbs.gemFPP.m31.nstripsu = 1280
+sbs.gemFPP.m31.nstripsv = 1536
+
+
+# Define strip pitch. ALL modules have the same strip pitch along both dimensions, 0.4 mm:
+sbs.gemFPP.upitch = 0.0004
+sbs.gemFPP.vpitch = 0.0004
+
+
+# Define module average gains relative to target ADC peak position of 4000
+#U strips
+sbs.gemFPP.m0.ugain = 1  
+sbs.gemFPP.m1.ugain = 1   
+sbs.gemFPP.m2.ugain = 1  
+sbs.gemFPP.m3.ugain = 1   
+sbs.gemFPP.m4.ugain = 1   
+sbs.gemFPP.m5.ugain = 1   
+sbs.gemFPP.m6.ugain = 1   
+sbs.gemFPP.m7.ugain = 1   
+sbs.gemFPP.m8.ugain = 1   
+sbs.gemFPP.m9.ugain = 1  
+sbs.gemFPP.m10.ugain = 1  
+sbs.gemFPP.m11.ugain = 1   
+sbs.gemFPP.m12.ugain = 1   
+sbs.gemFPP.m13.ugain = 1   
+sbs.gemFPP.m14.ugain = 1   
+sbs.gemFPP.m15.ugain = 1   
+sbs.gemFPP.m16.ugain = 1   
+sbs.gemFPP.m17.ugain = 1   
+sbs.gemFPP.m18.ugain = 1   
+sbs.gemFPP.m19.ugain = 1   
+sbs.gemFPP.m20.ugain = 1   
+sbs.gemFPP.m21.ugain = 1   
+sbs.gemFPP.m22.ugain = 1   
+sbs.gemFPP.m23.ugain = 1   
+sbs.gemFPP.m24.ugain = 1   
+sbs.gemFPP.m25.ugain = 1   
+sbs.gemFPP.m26.ugain = 1   
+sbs.gemFPP.m27.ugain = 1   
+sbs.gemFPP.m28.ugain = 1   
+sbs.gemFPP.m29.ugain = 1   
+sbs.gemFPP.m30.ugain = 1   
+sbs.gemFPP.m31.ugain = 1   
+
+#V Strips
+sbs.gemFPP.m0.vgain = 1  
+sbs.gemFPP.m1.vgain = 1   
+sbs.gemFPP.m2.vgain = 1   
+sbs.gemFPP.m3.vgain = 1   
+sbs.gemFPP.m4.vgain = 1   
+sbs.gemFPP.m5.vgain = 1   
+sbs.gemFPP.m6.vgain = 1  
+sbs.gemFPP.m7.vgain = 1   
+sbs.gemFPP.m8.vgain = 1  
+sbs.gemFPP.m9.vgain = 1   
+sbs.gemFPP.m10.vgain = 1   
+sbs.gemFPP.m11.vgain = 1  
+sbs.gemFPP.m12.vgain = 1  
+sbs.gemFPP.m13.vgain = 1 
+sbs.gemFPP.m14.vgain = 1 
+sbs.gemFPP.m15.vgain = 1 
+sbs.gemFPP.m16.vgain = 1 
+sbs.gemFPP.m17.vgain = 1 
+sbs.gemFPP.m18.vgain = 1 
+sbs.gemFPP.m19.vgain = 1 
+sbs.gemFPP.m20.vgain = 1 
+sbs.gemFPP.m21.vgain = 1 
+sbs.gemFPP.m22.vgain = 1 
+sbs.gemFPP.m23.vgain = 1 
+sbs.gemFPP.m24.vgain = 1 
+sbs.gemFPP.m25.vgain = 1 
+sbs.gemFPP.m26.vgain = 1 
+sbs.gemFPP.m27.vgain = 1 
+sbs.gemFPP.m28.vgain = 1 
+sbs.gemFPP.m29.vgain = 1 
+sbs.gemFPP.m30.vgain = 1 
+sbs.gemFPP.m31.vgain = 1 
+
+
+
+################### DECODE INFO ########################################################################
+## Channel maps for decoding explained                                                                ##
+## Each entry corresponds to one APV card                                                             ## 
+## Crate = ROC ID = 2 and 4  for SBS VTP                                                              ##
+## Slot = 11 for BigBite VTP                                                                          ##
+## fiber/mpd is fiber number for an MPD module, this is unique for each module within a VTP/SSP       ##
+## gemid is unique "production ID" of a GEM module, not currently used by analysis but useful         ##
+## for bookkeeping/tracking                                                                           ##
+## adc_ch is the unique adc channel of this APV card within its associated MPD                        ##
+## i2c is the "i2c address" of this APV card (not currently used by analysis)                         ##
+## pos maps APV cards to physical locations on the detector                                           ##
+## invert specifies whether strip index runs from "right-to-left" or "left-to-right" within an APV    ##
+## axis specifies which strip orientation/dimension of the readout strips connected to this APV       ##
+## ORDER of entries in the maps is:                                                                   ##
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis                              ##
+########################################################################################################
+
+#Back Layer (L8 - m0/1/2/3): UVAXY L8 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m0.chanmap = 
+     58      11      12     200       0      15       0       1       1 
+     58      11      12     200       1      14       1       1       1 
+     58      11      12     200       2      13       2       1       1 
+     58      11      12     200       3      12       3       1       1 
+     58      11      12     200       4      11       4       1       1 
+     58      11      12     200       5      10       5       1       1 
+     58      11      12     200       6       9       6       1       1 
+     58      11      12     200       7       8       7       1       1 
+     58      11      12     200       8       7       8       1       1 
+     58      11      12     200       9       6       9       1       1 
+     58      11      12     200      10       5      10       1       1 
+     58      11      12     200      11       4      11       1       1 
+     58      11      16     200      10       4       9       1       0 
+     58      11      16     200      11       3       8       1       0 
+     58      11      16     200      12       2       7       1       0 
+     58      11      16     200      13       1       6       1       0 
+     58      11      16     200      14       0       5       1       0 
+     58      11      17     200       0       4       0       0       0 
+     58      11      17     200       1       3       1       0       0 
+     58      11      17     200       2       2       2       0       0 
+     58      11      17     200       3       1       3       0       0 
+     58      11      17     200       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m1.chanmap = 
+     58      11      13     201       0      15       0       1       1 
+     58      11      13     201       1      14       1       1       1 
+     58      11      13     201       2      13       2       1       1 
+     58      11      13     201       3      12       3       1       1 
+     58      11      13     201       4      11       4       1       1 
+     58      11      13     201       5      10       5       1       1 
+     58      11      13     201       6       9       6       1       1 
+     58      11      13     201       7       8       7       1       1 
+     58      11      13     201       8       7       8       1       1 
+     58      11      13     201       9       6       9       1       1 
+     58      11      13     201      10       5      10       1       1 
+     58      11      13     201      11       4      11       1       1 
+     58      11      16     201       5      12       9       1       0 
+     58      11      16     201       6      11       8       1       0 
+     58      11      16     201       7      10       7       1       0 
+     58      11      16     201       8       9       6       1       0 
+     58      11      16     201       9       8       5       1       0 
+     58      11      17     201       5      12       0       0       0 
+     58      11      17     201       6      11       1       0       0 
+     58      11      17     201       7      10       2       0       0 
+     58      11      17     201       8       9       3       0       0 
+     58      11      17     201       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m2.chanmap = 
+     58      11      14     202       0      15      11       0       1 
+     58      11      14     202       1      14      10       0       1 
+     58      11      14     202       2      13       9       0       1 
+     58      11      14     202       3      12       8       0       1 
+     58      11      14     202       4      11       7       0       1 
+     58      11      14     202       5      10       6       0       1 
+     58      11      14     202       6       9       5       0       1 
+     58      11      14     202       7       8       4       0       1 
+     58      11      14     202       8       7       3       0       1 
+     58      11      14     202       9       6       2       0       1 
+     58      11      14     202      10       5       1       0       1 
+     58      11      14     202      11       4       0       0       1 
+     58      11      16     202       0      20       9       1       0 
+     58      11      16     202       1      19       8       1       0 
+     58      11      16     202       2      18       7       1       0 
+     58      11      16     202       3      17       6       1       0 
+     58      11      16     202       4      16       5       1       0 
+     58      11      17     202      10      20       0       0       0 
+     58      11      17     202      11      19       1       0       0 
+     58      11      17     202      12      18       2       0       0 
+     58      11      17     202      13      17       3       0       0 
+     58      11      17     202      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m3.chanmap = 
+     58      11      15     203       0      15      11       0       1 
+     58      11      15     203       1      14      10       0       1 
+     58      11      15     203       2      13       9       0       1 
+     58      11      15     203       3      12       8       0       1 
+     58      11      15     203       4      11       7       0       1 
+     58      11      15     203       5      10       6       0       1 
+     58      11      15     203       6       9       5       0       1 
+     58      11      15     203       7       8       4       0       1 
+     58      11      15     203       8       7       3       0       1 
+     58      11      15     203       9       6       2       0       1 
+     58      11      15     203      10       5       1       0       1 
+     58      11      15     203      11       4       0       0       1 
+     58      11      18     203       0       4       9       1       0 
+     58      11      18     203       1       3       8       1       0 
+     58      11      18     203       2       2       7       1       0 
+     58      11      18     203       3       1       6       1       0 
+     58      11      18     203       4       0       5       1       0 
+     58      11      18     203       8      12       0       0       0 
+     58      11      18     203       9      11       1       0       0 
+     58      11      18     203      10      10       2       0       0 
+     58      11      18     203      11       9       3       0       0 
+     58      11      18     203      12       8       4       0       0 
+
+#Back Layer (L9 - m0/1/2/3): UVAXY L9 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m4.chanmap = 
+     58      11      19     210       0      15       0       1       1 
+     58      11      19     210       1      14       1       1       1 
+     58      11      19     210       2      13       2       1       1 
+     58      11      19     210       3      12       3       1       1 
+     58      11      19     210       4      11       4       1       1 
+     58      11      19     210       5      10       5       1       1 
+     58      11      19     210       6       9       6       1       1 
+     58      11      19     210       7       8       7       1       1 
+     58      11      19     210       8       7       8       1       1 
+     58      11      19     210       9       6       9       1       1 
+     58      11      19     210      10       5      10       1       1 
+     58      11      19     210      11       4      11       1       1 
+     20      11      15     210      10       4       9       1       0 
+     20      11      15     210      11       3       8       1       0 
+     20      11      15     210      12       2       7       1       0 
+     20      11      15     210      13       1       6       1       0 
+     20      11      15     210      14       0       5       1       0 
+     58      11      20     210       0       4       0       0       0 
+     58      11      20     210       1       3       1       0       0 
+     58      11      20     210       2       2       2       0       0 
+     58      11      20     210       3       1       3       0       0 
+     58      11      20     210       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m5.chanmap = 
+     20      11      12     211       0      15       0       1       1 
+     20      11      12     211       1      14       1       1       1 
+     20      11      12     211       2      13       2       1       1 
+     20      11      12     211       3      12       3       1       1 
+     20      11      12     211       4      11       4       1       1 
+     20      11      12     211       5      10       5       1       1 
+     20      11      12     211       6       9       6       1       1 
+     20      11      12     211       7       8       7       1       1 
+     20      11      12     211       8       7       8       1       1 
+     20      11      12     211       9       6       9       1       1 
+     20      11      12     211      10       5      10       1       1 
+     20      11      12     211      11       4      11       1       1 
+     20      11      15     211       5      12       9       1       0 
+     20      11      15     211       6      11       8       1       0 
+     20      11      15     211       7      10       7       1       0 
+     20      11      15     211       8       9       6       1       0 
+     20      11      15     211       9       8       5       1       0 
+     58      11      20     211       5      12       0       0       0 
+     58      11      20     211       6      11       1       0       0 
+     58      11      20     211       7      10       2       0       0 
+     58      11      20     211       8       9       3       0       0 
+     58      11      20     211       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m6.chanmap = 
+     20      11      13     212       0      15      11       0       1 
+     20      11      13     212       1      14      10       0       1 
+     20      11      13     212       2      13       9       0       1 
+     20      11      13     212       3      12       8       0       1 
+     20      11      13     212       4      11       7       0       1 
+     20      11      13     212       5      10       6       0       1 
+     20      11      13     212       6       9       5       0       1 
+     20      11      13     212       7       8       4       0       1 
+     20      11      13     212       8       7       3       0       1 
+     20      11      13     212       9       6       2       0       1 
+     20      11      13     212      10       5       1       0       1 
+     20      11      13     212      11       4       0       0       1 
+     20      11      15     212       0      20       9       1       0 
+     20      11      15     212       1      19       8       1       0 
+     20      11      15     212       2      18       7       1       0 
+     20      11      15     212       3      17       6       1       0 
+     20      11      15     212       4      16       5       1       0 
+     58      11      20     212      10      20       0       0       0 
+     58      11      20     212      11      19       1       0       0 
+     58      11      20     212      12      18       2       0       0 
+     58      11      20     212      13      17       3       0       0 
+     58      11      20     212      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m7.chanmap = 
+     20      11      14     213       0      15      11       0       1 
+     20      11      14     213       1      14      10       0       1 
+     20      11      14     213       2      13       9       0       1 
+     20      11      14     213       3      12       8       0       1 
+     20      11      14     213       4      11       7       0       1 
+     20      11      14     213       5      10       6       0       1 
+     20      11      14     213       6       9       5       0       1 
+     20      11      14     213       7       8       4       0       1 
+     20      11      14     213       8       7       3       0       1 
+     20      11      14     213       9       6       2       0       1 
+     20      11      14     213      10       5       1       0       1 
+     20      11      14     213      11       4       0       0       1 
+     58      11      21     213       0       4       9       1       0 
+     58      11      21     213       1       3       8       1       0 
+     58      11      21     213       2       2       7       1       0 
+     58      11      21     213       3       1       6       1       0 
+     58      11      21     213       4       0       5       1       0 
+     58      11      21     213       8      12       0       0       0 
+     58      11      21     213       9      11       1       0       0 
+     58      11      21     213      10      10       2       0       0 
+     58      11      21     213      11       9       3       0       0 
+     58      11      21     213      12       8       4       0       0 
+
+#Back Layer (L10 - m0/1/2/3): UVAXY L10 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m8.chanmap = 
+     58      11      22     220       0      15       0       1       1 
+     58      11      22     220       1      14       1       1       1 
+     58      11      22     220       2      13       2       1       1 
+     58      11      22     220       3      12       3       1       1 
+     58      11      22     220       4      11       4       1       1 
+     58      11      22     220       5      10       5       1       1 
+     58      11      22     220       6       9       6       1       1 
+     58      11      22     220       7       8       7       1       1 
+     58      11      22     220       8       7       8       1       1 
+     58      11      22     220       9       6       9       1       1 
+     58      11      22     220      10       5      10       1       1 
+     58      11      22     220      11       4      11       1       1 
+     24      11       9     220      10       4       9       1       0 
+     24      11       9     220      11       3       8       1       0 
+     24      11       9     220      12       2       7       1       0 
+     24      11       9     220      13       1       6       1       0 
+     24      11       9     220      14       0       5       1       0 
+     24      11      10     220       0       4       0       0       0 
+     24      11      10     220       1       3       1       0       0 
+     24      11      10     220       2       2       2       0       0 
+     24      11      10     220       3       1       3       0       0 
+     24      11      10     220       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m9.chanmap = 
+     58      11      23     221       0      15       0       1       1 
+     58      11      23     221       1      14       1       1       1 
+     58      11      23     221       2      13       2       1       1 
+     58      11      23     221       3      12       3       1       1 
+     58      11      23     221       4      11       4       1       1 
+     58      11      23     221       5      10       5       1       1 
+     58      11      23     221       6       9       6       1       1 
+     58      11      23     221       7       8       7       1       1 
+     58      11      23     221       8       7       8       1       1 
+     58      11      23     221       9       6       9       1       1 
+     58      11      23     221      10       5      10       1       1 
+     58      11      23     221      11       4      11       1       1 
+     24      11       9     221       5      12       9       1       0 
+     24      11       9     221       6      11       8       1       0 
+     24      11       9     221       7      10       7       1       0 
+     24      11       9     221       8       9       6       1       0 
+     24      11       9     221       9       8       5       1       0 
+     24      11      10     221       5      12       0       0       0 
+     24      11      10     221       6      11       1       0       0 
+     24      11      10     221       7      10       2       0       0 
+     24      11      10     221       8       9       3       0       0 
+     24      11      10     221       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m10.chanmap = 
+     25      11       8     222       0      15      11       0       1 
+     25      11       8     222       1      14      10       0       1 
+     25      11       8     222       2      13       9       0       1 
+     25      11       8     222       3      12       8       0       1 
+     25      11       8     222       4      11       7       0       1 
+     25      11       8     222       5      10       6       0       1 
+     25      11       8     222       6       9       5       0       1 
+     25      11       8     222       7       8       4       0       1 
+     25      11       8     222       8       7       3       0       1 
+     25      11       8     222       9       6       2       0       1 
+     25      11       8     222      10       5       1       0       1 
+     25      11       8     222      11       4       0       0       1 
+     24      11       9     222       0      20       9       1       0 
+     24      11       9     222       1      19       8       1       0 
+     24      11       9     222       2      18       7       1       0 
+     24      11       9     222       3      17       6       1       0 
+     24      11       9     222       4      16       5       1       0 
+     24      11      10     222      10      20       0       0       0 
+     24      11      10     222      11      19       1       0       0 
+     24      11      10     222      12      18       2       0       0 
+     24      11      10     222      13      17       3       0       0 
+     24      11      10     222      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m11.chanmap = 
+     24      11       8     223       0      15      11       0       1 
+     24      11       8     223       1      14      10       0       1 
+     24      11       8     223       2      13       9       0       1 
+     24      11       8     223       3      12       8       0       1 
+     24      11       8     223       4      11       7       0       1 
+     24      11       8     223       5      10       6       0       1 
+     24      11       8     223       6       9       5       0       1 
+     24      11       8     223       7       8       4       0       1 
+     24      11       8     223       8       7       3       0       1 
+     24      11       8     223       9       6       2       0       1 
+     24      11       8     223      10       5       1       0       1 
+     24      11       8     223      11       4       0       0       1 
+     24      11      11     223       0       4       9       1       0 
+     24      11      11     223       1       3       8       1       0 
+     24      11      11     223       2       2       7       1       0 
+     24      11      11     223       3       1       6       1       0 
+     24      11      11     223       4       0       5       1       0 
+     24      11      11     223       8      12       0       0       0 
+     24      11      11     223       9      11       1       0       0 
+     24      11      11     223      10      10       2       0       0 
+     24      11      11     223      11       9       3       0       0 
+     24      11      11     223      12       8       4       0       0 
+
+#Back Layer (L11- m0/1/2/3): UVAXY L11 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m12.chanmap = 
+     24      11      12     230       0      15       0       1       1 
+     24      11      12     230       1      14       1       1       1 
+     24      11      12     230       2      13       2       1       1 
+     24      11      12     230       3      12       3       1       1 
+     24      11      12     230       4      11       4       1       1 
+     24      11      12     230       5      10       5       1       1 
+     24      11      12     230       6       9       6       1       1 
+     24      11      12     230       7       8       7       1       1 
+     24      11      12     230       8       7       8       1       1 
+     24      11      12     230       9       6       9       1       1 
+     24      11      12     230      10       5      10       1       1 
+     24      11      12     230      11       4      11       1       1 
+     25      11       9     230      10       4       9       1       0 
+     25      11       9     230      11       3       8       1       0 
+     25      11       9     230      12       2       7       1       0 
+     25      11       9     230      13       1       6       1       0 
+     25      11       9     230      14       0       5       1       0 
+     25      11      10     230       0       4       0       0       0 
+     25      11      10     230       1       3       1       0       0 
+     25      11      10     230       2       2       2       0       0 
+     25      11      10     230       3       1       3       0       0 
+     25      11      10     230       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m13.chanmap = 
+     24      11      13     231       0      15       0       1       1 
+     24      11      13     231       1      14       1       1       1 
+     24      11      13     231       2      13       2       1       1 
+     24      11      13     231       3      12       3       1       1 
+     24      11      13     231       4      11       4       1       1 
+     24      11      13     231       5      10       5       1       1 
+     24      11      13     231       6       9       6       1       1 
+     24      11      13     231       7       8       7       1       1 
+     24      11      13     231       8       7       8       1       1 
+     24      11      13     231       9       6       9       1       1 
+     24      11      13     231      10       5      10       1       1 
+     24      11      13     231      11       4      11       1       1 
+     25      11       9     231       5      12       9       1       0 
+     25      11       9     231       6      11       8       1       0 
+     25      11       9     231       7      10       7       1       0 
+     25      11       9     231       8       9       6       1       0 
+     25      11       9     231       9       8       5       1       0 
+     25      11      10     231       5      12       0       0       0 
+     25      11      10     231       6      11       1       0       0 
+     25      11      10     231       7      10       2       0       0 
+     25      11      10     231       8       9       3       0       0 
+     25      11      10     231       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m14.chanmap = 
+     24      11      14     232       0      15      11       0       1 
+     24      11      14     232       1      14      10       0       1 
+     24      11      14     232       2      13       9       0       1 
+     24      11      14     232       3      12       8       0       1 
+     24      11      14     232       4      11       7       0       1 
+     24      11      14     232       5      10       6       0       1 
+     24      11      14     232       6       9       5       0       1 
+     24      11      14     232       7       8       4       0       1 
+     24      11      14     232       8       7       3       0       1 
+     24      11      14     232       9       6       2       0       1 
+     24      11      14     232      10       5       1       0       1 
+     24      11      14     232      11       4       0       0       1 
+     25      11       9     232       0      20       9       1       0 
+     25      11       9     232       1      19       8       1       0 
+     25      11       9     232       2      18       7       1       0 
+     25      11       9     232       3      17       6       1       0 
+     25      11       9     232       4      16       5       1       0 
+     25      11      10     232      10      20       0       0       0 
+     25      11      10     232      11      19       1       0       0 
+     25      11      10     232      12      18       2       0       0 
+     25      11      10     232      13      17       3       0       0 
+     25      11      10     232      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m15.chanmap = 
+     24      11      15     233       0      15      11       0       1 
+     24      11      15     233       1      14      10       0       1 
+     24      11      15     233       2      13       9       0       1 
+     24      11      15     233       3      12       8       0       1 
+     24      11      15     233       4      11       7       0       1 
+     24      11      15     233       5      10       6       0       1 
+     24      11      15     233       6       9       5       0       1 
+     24      11      15     233       7       8       4       0       1 
+     24      11      15     233       8       7       3       0       1 
+     24      11      15     233       9       6       2       0       1 
+     24      11      15     233      10       5       1       0       1 
+     24      11      15     233      11       4       0       0       1 
+     25      11      11     233       0       4       9       1       0 
+     25      11      11     233       1       3       8       1       0 
+     25      11      11     233       2       2       7       1       0 
+     25      11      11     233       3       1       6       1       0 
+     25      11      11     233       4       0       5       1       0 
+     25      11      11     233       8      12       0       0       0 
+     25      11      11     233       9      11       1       0       0 
+     25      11      11     233      10      10       2       0       0 
+     25      11      11     233      11       9       3       0       0 
+     25      11      11     233      12       8       4       0       0 
+
+#Back Layer (L12 - m0/1/2/3): UVAXY L12 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m16.chanmap = 
+     25      11      12     240       0      15       0       1       1 
+     25      11      12     240       1      14       1       1       1 
+     25      11      12     240       2      13       2       1       1 
+     25      11      12     240       3      12       3       1       1 
+     25      11      12     240       4      11       4       1       1 
+     25      11      12     240       5      10       5       1       1 
+     25      11      12     240       6       9       6       1       1 
+     25      11      12     240       7       8       7       1       1 
+     25      11      12     240       8       7       8       1       1 
+     25      11      12     240       9       6       9       1       1 
+     25      11      12     240      10       5      10       1       1 
+     25      11      12     240      11       4      11       1       1 
+     25      11      16     240      10       4       9       1       0 
+     25      11      16     240      11       3       8       1       0 
+     25      11      16     240      12       2       7       1       0 
+     25      11      16     240      13       1       6       1       0 
+     25      11      16     240      14       0       5       1       0 
+     25      11      17     240       0       4       0       0       0 
+     25      11      17     240       1       3       1       0       0 
+     25      11      17     240       2       2       2       0       0 
+     25      11      17     240       3       1       3       0       0 
+     25      11      17     240       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m17.chanmap = 
+     25      11      13     241       0      15       0       1       1 
+     25      11      13     241       1      14       1       1       1 
+     25      11      13     241       2      13       2       1       1 
+     25      11      13     241       3      12       3       1       1 
+     25      11      13     241       4      11       4       1       1 
+     25      11      13     241       5      10       5       1       1 
+     25      11      13     241       6       9       6       1       1 
+     25      11      13     241       7       8       7       1       1 
+     25      11      13     241       8       7       8       1       1 
+     25      11      13     241       9       6       9       1       1 
+     25      11      13     241      10       5      10       1       1 
+     25      11      13     241      11       4      11       1       1 
+     25      11      16     241       5      12       9       1       0 
+     25      11      16     241       6      11       8       1       0 
+     25      11      16     241       7      10       7       1       0 
+     25      11      16     241       8       9       6       1       0 
+     25      11      16     241       9       8       5       1       0 
+     25      11      17     241       5      12       0       0       0 
+     25      11      17     241       6      11       1       0       0 
+     25      11      17     241       7      10       2       0       0 
+     25      11      17     241       8       9       3       0       0 
+     25      11      17     241       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m18.chanmap = 
+     25      11      14     242       0      15      11       0       1 
+     25      11      14     242       1      14      10       0       1 
+     25      11      14     242       2      13       9       0       1 
+     25      11      14     242       3      12       8       0       1 
+     25      11      14     242       4      11       7       0       1 
+     25      11      14     242       5      10       6       0       1 
+     25      11      14     242       6       9       5       0       1 
+     25      11      14     242       7       8       4       0       1 
+     25      11      14     242       8       7       3       0       1 
+     25      11      14     242       9       6       2       0       1 
+     25      11      14     242      10       5       1       0       1 
+     25      11      14     242      11       4       0       0       1 
+     25      11      16     242       0      20       9       1       0 
+     25      11      16     242       1      19       8       1       0 
+     25      11      16     242       2      18       7       1       0 
+     25      11      16     242       3      17       6       1       0 
+     25      11      16     242       4      16       5       1       0 
+     25      11      17     242      10      20       0       0       0 
+     25      11      17     242      11      19       1       0       0 
+     25      11      17     242      12      18       2       0       0 
+     25      11      17     242      13      17       3       0       0 
+     25      11      17     242      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m19.chanmap = 
+     25      11      15     243       0      15      11       0       1 
+     25      11      15     243       1      14      10       0       1 
+     25      11      15     243       2      13       9       0       1 
+     25      11      15     243       3      12       8       0       1 
+     25      11      15     243       4      11       7       0       1 
+     25      11      15     243       5      10       6       0       1 
+     25      11      15     243       6       9       5       0       1 
+     25      11      15     243       7       8       4       0       1 
+     25      11      15     243       8       7       3       0       1 
+     25      11      15     243       9       6       2       0       1 
+     25      11      15     243      10       5       1       0       1 
+     25      11      15     243      11       4       0       0       1 
+     25      11      18     243       0       4       9       1       0 
+     25      11      18     243       1       3       8       1       0 
+     25      11      18     243       2       2       7       1       0 
+     25      11      18     243       3       1       6       1       0 
+     25      11      18     243       4       0       5       1       0 
+     25      11      18     243       8      12       0       0       0 
+     25      11      18     243       9      11       1       0       0 
+     25      11      18     243      10      10       2       0       0 
+     25      11      18     243      11       9       3       0       0 
+     25      11      18     243      12       8       4       0       0 
+
+#Back Layer (L13 - m0/1/2/3): UVAXY L13 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m20.chanmap = 
+     25      11      19     250       0      15       0       1       1 
+     25      11      19     250       1      14       1       1       1 
+     25      11      19     250       2      13       2       1       1 
+     25      11      19     250       3      12       3       1       1 
+     25      11      19     250       4      11       4       1       1 
+     25      11      19     250       5      10       5       1       1 
+     25      11      19     250       6       9       6       1       1 
+     25      11      19     250       7       8       7       1       1 
+     25      11      19     250       8       7       8       1       1 
+     25      11      19     250       9       6       9       1       1 
+     25      11      19     250      10       5      10       1       1 
+     25      11      19     250      11       4      11       1       1 
+     25      11      23     250      10       4       9       1       0 
+     25      11      23     250      11       3       8       1       0 
+     25      11      23     250      12       2       7       1       0 
+     25      11      23     250      13       1       6       1       0 
+     25      11      23     250      14       0       5       1       0 
+     25      11      24     250       0       4       0       0       0 
+     25      11      24     250       1       3       1       0       0 
+     25      11      24     250       2       2       2       0       0 
+     25      11      24     250       3       1       3       0       0 
+     25      11      24     250       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m21.chanmap = 
+     25      11      20     251       0      15       0       1       1 
+     25      11      20     251       1      14       1       1       1 
+     25      11      20     251       2      13       2       1       1 
+     25      11      20     251       3      12       3       1       1 
+     25      11      20     251       4      11       4       1       1 
+     25      11      20     251       5      10       5       1       1 
+     25      11      20     251       6       9       6       1       1 
+     25      11      20     251       7       8       7       1       1 
+     25      11      20     251       8       7       8       1       1 
+     25      11      20     251       9       6       9       1       1 
+     25      11      20     251      10       5      10       1       1 
+     25      11      20     251      11       4      11       1       1 
+     25      11      23     251       5      12       9       1       0 
+     25      11      23     251       6      11       8       1       0 
+     25      11      23     251       7      10       7       1       0 
+     25      11      23     251       8       9       6       1       0 
+     25      11      23     251       9       8       5       1       0 
+     25      11      24     251       5      12       0       0       0 
+     25      11      24     251       6      11       1       0       0 
+     25      11      24     251       7      10       2       0       0 
+     25      11      24     251       8       9       3       0       0 
+     25      11      24     251       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m22.chanmap = 
+     25      11      21     252       0      15      11       0       1 
+     25      11      21     252       1      14      10       0       1 
+     25      11      21     252       2      13       9       0       1 
+     25      11      21     252       3      12       8       0       1 
+     25      11      21     252       4      11       7       0       1 
+     25      11      21     252       5      10       6       0       1 
+     25      11      21     252       6       9       5       0       1 
+     25      11      21     252       7       8       4       0       1 
+     25      11      21     252       8       7       3       0       1 
+     25      11      21     252       9       6       2       0       1 
+     25      11      21     252      10       5       1       0       1 
+     25      11      21     252      11       4       0       0       1 
+     25      11      23     252       0      20       9       1       0 
+     25      11      23     252       1      19       8       1       0 
+     25      11      23     252       2      18       7       1       0 
+     25      11      23     252       3      17       6       1       0 
+     25      11      23     252       4      16       5       1       0 
+     25      11      24     252      10      20       0       0       0 
+     25      11      24     252      11      19       1       0       0 
+     25      11      24     252      12      18       2       0       0 
+     25      11      24     252      13      17       3       0       0 
+     25      11      24     252      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m23.chanmap = 
+     25      11      22     253       0      15      11       0       1 
+     25      11      22     253       1      14      10       0       1 
+     25      11      22     253       2      13       9       0       1 
+     25      11      22     253       3      12       8       0       1 
+     25      11      22     253       4      11       7       0       1 
+     25      11      22     253       5      10       6       0       1 
+     25      11      22     253       6       9       5       0       1 
+     25      11      22     253       7       8       4       0       1 
+     25      11      22     253       8       7       3       0       1 
+     25      11      22     253       9       6       2       0       1 
+     25      11      22     253      10       5       1       0       1 
+     25      11      22     253      11       4       0       0       1 
+     25      11      25     253       0       4       9       1       0 
+     25      11      25     253       1       3       8       1       0 
+     25      11      25     253       2       2       7       1       0 
+     25      11      25     253       3       1       6       1       0 
+     25      11      25     253       4       0       5       1       0 
+     25      11      25     253       8      12       0       0       0 
+     25      11      25     253       9      11       1       0       0 
+     25      11      25     253      10      10       2       0       0 
+     25      11      25     253      11       9       3       0       0 
+     25      11      25     253      12       8       4       0       0 
+
+#Back Layer (L14 - m0/1/2/3): UVAXY L14 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m24.chanmap = 
+     25      11      26     260       0      15       0       1       1 
+     25      11      26     260       1      14       1       1       1 
+     25      11      26     260       2      13       2       1       1 
+     25      11      26     260       3      12       3       1       1 
+     25      11      26     260       4      11       4       1       1 
+     25      11      26     260       5      10       5       1       1 
+     25      11      26     260       6       9       6       1       1 
+     25      11      26     260       7       8       7       1       1 
+     25      11      26     260       8       7       8       1       1 
+     25      11      26     260       9       6       9       1       1 
+     25      11      26     260      10       5      10       1       1 
+     25      11      26     260      11       4      11       1       1 
+     24      11      18     260      10       4       9       1       0 
+     24      11      18     260      11       3       8       1       0 
+     24      11      18     260      12       2       7       1       0 
+     24      11      18     260      13       1       6       1       0 
+     24      11      18     260      14       0       5       1       0 
+     24      11      19     260       0       4       0       0       0 
+     24      11      19     260       1       3       1       0       0 
+     24      11      19     260       2       2       2       0       0 
+     24      11      19     260       3       1       3       0       0 
+     24      11      19     260       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m25.chanmap = 
+     25      11      27     261       0      15       0       1       1 
+     25      11      27     261       1      14       1       1       1 
+     25      11      27     261       2      13       2       1       1 
+     25      11      27     261       3      12       3       1       1 
+     25      11      27     261       4      11       4       1       1 
+     25      11      27     261       5      10       5       1       1 
+     25      11      27     261       6       9       6       1       1 
+     25      11      27     261       7       8       7       1       1 
+     25      11      27     261       8       7       8       1       1 
+     25      11      27     261       9       6       9       1       1 
+     25      11      27     261      10       5      10       1       1 
+     25      11      27     261      11       4      11       1       1 
+     24      11      18     261       5      12       9       1       0 
+     24      11      18     261       6      11       8       1       0 
+     24      11      18     261       7      10       7       1       0 
+     24      11      18     261       8       9       6       1       0 
+     24      11      18     261       9       8       5       1       0 
+     24      11      19     261       5      12       0       0       0 
+     24      11      19     261       6      11       1       0       0 
+     24      11      19     261       7      10       2       0       0 
+     24      11      19     261       8       9       3       0       0 
+     24      11      19     261       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m26.chanmap = 
+     24      11      16     262       0      15      11       0       1 
+     24      11      16     262       1      14      10       0       1 
+     24      11      16     262       2      13       9       0       1 
+     24      11      16     262       3      12       8       0       1 
+     24      11      16     262       4      11       7       0       1 
+     24      11      16     262       5      10       6       0       1 
+     24      11      16     262       6       9       5       0       1 
+     24      11      16     262       7       8       4       0       1 
+     24      11      16     262       8       7       3       0       1 
+     24      11      16     262       9       6       2       0       1 
+     24      11      16     262      10       5       1       0       1 
+     24      11      16     262      11       4       0       0       1 
+     24      11      18     262       0      20       9       1       0 
+     24      11      18     262       1      19       8       1       0 
+     24      11      18     262       2      18       7       1       0 
+     24      11      18     262       3      17       6       1       0 
+     24      11      18     262       4      16       5       1       0 
+     24      11      19     262      10      20       0       0       0 
+     24      11      19     262      11      19       1       0       0 
+     24      11      19     262      12      18       2       0       0 
+     24      11      19     262      13      17       3       0       0 
+     24      11      19     262      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m27.chanmap = 
+     24      11      17     263       0      15      11       0       1 
+     24      11      17     263       1      14      10       0       1 
+     24      11      17     263       2      13       9       0       1 
+     24      11      17     263       3      12       8       0       1 
+     24      11      17     263       4      11       7       0       1 
+     24      11      17     263       5      10       6       0       1 
+     24      11      17     263       6       9       5       0       1 
+     24      11      17     263       7       8       4       0       1 
+     24      11      17     263       8       7       3       0       1 
+     24      11      17     263       9       6       2       0       1 
+     24      11      17     263      10       5       1       0       1 
+     24      11      17     263      11       4       0       0       1 
+     24      11      20     263       0       4       9       1       0 
+     24      11      20     263       1       3       8       1       0 
+     24      11      20     263       2       2       7       1       0 
+     24      11      20     263       3       1       6       1       0 
+     24      11      20     263       4       0       5       1       0 
+     24      11      20     263       8      12       0       0       0 
+     24      11      20     263       9      11       1       0       0 
+     24      11      20     263      10      10       2       0       0 
+     24      11      20     263      11       9       3       0       0 
+     24      11      20     263      12       8       4       0       0 
+
+#Back Layer (L15 - m0/1/2/3): UVAXY L15 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m28.chanmap = 
+     24      11      21     270       0      15       0       1       1 
+     24      11      21     270       1      14       1       1       1 
+     24      11      21     270       2      13       2       1       1 
+     24      11      21     270       3      12       3       1       1 
+     24      11      21     270       4      11       4       1       1 
+     24      11      21     270       5      10       5       1       1 
+     24      11      21     270       6       9       6       1       1 
+     24      11      21     270       7       8       7       1       1 
+     24      11      21     270       8       7       8       1       1 
+     24      11      21     270       9       6       9       1       1 
+     24      11      21     270      10       5      10       1       1 
+     24      11      21     270      11       4      11       1       1 
+     24      11      25     270      10       4       9       1       0 
+     24      11      25     270      11       3       8       1       0 
+     24      11      25     270      12       2       7       1       0 
+     24      11      25     270      13       1       6       1       0 
+     24      11      25     270      14       0       5       1       0 
+     24      11      26     270       0       4       0       0       0 
+     24      11      26     270       1       3       1       0       0 
+     24      11      26     270       2       2       2       0       0 
+     24      11      26     270       3       1       3       0       0 
+     24      11      26     270       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m29.chanmap = 
+     24      11      22     271       0      15       0       1       1 
+     24      11      22     271       1      14       1       1       1 
+     24      11      22     271       2      13       2       1       1 
+     24      11      22     271       3      12       3       1       1 
+     24      11      22     271       4      11       4       1       1 
+     24      11      22     271       5      10       5       1       1 
+     24      11      22     271       6       9       6       1       1 
+     24      11      22     271       7       8       7       1       1 
+     24      11      22     271       8       7       8       1       1 
+     24      11      22     271       9       6       9       1       1 
+     24      11      22     271      10       5      10       1       1 
+     24      11      22     271      11       4      11       1       1 
+     24      11      25     271       5      12       9       1       0 
+     24      11      25     271       6      11       8       1       0 
+     24      11      25     271       7      10       7       1       0 
+     24      11      25     271       8       9       6       1       0 
+     24      11      25     271       9       8       5       1       0 
+     24      11      26     271       5      12       0       0       0 
+     24      11      26     271       6      11       1       0       0 
+     24      11      26     271       7      10       2       0       0 
+     24      11      26     271       8       9       3       0       0 
+     24      11      26     271       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m30.chanmap = 
+     24      11      23     272       0      15      11       0       1 
+     24      11      23     272       1      14      10       0       1 
+     24      11      23     272       2      13       9       0       1 
+     24      11      23     272       3      12       8       0       1 
+     24      11      23     272       4      11       7       0       1 
+     24      11      23     272       5      10       6       0       1 
+     24      11      23     272       6       9       5       0       1 
+     24      11      23     272       7       8       4       0       1 
+     24      11      23     272       8       7       3       0       1 
+     24      11      23     272       9       6       2       0       1 
+     24      11      23     272      10       5       1       0       1 
+     24      11      23     272      11       4       0       0       1 
+     24      11      25     272       0      20       9       1       0 
+     24      11      25     272       1      19       8       1       0 
+     24      11      25     272       2      18       7       1       0 
+     24      11      25     272       3      17       6       1       0 
+     24      11      25     272       4      16       5       1       0 
+     24      11      26     272      10      20       0       0       0 
+     24      11      26     272      11      19       1       0       0 
+     24      11      26     272      12      18       2       0       0 
+     24      11      26     272      13      17       3       0       0 
+     24      11      26     272      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m31.chanmap = 
+     24      11      24     273       0      15      11       0       1 
+     24      11      24     273       1      14      10       0       1 
+     24      11      24     273       2      13       9       0       1 
+     24      11      24     273       3      12       8       0       1 
+     24      11      24     273       4      11       7       0       1 
+     24      11      24     273       5      10       6       0       1 
+     24      11      24     273       6       9       5       0       1 
+     24      11      24     273       7       8       4       0       1 
+     24      11      24     273       8       7       3       0       1 
+     24      11      24     273       9       6       2       0       1 
+     24      11      24     273      10       5       1       0       1 
+     24      11      24     273      11       4       0       0       1 
+     24      11      27     273       0       4       9       1       0 
+     24      11      27     273       1       3       8       1       0 
+     24      11      27     273       2       2       7       1       0 
+     24      11      27     273       3       1       6       1       0 
+     24      11      27     273       4       0       5       1       0 
+     24      11      27     273       8      12       0       0       0 
+     24      11      27     273       9      11       1       0       0 
+     24      11      27     273      10      10       2       0       0 
+     24      11      27     273      11       9       3       0       0 
+     24      11      27     273      12       8       4       0       0 
+
+
+# ###################### BEGIN TIME-DEPENDENT CLUSTERING PARAMETERS #############
+
+##SUGGESTED INITIAL VALUES:
+# gridbinwidthx = 0.01
+# gridbinwidthy = 0.01
+# gridedgetolerancex = 0.003
+# gridedgetolerancey = 0.003
+# threshold_sample = 75.
+# threshold_stripsum = 300.
+# threshold_clustersum = 600.
+# maxhitcombos = 25000
+# maxhitcombos_inner = 25000
+# maxhitcombos_total = 1,000,000,000 (this is not actually the most relevant limit for the tracking algorithm and I am using an even higher limit for BigBite analysis)
+# max2Dhits = 100,000
+# filterflag1D = 0
+# filterflag2D = 1
+# ADCasym_cut = 0.8
+# deltat_cut = 25.0
+# corrcoeff_cut = 0.5 
+
+############ parameters searched by SBSGEMModule::ReadDatabase() #################
+############ offline thresholds: ############
+sbs.gemFPP.threshold_sample = 50.0
+sbs.gemFPP.threshold_stripsum = 75.0
+sbs.gemFPP.threshold_clustersum = 100.0
+
+
+sbs.gemFPP.ADCasym_cut = 0.8 
+sbs.gemFPP.deltat_cut = 25.0
+sbs.gemFPP.corrcoeff_cut = 0.5
+sbs.gemFPP.filterflag1D = -1 # -1 = no filtering: don't require 1D hits to pass any cuts other than basic zero suppression
+sbs.gemFPP.filterflag2D = -1  # 1 = "hard" filtering: require 2D hits to pass all cuts
+
+sbs.gemFPP.peakprominence_minsigma = 3.0 
+sbs.gemFPP.peakprominence_minfraction = 0.15
+
+# limit cluster size growth to +/- 4 strips for cluster charge calculation
+sbs.gemFPP.maxnu_charge = 4
+sbs.gemFPP.maxnv_charge = 4 
+
+# limit cluster size to +/-3 strips from maximum for cluster position calculation
+sbs.gemFPP.maxnu_pos = 3
+sbs.gemFPP.maxnv_pos = 3
+
+sbs.gemFPP.sigmahitpos = 0.0001
+sbs.gemFPP.sigmahitshape = 0.0004
+sbs.gemFPP.zerosuppress = 1
+sbs.gemFPP.zerosuppress_nsigma = 3.5
+sbs.gemFPP.onlinezerosuppress = 1 # note that this parameter only provides a default value, actual behavior is determined by the flags seen in the raw data:
+
+sbs.gemFPP.plot_common_mode = 0
+sbs.gemFPP.plot_event_info = 1
+
+# when zero suppression is enabled again we will turn this to 1: 
+sbs.gemFPP.pedsub_online = 1 # under normal conditions, this should always be 1, unless running normal data taking in pedestal mode:
+sbs.gemFPP.max2Dhits = 100000 # per-module
+
+
+
+############### Parameters searched by SBSGEMSpectrometerTracker::ReadDatabase() ######################
+
+# parameters controlling tracking:
+sbs.gemFPP.minhitsontrack = 4
+
+sbs.gemFPP.maxhitcombos = 25000 #25000 for final &  50000 for first alignments
+sbs.gemFPP.maxhitcombos_inner = 25000 #25000 for final & 50000 for first alignments
+#sbs.gemFPP.maxhitcombos_total = 1.e22
+sbs.gemFPP.maxhitcombos_total = 1.e15
+
+sbs.gemFPP.tryfasttrack = 0  #May get errors before a good alignment. So may be help to turn off during alignment. 
+
+# typical values after alignment:
+sbs.gemFPP.gridbinwidthx = 0.01
+sbs.gemFPP.gridbinwidthy = 0.01
+sbs.gemFPP.gridedgetolerancex = 0.0025
+sbs.gemFPP.gridedgetolerancey = 0.0025
+sbs.gemFPP.trackchi2cut = 150.0
+
+# Adjust the grid bins and chi2 here during the alignment. Comment them out aftert the alignment is complete.
+#For alignment with cosmics, we want to start with wider grid bins and a loose chi2 cut for tracking:
+#sbs.gemFPP.gridbinwidthx = 0.03 #0.1
+#sbs.gemFPP.gridbinwidthy = 0.03 #0.1
+#sbs.gemFPP.gridedgetolerancex = 0.008 #0.02
+#sbs.gemFPP.gridedgetolerancey = 0.008 #0.02
+#sbs.gemFPP.trackchi2cut = 300 #300.0 #40 #3000.0
+
+sbs.gemFPP.sigmahitpos = 0.0001
+sbs.gemFPP.do_efficiencies = 1
+sbs.gemFPP.dump_geometry_info = 1
+
+sbs.gemFPP.efficiency_bin_width_1D = 0.02
+sbs.gemFPP.efficiency_bin_width_2D = 0.04
+
+# these should probably be tighter later on:
+sbs.gemFPP.xptar_min = -0.24
+sbs.gemFPP.xptar_max = 0.24
+
+sbs.gemFPP.yptar_min = -0.12
+sbs.gemFPP.yptar_max = 0.12
+
+sbs.gemFPP.ytar_min = -0.25
+sbs.gemFPP.ytar_max = 0.25
+
+sbs.gemFPP.pmin = 0.8
+sbs.gemFPP.pmax = 11.0
+
+sbs.gemFPP.xpfp_min = -0.35
+sbs.gemFPP.xpfp_max = 0.2
+sbs.gemFPP.ypfp_min = -0.12
+sbs.gemFPP.ypfp_max = 0.12
+
+# # basic flags controlling decoding:
+sbs.gemFPP.pedestalmode = 0
+sbs.gemFPP.commonmode_flag = 2 # 1 = Danning, 0 = sorting, 2 = histogramming
+sbs.gemFPP.chan_cm_flags = 640 # defines the "dummy" reference channel for storing the cm_enable and build_all_samples flags -(40 x 16) "sbsvtp2" and "sbsvtp4"currently has 36 and 20 MPDs respectively right now. 
+sbs.gemFPP.commonmode_nstriplo = 20 # for sorting method
+sbs.gemFPP.commonmode_nstriphi = 20 # for sorting method
+sbs.gemFPP.commonmode_niter = 3
+sbs.gemFPP.commonmode_minstrips = 20
+
+# histogramming-method parameters: 
+sbs.gemFPP.commonmode_binwidth_nsigma = 2.0
+sbs.gemFPP.commonmode_scanrange_nsigma = 5.0
+sbs.gemFPP.commonmode_stepsize_nsigma = 0.25
+
+# attempt to correct common-mode for negative bias:
+sbs.gemFPP.correct_common_mode = 0
+sbs.gemFPP.correct_common_mode_minstrips = 15
+sbs.gemFPP.correct_common_mode_nsigma = 2.0
+
+sbs.gemFPP.use_commonmode_rolling_average = 1
+sbs.gemFPP.commonmode_nevents_lookback = 10
+
+sbs.gemFPP.plot_common_mode = 0
+sbs.gemFPP.pedsub_online = 1 # normally this should always be set to 1
+sbs.gemFPP.dump_geometry_info = 1
+sbs.gemFPP.efficiency_bin_width_1D = 0.02
+sbs.gemFPP.efficiency_bin_width_2D = 0.02
+sbs.gemFPP.commonmode_range_nsigma = 5.0
+
+
+# these may need adjusting:
+sbs.gemFPP.usestriptimingcut = 0
+sbs.gemFPP.useTSchi2cut = 0
+sbs.gemFPP.maxstrip_t0 = 75.0
+sbs.gemFPP.maxstrip_tsigma = 8.0
+sbs.gemFPP.HitTimeMean = 75.0
+sbs.gemFPP.HitTimeSigma = 8.0
+sbs.gemFPP.maxstrip_tcut = 3.5
+sbs.gemFPP.addstrip_tcut = 35.0
+sbs.gemFPP.addstrip_ccor_cut = 0.4
+sbs.gemFPP.suppressfirstlast = 0
+
+sbs.gemFPP.modulegain = 1
+
+sbs.gemFPP.plot_event_info = 0
+
+
+---------[ 2025-01-31 00:00:00 ] # Cosmic Data Analysis
+
+sbs.gemFPP.useopticsconstraint = 0
+sbs.gemFPP.useslopeconstraint = 0
+sbs.gemFPP.useconstraint = 0
+sbs.gemFPP.dump_geometry_info = 1
+
+# ###################### END TIME-DEPENDENT CLUSTERING PARAMETERS #############
+
+
+
+# ###################### BEGIN TIME-DEPENDENT ALIGNMENT PARAMETERS #############
+
+# ###################### END TIME-DEPENDENT ALIGNMENT PARAMETERS #############
+
+
+# ###################### BEGIN TIME-DEPENDENT PEDESTAL FILES ##########################
+
+
+---------[ 2025-01-31 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run647.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run647.dat
+
+---------[ 2025-02-03 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run679.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run679.dat
+
+---------[ 2025-02-07 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run744.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run744.dat
+
+---------[ 2025-02-14 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run971.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run971.dat
+
+---------[ 2025-02-17 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1030.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1030.dat
+
+---------[ 2025-02-18 16:00:00 ] # Cosmic Data Analysis
+#Back Layer (L8 - m0/1/2/3): UVAXY L8 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m0.chanmap = 
+     58      11      12     200       0      15       0       1       1 
+     58      11      12     200       1      14       1       1       1 
+     58      11      12     200       2      13       2       1       1 
+     58      11      12     200       3      12       3       1       1 
+     58      11      12     200       4      11       4       1       1 
+     58      11      12     200       5      10       5       1       1 
+     58      11      12     200       6       9       6       1       1 
+     58      11      12     200       7       8       7       1       1 
+     58      11      12     200       8       7       8       1       1 
+     58      11      12     200       9       6       9       1       1 
+     58      11      12     200      10       5      10       1       1 
+     58      11      12     200      11       4      11       1       1 
+     58      11      16     200      10       4       9       1       0 
+     58      11      16     200      11       3       8       1       0 
+     58      11      16     200      12       2       7       1       0 
+     58      11      16     200      13       1       6       1       0 
+     58      11      16     200      14       0       5       1       0 
+     20      11       7     200       0       4       0       0       0 
+     20      11       7     200       1       3       1       0       0 
+     20      11       7     200       2       2       2       0       0 
+     20      11       7     200       3       1       3       0       0 
+     20      11       7     200       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m1.chanmap = 
+     58      11      13     201       0      15       0       1       1 
+     58      11      13     201       1      14       1       1       1 
+     58      11      13     201       2      13       2       1       1 
+     58      11      13     201       3      12       3       1       1 
+     58      11      13     201       4      11       4       1       1 
+     58      11      13     201       5      10       5       1       1 
+     58      11      13     201       6       9       6       1       1 
+     58      11      13     201       7       8       7       1       1 
+     58      11      13     201       8       7       8       1       1 
+     58      11      13     201       9       6       9       1       1 
+     58      11      13     201      10       5      10       1       1 
+     58      11      13     201      11       4      11       1       1 
+     58      11      16     201       5      12       9       1       0 
+     58      11      16     201       6      11       8       1       0 
+     58      11      16     201       7      10       7       1       0 
+     58      11      16     201       8       9       6       1       0 
+     58      11      16     201       9       8       5       1       0 
+     20      11       7     201       5      12       0       0       0 
+     20      11       7     201       6      11       1       0       0 
+     20      11       7     201       7      10       2       0       0 
+     20      11       7     201       8       9       3       0       0 
+     20      11       7     201       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m2.chanmap = 
+     58      11      14     202       0      15      11       0       1 
+     58      11      14     202       1      14      10       0       1 
+     58      11      14     202       2      13       9       0       1 
+     58      11      14     202       3      12       8       0       1 
+     58      11      14     202       4      11       7       0       1 
+     58      11      14     202       5      10       6       0       1 
+     58      11      14     202       6       9       5       0       1 
+     58      11      14     202       7       8       4       0       1 
+     58      11      14     202       8       7       3       0       1 
+     58      11      14     202       9       6       2       0       1 
+     58      11      14     202      10       5       1       0       1 
+     58      11      14     202      11       4       0       0       1 
+     58      11      16     202       0      20       9       1       0 
+     58      11      16     202       1      19       8       1       0 
+     58      11      16     202       2      18       7       1       0 
+     58      11      16     202       3      17       6       1       0 
+     58      11      16     202       4      16       5       1       0 
+     20      11       7     202      10      20       0       0       0 
+     20      11       7     202      11      19       1       0       0 
+     20      11       7     202      12      18       2       0       0 
+     20      11       7     202      13      17       3       0       0 
+     20      11       7     202      14      16       4       0       0 
+
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1058.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1058.dat
+
+---------[ 2025-02-20 15:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1091.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1091.dat
+
+---------[ 2025-02-22 10:21:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1095.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1095.dat
+
+---------[ 2025-02-24 12:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1119.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1119.dat
+
+---------[ 2025-02-25 12:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1126.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1126.dat
+
+---------[ 2025-02-28 15:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1153.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1153.dat
+
+---------[ 2025-03-06 12:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.m0.chanmap = 
+     58      11      12     200       0      15       0       1       1 
+     58      11      12     200       1      14       1       1       1 
+     58      11      12     200       2      13       2       1       1 
+     58      11      12     200       3      12       3       1       1 
+     58      11      12     200       4      11       4       1       1 
+     58      11      12     200       5      10       5       1       1 
+     58      11      12     200       6       9       6       1       1 
+     58      11      12     200       7       8       7       1       1 
+     58      11      12     200       8       7       8       1       1 
+     58      11      12     200       9       6       9       1       1 
+     58      11      12     200      10       5      10       1       1 
+     58      11      12     200      11       4      11       1       1 
+     58      11      16     200      10       4       9       1       0 
+     58      11      16     200      11       3       8       1       0 
+     58      11      16     200      12       2       7       1       0 
+     58      11      16     200      13       1       6       1       0 
+     58      11      16     200      14       0       5       1       0 
+     58      11      17     200       0       4       0       0       0 
+     58      11      17     200       1       3       1       0       0 
+     58      11      17     200       2       2       2       0       0 
+     58      11      17     200       3       1       3       0       0 
+     58      11      17     200       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m1.chanmap = 
+     58      11      13     201       0      15       0       1       1 
+     58      11      13     201       1      14       1       1       1 
+     58      11      13     201       2      13       2       1       1 
+     58      11      13     201       3      12       3       1       1 
+     58      11      13     201       4      11       4       1       1 
+     58      11      13     201       5      10       5       1       1 
+     58      11      13     201       6       9       6       1       1 
+     58      11      13     201       7       8       7       1       1 
+     58      11      13     201       8       7       8       1       1 
+     58      11      13     201       9       6       9       1       1 
+     58      11      13     201      10       5      10       1       1 
+     58      11      13     201      11       4      11       1       1 
+     58      11      16     201       5      12       9       1       0 
+     58      11      16     201       6      11       8       1       0 
+     58      11      16     201       7      10       7       1       0 
+     58      11      16     201       8       9       6       1       0 
+     58      11      16     201       9       8       5       1       0 
+     58      11      17     201       5      12       0       0       0 
+     58      11      17     201       6      11       1       0       0 
+     58      11      17     201       7      10       2       0       0 
+     58      11      17     201       8       9       3       0       0 
+     58      11      17     201       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m2.chanmap = 
+     58      11      14     202       0      15      11       0       1 
+     58      11      14     202       1      14      10       0       1 
+     58      11      14     202       2      13       9       0       1 
+     58      11      14     202       3      12       8       0       1 
+     58      11      14     202       4      11       7       0       1 
+     58      11      14     202       5      10       6       0       1 
+     58      11      14     202       6       9       5       0       1 
+     58      11      14     202       7       8       4       0       1 
+     58      11      14     202       8       7       3       0       1 
+     58      11      14     202       9       6       2       0       1 
+     58      11      14     202      10       5       1       0       1 
+     58      11      14     202      11       4       0       0       1 
+     58      11      16     202       0      20       9       1       0 
+     58      11      16     202       1      19       8       1       0 
+     58      11      16     202       2      18       7       1       0 
+     58      11      16     202       3      17       6       1       0 
+     58      11      16     202       4      16       5       1       0 
+     58      11      17     202      10      20       0       0       0 
+     58      11      17     202      11      19       1       0       0 
+     58      11      17     202      12      18       2       0       0 
+     58      11      17     202      13      17       3       0       0 
+     58      11      17     202      14      16       4       0       0 
+
+
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1253.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1253.dat
+
+---------[ 2025-03-10 18:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1285.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1285.dat
+
+sbs.gemFPP.m4.chanmap = 
+     20      11      12     210       0      15       0       1       1 
+     20      11      12     210       1      14       1       1       1 
+     20      11      12     210       2      13       2       1       1 
+     20      11      12     210       3      12       3       1       1 
+     20      11      12     210       4      11       4       1       1 
+     20      11      12     210       5      10       5       1       1 
+     20      11      12     210       6       9       6       1       1 
+     20      11      12     210       7       8       7       1       1 
+     20      11      12     210       8       7       8       1       1 
+     20      11      12     210       9       6       9       1       1 
+     20      11      12     210      10       5      10       1       1 
+     20      11      12     210      11       4      11       1       1 
+     20      11      15     210      10       4       9       1       0 
+     20      11      15     210      11       3       8       1       0 
+     20      11      15     210      12       2       7       1       0 
+     20      11      15     210      13       1       6       1       0 
+     20      11      15     210      14       0       5       1       0 
+     58      11      20     210       0       4       0       0       0 
+     58      11      20     210       1       3       1       0       0 
+     58      11      20     210       2       2       2       0       0 
+     58      11      20     210       3       1       3       0       0 
+     58      11      20     210       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFPP.m5.chanmap = 
+     58      11      19     211       0      15       0       1       1 
+     58      11      19     211       1      14       1       1       1 
+     58      11      19     211       2      13       2       1       1 
+     58      11      19     211       3      12       3       1       1 
+     58      11      19     211       4      11       4       1       1 
+     58      11      19     211       5      10       5       1       1 
+     58      11      19     211       6       9       6       1       1 
+     58      11      19     211       7       8       7       1       1 
+     58      11      19     211       8       7       8       1       1 
+     58      11      19     211       9       6       9       1       1 
+     58      11      19     211      10       5      10       1       1 
+     58      11      19     211      11       4      11       1       1 
+     20      11      15     211       5      12       9       1       0 
+     20      11      15     211       6      11       8       1       0 
+     20      11      15     211       7      10       7       1       0 
+     20      11      15     211       8       9       6       1       0 
+     20      11      15     211       9       8       5       1       0 
+     58      11      20     211       5      12       0       0       0 
+     58      11      20     211       6      11       1       0       0 
+     58      11      20     211       7      10       2       0       0 
+     58      11      20     211       8       9       3       0       0 
+     58      11      20     211       9       8       4       0       0 
+
+
+#sbs.gemFPP.m0.position =      -0.7659122    -0.002245722     0.003617657
+#sbs.gemFPP.m0.angle =      0.02062301       0.5780761       0.1426665
+#sbs.gemFPP.m1.position =      -0.2561648    -0.001205579     -0.04096934
+#sbs.gemFPP.m1.angle =     -0.01678226       0.3435169       0.1089344
+#sbs.gemFPP.m2.position =           0.256               0               0
+#sbs.gemFPP.m2.angle =               0               0               0
+#sbs.gemFPP.m3.position =       0.7662589    8.940733e-05     -0.04151273
+#sbs.gemFPP.m3.angle =     -0.04243949      -0.3974886       0.1872383
+#sbs.gemFPP.m4.position =      -0.7707289    -0.001736923      0.08611048
+#sbs.gemFPP.m4.angle =       -0.136073       0.1384523       0.1513469
+#sbs.gemFPP.m5.position =      -0.2598416    0.0001588481      0.05029484
+#sbs.gemFPP.m5.angle =      0.03646186       0.2715834       0.1554894
+#sbs.gemFPP.m6.position =       0.2525488   -0.0008613161       0.0831828
+#sbs.gemFPP.m6.angle =     -0.02679068      -0.0793043       0.3257177
+#sbs.gemFPP.m7.position =       0.7613798     0.001542848      0.05084536
+#sbs.gemFPP.m7.angle =     0.006722681     -0.07886182      0.04055396
+#sbs.gemFPP.m8.position =      -0.7683527    -0.001488888       0.2187837
+#sbs.gemFPP.m8.angle =       -0.123342      0.05909417      0.08482048
+#sbs.gemFPP.m9.position =      -0.2566259    0.0002236072       0.1825393
+#sbs.gemFPP.m9.angle =      -0.0897063     -0.03267482       0.1790171
+#sbs.gemFPP.m10.position =       0.2545364     0.001549854       0.2181086
+#sbs.gemFPP.m10.angle =      -0.0920512      -0.2831992       0.1016449
+#sbs.gemFPP.m11.position =       0.7646521      0.00193325       0.1871457
+#sbs.gemFPP.m11.angle =     -0.01986657      -0.4389692      0.04693197
+#sbs.gemFPP.m12.position =      -0.7677827    -0.001172883       0.3014148
+#sbs.gemFPP.m12.angle =     -0.04553951     -0.04065642      0.09240715
+#sbs.gemFPP.m13.position =      -0.2573396   -0.0009764898       0.2597833
+#sbs.gemFPP.m13.angle =     -0.05251944     -0.01112181      0.03158205
+#sbs.gemFPP.m14.position =       0.2547226    0.0005881048       0.3053843
+#sbs.gemFPP.m14.angle =     -0.01427352      -0.3466192      0.06497453
+#sbs.gemFPP.m15.position =        0.764685    0.0007774172       0.2648519
+#sbs.gemFPP.m15.angle =      -0.1325774      -0.3037489      0.07271011
+#sbs.gemFPP.m16.position =      -0.7662675      0.00359784       0.3962563
+#sbs.gemFPP.m16.angle =       -0.110097       0.3009982      -0.1062517
+#sbs.gemFPP.m17.position =      -0.2563075      0.00273547        0.436452
+#sbs.gemFPP.m17.angle =      -0.1336081      0.02616072      -0.0923603
+#sbs.gemFPP.m18.position =       0.2559338     0.001712305       0.3946858
+#sbs.gemFPP.m18.angle =      -0.1731748      -0.2436744      -0.1167149
+#sbs.gemFPP.m19.position =        0.766949     0.001393885       0.4444957
+#sbs.gemFPP.m19.angle =      -0.1249655      -0.2386638      -0.1265157
+#sbs.gemFPP.m20.position =      -0.7749639     0.003810651       0.4873074
+#sbs.gemFPP.m20.angle =      0.04085283      0.01390313      -0.1057444
+#sbs.gemFPP.m21.position =      -0.2605502     0.002724642        0.531829
+#sbs.gemFPP.m21.angle =        0.149249       0.1123351      -0.1305801
+#sbs.gemFPP.m22.position =       0.2486626    0.0005699665       0.4908971
+#sbs.gemFPP.m22.angle =     -0.08935175     -0.06043298      -0.1451488
+#sbs.gemFPP.m23.position =       0.7625623   -0.0001920146       0.5328304
+#sbs.gemFPP.m23.angle =     0.004140336      0.08010381      -0.1704137
+#sbs.gemFPP.m24.position =      -0.7651196    -0.003520226       0.6153313
+#sbs.gemFPP.m24.angle =       -0.111384      0.08684884      0.09984091
+#sbs.gemFPP.m25.position =      -0.2522373    -0.002947401       0.6559103
+#sbs.gemFPP.m25.angle =      0.05310833    -0.001035593      0.07211644
+#sbs.gemFPP.m26.position =       0.2588587    -0.003766023       0.6152338
+#sbs.gemFPP.m26.angle =      -0.1429603      -0.2334845      0.06444653
+#sbs.gemFPP.m27.position =       0.7704395    -0.001993686         0.65978
+#sbs.gemFPP.m27.angle =     -0.01227687      -0.3635523      0.02380164
+#sbs.gemFPP.m28.position =      -0.7527206    -0.001371291       0.7053231
+#sbs.gemFPP.m28.angle =    -0.002543842     -0.02497137     0.004502811
+#sbs.gemFPP.m29.position =      -0.2394534    -0.002593244       0.7480601
+#sbs.gemFPP.m29.angle =       0.1052674      -0.2958121     -0.02035853
+#sbs.gemFPP.m30.position =       0.2711298     -0.00131998       0.7072996
+#sbs.gemFPP.m30.angle =    -0.009660263      -0.1537549     -0.02648752
+#sbs.gemFPP.m31.position =       0.7831728    -0.001785075        0.752598
+#sbs.gemFPP.m31.angle =     -0.03498031      -0.1945024     -0.09260319
+
+
+#sbs.gemFPP.m0.position =      -0.7660033    -0.002362089     0.003526612
+#sbs.gemFPP.m0.angle =      0.02782865       0.5025513       0.1594375
+#sbs.gemFPP.m1.position =      -0.2562206    -0.001262314     -0.04083934
+#sbs.gemFPP.m1.angle =     -0.03794229       0.3620329       0.1170092
+#sbs.gemFPP.m2.position =           0.256               0               0
+#sbs.gemFPP.m2.angle =               0               0               0
+#sbs.gemFPP.m3.position =       0.7661513    0.0001257814     -0.04129813
+#sbs.gemFPP.m3.angle =      -0.0612612       -0.413456       0.1925722
+#sbs.gemFPP.m4.position =      -0.7710753    -0.001812718      0.08633044
+#sbs.gemFPP.m4.angle =      -0.1698963       0.1011715       0.1499169
+#sbs.gemFPP.m5.position =      -0.2600343    0.0001075233      0.05026875
+#sbs.gemFPP.m5.angle =    -0.002152281       0.2693273       0.1632378
+#sbs.gemFPP.m6.position =       0.2523452   -0.0008938528      0.08330643
+#sbs.gemFPP.m6.angle =     -0.05676058     -0.04612745       0.3264647
+#sbs.gemFPP.m7.position =       0.7611587     0.001545265      0.05091721
+#sbs.gemFPP.m7.angle =      -0.0176409     -0.06336151      0.04167201
+#sbs.gemFPP.m8.position =      -0.7684736    -0.001458326       0.2187501
+#sbs.gemFPP.m8.angle =      -0.1270618       0.0335462      0.08945298
+#sbs.gemFPP.m9.position =      -0.2567606    0.0002444666       0.1825291
+#sbs.gemFPP.m9.angle =     -0.09065753     -0.02222926        0.178137
+#sbs.gemFPP.m10.position =       0.2543911     0.001559057       0.2180868
+#sbs.gemFPP.m10.angle =      -0.0888481      -0.2873463      0.09849414
+#sbs.gemFPP.m11.position =       0.7645178     0.001940465        0.187108
+#sbs.gemFPP.m11.angle =     -0.01469641      -0.4413473      0.04503409
+#sbs.gemFPP.m12.position =      -0.7678565    -0.001123611       0.3013804
+#sbs.gemFPP.m12.angle =     -0.04763761     -0.05545599      0.09317488
+#sbs.gemFPP.m13.position =       -0.257439   -0.0009553482       0.2597624
+#sbs.gemFPP.m13.angle =     -0.04770088     0.001693589       0.0257357
+#sbs.gemFPP.m14.position =       0.2546167    0.0005808416       0.3053505
+#sbs.gemFPP.m14.angle =    -0.005770718      -0.3474055      0.06230891
+#sbs.gemFPP.m15.position =       0.7645748    0.0007633246       0.2648114
+#sbs.gemFPP.m15.angle =      -0.1242917      -0.3148175      0.07131027
+#sbs.gemFPP.m16.position =      -0.7662965     0.003641417       0.3962324
+#sbs.gemFPP.m16.angle =      -0.1124925       0.3019594      -0.1073059
+#sbs.gemFPP.m17.position =      -0.2563359     0.002744527       0.4363915
+#sbs.gemFPP.m17.angle =      -0.1474764      0.02907169      -0.0993688
+#sbs.gemFPP.m18.position =       0.2558604     0.001697526       0.3946299
+#sbs.gemFPP.m18.angle =      -0.1701917      -0.2501458      -0.1201502
+#sbs.gemFPP.m19.position =       0.7669253     0.001349127       0.4444152
+#sbs.gemFPP.m19.angle =      -0.1257732      -0.2279207      -0.1275232
+#sbs.gemFPP.m20.position =      -0.7749589     0.003859612       0.4873006
+#sbs.gemFPP.m20.angle =      0.03505181       0.0245017      -0.1057468
+#sbs.gemFPP.m21.position =      -0.2605729     0.002728881       0.5318139
+#sbs.gemFPP.m21.angle =       0.1430275       0.1143336      -0.1380771
+#sbs.gemFPP.m22.position =       0.2486467    0.0005367672       0.4908598
+#sbs.gemFPP.m22.angle =     -0.09014182     -0.06470086       -0.148948
+#sbs.gemFPP.m23.position =       0.7625672   -0.0002550387       0.5327139
+#sbs.gemFPP.m23.angle =       0.0113746      0.09601687      -0.1731583
+#sbs.gemFPP.m24.position =      -0.7650397    -0.003468836       0.6152629
+#sbs.gemFPP.m24.angle =      -0.1091803      0.09272716      0.09564475
+#sbs.gemFPP.m25.position =      -0.2522222     -0.00296412       0.6558904
+#sbs.gemFPP.m25.angle =      0.04541393    -0.005863355      0.06444286
+#sbs.gemFPP.m26.position =       0.2588984    -0.003819346       0.6151833
+#sbs.gemFPP.m26.angle =       -0.140699      -0.2383393      0.06115613
+#sbs.gemFPP.m27.position =       0.7705058    -0.002071929       0.6596402
+#sbs.gemFPP.m27.angle =       -0.012495         -0.3432      0.02446663
+#sbs.gemFPP.m28.position =      -0.7526536    -0.001316169       0.7055919
+#sbs.gemFPP.m28.angle =    0.0006340553     -0.02217121   -0.0005675372
+#sbs.gemFPP.m29.position =      -0.2393315     -0.00261976       0.7482437
+#sbs.gemFPP.m29.angle =      0.09436456      -0.2876359     -0.02996043
+#sbs.gemFPP.m30.position =       0.2711966    -0.001385138       0.7072456
+#sbs.gemFPP.m30.angle =    -0.005946181      -0.1492937     -0.03086595
+#sbs.gemFPP.m31.position =       0.7832497    -0.001879334        0.752454
+#sbs.gemFPP.m31.angle =     -0.01297453      -0.1863689     -0.09261741
+
+
+#sbs.gemFPP.m0.position =      -0.7661604    -0.002474424     0.003344783
+#sbs.gemFPP.m0.angle =      0.04542645       0.4715531       0.1773423
+#sbs.gemFPP.m1.position =      -0.2563328    -0.001291881     -0.04086203
+#sbs.gemFPP.m1.angle =     -0.04335122        0.348919        0.123498
+#sbs.gemFPP.m2.position =           0.256               0               0
+#sbs.gemFPP.m2.angle =               0               0               0
+#sbs.gemFPP.m3.position =       0.7660305    0.0001406308     -0.04127247
+#sbs.gemFPP.m3.angle =      -0.0596508      -0.3926483        0.195403
+#sbs.gemFPP.m4.position =      -0.7712734    -0.001870231      0.08628838
+#sbs.gemFPP.m4.angle =      -0.1714786      0.08299759       0.1592332
+#sbs.gemFPP.m5.position =      -0.2601462    9.004139e-05      0.05016607
+#sbs.gemFPP.m5.angle =     -0.02632017       0.2523591       0.1666303
+#sbs.gemFPP.m6.position =       0.2522852   -0.0009010498      0.08332552
+#sbs.gemFPP.m6.angle =     -0.07047427     -0.02071009       0.3250424
+#sbs.gemFPP.m7.position =       0.7610387     0.001550242      0.05086395
+#sbs.gemFPP.m7.angle =     -0.02766065      -0.0405382      0.04321208
+#sbs.gemFPP.m8.position =      -0.7685773    -0.001467235       0.2186808
+#sbs.gemFPP.m8.angle =      -0.1275098      0.01513901      0.09424225
+#sbs.gemFPP.m9.position =      -0.2568502    0.0002477803       0.1825235
+#sbs.gemFPP.m9.angle =      -0.0933502     -0.03094945       0.1781836
+#sbs.gemFPP.m10.position =       0.2543424     0.001542227       0.2180521
+#sbs.gemFPP.m10.angle =     -0.09000961      -0.2821122      0.09547432
+#sbs.gemFPP.m11.position =       0.7644394     0.001924231       0.1870048
+#sbs.gemFPP.m11.angle =     -0.01473401      -0.4366923      0.04560596
+#sbs.gemFPP.m12.position =      -0.7679381    -0.001105166       0.3013629
+#sbs.gemFPP.m12.angle =     -0.04305465     -0.06307074      0.09592631
+#sbs.gemFPP.m13.position =       -0.257505   -0.0009461666       0.2597742
+#sbs.gemFPP.m13.angle =     -0.04775854    -0.005739314      0.02351686
+#sbs.gemFPP.m14.position =       0.2545729    0.0005543557        0.305308
+#sbs.gemFPP.m14.angle =    -0.001583029      -0.3335544      0.05888625
+#sbs.gemFPP.m15.position =       0.7645174    0.0007357384       0.2646917
+#sbs.gemFPP.m15.angle =      -0.1238852       -0.314518      0.07242289
+#sbs.gemFPP.m16.position =      -0.7663299     0.003683143       0.3962388
+#sbs.gemFPP.m16.angle =      -0.1130237       0.3010427      -0.1072798
+#sbs.gemFPP.m17.position =      -0.2563602     0.002753397       0.4363772
+#sbs.gemFPP.m17.angle =      -0.1577421       0.0308747       -0.106382
+#sbs.gemFPP.m18.position =        0.255822     0.001662212       0.3945683
+#sbs.gemFPP.m18.angle =      -0.1706647      -0.2426915      -0.1238732
+#sbs.gemFPP.m19.position =       0.7669031     0.001292918       0.4442819
+#sbs.gemFPP.m19.angle =      -0.1240311      -0.2215209      -0.1270337
+#sbs.gemFPP.m20.position =      -0.7749657     0.003917836       0.4873261
+#sbs.gemFPP.m20.angle =      0.03683601      0.03163719      -0.1088768
+#sbs.gemFPP.m21.position =         -0.2606     0.002736095       0.5318498
+#sbs.gemFPP.m21.angle =       0.1338611       0.1194179      -0.1460161
+#sbs.gemFPP.m22.position =        0.248626    0.0004912728       0.4908152
+#sbs.gemFPP.m22.angle =     -0.09946382     -0.05664941      -0.1534242
+#sbs.gemFPP.m23.position =       0.7625644   -0.0003213615       0.5325781
+#sbs.gemFPP.m23.angle =      0.01072649        0.103639      -0.1723842
+#sbs.gemFPP.m24.position =      -0.7649936    -0.003394785       0.6153084
+#sbs.gemFPP.m24.angle =      -0.1182074      0.09821927      0.08820568
+#sbs.gemFPP.m25.position =      -0.2522389    -0.002970153       0.6559358
+#sbs.gemFPP.m25.angle =      0.03549261    -0.006321463      0.05590278
+#sbs.gemFPP.m26.position =       0.2588942    -0.003879408       0.6151218
+#sbs.gemFPP.m26.angle =      -0.1461142      -0.2314365      0.05613786
+#sbs.gemFPP.m27.position =       0.7705306     -0.00215594       0.6594879
+#sbs.gemFPP.m27.angle =     -0.01183395        -0.32893      0.02548454
+#sbs.gemFPP.m28.position =      -0.7526495    -0.001234813       0.7058156
+#sbs.gemFPP.m28.angle =     -0.01077398    -0.009378038      -0.0115472
+#sbs.gemFPP.m29.position =      -0.2393404    -0.002634236       0.7483883
+#sbs.gemFPP.m29.angle =      0.07398508      -0.2779833     -0.03908546
+#sbs.gemFPP.m30.position =       0.2712057    -0.001457919       0.7071892
+#sbs.gemFPP.m30.angle =      -0.0177068      -0.1460761     -0.03640869
+#sbs.gemFPP.m31.position =       0.7832782    -0.001983009       0.7522747
+#sbs.gemFPP.m31.angle =    -0.004417854      -0.1675149     -0.09404955
+
+sbs.gemFPP.m0.position =      -0.7663377    -0.002471138     0.003344831
+sbs.gemFPP.m0.angle =       0.0354784       0.4735172       0.1751277
+sbs.gemFPP.m1.position =      -0.2564053    -0.001303387     -0.04093021
+sbs.gemFPP.m1.angle =     -0.05040715       0.3376242        0.126285
+sbs.gemFPP.m2.position =           0.256               0               0
+sbs.gemFPP.m2.angle =               0               0               0
+sbs.gemFPP.m3.position =       0.7659643    0.0001222188     -0.04126821
+sbs.gemFPP.m3.angle =     -0.05499292      -0.3760603       0.1922023
+sbs.gemFPP.m4.position =      -0.7714319    -0.001866664      0.08629819
+sbs.gemFPP.m4.angle =      -0.1797351      0.08019933       0.1568931
+sbs.gemFPP.m5.position =      -0.2602043    8.376109e-05      0.05008913
+sbs.gemFPP.m5.angle =     -0.04215861       0.2408143       0.1657862
+sbs.gemFPP.m6.position =       0.2522658   -0.0009064578      0.08333197
+sbs.gemFPP.m6.angle =     -0.07866015    -0.007901666       0.3233614
+sbs.gemFPP.m7.position =       0.7609897     0.001527606      0.05080167
+sbs.gemFPP.m7.angle =     -0.03203882     -0.02406274      0.03950137
+sbs.gemFPP.m8.position =      -0.7686557    -0.001454983       0.2186413
+sbs.gemFPP.m8.angle =      -0.1349947      0.00812403      0.09369217
+sbs.gemFPP.m9.position =      -0.2568889    0.0002512557       0.1825306
+sbs.gemFPP.m9.angle =      -0.1033748     -0.04172245       0.1774295
+sbs.gemFPP.m10.position =       0.2543278     0.001532848       0.2180286
+sbs.gemFPP.m10.angle =     -0.08877907      -0.2745274      0.09217043
+sbs.gemFPP.m11.position =       0.7644009     0.001888673       0.1869226
+sbs.gemFPP.m11.angle =      -0.0209658      -0.4283787       0.0419899
+sbs.gemFPP.m12.position =      -0.7679921    -0.001086909       0.3013315
+sbs.gemFPP.m12.angle =     -0.04198464     -0.06954804      0.09355445
+sbs.gemFPP.m13.position =      -0.2575237   -0.0009420742       0.2597785
+sbs.gemFPP.m13.angle =     -0.04837586     -0.01273321      0.02241618
+sbs.gemFPP.m14.position =       0.2545634    0.0005379267       0.3052867
+sbs.gemFPP.m14.angle =    -0.003893892      -0.3220803      0.05774879
+sbs.gemFPP.m15.position =       0.7644883    0.0006927025       0.2645784
+sbs.gemFPP.m15.angle =      -0.1276048      -0.3138097      0.06860989
+sbs.gemFPP.m16.position =      -0.7663636     0.003713254       0.3962612
+sbs.gemFPP.m16.angle =      -0.1210758       0.2992184      -0.1097852
+sbs.gemFPP.m17.position =      -0.2563712     0.002759124       0.4363996
+sbs.gemFPP.m17.angle =      -0.1680999      0.03100114      -0.1099882
+sbs.gemFPP.m18.position =       0.2558015     0.001643179        0.394523
+sbs.gemFPP.m18.angle =      -0.1715151      -0.2327846      -0.1259181
+sbs.gemFPP.m19.position =       0.7668904     0.001240163        0.444184
+sbs.gemFPP.m19.angle =      -0.1356981      -0.2140943      -0.1277508
+sbs.gemFPP.m20.position =      -0.7749489     0.003958655       0.4873264
+sbs.gemFPP.m20.angle =      0.03590447      0.03023471      -0.1123323
+sbs.gemFPP.m21.position =      -0.2606001     0.002739363       0.5318584
+sbs.gemFPP.m21.angle =       0.1346293       0.1274663      -0.1486509
+sbs.gemFPP.m22.position =       0.2485982    0.0004656969       0.4907742
+sbs.gemFPP.m22.angle =     -0.09590833     -0.04618972      -0.1564544
+sbs.gemFPP.m23.position =        0.762557    -0.000381812       0.5324566
+sbs.gemFPP.m23.angle =    -0.007246841       0.1175065      -0.1749286
+sbs.gemFPP.m24.position =      -0.7649567     -0.00335219       0.6153432
+sbs.gemFPP.m24.angle =      -0.1201316       0.1044906      0.08322067
+sbs.gemFPP.m25.position =      -0.2522322    -0.002975162       0.6559494
+sbs.gemFPP.m25.angle =      0.03315423    -0.001134264      0.05197165
+sbs.gemFPP.m26.position =       0.2588729    -0.003916334       0.6150624
+sbs.gemFPP.m26.angle =      -0.1420558      -0.2225415       0.0531967
+sbs.gemFPP.m27.position =       0.7705206    -0.002229516       0.6593425
+sbs.gemFPP.m27.angle =      -0.0112726      -0.3046218      0.02038461
+sbs.gemFPP.m28.position =      -0.7526334    -0.001184709       0.7059354
+sbs.gemFPP.m28.angle =     -0.01540425    -0.002183678     -0.01752159
+sbs.gemFPP.m29.position =      -0.2393617    -0.002644496       0.7484699
+sbs.gemFPP.m29.angle =       0.0595962      -0.2718999     -0.04286333
+sbs.gemFPP.m30.position =       0.2711831    -0.001499019       0.7071349
+sbs.gemFPP.m30.angle =     -0.03218941      -0.1357699     -0.03794606
+sbs.gemFPP.m31.position =       0.7832871    -0.002059096       0.7521363
+sbs.gemFPP.m31.angle =    -0.003739016      -0.1458709     -0.09525315
+
+sbs.gemFPP.m28.position =      -0.7525658    -0.001196787       0.7058801
+sbs.gemFPP.m28.angle =     -0.02852094     -0.02310346      -0.0222881
+sbs.gemFPP.m29.position =      -0.2393224    -0.002661786       0.7484847
+sbs.gemFPP.m29.angle =        0.045606      -0.2965779     -0.03759406
+sbs.gemFPP.m30.position =       0.2711726    -0.001465164       0.7071813
+sbs.gemFPP.m30.angle =     -0.06044218      -0.1567788     -0.03512494
+sbs.gemFPP.m31.position =       0.7833278    -0.002032625       0.7521437
+sbs.gemFPP.m31.angle =    -0.003321725      -0.1106906     -0.09392041
+#sbs.gemFPP.m30.position =       0.2698642   -0.0005867897       0.7060747
+#sbs.gemFPP.m31.position =       0.7832871    -0.0002059096       0.74811363
+
+sbs.gemFPP.m28.position =      -0.7525883    -0.001205872       0.7059268
+sbs.gemFPP.m28.angle =     -0.03631696     -0.02334802     -0.02621172
+sbs.gemFPP.m29.position =      -0.2393466    -0.002700277       0.7485518
+sbs.gemFPP.m29.angle =      0.02724743       -0.302843     -0.03812161
+sbs.gemFPP.m30.position =        0.271193    -0.001486459        0.707152
+sbs.gemFPP.m30.angle =     -0.07241886      -0.1599976     -0.03983802
+sbs.gemFPP.m31.position =       0.7833079    -0.002028507       0.7520562
+sbs.gemFPP.m31.angle =     -0.02595239     -0.09043174     -0.09226601
+
+sbs.gemFPP.m28.position =       -0.752564    -0.001198736       0.7058874
+sbs.gemFPP.m28.angle =     -0.03494593     -0.02819255     -0.02283444
+sbs.gemFPP.m29.position =      -0.2393185    -0.002664546       0.7485243
+sbs.gemFPP.m29.angle =      0.02913735      -0.3100812     -0.03951839
+sbs.gemFPP.m30.position =       0.2711775    -0.001462059       0.7071871
+sbs.gemFPP.m30.angle =     -0.06933087      -0.1604257     -0.03590298
+sbs.gemFPP.m31.position =       0.7833336    -0.002033559       0.7521276
+sbs.gemFPP.m31.angle =     -0.01079349      -0.1003167     -0.09278271
+
+
+---------[ 2025-03-12 16:00:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1383.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1383.dat
+
+---------[ 2025-03-17 23:13:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1555.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1555.dat
+
+---------[ 2025-03-21 12:18:00 ] # Cosmic Data Analysis
+sbs.gemFPP.pedfile = gemped/daq_ped_sbs_gemFPP_run1642.dat
+sbs.gemFPP.cmfile = gemped/db_cmr_sbs_gemFPP_run1642.dat
+# # #################### END TIME-DEPENDENT PEDESTAL FILES #########################

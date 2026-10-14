@@ -1,0 +1,5 @@
+add_executable(test_pipeline test_pipeline.cpp)
+target_include_directories(test_pipeline PRIVATE ${PROJECT_SOURCE_DIR}/tests/codec)
+target_link_libraries(test_pipeline PRIVATE gemfilter_pipeline gemfilter_apps)
+target_compile_definitions(test_pipeline PRIVATE GF_TEST_DB="${PROJECT_SOURCE_DIR}/tests/seeds/data/DB")
+add_test(NAME pipeline.e2e COMMAND test_pipeline WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})

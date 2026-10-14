@@ -1,0 +1,14 @@
+# Developer tools (SYNTHETIC benchmarks / generators).
+add_executable(gemfilter_bench gemfilter_bench.cpp)
+target_link_libraries(gemfilter_bench PRIVATE gemfilter_pipeline gemfilter_status gemfilter_apps)
+install(TARGETS gemfilter_bench RUNTIME DESTINATION bin)
+if(TARGET gemfilter_et)
+  add_executable(gf_et_feed gf_et_tools.cpp)
+  target_link_libraries(gf_et_feed PRIVATE gemfilter_apps gemfilter_et_core gemfilter::et)
+  add_executable(gf_et_drain gf_et_tools.cpp)
+  target_link_libraries(gf_et_drain PRIVATE gemfilter_apps gemfilter_et_core gemfilter::et)
+  install(TARGETS gf_et_feed gf_et_drain RUNTIME DESTINATION bin)
+endif()
+
+# libsbsdig -> EVIO converter (SIDIS simulation validation)
+add_subdirectory(sbsdig2evio)

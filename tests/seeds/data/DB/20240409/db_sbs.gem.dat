@@ -1,0 +1,2457 @@
+## GEn-RP Inline layers. With two XW GEMs layers in front.
+
+# Date/Time = Tue April 9 00:00:00 2024
+# start database a few days before the start of the GEn-RP experiment.
+-------[ 2024-04-09 00:00:00 ]
+
+
+# database format: the tracker consists of a collection of modules: 
+# database properties will be organized by module, not by "plane" as in old SBS-offline
+ 
+# This is the database for "INLINE" GEMs to be used for the GEn-RP experiment.
+# Layer 0: UVaXW (L0)
+# Layer 1: UVaXW (L1)
+# Layer 2: UVa (L2)
+# Layer 3: UVa (L3)
+# Layer 4: UVa (L4)
+# Layer 5: UVa (L5)
+# Layer 6: UVa (L6)
+# Layer 7: UVa (L7)
+# Layer 8: UVa (PolR0)
+# Layer 9: UVa (PolR1)
+
+sbs.gem.usetrigtime = 1
+sbs.gem.trigtime_crate = 5
+sbs.gem.trigtime_slot = 2
+sbs.gem.trigtime_chan = 127
+sbs.gem.trigtime_t0 = 339.4
+sbs.gem.trigtime_calib = 0.0936
+sbs.gem.trigtime_slope = 0.4
+sbs.gem.maxtrigtime_correction = 50.0
+
+sbs.gem.modules = m0 m1  m2 m3 m4 m5  m6 m7 m8 m9  m10 m11 m12 m13  m14 m15 m16 m17  m18 m19 m20 m21  m22 m23 m24 m25  m26 m27 m28 m29  m30 m31 m32 m33
+     
+sbs.gem.m0.layer = 0
+
+sbs.gem.m1.layer = 1
+
+sbs.gem.m2.layer = 2
+sbs.gem.m3.layer = 2
+sbs.gem.m4.layer = 2
+sbs.gem.m5.layer = 2
+
+sbs.gem.m6.layer  = 3
+sbs.gem.m7.layer  = 3
+sbs.gem.m8.layer  = 3
+sbs.gem.m9.layer  = 3
+
+sbs.gem.m10.layer = 4
+sbs.gem.m11.layer = 4
+sbs.gem.m12.layer = 4
+sbs.gem.m13.layer = 4
+
+sbs.gem.m14.layer = 5
+sbs.gem.m15.layer = 5
+sbs.gem.m16.layer = 5
+sbs.gem.m17.layer = 5
+
+sbs.gem.m18.layer = 6
+sbs.gem.m19.layer = 6
+sbs.gem.m20.layer = 6
+sbs.gem.m21.layer = 6
+
+sbs.gem.m22.layer = 7
+sbs.gem.m23.layer = 7
+sbs.gem.m24.layer = 7
+sbs.gem.m25.layer = 7
+
+sbs.gem.m26.layer = 8
+sbs.gem.m27.layer = 8
+sbs.gem.m28.layer = 8
+sbs.gem.m29.layer = 8
+
+sbs.gem.m30.layer = 9
+sbs.gem.m31.layer = 9
+sbs.gem.m32.layer = 9
+sbs.gem.m33.layer = 9
+
+
+# # APV mapping configurations: 0 = INFN, 1 = UVA X/Y, 2 = UVA U/V
+sbs.gem.m0.apvmap = 2
+
+sbs.gem.m1.apvmap = 2
+
+sbs.gem.m2.apvmap  = 1
+sbs.gem.m3.apvmap  = 1
+sbs.gem.m4.apvmap  = 1
+sbs.gem.m5.apvmap  = 1
+
+sbs.gem.m6.apvmap  = 1
+sbs.gem.m7.apvmap  = 1
+sbs.gem.m8.apvmap  = 1
+sbs.gem.m9.apvmap  = 1
+
+sbs.gem.m10.apvmap = 1
+sbs.gem.m11.apvmap = 1
+sbs.gem.m12.apvmap = 1
+sbs.gem.m13.apvmap = 1
+
+sbs.gem.m14.apvmap = 1
+sbs.gem.m15.apvmap = 1
+sbs.gem.m16.apvmap = 1
+sbs.gem.m17.apvmap = 1
+
+sbs.gem.m18.apvmap = 1
+sbs.gem.m19.apvmap = 1
+sbs.gem.m20.apvmap = 1
+sbs.gem.m21.apvmap = 1
+
+sbs.gem.m22.apvmap = 1
+sbs.gem.m23.apvmap = 1
+sbs.gem.m24.apvmap = 1
+sbs.gem.m25.apvmap = 1
+
+sbs.gem.m26.apvmap = 1
+sbs.gem.m27.apvmap = 1
+sbs.gem.m28.apvmap = 1
+sbs.gem.m29.apvmap = 1
+
+sbs.gem.m30.apvmap = 1
+sbs.gem.m31.apvmap = 1
+sbs.gem.m32.apvmap = 1
+sbs.gem.m33.apvmap = 1
+
+# # Initial guess values for the position and angle.
+
+# in the UVA X/Y layer, the "GEMPOS" index that defines the global module number runs from top to bottom
+
+# Z coordinate offset between 2 consecutive GEM modules within a UVA-XY GEM layer is found to be 0.032 meters -> Anu on Dec 2nd 2021 after referring engineering drawings.
+# Andrew has taken this value to be 0.036 meters in his initial guess values for SBS.
+
+# #### Inline Frame ####
+# ## First railing - XW double (back-to-back) - Z coordinate of the railing = 0.07 m (from measurement using a tape measure on Jul 29,2022)
+# ## Layer 0
+##sbs.gem.m0.position = 0.535 0 0
+##sbs.gem.m1.position = 0 0 0
+##sbs.gem.m2.position = -0.535 0 0 
+# ## Layer 1 # Measured to be roughly 8.3 cm above (-x direction) the INFN Layer 0
+##sbs.gem.m3.position = 0.452 0 0.13 
+##sbs.gem.m4.position = -0.083 0 0.13 
+##sbs.gem.m5.position = -0.618 0 0.13
+
+## Layer 0 # XW-layer0; let's make this module/layer the origin of the internal cordinate system of the GEn-RP inline GEMs
+sbs.gem.m0.position = 0 0 0
+
+## Layer 1 # The Z position of the Layer 1 (XW-layer1).
+sbs.gem.m1.position = 0 0 0.057
+
+ ## Second railing - UVA double - Z coordinate of the railing = 0.025 m + 0.267 m (from the drawing) = 0.292 m
+ ## Layer 2: Type B layer
+#sbs.gem.m2.position = -0.748 0 0.248
+#sbs.gem.m3.position = -0.236 0 0.216
+#sbs.gem.m4.position =  0.276 0 0.248
+#sbs.gem.m5.position =  0.788 0 0.216
+
+sbs.gem.m2.position = -0.766 0.0 0.237
+sbs.gem.m3.position = -0.257 0.0 0.198
+sbs.gem.m4.position =  0.257 0.0 0.242
+sbs.gem.m5.position =  0.766 0.0 0.203
+
+
+ ## Layer 3: Type A layer
+#sbs.gem.m6.position = -0.748 0 0.292
+#sbs.gem.m7.position = -0.236 0 0.260
+#sbs.gem.m8.position =  0.276 0 0.292
+#sbs.gem.m9.position =  0.788 0 0.260
+
+sbs.gem.m6.position = -0.767 0 0.316
+sbs.gem.m7.position = -0.256 0 0.286
+sbs.gem.m8.position =  0.257 0 0.320
+sbs.gem.m9.position =  0.765 0 0.292
+
+ # Third railing - UVA double - Z coordinate of the railing = 0.025 m + 0.593 m (from the drawing) = 0.618 m
+ ## Layer 4: Type B layer
+#sbs.gem.m10.position = -0.748 0 0.574
+#sbs.gem.m11.position = -0.236 0 0.542
+#sbs.gem.m12.position =  0.276 0 0.574
+#sbs.gem.m13.position =  0.788 0 0.542
+
+sbs.gem.m10.position = -0.767 0 0.543
+sbs.gem.m11.position = -0.256 0 0.512
+sbs.gem.m12.position =  0.257 0 0.549
+sbs.gem.m13.position =  0.766 0 0.522
+
+ ## Layer 5: Type A layer
+#sbs.gem.m14.position = -0.748 0 0.618
+#sbs.gem.m15.position = -0.236 0 0.586
+#sbs.gem.m16.position =  0.276 0 0.618
+#sbs.gem.m17.position =  0.788 0 0.586
+
+sbs.gem.m14.position = -0.766 0 0.6264
+sbs.gem.m15.position = -0.257 0 0.5892
+sbs.gem.m16.position =  0.257 0 0.6369
+sbs.gem.m17.position =  0.766 0 0.5991
+
+ # Fourth railing - UVA single - Z coordinate of the railing = 0.025 m + 0.721 m (from the drawing) = 0.746 m
+ ## Layer 6: Type A layer
+#sbs.gem.m18.position = -0.748 0 0.746
+#sbs.gem.m19.position = -0.236 0 0.714
+#sbs.gem.m20.position =  0.276 0 0.746
+#sbs.gem.m21.position =  0.788 0 0.714
+
+sbs.gem.m18.position = -0.767   0 0.7566
+sbs.gem.m19.position = -0.257   0 0.7178
+sbs.gem.m20.position =  0.258  0 0.7628
+sbs.gem.m21.position =  0.766  0 0.7249
+
+ # Fifth raling - UVA single - Z coordinate of the raling = 0.025 m + 0.849 m (from the drawing) = 0.874 m
+ ## Layer 7: Type A layer
+#sbs.gem.m22.position = -0.748 0 0.874
+#sbs.gem.m23.position = -0.236 0 0.842
+#sbs.gem.m24.position =  0.276 0 0.874
+#sbs.gem.m25.position =  0.788 0 0.842
+
+sbs.gem.m22.position = -0.766 0.0 0.8730
+sbs.gem.m23.position = -0.256 0.0 0.8357
+sbs.gem.m24.position =  0.256 0.0 0.8822
+sbs.gem.m25.position =  0.765 0.0 0.8432
+
+coppied from inline layer Third railing of the inline stack
+ ## Layer 8: Type B layer
+#sbs.gem.m26.position = -0.748 0 0.574
+#sbs.gem.m27.position = -0.236 0 0.542
+#sbs.gem.m28.position =  0.276 0 0.574
+#sbs.gem.m29.position =  0.788 0 0.542
+ ## Layer 9: Type A layer
+#sbs.gem.m30.position = -0.748 0 0.618
+#sbs.gem.m31.position = -0.236 0 0.586
+#sbs.gem.m32.position =  0.276 0 0.618
+#sbs.gem.m33.position =  0.788 0 0.586
+
+# I'm introducing some dummy positions that are outside the acceptance for the PR
+# layers so they don't accidentally affect tracking in the inline stack:
+
+sbs.gem.m26.position = -0.766 -2.0 2.8730
+sbs.gem.m27.position = -0.256 -2.0 2.8357
+sbs.gem.m28.position =  0.256 -2.0 2.8822
+sbs.gem.m29.position =  0.765 -2.0 2.8432
+
+sbs.gem.m30.position = -0.766 -2.0 2.9730
+sbs.gem.m31.position = -0.256 -2.0 2.9357
+sbs.gem.m32.position =  0.256 -2.0 2.9822
+sbs.gem.m33.position =  0.765 -2.0 2.9432
+
+####### ANGLES  #######
+# ##First setting --- assuming all to be All ZERO
+sbs.gem.m0.angle = 0 0 0
+
+sbs.gem.m1.angle = 0 0 0
+
+sbs.gem.m2.angle = 0 0 0
+sbs.gem.m3.angle = 0 0 0
+sbs.gem.m4.angle = 0 0 0
+sbs.gem.m5.angle = 0 0 0
+
+sbs.gem.m6.angle = 0 0 0
+sbs.gem.m7.angle = 0 0 0
+sbs.gem.m8.angle = 0 0 0
+sbs.gem.m9.angle = 0 0 0
+
+sbs.gem.m10.angle = 0 0 0
+sbs.gem.m11.angle = 0 0 0
+sbs.gem.m12.angle = 0 0 0
+sbs.gem.m13.angle = 0 0 0
+
+sbs.gem.m14.angle = 0 0 0
+sbs.gem.m15.angle = 0 0 0
+sbs.gem.m16.angle = 0 0 0
+sbs.gem.m17.angle = 0 0 0
+
+sbs.gem.m18.angle = 0 0 0
+sbs.gem.m19.angle = 0 0 0
+sbs.gem.m20.angle = 0 0 0
+sbs.gem.m21.angle = 0 0 0
+
+sbs.gem.m22.angle = 0 0 0
+sbs.gem.m23.angle = 0 0 0
+sbs.gem.m24.angle = 0 0 0
+sbs.gem.m25.angle = 0 0 0
+
+# These GEMs are going to be rotated by 90 degrees about the X axis (not sure
+# what the sign should be)
+sbs.gem.m26.angle = 90 0 0
+sbs.gem.m27.angle = 90 0 0
+sbs.gem.m28.angle = 90 0 0
+sbs.gem.m29.angle = 90 0 0
+
+sbs.gem.m30.angle = 90 0 0
+sbs.gem.m31.angle = 90 0 0
+sbs.gem.m32.angle = 90 0 0
+sbs.gem.m33.angle = 90 0 0
+
+#######
+
+# # Set to nominal sizes
+# Module sizes: INFN XY = (0.512 0.4096 0.001) , UVA XY = (0.512 0.6144 0.001)
+
+sbs.gem.m0.size = 1.552 0.4028 0.001
+
+sbs.gem.m1.size = 1.552 0.4028 0.001
+
+sbs.gem.m2.size = 0.512 0.6144 0.001
+sbs.gem.m3.size = 0.512 0.6144 0.001
+sbs.gem.m4.size = 0.512 0.6144 0.001
+sbs.gem.m5.size = 0.512 0.6144 0.001
+
+sbs.gem.m6.size  = 0.512 0.6144 0.001
+sbs.gem.m7.size  = 0.512 0.6144 0.001
+sbs.gem.m8.size  = 0.512 0.6144 0.001
+sbs.gem.m9.size  = 0.512 0.6144 0.001
+
+sbs.gem.m10.size = 0.512 0.6144 0.001
+sbs.gem.m11.size = 0.512 0.6144 0.001
+sbs.gem.m12.size = 0.512 0.6144 0.001
+sbs.gem.m13.size = 0.512 0.6144 0.001
+
+sbs.gem.m14.size = 0.512 0.6144 0.001
+sbs.gem.m15.size = 0.512 0.6144 0.001
+sbs.gem.m16.size = 0.512 0.6144 0.001
+sbs.gem.m17.size = 0.512 0.6144 0.001
+
+sbs.gem.m18.size = 0.512 0.6144 0.001
+sbs.gem.m19.size = 0.512 0.6144 0.001
+sbs.gem.m20.size = 0.512 0.6144 0.001
+sbs.gem.m21.size = 0.512 0.6144 0.001
+
+sbs.gem.m22.size = 0.512 0.6144 0.001
+sbs.gem.m23.size = 0.512 0.6144 0.001
+sbs.gem.m24.size = 0.512 0.6144 0.001
+sbs.gem.m25.size = 0.512 0.6144 0.001
+
+sbs.gem.m26.size = 0.512 0.6144 0.001
+sbs.gem.m27.size = 0.512 0.6144 0.001
+sbs.gem.m28.size = 0.512 0.6144 0.001
+sbs.gem.m29.size = 0.512 0.6144 0.001
+
+sbs.gem.m30.size = 0.512 0.6144 0.001
+sbs.gem.m31.size = 0.512 0.6144 0.001
+sbs.gem.m32.size = 0.512 0.6144 0.001
+sbs.gem.m33.size = 0.512 0.6144 0.001
+
+# ## strip angles (as measured wrt +X direction of transport coordinate system):
+
+# For the UVA X/Y modules the "X" axis coincides with the direction of transport coordinates "X" axis. For GEM layers that are oriented so that the beam is hitting the R/O board first, "Y" axis is rotaed by -90 degrees w.r.t transport coordinates "X" axis and for the GEM layers that are oriented so that the beam is hitting the gas window first, "Y" axis is rotaded by +90 degrees w.r.t transport coordinates "X" axis (GEM layer "Y" axis and transport coordinate "Y" axis coincides with each other).
+
+# notes on X/W strip orientation:
+# X (W) strips are on the "bottom" ("top") of the readout board.
+# For both X and W strips, the "pos" index in the chanmap runs from bottom to top
+# Whether the beam hits gas window or readout board first, the X ("u") strip angles should be 180 degrees for both, since the strips basically measure -X
+# IF I have interpreted the schematics correctly and the strip angles are as defined below, then the schematic is as viewed from downstream,
+# and The "W" strips for layer 0 measure the
+# coordinate W0 = -(X+Y)/sqrt(2), and for layer 1 the "W" strips measure W1 = -(X-Y)/sqrt(2);
+# Layer 0: PxV = cos(135) = -1/sqrt(2), PyV = sin(135) = +1/sqrt(2): "W" = -X/sqrt(2) + Y/sqrt(2)
+# Layer 1: PxV = cos(-135) = -1/sqrt(2), PyV = sin(-135) = -1/sqrt(2): "W" = -X/sqrt(2) - Y/sqrt(2)
+# this would naively appear to be opposite the convention implied by the comments below; that or I'm interpreting the
+# mapping schematic incorrectly
+
+#Layer 0 and 1 needs to be confirmed 
+# Layer 0 (UVAXW) - beam hits gas window first
+sbs.gem.m0.uangle = 180.0
+sbs.gem.m0.vangle = 135.0
+
+# Layer 1 (UVAXW) - beam hits r/o board first
+sbs.gem.m1.uangle = 180.0
+sbs.gem.m1.vangle = -135.0
+
+# Layer 2 (UVA) - beam hits gas window first
+sbs.gem.m2.uangle  = 0.0
+sbs.gem.m2.vangle  = 90.0
+sbs.gem.m3.uangle  = 0.0
+sbs.gem.m3.vangle  = 90.0
+sbs.gem.m4.uangle = 0.0
+sbs.gem.m4.vangle = 90.0
+sbs.gem.m5.uangle = 0.0
+sbs.gem.m5.vangle = 90.0
+
+# Layer 3 (UVA) - beam hits r/o board first
+sbs.gem.m6.uangle = 0.0
+sbs.gem.m6.vangle = -90.0
+sbs.gem.m7.uangle = 0.0
+sbs.gem.m7.vangle = -90.0
+sbs.gem.m8.uangle = 0.0
+sbs.gem.m8.vangle = -90.0
+sbs.gem.m9.uangle = 0.0
+sbs.gem.m9.vangle = -90.0
+
+# Layer 4 (UVA) - beam hits gas windo first
+sbs.gem.m10.uangle = 0.0
+sbs.gem.m10.vangle = 90.0
+sbs.gem.m11.uangle = 0.0
+sbs.gem.m11.vangle = 90.0
+sbs.gem.m12.uangle = 0.0
+sbs.gem.m12.vangle = 90.0
+sbs.gem.m13.uangle = 0.0
+sbs.gem.m13.vangle = 90.0
+
+# Layer 5 (UVA) - beam hits r/o board first
+sbs.gem.m14.uangle = 0.0
+sbs.gem.m14.vangle = -90.0
+sbs.gem.m15.uangle = 0.0
+sbs.gem.m15.vangle = -90.0
+sbs.gem.m16.uangle = 0.0
+sbs.gem.m16.vangle = -90.0
+sbs.gem.m17.uangle = 0.0
+sbs.gem.m17.vangle = -90.0
+
+# Layer 6 (UVA) - beam hits r/o board first
+sbs.gem.m18.uangle = 0.0
+sbs.gem.m18.vangle = -90.0
+sbs.gem.m19.uangle = 0.0
+sbs.gem.m19.vangle = -90.0
+sbs.gem.m20.uangle = 0.0
+sbs.gem.m20.vangle = -90.0
+sbs.gem.m21.uangle = 0.0
+sbs.gem.m21.vangle = -90.0
+
+# Layer 7 (UVA) - beam hits r/o board first
+sbs.gem.m22.uangle = 0.0
+sbs.gem.m22.vangle = -90.0
+sbs.gem.m23.uangle = 0.0
+sbs.gem.m23.vangle = -90.0
+sbs.gem.m24.uangle = 0.0
+sbs.gem.m24.vangle = -90.0
+sbs.gem.m25.uangle = 0.0
+sbs.gem.m25.vangle = -90.0
+
+# Layer 8 (UVA) - beam hits gas windo first
+sbs.gem.m26.uangle = 0.0
+sbs.gem.m26.vangle = 90.0
+sbs.gem.m27.uangle = 0.0
+sbs.gem.m27.vangle = 90.0
+sbs.gem.m28.uangle = 0.0
+sbs.gem.m28.vangle = 90.0
+sbs.gem.m29.uangle = 0.0
+sbs.gem.m29.vangle = 90.0
+
+# Layer 9 (UVA) - beam hits r/o board first
+sbs.gem.m30.uangle = 0.0
+sbs.gem.m30.vangle = -90.0
+sbs.gem.m31.uangle = 0.0
+sbs.gem.m31.vangle = -90.0
+sbs.gem.m32.uangle = 0.0
+sbs.gem.m32.vangle = -90.0
+sbs.gem.m33.uangle = 0.0
+sbs.gem.m33.vangle = -90.0
+
+# Layer 6 (UVA) - beam hits r/o board first
+# # U/V strip offsets: for X/Y GEMS, INFN and UVA alike, we are probably safe to stick with (0,0).
+# # for U/V strip GEMs, the needed offsets are non-zero:
+
+# # U offsets:
+#This may need to be checked
+sbs.gem.m0.uoffset = 0.0176
+#This may need to be checked
+sbs.gem.m1.uoffset = 0.0176
+
+sbs.gem.m2.uoffset = 0.0
+sbs.gem.m3.uoffset = 0.0
+sbs.gem.m4.uoffset = 0.0
+sbs.gem.m5.uoffset = 0.0
+
+sbs.gem.m6.uoffset = 0.0
+sbs.gem.m7.uoffset = 0.0
+sbs.gem.m8.uoffset  = 0.0
+sbs.gem.m9.uoffset  = 0.0
+
+sbs.gem.m10.uoffset = 0.0
+sbs.gem.m11.uoffset = 0.0
+sbs.gem.m12.uoffset = 0.0
+sbs.gem.m13.uoffset = 0.0
+
+sbs.gem.m14.uoffset = 0.0
+sbs.gem.m15.uoffset = 0.0
+sbs.gem.m16.uoffset = 0.0
+sbs.gem.m17.uoffset = 0.0
+
+sbs.gem.m18.uoffset = 0.0
+sbs.gem.m19.uoffset = 0.0
+sbs.gem.m20.uoffset = 0.0
+sbs.gem.m21.uoffset = 0.0
+
+sbs.gem.m22.uoffset = 0.0
+sbs.gem.m23.uoffset = 0.0
+sbs.gem.m24.uoffset = 0.0
+sbs.gem.m25.uoffset = 0.0
+
+sbs.gem.m26.uoffset = 0.0
+sbs.gem.m27.uoffset = 0.0
+sbs.gem.m28.uoffset = 0.0
+sbs.gem.m29.uoffset = 0.0
+
+sbs.gem.m30.uoffset = 0.0
+sbs.gem.m31.uoffset = 0.0
+sbs.gem.m32.uoffset = 0.0
+sbs.gem.m33.uoffset = 0.0
+
+# # V offsets:
+#This may need to be checked
+sbs.gem.m0.voffset = 0.0
+
+#This may need to be checked
+sbs.gem.m1.voffset = 0.0
+
+sbs.gem.m2.voffset = 0.0
+sbs.gem.m3.voffset = 0.0
+sbs.gem.m4.voffset = 0.0
+sbs.gem.m5.voffset = 0.0
+
+sbs.gem.m6.voffset = 0.0
+sbs.gem.m7.voffset = 0.0
+sbs.gem.m8.voffset = 0.0
+sbs.gem.m9.voffset = 0.0
+
+sbs.gem.m10.voffset = 0.0
+sbs.gem.m11.voffset = 0.0
+sbs.gem.m12.voffset = 0.0
+sbs.gem.m13.voffset = 0.0
+
+sbs.gem.m14.voffset = 0.0
+sbs.gem.m15.voffset = 0.0
+sbs.gem.m16.voffset = 0.0
+sbs.gem.m17.voffset = 0.0
+
+sbs.gem.m18.voffset = 0.0
+sbs.gem.m19.voffset = 0.0
+sbs.gem.m20.voffset = 0.0
+sbs.gem.m21.voffset = 0.0
+
+sbs.gem.m22.voffset = 0.0
+sbs.gem.m23.voffset = 0.0
+sbs.gem.m24.voffset = 0.0
+sbs.gem.m25.voffset = 0.0
+
+sbs.gem.m26.voffset = 0.0
+sbs.gem.m27.voffset = 0.0
+sbs.gem.m28.voffset = 0.0
+sbs.gem.m29.voffset = 0.0
+
+sbs.gem.m30.voffset = 0.0
+sbs.gem.m31.voffset = 0.0
+sbs.gem.m32.voffset = 0.0
+sbs.gem.m33.voffset = 0.0
+
+# # strip counts: 
+
+sbs.gem.m0.nstripsu = 3968
+sbs.gem.m0.nstripsv = 3456
+
+sbs.gem.m1.nstripsu = 3968
+sbs.gem.m1.nstripsv = 3456
+
+sbs.gem.m2.nstripsu = 1280
+sbs.gem.m2.nstripsv = 1536
+sbs.gem.m3.nstripsu = 1280
+sbs.gem.m3.nstripsv = 1536
+sbs.gem.m4.nstripsu  = 1280
+sbs.gem.m4.nstripsv  = 1536
+sbs.gem.m5.nstripsu  = 1280
+sbs.gem.m5.nstripsv  = 1536
+
+sbs.gem.m6.nstripsu = 1280
+sbs.gem.m6.nstripsv = 1536
+sbs.gem.m7.nstripsu = 1280
+sbs.gem.m7.nstripsv = 1536
+sbs.gem.m8.nstripsu = 1280
+sbs.gem.m8.nstripsv = 1536
+sbs.gem.m9.nstripsu = 1280
+sbs.gem.m9.nstripsv = 1536
+
+sbs.gem.m10.nstripsu = 1280
+sbs.gem.m10.nstripsv = 1536
+sbs.gem.m11.nstripsu = 1280
+sbs.gem.m11.nstripsv = 1536
+sbs.gem.m12.nstripsu = 1280
+sbs.gem.m12.nstripsv = 1536
+sbs.gem.m13.nstripsu = 1280
+sbs.gem.m13.nstripsv = 1536
+
+sbs.gem.m14.nstripsu = 1280
+sbs.gem.m14.nstripsv = 1536
+sbs.gem.m15.nstripsu = 1280
+sbs.gem.m15.nstripsv = 1536
+sbs.gem.m16.nstripsu = 1280
+sbs.gem.m16.nstripsv = 1536
+sbs.gem.m17.nstripsu = 1280
+sbs.gem.m17.nstripsv = 1536
+
+sbs.gem.m18.nstripsu = 1280
+sbs.gem.m18.nstripsv = 1536
+sbs.gem.m19.nstripsu = 1280
+sbs.gem.m19.nstripsv = 1536
+sbs.gem.m20.nstripsu = 1280
+sbs.gem.m20.nstripsv = 1536
+sbs.gem.m21.nstripsu = 1280
+sbs.gem.m21.nstripsv = 1536
+
+sbs.gem.m22.nstripsu = 1280
+sbs.gem.m22.nstripsv = 1536
+sbs.gem.m23.nstripsu = 1280
+sbs.gem.m23.nstripsv = 1536
+sbs.gem.m24.nstripsu = 1280
+sbs.gem.m24.nstripsv = 1536
+sbs.gem.m25.nstripsu = 1280
+sbs.gem.m25.nstripsv = 1536
+
+sbs.gem.m26.nstripsu = 1280
+sbs.gem.m26.nstripsv = 1536
+sbs.gem.m27.nstripsu = 1280
+sbs.gem.m27.nstripsv = 1536
+sbs.gem.m28.nstripsu = 1280
+sbs.gem.m28.nstripsv = 1536
+sbs.gem.m29.nstripsu = 1280
+sbs.gem.m29.nstripsv = 1536
+
+sbs.gem.m30.nstripsu = 1280
+sbs.gem.m30.nstripsv = 1536
+sbs.gem.m31.nstripsu = 1280
+sbs.gem.m31.nstripsv = 1536
+sbs.gem.m32.nstripsu = 1280
+sbs.gem.m32.nstripsv = 1536
+sbs.gem.m33.nstripsu = 1280
+sbs.gem.m33.nstripsv = 1536
+
+# # all modules have the same strip pitch along both dimensions, 0.4 mm:
+sbs.gem.upitch = 0.0004
+sbs.gem.vpitch = 0.0004
+
+
+# # Module average gains relative to target ADC peak position of 4000
+#U strips
+sbs.gem.m0.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m1.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m2.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m3.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m4.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m5.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m6.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m7.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m8.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m9.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m10.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m11.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m12.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m13.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m14.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m15.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m16.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m17.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m18.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m19.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m20.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m21.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m22.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m23.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m24.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m25.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m26.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m27.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m28.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m29.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m30.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m31.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m32.ugain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m33.ugain = 1  1  1  1  1  1  1  1  1  1 
+
+#V Strips
+sbs.gem.m0.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m1.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m2.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m3.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m4.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m5.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m6.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m7.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m8.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m9.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m10.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m11.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m12.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m13.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m14.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m15.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m16.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m17.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m18.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m19.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m20.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m21.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m22.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m23.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m24.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m25.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m26.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m27.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m28.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m29.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m30.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m31.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m32.vgain = 1  1  1  1  1  1  1  1  1  1 
+sbs.gem.m33.vgain = 1  1  1  1  1  1  1  1  1  1 
+
+# ###################### BEGIN TIME-DEPENDENT CLUSTERING PARAMETERS #############
+
+##SUGGESTED INITIAL VALUES:
+# gridbinwidthx = 0.01
+# gridbinwidthy = 0.01
+# gridedgetolerancex = 0.003
+# gridedgetolerancey = 0.003
+# threshold_sample = 75.
+# threshold_stripsum = 300.
+# threshold_clustersum = 600.
+# maxhitcombos = 25000
+# maxhitcombos_inner = 25000
+# maxhitcombos_total = 1,000,000,000 (this is not actually the most relevant limit for the tracking algorithm and I am using an even higher limit for BigBite analysis)
+# max2Dhits = 100,000
+# filterflag1D = 0
+# filterflag2D = 1
+# ADCasym_cut = 0.8
+# deltat_cut = 25.0
+# corrcoeff_cut = 0.5 
+
+############ parameters searched by SBSGEMModule::ReadDatabase() #################
+############ offline thresholds: ############
+sbs.gem.threshold_sample =   75.0
+sbs.gem.threshold_stripsum = 250.
+sbs.gem.threshold_clustersum 500.
+
+sbs.gem.ADCasym_cut = 0.8 
+sbs.gem.deltat_cut = 25.0
+sbs.gem.corrcoeff_cut = 0.5
+sbs.gem.filterflag1D = -1 # -1 = no filtering: don't require 1D hits to pass any cuts other than basic zero suppression
+sbs.gem.filterflag2D = -1  # 1 = "hard" filtering: require 2D hits to pass all cuts
+
+sbs.gem.peakprominence_minsigma = 3.0 
+sbs.gem.peakprominence_minfraction = 0.15
+
+# limit cluster size growth to +/- 4 strips for cluster charge calculation
+sbs.gem.maxnu_charge = 4
+sbs.gem.maxnv_charge = 4 
+
+# limit cluster size to +/-3 strips from maximum for cluster position calculation
+sbs.gem.maxnu_pos = 3
+sbs.gem.maxnv_pos = 3
+
+sbs.gem.sigmahitpos = 0.0001
+sbs.gem.sigmahitshape = 0.0004
+sbs.gem.zerosuppress = 1
+sbs.gem.zerosuppress_nsigma = 3.0
+sbs.gem.onlinezerosuppress = 1 # note that this parameter only provides a default value, actual behavior is determined by the flags seen in the raw data:
+
+sbs.gem.plot_common_mode = 0
+sbs.gem.plot_event_info = 1
+
+# when zero suppression is enabled again we will turn this to 1: 
+sbs.gem.pedsub_online = 1 # under normal conditions, this should always be 1, unless running normal data taking in pedestal mode:
+sbs.gem.max2Dhits = 25000 # per-module
+
+
+
+############### Parameters searched by SBSGEMSpectrometerTracker::ReadDatabase() ######################
+
+# parameters controlling tracking:
+sbs.gem.minhitsontrack = 4 #4
+
+sbs.gem.maxhitcombos = 10000 #25000 for final &  50000 for first alignments
+sbs.gem.maxhitcombos_inner = 25000 #25000 for final & 50000 for first alignments
+sbs.gem.maxhitcombos_total = 1.e22
+
+sbs.gem.tryfasttrack = 1  #May get errors before a good alignment. So may be help to turn off during alignment. 
+
+# typical values after alignment:
+#sbs.gem.gridbinwidthx = 0.01
+#sbs.gem.gridbinwidthy = 0.01
+#sbs.gem.gridedgetolerancex = 0.0025
+#sbs.gem.gridedgetolerancey = 0.0025
+#sbs.gem.trackchi2cut = 30
+
+#For alignment with cosmics, we want to start with wider grid bins and a loose chi2 cut for tracking:
+# sbs.gem.gridbinwidthx = 0.02 #0.1
+# sbs.gem.gridbinwidthy = 0.02 #0.1
+# sbs.gem.gridedgetolerancex = 0.006 #0.02
+# sbs.gem.gridedgetolerancey = 0.006 #0.02
+# sbs.gem.trackchi2cut = 40 #3000.0
+
+# Adjust the grid bins and chi2 here:
+ sbs.gem.gridbinwidthx = 0.005
+ sbs.gem.gridbinwidthy = 0.005
+ sbs.gem.gridedgetolerancex = 0.0015
+ sbs.gem.gridedgetolerancey = 0.0015
+ sbs.gem.trackchi2cut = 20.0
+
+# For initial alignment with cosmics, we want to start with no constraints on track-finding:
+sbs.gem.useconstraint = 1
+sbs.gem.useslopeconstraint = 0
+sbs.gem.useopticsconstraint = 1
+
+sbs.gem.sigmahitpos = 0.0001
+sbs.gem.do_efficiencies = 1
+sbs.gem.dump_geometry_info = 1
+
+sbs.gem.efficiency_bin_width_1D = 0.02
+sbs.gem.efficiency_bin_width_2D = 0.04
+
+# these should probably be tighter later on:
+sbs.gem.xptar_min = -0.2
+sbs.gem.xptar_max = 0.3
+
+sbs.gem.yptar_min = -0.1
+sbs.gem.yptar_max = 0.1
+
+sbs.gem.ytar_min = -0.1
+sbs.gem.ytar_max = 0.1
+
+sbs.gem.pmin = 0.5
+sbs.gem.pmax = 4.5
+
+sbs.gem.xpfp_min = -0.45
+sbs.gem.xpfp_max = 0.2
+sbs.gem.ypfp_min = -0.1
+sbs.gem.ypfp_max = 0.1
+
+# # basic flags controlling decoding:
+sbs.gem.pedestalmode = 0
+sbs.gem.commonmode_flag = 2 # 1 = Danning, 0 = sorting, 2 = histogramming
+sbs.gem.chan_cm_flags = 640 # defines the "dummy" reference channel for storing the cm_enable and build_all_samples flags -(40 x 16) "sbsvtp2" and "sbsvtp4"currently has 36 and 20 MPDs respectively right now. 
+sbs.gem.commonmode_nstriplo = 20 # for sorting method
+sbs.gem.commonmode_nstriphi = 20 # for sorting method
+sbs.gem.commonmode_niter = 3
+sbs.gem.commonmode_minstrips = 20
+
+# histogramming-method parameters: 
+sbs.gem.commonmode_binwidth_nsigma = 2.0
+sbs.gem.commonmode_scanrange_nsigma = 5.0
+sbs.gem.commonmode_stepsize_nsigma = 0.25
+
+# attempt to correct common-mode for negative bias:
+sbs.gem.correct_common_mode = 0
+sbs.gem.correct_common_mode_minstrips = 15
+sbs.gem.correct_common_mode_nsigma = 2.0
+
+sbs.gem.use_commonmode_rolling_average = 1
+sbs.gem.commonmode_nevents_lookback = 10
+
+sbs.gem.plot_common_mode = 0
+sbs.gem.pedsub_online = 1 # normally this should always be set to 1
+sbs.gem.dump_geometry_info = 1
+sbs.gem.efficiency_bin_width_1D = 0.02
+sbs.gem.efficiency_bin_width_2D = 0.02
+sbs.gem.commonmode_range_nsigma = 5.0
+
+
+# these may need adjusting:
+sbs.gem.usestriptimingcut = 1
+sbs.gem.useTSchi2cut = 0
+sbs.gem.maxstrip_t0 = 75.0
+sbs.gem.maxstrip_tsigma = 8.0
+sbs.gem.HitTimeMean = 75.0
+sbs.gem.HitTimeSigma = 8.0
+sbs.gem.maxstrip_tcut = 3.5
+sbs.gem.addstrip_tcut = 35.0
+sbs.gem.addstrip_ccor_cut = 0.4
+sbs.gem.suppressfirstlast = 1
+
+sbs.gem.modulegain = 1
+
+sbs.gem.plot_event_info = 0
+
+# AJRP 2/17/2025:
+# default alignment with 100% field, after fixing front and back layers based on zero-field data:
+
+sbs.gem.m0.position =    -0.002141713     -0.01548308    -0.002211918
+sbs.gem.m0.angle =       0.1677907      0.07055288      -0.1594076
+sbs.gem.m1.position =    -0.002731495     -0.01493489      0.06597573
+sbs.gem.m1.angle =       0.2671522       0.1831089      -0.1878431
+sbs.gem.m2.position =      -0.7635144   -0.0004512094       0.2342269
+sbs.gem.m2.angle =      0.08853744        0.179377     0.001836038
+sbs.gem.m3.position =      -0.2519682   -0.0006252508       0.1894398
+sbs.gem.m3.angle =     0.001816958      0.05381564     -0.01945202
+sbs.gem.m4.position =        0.259899    -0.001077052       0.2321659
+sbs.gem.m4.angle =       0.1200141       0.1031629     -0.02348125
+sbs.gem.m5.position =        0.770834    -0.001612467       0.1873834
+sbs.gem.m5.angle =       0.1040319      -0.3125352      0.09315088
+sbs.gem.m6.position =      -0.7654849   -0.0004380563       0.3135085
+sbs.gem.m6.angle =    -0.001941516     -0.01266919      0.03445443
+sbs.gem.m7.position =      -0.2532374    0.0009269035       0.2794538
+sbs.gem.m7.angle =      0.06333188       -0.104131     -0.05443909
+sbs.gem.m8.position =       0.2592416    -0.001369047       0.3129732
+sbs.gem.m8.angle =      0.09735239      -0.4308398       0.2580358
+sbs.gem.m9.position =       0.7687501    0.0003364336       0.2772365
+sbs.gem.m9.angle =       0.3301987       -0.509101   -0.0001805054
+sbs.gem.m10.position =      -0.7653112   -0.0001917618       0.5425019
+sbs.gem.m10.angle =     -0.00143217      -0.1643609       0.0704554
+sbs.gem.m11.position =      -0.2527068     0.001376043       0.5082158
+sbs.gem.m11.angle =     -0.04657638      -0.5979499       0.1764753
+sbs.gem.m12.position =       0.2587296      0.00256349       0.5465972
+sbs.gem.m12.angle =      0.05841173      -0.5603759       0.1070313
+sbs.gem.m13.position =       0.7699501     0.002885302        0.509299
+sbs.gem.m13.angle =       0.1475217      -0.2180021       0.1017191
+sbs.gem.m14.position =      -0.7662127    0.0001579997       0.6263677
+sbs.gem.m14.angle =      0.04628008      -0.2463362      0.06170555
+sbs.gem.m15.position =      -0.2546089    0.0001598454       0.5866109
+sbs.gem.m15.angle =    -0.009787153      -0.7905113     0.004704292
+sbs.gem.m16.position =       0.2573058     0.001663943       0.6352016
+sbs.gem.m16.angle =       0.1610726      -0.7601175      0.06106773
+sbs.gem.m17.position =       0.7687495     0.001781015       0.5861323
+sbs.gem.m17.angle =     -0.07152286      -0.2034422       0.1312161
+sbs.gem.m18.position =      -0.7666177    -0.003114391       0.7558672
+sbs.gem.m18.angle =      0.03514022        0.191799      0.04183716
+sbs.gem.m19.position =      -0.2544986    -0.001738683       0.7175022
+sbs.gem.m19.angle =     -0.03645274      -0.8296661      0.02221774
+sbs.gem.m20.position =       0.2592651   -0.0003626433       0.7642392
+sbs.gem.m20.angle =       0.0195353      -0.4661414     -0.06864222
+sbs.gem.m21.position =       0.7698194    -0.002619846       0.7120818
+sbs.gem.m21.angle =       0.1320096       0.4869841      0.05673364
+sbs.gem.m22.position =      -0.7672871     0.001533482       0.8756434
+sbs.gem.m22.angle =     -0.05272527      -0.2724242      0.06670993
+sbs.gem.m23.position =      -0.2548986     0.001839877       0.8376155
+sbs.gem.m23.angle =      -0.1890936       -1.256589       0.2119995
+sbs.gem.m24.position =       0.2556408     0.001191273        0.885852
+sbs.gem.m24.angle =       0.1410652       -0.512924      0.08070183
+sbs.gem.m25.position =       0.7681993     0.001769274       0.8286245
+sbs.gem.m25.angle =       0.3187733        1.228395       0.1098484
+sbs.gem.m26.position =          -0.766              -2           2.873
+sbs.gem.m26.angle =        89.99964               0               0
+sbs.gem.m27.position =          -0.256              -2          2.8357
+sbs.gem.m27.angle =        89.99964               0               0
+sbs.gem.m28.position =           0.256              -2          2.8822
+sbs.gem.m28.angle =        89.99964               0               0
+sbs.gem.m29.position =           0.765              -2          2.8432
+sbs.gem.m29.angle =        89.99964               0               0
+sbs.gem.m30.position =          -0.766              -2           2.973
+sbs.gem.m30.angle =        89.99964               0               0
+sbs.gem.m31.position =          -0.256              -2          2.9357
+sbs.gem.m31.angle =        89.99964               0               0
+sbs.gem.m32.position =           0.256              -2          2.9822
+sbs.gem.m32.angle =        89.99964               0               0
+sbs.gem.m33.position =           0.765              -2          2.9432
+sbs.gem.m33.angle =        89.99964               0               0
+
+
+################### DECODE INFO ########################################################################
+## Channel maps for decoding explained                                                                ##
+## Each entry corresponds to one APV card                                                             ## 
+## Crate = ROC ID = 2 and 4  for SBS VTP                                                              ##
+## Slot = 11 for BigBite VTP                                                                          ##
+## fiber/mpd is fiber number for an MPD module, this is unique for each module within a VTP/SSP       ##
+## gemid is unique "production ID" of a GEM module, not currently used by analysis but useful         ##
+## for bookkeeping/tracking                                                                           ##
+## adc_ch is the unique adc channel of this APV card within its associated MPD                        ##
+## i2c is the "i2c address" of this APV card (not currently used by analysis)                         ##
+## pos maps APV cards to physical locations on the detector                                           ##
+## invert specifies whether strip index runs from "right-to-left" or "left-to-right" within an APV    ##
+## axis specifies which strip orientation/dimension of the readout strips connected to this APV       ##
+## ORDER of entries in the maps is:                                                                   ##
+## crate   slot   fiber/mpd  gemid  adc_ch   i2c   pos     invert   axis                              ##
+########################################################################################################
+
+
+#Sun Mar 27 17:41:50 2022
+# Copy the contents of this file into $DB_DIR/db_sbs.gem.dat to use these pedestals for analysis
+# format = detname.commonmode_mean(U,V) and detname.commonmode_rms(U,V) = common-mode mean and RMS for U, V strips by APV card in order of position
+
+################### DECODE INFO ########################################################################
+## Channel maps for decoding explained                                                                ##
+## Each entry corresponds to one APV card                                                             ## 
+## Crate = ROC ID = 2 and 4  for SBS VTP                                                              ##
+## Slot = 11 for BigBite VTP                                                                          ##
+## fiber/mpd is fiber number for an MPD module, this is unique for each module within a VTP/SSP       ##
+## gemid is unique "production ID" of a GEM module, not currently used by analysis but useful         ##
+## for bookkeeping/tracking                                                                           ##
+## adc_ch is the unique adc channel of this APV card within its associated MPD                        ##
+## i2c is the "i2c address" of this APV card (not currently used by analysis)                         ##
+## pos maps APV cards to physical locations on the detector                                           ##
+## invert specifies whether strip index runs from "right-to-left" or "left-to-right" within an APV    ##
+## axis specifies which strip orientation/dimension of the readout strips connected to this APV       ##
+## ORDER of entries in the maps is:                                                                   ##
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis                              ##
+########################################################################################################
+
+#Front Layer (L0 - m0): UVAXW L0 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gem.m0.chanmap = 
+      25      11       2      200       0       3       0      0       0
+      25      11       2      200       1       2       1      0       0
+      25      11       2      200       2       1       2      0       0
+      25      11       2      200       3       0       3      0       0
+      25      11       2      200       4       7       4      0       0
+      25      11       2      200       5       6       5      0       0
+      25      11       2      200       6       5       6      0       0
+      25      11       2      200       7       4       7      0       0
+      25      11       2      200       8      11      11      0       0
+      25      11       2      200       9      10      12      0       0
+      25      11       2      200      10       9      13      0       0
+      25      11       2      200      11       8      14      0       0
+      25      11       2      200      12      14      15      0       0
+      25      11       2      200      13      13      16      0       0
+      25      11       2      200      14      12      17      0       0
+      25      11       3      200       0       2      18      0       0
+      25      11       3      200       1       1      19      0       0
+      25      11       3      200       2       0      20      0       0
+      25      11       3      200       4       7      21      0       0
+      25      11       3      200       5       6      22      0       0
+      25      11       3      200       6       5      23      0       0
+      25      11       3      200       7       4      24      0       0
+      25      11       3      200       8      11      25      0       0
+      25      11       3      200       9      10      26      0       0
+      25      11       3      200      10       9      27      0       0
+      25      11       3      200      11       8      28      0       0
+      25      11       3      200      12      14      26      1       1
+      25      11       3      200      13      13      25      1       1
+      25      11       3      200      14      12      24      1       1
+      25      11       4      200       3       0       0      1       1
+      25      11       4      200       2       1       1      1       1
+      25      11       4      200       1       2       2      1       1
+      25      11       4      200       0       3       3      1       1
+      25      11       4      200       7       4       4      1       1
+      25      11       4      200       6       5       5      1       1
+      25      11       4      200       5       6       6      1       1
+      25      11       4      200       4       7       7      1       1
+      25      11       4      200      14      12       8      1       0
+      25      11       4      200      13      13       9      1       0
+      25      11       4      200      12      14      10      1       0
+      25      11       4      200      11       8       8      1       1
+      25      11       4      200      10       9       9      1       1
+      25      11       4      200       9      10      10      1       1
+      25      11       4      200       8      11      11      1       1
+      25      11       5      200       3       0      12      1       1
+      25      11       5      200       2       1      13      1       1
+      25      11       5      200       1       2      14      1       1
+      25      11       5      200       0       3      15      1       1
+      25      11       5      200       7       4      16      1       1
+      25      11       5      200       6       5      17      1       1
+      25      11       5      200       5       6      18      1       1
+      25      11       5      200       4       7      19      1       1
+      25      11       5      200      13      13      29      1       0
+      25      11       5      200      12      14      30      1       0
+      25      11       5      200      11       8      20      1       1
+      25      11       5      200      10       9      21      1       1
+      25      11       5      200       9      10      22      1       1
+      25      11       5      200       8      11      23      1       1
+
+sbs.gem.m1.chanmap =
+      25      11       6      201       0       3       0      0       0
+      25      11       6      201       1       2       1      0       0
+      25      11       6      201       2       1       2      0       0
+      25      11       6      201       3       0       3      0       0
+      25      11       6      201       4       7       4      0       0
+      25      11       6      201       5       6       5      0       0
+      25      11       6      201       6       5       6      0       0
+      25      11       6      201       7       4       7      0       0
+      25      11       6      201       8      11      11      0       0
+      25      11       6      201       9      10      12      0       0
+      25      11       6      201      10       9      13      0       0
+      25      11       6      201      11       8      14      0       0
+      25      11       6      201      12      14      15      0       0
+      25      11       6      201      13      13      16      0       0
+      25      11       6      201      14      12      17      0       0
+      25      11       7      201       0       2      18      0       0
+      25      11       7      201       1       1      19      0       0
+      25      11       7      201       2       0      20      0       0
+      25      11       7      201       4       7      21      0       0
+      25      11       7      201       5       6      22      0       0
+      25      11       7      201       6       5      23      0       0
+      25      11       7      201       7       4      24      0       0
+      25      11       7      201       8      11      25      0       0
+      25      11       7      201       9      10      26      0       0
+      25      11       7      201      10       9      27      0       0
+      25      11       7      201      11       8      28      0       0
+      25      11       7      201      12      14      26      1       1
+      25      11       7      201      13      13      25      1       1
+      25      11       7      201      14      12      24      1       1
+      25      11       8      201       3       0       0      1       1
+      25      11       8      201       2       1       1      1       1
+      25      11       8      201       1       2       2      1       1
+      25      11       8      201       0       3       3      1       1
+      25      11       8      201       7       4       4      1       1
+      25      11       8      201       6       5       5      1       1
+      25      11       8      201       5       6       6      1       1
+      25      11       8      201       4       7       7      1       1
+      25      11       8      201      14      12       8      1       0
+      25      11       8      201      13      13       9      1       0
+      25      11       8      201      12      14      10      1       0
+      25      11       8      201      11       8       8      1       1
+      25      11       8      201      10       9       9      1       1
+      25      11       8      201       9      10      10      1       1
+      25      11       8      201       8      11      11      1       1
+      25      11       9      201       3       0      12      1       1
+      25      11       9      201       2       1      13      1       1
+      25      11       9      201       1       2      14      1       1
+      25      11       9      201       0       3      15      1       1
+      25      11       9      201       7       4      16      1       1
+      25      11       9      201       6       5      17      1       1
+      25      11       9      201       5       6      18      1       1
+      25      11       9      201       4       7      19      1       1
+      25      11       9      201      13      13      29      1       0
+      25      11       9      201      12      14      30      1       0
+      25      11       9      201      11       8      20      1       1
+      25      11       9      201      10       9      21      1       1
+      25      11       9      201       9      10      22      1       1
+      25      11       9      201       8      11      23      1       1
+
+
+### -------------------------UVA-----------------------------------------
+
+#Third Layer (L2 - m2, m3, m4, m5): UVa (vtp2)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis
+sbs.gem.m2.chanmap = 
+      24      11       0      18       0      15       0       1       1 
+      24      11       0      18       1      14       1       1       1 
+      24      11       0      18       2      13       2       1       1 
+      24      11       0      18       3      12       3       1       1 
+      24      11       0      18       4      11       4       1       1 
+      24      11       0      18       5      10       5       1       1 
+      24      11       0      18       6       9       6       1       1 
+      24      11       0      18       7       8       7       1       1 
+      24      11       0      18       8       7       8       1       1 
+      24      11       0      18       9       6       9       1       1 
+      24      11       0      18      10       5      10       1       1 
+      24      11       0      18      11       4      11       1       1 
+      24      11       4      18      10       4       9       1       0 
+      24      11       4      18      11       3       8       1       0 
+      24      11       4      18      12       2       7       1       0 
+      24      11       4      18      13       1       6       1       0 
+      24      11       4      18      14       0       5       1       0 
+      24      11       5      18       0       4       0       0       0 
+      24      11       5      18       1       3       1       0       0 
+      24      11       5      18       2       2       2       0       0 
+      24      11       5      18       3       1       3       0       0 
+      24      11       5      18       4       0       4       0       0 
+sbs.gem.m3.chanmap = 
+      24      11       1      37       0      15       0       1       1 
+      24      11       1      37       1      14       1       1       1 
+      24      11       1      37       2      13       2       1       1 
+      24      11       1      37       3      12       3       1       1 
+      24      11       1      37       4      11       4       1       1 
+      24      11       1      37       5      10       5       1       1 
+      24      11       1      37       6       9       6       1       1 
+      24      11       1      37       7       8       7       1       1 
+      24      11       1      37       8       7       8       1       1 
+      24      11       1      37       9       6       9       1       1 
+      24      11       1      37      10       5      10       1       1 
+      24      11       1      37      11       4      11       1       1 
+      24      11       4      37       5      12       9       1       0 
+      24      11       4      37       6      11       8       1       0 
+      24      11       4      37       7      10       7       1       0 
+      24      11       4      37       8       9       6       1       0 
+      24      11       4      37       9       8       5       1       0 
+      24      11       5      37       5      12       0       0       0 
+      24      11       5      37       6      11       1       0       0 
+      24      11       5      37       7      10       2       0       0 
+      24      11       5      37       8       9       3       0       0 
+      24      11       5      37       9       8       4       0       0 
+sbs.gem.m4.chanmap = 
+      24      11       2      25       0      15      11       0       1 
+      24      11       2      25       1      14      10       0       1 
+      24      11       2      25       2      13       9       0       1 
+      24      11       2      25       3      12       8       0       1 
+      24      11       2      25       4      11       7       0       1 
+      24      11       2      25       5      10       6       0       1 
+      24      11       2      25       6       9       5       0       1 
+      24      11       2      25       7       8       4       0       1 
+      24      11       2      25       8       7       3       0       1 
+      24      11       2      25       9       6       2       0       1 
+      24      11       2      25      10       5       1       0       1 
+      24      11       2      25      11       4       0       0       1 
+      24      11       4      25       0      20       9       1       0 
+      24      11       4      25       1      19       8       1       0 
+      24      11       4      25       2      18       7       1       0 
+      24      11       4      25       3      17       6       1       0 
+      24      11       4      25       4      16       5       1       0 
+      24      11       5      25      10      20       0       0       0 
+      24      11       5      25      11      19       1       0       0 
+      24      11       5      25      12      18       2       0       0 
+      24      11       5      25      13      17       3       0       0 
+      24      11       5      25      14      16       4       0       0 
+sbs.gem.m5.chanmap = 
+      24      11       3      20       0      15      11       0       1 
+      24      11       3      20       1      14      10       0       1 
+      24      11       3      20       2      13       9       0       1 
+      24      11       3      20       3      12       8       0       1 
+      24      11       3      20       4      11       7       0       1 
+      24      11       3      20       5      10       6       0       1 
+      24      11       3      20       6       9       5       0       1 
+      24      11       3      20       7       8       4       0       1 
+      24      11       3      20       8       7       3       0       1 
+      24      11       3      20       9       6       2       0       1 
+      24      11       3      20      10       5       1       0       1 
+      24      11       3      20      11       4       0       0       1 
+      24      11       6      20       0       4       9       1       0 
+      24      11       6      20       1       3       8       1       0 
+      24      11       6      20       2       2       7       1       0 
+      24      11       6      20       3       1       6       1       0 
+      24      11       6      20       4       0       5       1       0 
+      24      11       6      20       8      12       0       0       0 
+      24      11       6      20       9      11       1       0       0 
+      24      11       6      20      10      10       2       0       0 
+      24      11       6      20      11       9       3       0       0 
+      24      11       6      20      12       8       4       0       0 
+
+#Fourth Layer (L3 - m6, m7, m8, m9): UVa (vtp2)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis      
+sbs.gem.m6.chanmap = 
+      24      11       7      17       0      15       0       1       1 
+      24      11       7      17       1      14       1       1       1 
+      24      11       7      17       2      13       2       1       1 
+      24      11       7      17       3      12       3       1       1 
+      24      11       7      17       4      11       4       1       1 
+      24      11       7      17       5      10       5       1       1 
+      24      11       7      17       6       9       6       1       1 
+      24      11       7      17       7       8       7       1       1 
+      24      11       7      17       8       7       8       1       1 
+      24      11       7      17       9       6       9       1       1 
+      24      11       7      17      10       5      10       1       1 
+      24      11       7      17      11       4      11       1       1 
+      24      11      11      17      10       4       9       1       0 
+      24      11      11      17      11       3       8       1       0 
+      24      11      11      17      12       2       7       1       0 
+      24      11      11      17      13       1       6       1       0 
+      24      11      11      17      14       0       5       1       0 
+      24      11      12      17       0       4       0       0       0 
+      24      11      12      17       1       3       1       0       0 
+      24      11      12      17       2       2       2       0       0 
+      24      11      12      17       3       1       3       0       0 
+      24      11      12      17       4       0       4       0       0 
+sbs.gem.m7.chanmap = 
+      24      11       8      14       0      15       0       1       1 
+      24      11       8      14       1      14       1       1       1 
+      24      11       8      14       2      13       2       1       1 
+      24      11       8      14       3      12       3       1       1 
+      24      11       8      14       4      11       4       1       1 
+      24      11       8      14       5      10       5       1       1 
+      24      11       8      14       6       9       6       1       1 
+      24      11       8      14       7       8       7       1       1 
+      24      11       8      14       8       7       8       1       1 
+      24      11       8      14       9       6       9       1       1 
+      24      11       8      14      10       5      10       1       1 
+      24      11       8      14      11       4      11       1       1 
+      24      11      11      14       5      12       9       1       0 
+      24      11      11      14       6      11       8       1       0 
+      24      11      11      14       7      10       7       1       0 
+      24      11      11      14       8       9       6       1       0 
+      24      11      11      14       9       8       5       1       0 
+      24      11      12      14       5      12       0       0       0 
+      24      11      12      14       6      11       1       0       0 
+      24      11      12      14       7      10       2       0       0 
+      24      11      12      14       8       9       3       0       0 
+      24      11      12      14       9       8       4       0       0 
+sbs.gem.m8.chanmap = 
+      24      11       9       7       0      15      11       0       1 
+      24      11       9       7       1      14      10       0       1 
+      24      11       9       7       2      13       9       0       1 
+      24      11       9       7       3      12       8       0       1 
+      24      11       9       7       4      11       7       0       1 
+      24      11       9       7       5      10       6       0       1 
+      24      11       9       7       6       9       5       0       1 
+      24      11       9       7       7       8       4       0       1 
+      24      11       9       7       8       7       3       0       1 
+      24      11       9       7       9       6       2       0       1 
+      24      11       9       7      10       5       1       0       1 
+      24      11       9       7      11       4       0       0       1 
+      24      11      11       7       0      20       9       1       0 
+      24      11      11       7       1      19       8       1       0 
+      24      11      11       7       2      18       7       1       0 
+      24      11      11       7       3      17       6       1       0 
+      24      11      11       7       4      16       5       1       0 
+      24      11      12       7      10      20       0       0       0 
+      24      11      12       7      11      19       1       0       0 
+      24      11      12       7      12      18       2       0       0 
+      24      11      12       7      13      17       3       0       0 
+      24      11      12       7      14      16       4       0       0 
+sbs.gem.m9.chanmap = 
+      24      11      10      16       0      15      11       0       1 
+      24      11      10      16       1      14      10       0       1 
+      24      11      10      16       2      13       9       0       1 
+      24      11      10      16       3      12       8       0       1 
+      24      11      10      16       4      11       7       0       1 
+      24      11      10      16       5      10       6       0       1 
+      24      11      10      16       6       9       5       0       1 
+      24      11      10      16       7       8       4       0       1 
+      24      11      10      16       8       7       3       0       1 
+      24      11      10      16       9       6       2       0       1 
+      24      11      10      16      10       5       1       0       1 
+      24      11      10      16      11       4       0       0       1 
+      24      11      13      16       0       4       9       1       0 
+      24      11      13      16       1       3       8       1       0 
+      24      11      13      16       2       2       7       1       0 
+      24      11      13      16       3       1       6       1       0 
+      24      11      13      16       4       0       5       1       0 
+      24      11      13      16       8      12       0       0       0 
+      24      11      13      16       9      11       1       0       0 
+      24      11      13      16      10      10       2       0       0 
+      24      11      13      16      11       9       3       0       0 
+      24      11      13      16      12       8       4       0       0
+
+#Fifth Layer (L4 - m10, m11, m12, m13): UVa (vtp2)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis       
+sbs.gem.m10.chanmap = 
+      24      11      14       1       0      15       0       1       1 
+      24      11      14       1       1      14       1       1       1 
+      24      11      14       1       2      13       2       1       1 
+      24      11      14       1       3      12       3       1       1 
+      24      11      14       1       4      11       4       1       1 
+      24      11      14       1       5      10       5       1       1 
+      24      11      14       1       6       9       6       1       1 
+      24      11      14       1       7       8       7       1       1 
+      24      11      14       1       8       7       8       1       1 
+      24      11      14       1       9       6       9       1       1 
+      24      11      14       1      10       5      10       1       1 
+      24      11      14       1      11       4      11       1       1 
+      24      11      18       1      10       4       9       1       0 
+      24      11      18       1      11       3       8       1       0 
+      24      11      18       1      12       2       7       1       0 
+      24      11      18       1      13       1       6       1       0 
+      24      11      18       1      14       0       5       1       0 
+      24      11      19       1       0       4       0       0       0 
+      24      11      19       1       1       3       1       0       0 
+      24      11      19       1       2       2       2       0       0 
+      24      11      19       1       3       1       3       0       0 
+      24      11      19       1       4       0       4       0       0 
+sbs.gem.m11.chanmap = 
+      24      11      15       8       0      15       0       1       1 
+      24      11      15       8       1      14       1       1       1 
+      24      11      15       8       2      13       2       1       1 
+      24      11      15       8       3      12       3       1       1 
+      24      11      15       8       4      11       4       1       1 
+      24      11      15       8       5      10       5       1       1 
+      24      11      15       8       6       9       6       1       1 
+      24      11      15       8       7       8       7       1       1 
+      24      11      15       8       8       7       8       1       1 
+      24      11      15       8       9       6       9       1       1 
+      24      11      15       8      10       5      10       1       1 
+      24      11      15       8      11       4      11       1       1 
+      24      11      18       8       5      12       9       1       0 
+      24      11      18       8       6      11       8       1       0 
+      24      11      18       8       7      10       7       1       0 
+      24      11      18       8       8       9       6       1       0 
+      24      11      18       8       9       8       5       1       0 
+      24      11      19       8       5      12       0       0       0 
+      24      11      19       8       6      11       1       0       0 
+      24      11      19       8       7      10       2       0       0 
+      24      11      19       8       8       9       3       0       0 
+      24      11      19       8       9       8       4       0       0 
+sbs.gem.m12.chanmap = 
+      24      11      16      21       0      15      11       0       1 
+      24      11      16      21       1      14      10       0       1 
+      24      11      16      21       2      13       9       0       1 
+      24      11      16      21       3      12       8       0       1 
+      24      11      16      21       4      11       7       0       1 
+      24      11      16      21       5      10       6       0       1 
+      24      11      16      21       6       9       5       0       1 
+      24      11      16      21       7       8       4       0       1 
+      24      11      16      21       8       7       3       0       1 
+      24      11      16      21       9       6       2       0       1 
+      24      11      16      21      10       5       1       0       1 
+      24      11      16      21      11       4       0       0       1 
+      24      11      18      21       0      20       9       1       0 
+      24      11      18      21       1      19       8       1       0 
+      24      11      18      21       2      18       7       1       0 
+      24      11      18      21       3      17       6       1       0 
+      24      11      18      21       4      16       5       1       0 
+      24      11      19      21      10      20       0       0       0 
+      24      11      19      21      11      19       1       0       0 
+      24      11      19      21      12      18       2       0       0 
+      24      11      19      21      13      17       3       0       0 
+      24      11      19      21      14      16       4       0       0 
+sbs.gem.m13.chanmap = 
+      24      11      17      26       0      15      11       0       1 
+      24      11      17      26       1      14      10       0       1 
+      24      11      17      26       2      13       9       0       1 
+      24      11      17      26       3      12       8       0       1 
+      24      11      17      26       4      11       7       0       1 
+      24      11      17      26       5      10       6       0       1 
+      24      11      17      26       6       9       5       0       1 
+      24      11      17      26       7       8       4       0       1 
+      24      11      17      26       8       7       3       0       1 
+      24      11      17      26       9       6       2       0       1 
+      24      11      17      26      10       5       1       0       1 
+      24      11      17      26      11       4       0       0       1 
+      24      11      20      26       0       4       9       1       0 
+      24      11      20      26       1       3       8       1       0 
+      24      11      20      26       2       2       7       1       0 
+      24      11      20      26       3       1       6       1       0 
+      24      11      20      26       4       0       5       1       0 
+      24      11      20      26       8      12       0       0       0 
+      24      11      20      26       9      11       1       0       0 
+      24      11      20      26      10      10       2       0       0 
+      24      11      20      26      11       9       3       0       0 
+      24      11      20      26      12       8       4       0       0
+
+#Sixth Layer (L5 - m14, m15, m16, m17): UVa (vtp2)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis           
+sbs.gem.m14.chanmap = 
+      24      11      21       2       0      15       0       1       1 
+      24      11      21       2       1      14       1       1       1 
+      24      11      21       2       2      13       2       1       1 
+      24      11      21       2       3      12       3       1       1 
+      24      11      21       2       4      11       4       1       1 
+      24      11      21       2       5      10       5       1       1 
+      24      11      21       2       6       9       6       1       1 
+      24      11      21       2       7       8       7       1       1 
+      24      11      21       2       8       7       8       1       1 
+      24      11      21       2       9       6       9       1       1 
+      24      11      21       2      10       5      10       1       1 
+      24      11      21       2      11       4      11       1       1 
+      24      11      25       2      10       4       9       1       0 
+      24      11      25       2      11       3       8       1       0 
+      24      11      25       2      12       2       7       1       0 
+      24      11      25       2      13       1       6       1       0 
+      24      11      25       2      14       0       5       1       0 
+      24      11      26       2       0       4       0       0       0 
+      24      11      26       2       1       3       1       0       0 
+      24      11      26       2       2       2       2       0       0 
+      24      11      26       2       3       1       3       0       0 
+      24      11      26       2       4       0       4       0       0 
+sbs.gem.m15.chanmap = 
+      24      11      22      49       0      15       0       1       1 
+      24      11      22      49       1      14       1       1       1 
+      24      11      22      49       2      13       2       1       1 
+      24      11      22      49       3      12       3       1       1 
+      24      11      22      49       4      11       4       1       1 
+      24      11      22      49       5      10       5       1       1 
+      24      11      22      49       6       9       6       1       1 
+      24      11      22      49       7       8       7       1       1 
+      24      11      22      49       8       7       8       1       1 
+      24      11      22      49       9       6       9       1       1 
+      24      11      22      49      10       5      10       1       1 
+      24      11      22      49      11       4      11       1       1 
+      24      11      25      49       5      12       9       1       0 
+      24      11      25      49       6      11       8       1       0 
+      24      11      25      49       7      10       7       1       0 
+      24      11      25      49       8       9       6       1       0 
+      24      11      25      49       9       8       5       1       0 
+      24      11      26      49       5      12       0       0       0 
+      24      11      26      49       6      11       1       0       0 
+      24      11      26      49       7      10       2       0       0 
+      24      11      26      49       8       9       3       0       0 
+      24      11      26      49       9       8       4       0       0 
+sbs.gem.m16.chanmap = 
+      24      11      23      11       0      15      11       0       1 
+      24      11      23      11       1      14      10       0       1 
+      24      11      23      11       2      13       9       0       1 
+      24      11      23      11       3      12       8       0       1 
+      24      11      23      11       4      11       7       0       1 
+      24      11      23      11       5      10       6       0       1 
+      24      11      23      11       6       9       5       0       1 
+      24      11      23      11       7       8       4       0       1 
+      24      11      23      11       8       7       3       0       1 
+      24      11      23      11       9       6       2       0       1 
+      24      11      23      11      10       5       1       0       1 
+      24      11      23      11      11       4       0       0       1 
+      24      11      25      11       0      20       9       1       0 
+      24      11      25      11       1      19       8       1       0 
+      24      11      25      11       2      18       7       1       0 
+      24      11      25      11       3      17       6       1       0 
+      24      11      25      11       4      16       5       1       0 
+      24      11      26      11      10      20       0       0       0 
+      24      11      26      11      11      19       1       0       0 
+      24      11      26      11      12      18       2       0       0 
+      24      11      26      11      13      17       3       0       0 
+      24      11      26      11      14      16       4       0       0 
+sbs.gem.m17.chanmap = 
+      24      11      24      47       0      15      11       0       1 
+      24      11      24      47       1      14      10       0       1 
+      24      11      24      47       2      13       9       0       1 
+      24      11      24      47       3      12       8       0       1 
+      24      11      24      47       4      11       7       0       1 
+      24      11      24      47       5      10       6       0       1 
+      24      11      24      47       6       9       5       0       1 
+      24      11      24      47       7       8       4       0       1 
+      24      11      24      47       8       7       3       0       1 
+      24      11      24      47       9       6       2       0       1 
+      24      11      24      47      10       5       1       0       1 
+      24      11      24      47      11       4       0       0       1 
+      24      11      27      47       0       4       9       1       0 
+      24      11      27      47       1       3       8       1       0 
+      24      11      27      47       2       2       7       1       0 
+      24      11      27      47       3       1       6       1       0 
+      24      11      27      47       4       0       5       1       0 
+      24      11      27      47       8      12       0       0       0 
+      24      11      27      47       9      11       1       0       0 
+      24      11      27      47      10      10       2       0       0 
+      24      11      27      47      11       9       3       0       0 
+      24      11      27      47      12       8       4       0       0
+
+#Seventh Layer (L6 - m18, m19, m20, m21): UVa (vtp2)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis       
+sbs.gem.m18.chanmap = 
+      24      11      28      23       0      15       0       1       1 
+      24      11      28      23       1      14       1       1       1 
+      24      11      28      23       2      13       2       1       1 
+      24      11      28      23       3      12       3       1       1 
+      24      11      28      23       4      11       4       1       1 
+      24      11      28      23       5      10       5       1       1 
+      24      11      28      23       6       9       6       1       1 
+      24      11      28      23       7       8       7       1       1 
+      24      11      28      23       8       7       8       1       1 
+      24      11      28      23       9       6       9       1       1 
+      24      11      28      23      10       5      10       1       1 
+      24      11      28      23      11       4      11       1       1 
+      24      11      32      23      10       4       9       1       0 
+      24      11      32      23      11       3       8       1       0 
+      24      11      32      23      12       2       7       1       0 
+      24      11      32      23      13       1       6       1       0 
+      24      11      32      23      14       0       5       1       0 
+      24      11      33      23       0       4       0       0       0 
+      24      11      33      23       1       3       1       0       0 
+      24      11      33      23       2       2       2       0       0 
+      24      11      33      23       3       1       3       0       0 
+      24      11      33      23       4       0       4       0       0
+# AJRP: testing whether cable swap from A_LL persisted into GEN-RP:
+#Seventh Layer (L6 - m18, m19, m20, m21): UVa (vtp2)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis       
+#sbs.gem.m18.chanmap = 
+#      24      11      28      23       0      15       0       1       1 
+#      24      11      28      23       1      14       1       1       1 
+#      24      11      28      23       2      13       2       1       1 
+#      24      11      28      23       3      12       3       1       1 
+#      24      11      28      23       8      11       4       1       1 
+#      24      11      28      23       9      10       5       1       1 
+#      24      11      28      23      10       9       6       1       1 
+#      24      11      28      23      11       8       7       1       1 
+#      24      11      28      23       4       7       8       1       1 
+#      24      11      28      23       5       6       9       1       1 
+#      24      11      28      23       6       5      10       1       1 
+#      24      11      28      23       7       4      11       1       1 
+#      24      11      32      23      10       4       9       1       0 
+#      24      11      32      23      11       3       8       1       0 
+#      24      11      32      23      12       2       7       1       0 
+#      24      11      32      23      13       1       6       1       0 
+#      24      11      32      23      14       0       5       1       0 
+#      24      11      33      23       0       4       0       0       0 
+#      24      11      33      23       1       3       1       0       0 
+#      24      11      33      23       2       2       2       0       0 
+#      24      11      33      23       3       1       3       0       0 
+#      24      11      33      23       4       0       4       0       0 
+
+sbs.gem.m19.chanmap = 
+      24      11      29      89       0      15       0       1       1 
+      24      11      29      89       1      14       1       1       1 
+      24      11      29      89       2      13       2       1       1 
+      24      11      29      89       3      12       3       1       1 
+      24      11      29      89       4      11       4       1       1 
+      24      11      29      89       5      10       5       1       1 
+      24      11      29      89       6       9       6       1       1 
+      24      11      29      89       7       8       7       1       1 
+      24      11      29      89       8       7       8       1       1 
+      24      11      29      89       9       6       9       1       1 
+      24      11      29      89      10       5      10       1       1 
+      24      11      29      89      11       4      11       1       1 
+      24      11      32      89       5      12       9       1       0 
+      24      11      32      89       6      11       8       1       0 
+      24      11      32      89       7      10       7       1       0 
+      24      11      32      89       8       9       6       1       0 
+      24      11      32      89       9       8       5       1       0 
+      24      11      33      89       5      12       0       0       0 
+      24      11      33      89       6      11       1       0       0 
+      24      11      33      89       7      10       2       0       0 
+      24      11      33      89       8       9       3       0       0 
+      24      11      33      89       9       8       4       0       0 
+sbs.gem.m20.chanmap = 
+      24      11      30      88       0      15      11       0       1 
+      24      11      30      88       1      14      10       0       1 
+      24      11      30      88       2      13       9       0       1 
+      24      11      30      88       3      12       8       0       1 
+      24      11      30      88       4      11       7       0       1 
+      24      11      30      88       5      10       6       0       1 
+      24      11      30      88       6       9       5       0       1 
+      24      11      30      88       7       8       4       0       1 
+      24      11      30      88       8       7       3       0       1 
+      24      11      30      88       9       6       2       0       1 
+      24      11      30      88      10       5       1       0       1 
+      24      11      30      88      11       4       0       0       1 
+      24      11      32      88       0      20       9       1       0 
+      24      11      32      88       1      19       8       1       0 
+      24      11      32      88       2      18       7       1       0 
+      24      11      32      88       3      17       6       1       0 
+      24      11      32      88       4      16       5       1       0 
+      24      11      33      88      10      20       0       0       0 
+      24      11      33      88      11      19       1       0       0 
+      24      11      33      88      12      18       2       0       0 
+      24      11      33      88      13      17       3       0       0 
+      24      11      33      88      14      16       4       0       0 
+sbs.gem.m21.chanmap = 
+      24      11      31      41       0      15      11       0       1 
+      24      11      31      41       1      14      10       0       1 
+      24      11      31      41       2      13       9       0       1 
+      24      11      31      41       3      12       8       0       1 
+      24      11      31      41       4      11       7       0       1 
+      24      11      31      41       5      10       6       0       1 
+      24      11      31      41       6       9       5       0       1 
+      24      11      31      41       7       8       4       0       1 
+      24      11      31      41       8       7       3       0       1 
+      24      11      31      41       9       6       2       0       1 
+      24      11      31      41      10       5       1       0       1 
+      24      11      31      41      11       4       0       0       1 
+      24      11      34      41       0       4       9       1       0 
+      24      11      34      41       1       3       8       1       0 
+      24      11      34      41       2       2       7       1       0 
+      24      11      34      41       3       1       6       1       0 
+      24      11      34      41       4       0       5       1       0 
+      24      11      34      41       8      12       0       0       0 
+      24      11      34      41       9      11       1       0       0 
+      24      11      34      41      10      10       2       0       0 
+      24      11      34      41      11       9       3       0       0 
+      24      11      34      41      12       8       4       0       0
+
+#Eighth Layer (L7 - m22, m23, m24, m25): UVa (vtp2)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis        
+sbs.gem.m22.chanmap = 
+      24      11      35       3       0      15       0       1       1 
+      24      11      35       3       1      14       1       1       1 
+      24      11      35       3       2      13       2       1       1 
+      24      11      35       3       3      12       3       1       1 
+      24      11      35       3       4      11       4       1       1 
+      24      11      35       3       5      10       5       1       1 
+      24      11      35       3       6       9       6       1       1 
+      24      11      35       3       7       8       7       1       1 
+      24      11      35       3       8       7       8       1       1 
+      24      11      35       3       9       6       9       1       1 
+      24      11      35       3      10       5      10       1       1 
+      24      11      35       3      11       4      11       1       1 
+      24      11      39       3      10       4       9       1       0 
+      24      11      39       3      11       3       8       1       0 
+      24      11      39       3      12       2       7       1       0 
+      24      11      39       3      13       1       6       1       0 
+      24      11      39       3      14       0       5       1       0 
+      25      11       0       3       0       4       0       0       0 
+      25      11       0       3       1       3       1       0       0 
+      25      11       0       3       2       2       2       0       0 
+      25      11       0       3       3       1       3       0       0 
+      25      11       0       3       4       0       4       0       0 
+sbs.gem.m23.chanmap = 
+      24      11      36      13       0      15       0       1       1 
+      24      11      36      13       1      14       1       1       1 
+      24      11      36      13       2      13       2       1       1 
+      24      11      36      13       3      12       3       1       1 
+      24      11      36      13       4      11       4       1       1 
+      24      11      36      13       5      10       5       1       1 
+      24      11      36      13       6       9       6       1       1 
+      24      11      36      13       7       8       7       1       1 
+      24      11      36      13       8       7       8       1       1 
+      24      11      36      13       9       6       9       1       1 
+      24      11      36      13      10       5      10       1       1 
+      24      11      36      13      11       4      11       1       1 
+      24      11      39      13       5      12       9       1       0 
+      24      11      39      13       6      11       8       1       0 
+      24      11      39      13       7      10       7       1       0 
+      24      11      39      13       8       9       6       1       0 
+      24      11      39      13       9       8       5       1       0 
+      25      11       0      13       5      12       0       0       0 
+      25      11       0      13       6      11       1       0       0 
+      25      11       0      13       7      10       2       0       0 
+      25      11       0      13       8       9       3       0       0 
+      25      11       0      13       9       8       4       0       0 
+sbs.gem.m24.chanmap = 
+      24      11      37      19       0      15      11       0       1 
+      24      11      37      19       1      14      10       0       1 
+      24      11      37      19       2      13       9       0       1 
+      24      11      37      19       3      12       8       0       1 
+      24      11      37      19       4      11       7       0       1 
+      24      11      37      19       5      10       6       0       1 
+      24      11      37      19       6       9       5       0       1 
+      24      11      37      19       7       8       4       0       1 
+      24      11      37      19       8       7       3       0       1 
+      24      11      37      19       9       6       2       0       1 
+      24      11      37      19      10       5       1       0       1 
+      24      11      37      19      11       4       0       0       1 
+      24      11      39      19       0      20       9       1       0 
+      24      11      39      19       1      19       8       1       0 
+      24      11      39      19       2      18       7       1       0 
+      24      11      39      19       3      17       6       1       0 
+      24      11      39      19       4      16       5       1       0 
+      25      11       0      19      10      20       0       0       0 
+      25      11       0      19      11      19       1       0       0 
+      25      11       0      19      12      18       2       0       0 
+      25      11       0      19      13      17       3       0       0 
+      25      11       0      19      14      16       4       0       0 
+sbs.gem.m25.chanmap = 
+      24      11      38      15       0      15      11       0       1 
+      24      11      38      15       1      14      10       0       1 
+      24      11      38      15       2      13       9       0       1 
+      24      11      38      15       3      12       8       0       1 
+      24      11      38      15       4      11       7       0       1 
+      24      11      38      15       5      10       6       0       1 
+      24      11      38      15       6       9       5       0       1 
+      24      11      38      15       7       8       4       0       1 
+      24      11      38      15       8       7       3       0       1 
+      24      11      38      15       9       6       2       0       1 
+      24      11      38      15      10       5       1       0       1 
+      24      11      38      15      11       4       0       0       1 
+      25      11       1      15       0       4       9       1       0 
+      25      11       1      15       1       3       8       1       0 
+      25      11       1      15       2       2       7       1       0 
+      25      11       1      15       3       1       6       1       0 
+      25      11       1      15       4       0       5       1       0 
+      25      11       1      15       8      12       0       0       0 
+      25      11       1      15       9      11       1       0       0 
+      25      11       1      15      10      10       2       0       0 
+      25      11       1      15      11       9       3       0       0 
+      25      11       1      15      12       8       4       0       0 
+
+#Nineth Layer (L8 - m26, m27, m28, m29): UVa (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis           
+sbs.gem.m26.chanmap = 
+      25      11      10       202       0      15       0       1       1 
+      25      11      10       202       1      14       1       1       1 
+      25      11      10       202       2      13       2       1       1 
+      25      11      10       202       3      12       3       1       1 
+      25      11      10       202       4      11       4       1       1 
+      25      11      10       202       5      10       5       1       1 
+      25      11      10       202       6       9       6       1       1 
+      25      11      10       202       7       8       7       1       1 
+      25      11      10       202       8       7       8       1       1 
+      25      11      10       202       9       6       9       1       1 
+      25      11      10       202      10       5      10       1       1 
+      25      11      10       202      11       4      11       1       1 
+      25      11      14       202      10       4       9       1       0 
+      25      11      14       202      11       3       8       1       0 
+      25      11      14       202      12       2       7       1       0 
+      25      11      14       202      13       1       6       1       0 
+      25      11      14       202      14       0       5       1       0 
+      25      11      15       202       0       4       0       0       0 
+      25      11      15       202       1       3       1       0       0 
+      25      11      15       202       2       2       2       0       0 
+      25      11      15       202       3       1       3       0       0 
+      25      11      15       202       4       0       4       0       0 
+sbs.gem.m27.chanmap = 
+      25      11      11       203       0      15       0       1       1 
+      25      11      11       203       1      14       1       1       1 
+      25      11      11       203       2      13       2       1       1 
+      25      11      11       203       3      12       3       1       1 
+      25      11      11       203       4      11       4       1       1 
+      25      11      11       203       5      10       5       1       1 
+      25      11      11       203       6       9       6       1       1 
+      25      11      11       203       7       8       7       1       1 
+      25      11      11       203       8       7       8       1       1 
+      25      11      11       203       9       6       9       1       1 
+      25      11      11       203      10       5      10       1       1 
+      25      11      11       203      11       4      11       1       1 
+      25      11      14       203       5      12       9       1       0 
+      25      11      14       203       6      11       8       1       0 
+      25      11      14       203       7      10       7       1       0 
+      25      11      14       203       8       9       6       1       0 
+      25      11      14       203       9       8       5       1       0 
+      25      11      15       203       5      12       0       0       0 
+      25      11      15       203       6      11       1       0       0 
+      25      11      15       203       7      10       2       0       0 
+      25      11      15       203       8       9       3       0       0 
+      25      11      15       203       9       8       4       0       0 
+sbs.gem.m28.chanmap = 
+      25      11      12       204       0      15      11       0       1 
+      25      11      12       204       1      14      10       0       1 
+      25      11      12       204       2      13       9       0       1 
+      25      11      12       204       3      12       8       0       1 
+      25      11      12       204       4      11       7       0       1 
+      25      11      12       204       5      10       6       0       1 
+      25      11      12       204       6       9       5       0       1 
+      25      11      12       204       7       8       4       0       1 
+      25      11      12       204       8       7       3       0       1 
+      25      11      12       204       9       6       2       0       1 
+      25      11      12       204      10       5       1       0       1 
+      25      11      12       204      11       4       0       0       1 
+      25      11      14       204       0      20       9       1       0 
+      25      11      14       204       1      19       8       1       0 
+      25      11      14       204       2      18       7       1       0 
+      25      11      14       204       3      17       6       1       0 
+      25      11      14       204       4      16       5       1       0 
+      25      11      15       204      10      20       0       0       0 
+      25      11      15       204      11      19       1       0       0 
+      25      11      15       204      12      18       2       0       0 
+      25      11      15       204      13      17       3       0       0 
+      25      11      15       204      14      16       4       0       0 
+sbs.gem.m29.chanmap = 
+      25      11      13       205       0      15      11       0       1 
+      25      11      13       205       1      14      10       0       1 
+      25      11      13       205       2      13       9       0       1 
+      25      11      13       205       3      12       8       0       1 
+      25      11      13       205       4      11       7       0       1 
+      25      11      13       205       5      10       6       0       1 
+      25      11      13       205       6       9       5       0       1 
+      25      11      13       205       7       8       4       0       1 
+      25      11      13       205       8       7       3       0       1 
+      25      11      13       205       9       6       2       0       1 
+      25      11      13       205      10       5       1       0       1 
+      25      11      13       205      11       4       0       0       1 
+      25      11      16       205       0       4       9       1       0 
+      25      11      16       205       1       3       8       1       0 
+      25      11      16       205       2       2       7       1       0 
+      25      11      16       205       3       1       6       1       0 
+      25      11      16       205       4       0       5       1       0 
+      25      11      16       205       8      12       0       0       0 
+      25      11      16       205       9      11       1       0       0 
+      25      11      16       205      10      10       2       0       0 
+      25      11      16       205      11       9       3       0       0 
+      25      11      16       205      12       8       4       0       0
+
+#Tenth Layer (L9 - m29, m30, m31, m32): UVa (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis       
+sbs.gem.m30.chanmap = 
+      25      11      17       206       0      15       0       1       1 
+      25      11      17       206       1      14       1       1       1 
+      25      11      17       206       2      13       2       1       1 
+      25      11      17       206       3      12       3       1       1 
+      25      11      17       206       4      11       4       1       1 
+      25      11      17       206       5      10       5       1       1 
+      25      11      17       206       6       9       6       1       1 
+      25      11      17       206       7       8       7       1       1 
+      25      11      17       206       8       7       8       1       1 
+      25      11      17       206       9       6       9       1       1 
+      25      11      17       206      10       5      10       1       1 
+      25      11      17       206      11       4      11       1       1 
+      25      11      21       206      10       4       9       1       0 
+      25      11      21       206      11       3       8       1       0 
+      25      11      21       206      12       2       7       1       0 
+      25      11      21       206      13       1       6       1       0 
+      25      11      21       206      14       0       5       1       0 
+      25      11      22       206       0       4       0       0       0 
+      25      11      22       206       1       3       1       0       0 
+      25      11      22       206       2       2       2       0       0 
+      25      11      22       206       3       1       3       0       0 
+      25      11      22       206       4       0       4       0       0 
+sbs.gem.m31.chanmap = 
+      25      11      18       207       0      15       0       1       1 
+      25      11      18       207       1      14       1       1       1 
+      25      11      18       207       2      13       2       1       1 
+      25      11      18       207       3      12       3       1       1 
+      25      11      18       207       4      11       4       1       1 
+      25      11      18       207       5      10       5       1       1 
+      25      11      18       207       6       9       6       1       1 
+      25      11      18       207       7       8       7       1       1 
+      25      11      18       207       8       7       8       1       1 
+      25      11      18       207       9       6       9       1       1 
+      25      11      18       207      10       5      10       1       1 
+      25      11      18       207      11       4      11       1       1 
+      25      11      21       207       5      12       9       1       0 
+      25      11      21       207       6      11       8       1       0 
+      25      11      21       207       7      10       7       1       0 
+      25      11      21       207       8       9       6       1       0 
+      25      11      21       207       9       8       5       1       0 
+      25      11      22       207       5      12       0       0       0 
+      25      11      22       207       6      11       1       0       0 
+      25      11      22       207       7      10       2       0       0 
+      25      11      22       207       8       9       3       0       0 
+      25      11      22       207       9       8       4       0       0 
+sbs.gem.m32.chanmap = 
+      25      11      19       208       0      15      11       0       1 
+      25      11      19       208       1      14      10       0       1 
+      25      11      19       208       2      13       9       0       1 
+      25      11      19       208       3      12       8       0       1 
+      25      11      19       208       4      11       7       0       1 
+      25      11      19       208       5      10       6       0       1 
+      25      11      19       208       6       9       5       0       1 
+      25      11      19       208       7       8       4       0       1 
+      25      11      19       208       8       7       3       0       1 
+      25      11      19       208       9       6       2       0       1 
+      25      11      19       208      10       5       1       0       1 
+      25      11      19       208      11       4       0       0       1 
+      25      11      21       208       0      20       9       1       0 
+      25      11      21       208       1      19       8       1       0 
+      25      11      21       208       2      18       7       1       0 
+      25      11      21       208       3      17       6       1       0 
+      25      11      21       208       4      16       5       1       0 
+      25      11      22       208      10      20       0       0       0 
+      25      11      22       208      11      19       1       0       0 
+      25      11      22       208      12      18       2       0       0 
+      25      11      22       208      13      17       3       0       0 
+      25      11      22       208      14      16       4       0       0 
+sbs.gem.m33.chanmap = 
+      25      11      20       209       0      15      11       0       1 
+      25      11      20       209       1      14      10       0       1 
+      25      11      20       209       2      13       9       0       1 
+      25      11      20       209       3      12       8       0       1 
+      25      11      20       209       4      11       7       0       1 
+      25      11      20       209       5      10       6       0       1 
+      25      11      20       209       6       9       5       0       1 
+      25      11      20       209       7       8       4       0       1 
+      25      11      20       209       8       7       3       0       1 
+      25      11      20       209       9       6       2       0       1 
+      25      11      20       209      10       5       1       0       1 
+      25      11      20       209      11       4       0       0       1 
+      25      11      23       209       0       4       9       1       0 
+      25      11      23       209       1       3       8       1       0 
+      25      11      23       209       2       2       7       1       0 
+      25      11      23       209       3       1       6       1       0 
+      25      11      23       209       4       0       5       1       0 
+      25      11      23       209       8      12       0       0       0 
+      25      11      23       209       9      11       1       0       0 
+      25      11      23       209      10      10       2       0       0 
+      25      11      23       209      11       9       3       0       0 
+      25      11      23       209      12       8       4       0       0
+
+# ###################### TIME-DEPENDENT PEDESTAL FILES ##########################
+
+# time-dependent entries:
+# default value from the beginning of time:
+
+# pedestals during downtime before GEn
+
+-------[ 2022-08-25 22:41:00 ] 
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run1373.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run1373.dat
+
+-------[ 2022-08-31 17:06:00 ]
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run1501.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run1501.dat
+
+-------[ 2022-09-01 21:38:00 ]
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run1530.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run1530.dat
+
+-------[ 2022-09-02 15:54:00 ]
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run1549.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run1549.dat
+
+-------[ 2022-09-09 21:30:00 ]
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run1664.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run1664.dat
+
+
+-------[ 2022-10-04 14:00:00 ]
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run1653.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run1653.dat
+
+-------[ 2022-10-12 13:50:00 ]  #One INFN backplane has shifted
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run1899.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run1899.dat
+
+-------[ 2023-02-14 18:00:00 ]  #New pedestal after a long down time
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run4135.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run4135.dat
+
+-------[ 2023-09-20 19:00:00 ] 
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run5228.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run5228.dat
+
+--------[ 2023-10-25 20:15:00 ] 
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run5963.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run5963.dat
+
+--------[ 2023-11-03 12:00:00 ]
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run6124.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run6124.dat
+
+--------[ 2023-11-09 20:30:00 ]
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run6187.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run6187.dat
+
+--------[ 2023-11-13 17:00:00 ] #L5G0 troubleshooting, should be good now
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run6215.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run6215.dat
+
+--------[ 2024-01-23 08:00:00 ] #GEn-RP Testing
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run6408.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run6408.dat
+
+--------[ 2024-01-23 17:00:00 ] #GEn-RP Testing
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run6417.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run6417.dat
+
+--------[ 2024-04-01 00:00:00 ] #GEn-RP actual
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run7150.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run7150.dat
+
+--------[ 2024-04-23 18:30:00 ] #GEn-RP actual
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run361.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run361.dat
+
+--------[ 2024-05-09 18:30:00 ] #GEn-RP actual
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run967.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run967.dat
+
+--------[ 2024-05-14 15:00:00 ] #K_LL start
+sbs.gem.pedfile = gemped/daq_ped_sbs_gem_run1204.dat
+sbs.gem.cmfile = gemped/db_cmr_sbs_gem_run1204.dat
+
+# # #################### END OF TIME-DEPENDENT PEDESTAL FILES #########################
+
+
+---------[ 2023-11-02 00:00:00 ] # Cosmic Data before A_LL
+
+sbs.gem.useopticsconstraint = 0
+sbs.gem.useslopeconstraint = 0
+sbs.gem.useconstraint = 0
+#sbs.gem.dump_geometry_info = 1
+
+---------[ 2023-11-16 14:30:00 ] # Back to Beam A_LL
+
+sbs.gem.useopticsconstraint = 0
+sbs.gem.useslopeconstraint = 0
+sbs.gem.useconstraint = 1
+sbs.gem.dump_geometry_info = 0
+
+sbs.gem.use_enhanced_chi2 = 0
+sbs.gem.minhighqualityhitsontrack = 0
+
+
+
+
+sbs.gem.m22.usestriptimingcut = 0
+sbs.gem.m22.suppressfirstlast = 0
+
+# NOTE: replacing m22 decode map to accommodate HDMI cable swap; this applies to all pion-A_LL runs (AJRP 11/22/2023)
+
+#Seventh Layer (L6 - m22, m23, m24, m25): UVa (vtp2)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis       
+sbs.gem.m22.chanmap = 
+     24      11      28      23       0      15       0       1       1 
+     24      11      28      23       1      14       1       1       1 
+     24      11      28      23       2      13       2       1       1 
+     24      11      28      23       3      12       3       1       1 
+     24      11      28      23       8      11       4       1       1 
+     24      11      28      23       9      10       5       1       1 
+     24      11      28      23       10       9       6       1       1 
+     24      11      28      23       11       8       7       1       1 
+     24      11      28      23       4       7       8       1       1 
+     24      11      28      23       5       6       9       1       1 
+     24      11      28      23       6       5      10       1       1 
+     24      11      28      23       7       4      11       1       1 
+     24      11      32      23      10       4       9       1       0 
+     24      11      32      23      11       3       8       1       0 
+     24      11      32      23      12       2       7       1       0 
+     24      11      32      23      13       1       6       1       0 
+     24      11      32      23      14       0       5       1       0 
+     24      11      33      23       0       4       0       0       0 
+     24      11      33      23       1       3       1       0       0 
+     24      11      33      23       2       2       2       0       0 
+     24      11      33      23       3       1       3       0       0 
+     24      11      33      23       4       0       4       0       0 
+
+
+
+---------[ 2024-04-10 00:00:00 ] # initial alignment (positions only)
+
+sbs.gem.maxhitcombos_total = 1.e23
+
+sbs.gem.m26.threshold_sample = 100000.
+sbs.gem.m27.threshold_sample = 100000.
+sbs.gem.m28.threshold_sample = 100000.
+sbs.gem.m29.threshold_sample = 100000.
+
+sbs.gem.m30.threshold_sample = 100000.
+sbs.gem.m31.threshold_sample = 100000.
+sbs.gem.m32.threshold_sample = 100000.
+sbs.gem.m33.threshold_sample = 100000.
+
+sbs.gem.trackchi2cut = 50.0
+
+#sbs.gem.sigmahitpos = 0.01
+#sbs.gem.gridbinwidthx = 0.1
+#sbs.gem.gridbinwidthy = 0.1
+#sbs.gem.gridedgetolerancex = 0.03
+#sbs.gem.gridedgetolerancey = 0.03
+#sbs.gem.m1.sigmahitpos = 0.01
+
+# AJRP 2/17/2025:
+# default alignment with 100% field, after fixing front and back layers based on zero-field data:
+
+sbs.gem.m0.position =    -0.002141713     -0.01548308    -0.002211918
+sbs.gem.m0.angle =       0.1677907      0.07055288      -0.1594076
+sbs.gem.m1.position =    -0.002731495     -0.01493489      0.06597573
+sbs.gem.m1.angle =       0.2671522       0.1831089      -0.1878431
+sbs.gem.m2.position =      -0.7635144   -0.0004512094       0.2342269
+sbs.gem.m2.angle =      0.08853744        0.179377     0.001836038
+sbs.gem.m3.position =      -0.2519682   -0.0006252508       0.1894398
+sbs.gem.m3.angle =     0.001816958      0.05381564     -0.01945202
+sbs.gem.m4.position =        0.259899    -0.001077052       0.2321659
+sbs.gem.m4.angle =       0.1200141       0.1031629     -0.02348125
+sbs.gem.m5.position =        0.770834    -0.001612467       0.1873834
+sbs.gem.m5.angle =       0.1040319      -0.3125352      0.09315088
+sbs.gem.m6.position =      -0.7654849   -0.0004380563       0.3135085
+sbs.gem.m6.angle =    -0.001941516     -0.01266919      0.03445443
+sbs.gem.m7.position =      -0.2532374    0.0009269035       0.2794538
+sbs.gem.m7.angle =      0.06333188       -0.104131     -0.05443909
+sbs.gem.m8.position =       0.2592416    -0.001369047       0.3129732
+sbs.gem.m8.angle =      0.09735239      -0.4308398       0.2580358
+sbs.gem.m9.position =       0.7687501    0.0003364336       0.2772365
+sbs.gem.m9.angle =       0.3301987       -0.509101   -0.0001805054
+sbs.gem.m10.position =      -0.7653112   -0.0001917618       0.5425019
+sbs.gem.m10.angle =     -0.00143217      -0.1643609       0.0704554
+sbs.gem.m11.position =      -0.2527068     0.001376043       0.5082158
+sbs.gem.m11.angle =     -0.04657638      -0.5979499       0.1764753
+sbs.gem.m12.position =       0.2587296      0.00256349       0.5465972
+sbs.gem.m12.angle =      0.05841173      -0.5603759       0.1070313
+sbs.gem.m13.position =       0.7699501     0.002885302        0.509299
+sbs.gem.m13.angle =       0.1475217      -0.2180021       0.1017191
+sbs.gem.m14.position =      -0.7662127    0.0001579997       0.6263677
+sbs.gem.m14.angle =      0.04628008      -0.2463362      0.06170555
+sbs.gem.m15.position =      -0.2546089    0.0001598454       0.5866109
+sbs.gem.m15.angle =    -0.009787153      -0.7905113     0.004704292
+sbs.gem.m16.position =       0.2573058     0.001663943       0.6352016
+sbs.gem.m16.angle =       0.1610726      -0.7601175      0.06106773
+sbs.gem.m17.position =       0.7687495     0.001781015       0.5861323
+sbs.gem.m17.angle =     -0.07152286      -0.2034422       0.1312161
+sbs.gem.m18.position =      -0.7666177    -0.003114391       0.7558672
+sbs.gem.m18.angle =      0.03514022        0.191799      0.04183716
+sbs.gem.m19.position =      -0.2544986    -0.001738683       0.7175022
+sbs.gem.m19.angle =     -0.03645274      -0.8296661      0.02221774
+sbs.gem.m20.position =       0.2592651   -0.0003626433       0.7642392
+sbs.gem.m20.angle =       0.0195353      -0.4661414     -0.06864222
+sbs.gem.m21.position =       0.7698194    -0.002619846       0.7120818
+sbs.gem.m21.angle =       0.1320096       0.4869841      0.05673364
+sbs.gem.m22.position =      -0.7672871     0.001533482       0.8756434
+sbs.gem.m22.angle =     -0.05272527      -0.2724242      0.06670993
+sbs.gem.m23.position =      -0.2548986     0.001839877       0.8376155
+sbs.gem.m23.angle =      -0.1890936       -1.256589       0.2119995
+sbs.gem.m24.position =       0.2556408     0.001191273        0.885852
+sbs.gem.m24.angle =       0.1410652       -0.512924      0.08070183
+sbs.gem.m25.position =       0.7681993     0.001769274       0.8286245
+sbs.gem.m25.angle =       0.3187733        1.228395       0.1098484
+sbs.gem.m26.position =          -0.766              -2           2.873
+sbs.gem.m26.angle =        89.99964               0               0
+sbs.gem.m27.position =          -0.256              -2          2.8357
+sbs.gem.m27.angle =        89.99964               0               0
+sbs.gem.m28.position =           0.256              -2          2.8822
+sbs.gem.m28.angle =        89.99964               0               0
+sbs.gem.m29.position =           0.765              -2          2.8432
+sbs.gem.m29.angle =        89.99964               0               0
+sbs.gem.m30.position =          -0.766              -2           2.973
+sbs.gem.m30.angle =        89.99964               0               0
+sbs.gem.m31.position =          -0.256              -2          2.9357
+sbs.gem.m31.angle =        89.99964               0               0
+sbs.gem.m32.position =           0.256              -2          2.9822
+sbs.gem.m32.angle =        89.99964               0               0
+sbs.gem.m33.position =           0.765              -2          2.9432
+sbs.gem.m33.angle =        89.99964               0               0
+
+
+#                 nhits = 4    5    6    7    8    9   10       
+sbs.gem.trackchi2cut = 50.0 
+
+sbs.gem.minhitsontrack = 4
+
+sbs.gem.useopticsconstraint = 1
+
+# these should probably be tighter later on:
+sbs.gem.xptar_min = -0.2
+sbs.gem.xptar_max = 0.3
+
+sbs.gem.yptar_min = -0.1
+sbs.gem.yptar_max = 0.1
+
+sbs.gem.ytar_min = -0.1
+sbs.gem.ytar_max = 0.1
+
+sbs.gem.pmin = 0.5
+sbs.gem.pmax = 4.5
+
+sbs.gem.xpfp_min = -0.45
+sbs.gem.xpfp_max = 0.2
+sbs.gem.ypfp_min = -0.1
+sbs.gem.ypfp_max = 0.1
+
+sbs.gem.gridbinwidthx = 0.005
+sbs.gem.gridbinwidthy = 0.005
+sbs.gem.gridedgetolerancex = 0.0015
+sbs.gem.gridedgetolerancey = 0.0015
+
+sbs.gem.maxhitcombos_total = 1.e23
+
+sbs.gem.suppressfirstlast = 1
+
+#sbs.gem.m*.maxstrip_t0 = 75.0
+#sbs.gem.m*.maxstrip_tsigma 8.0
+#sbs.gem.m*.maxstrip_tcut = 3.5 
+
+sbs.gem.deltat_sigma = 4.0 
+#sbs.gem.deltat_cut = 20.0 
+
+#sbs.gem.HitTimeMean = 75.0 75.0
+#sbs.gem.HitTimeSigma = 8.0 8.0
+
+sbs.gem.ADCasym_sigma = 0.1
+
+sbs.gem.sigma_tcorr = 7.0
+sbs.gem.sigmatrackt0 = 5.0
+sbs.gem.cuttrackt0 = 25.0
+
+sbs.gem.filterflag1D = 0
+sbs.gem.filterflag2D = 0
+
+
+
+--------[ 2024-04-18 23:51:00 ] # zero field:
+sbs.gem.useopticsconstraint = 0
+#sbs.gem.suppressfirstlast = 0
+#sbs.gem.usestriptimingcut = 0
+
+# let's use a looser chi2 cut in case we need a different alignment for the zero-field data:
+sbs.gem.trackchi2cut = 50.0
+sbs.gem.minhitsontrack = 4
+
+sbs.gem.filterflag1D = -1
+sbs.gem.filterflag2D = -1
+
+--------[ 2024-04-19 3:30:00 ] # back to full field
+sbs.gem.useopticsconstraint = 1
+sbs.gem.minhitsontrack = 4
+sbs.gem.trackchi2cut = 20.0
+
+
+# filtering criteria for straight-through runs (until we get better timing cuts/gain matching/etc)
+
+--------[ 2024-04-18 00:00:00 ] # start with run 82 (5 uA): "soft" filtering on both criteria 
+sbs.gem.filterflag1D = 0
+sbs.gem.filterflag2D = 0
+
+--------[ 2024-04-18 15:53:00 ] # low-current runs 83-84: no filtering 
+sbs.gem.filterflag1D = -1
+sbs.gem.filterflag2D = -1
+
+--------[ 2024-04-18 16:45:00 ] # 5-15 uA runs 86, etc
+
+sbs.gem.filterflag1D = 0
+sbs.gem.filterflag2D = 0
+
+--------[ 2024-04-18 21:00:00 ] # back to no filtering for 5-uA runs 113-115:
+sbs.gem.filterflag1D = -1
+sbs.gem.filterflag2D = -1
+
+--------[ 2024-04-18 22:10:00 ] # turn filtering back on for runs 116-117 (10-15 uA)
+sbs.gem.filterflag1D = 0
+sbs.gem.filterflag2D = 0
+
+--------[ 2024-04-18 23:50:00 ] # use different, dedicated alignment for zero-field run:
+
+sbs.gem.m0.position =    -0.002141713     -0.01548308    -0.002211918
+sbs.gem.m0.angle =       0.1677907      0.07055288      -0.1594076
+sbs.gem.m1.position =    -0.002760275     -0.01499242      0.06732182
+sbs.gem.m1.angle =     -0.05211231      0.09759483      -0.1913352
+sbs.gem.m2.position =       -0.763824   -0.0004729308       0.2365501
+sbs.gem.m2.angle =     -0.02264764      -0.2166852      0.01700413
+sbs.gem.m3.position =      -0.2520134   -0.0006530761        0.191557
+sbs.gem.m3.angle =      -0.1803087      -0.1563967     -0.02451358
+sbs.gem.m4.position =       0.2600804    -0.001092607       0.2328265
+sbs.gem.m4.angle =       0.3038787       0.2224129     -0.02748718
+sbs.gem.m5.position =       0.7708111    -0.001465076       0.1916691
+sbs.gem.m5.angle =      -0.2781739      -0.9365671       0.1069646
+sbs.gem.m6.position =      -0.7657199   -0.0004528064       0.3138905
+sbs.gem.m6.angle =      -0.1097156      -0.5543139      0.04515754
+sbs.gem.m7.position =      -0.2532796    0.0008891451       0.2816602
+sbs.gem.m7.angle =      -0.1112796      -0.5383606     -0.05648659
+sbs.gem.m8.position =       0.2592836    -0.001371325       0.3114943
+sbs.gem.m8.angle =       0.3826903       0.5169586       0.2557114
+sbs.gem.m9.position =       0.7685909    0.0001292181       0.2831775
+sbs.gem.m9.angle =       0.6551507       -1.623471      -0.1217589
+sbs.gem.m10.position =       -0.765648     -0.00022071        0.543558
+sbs.gem.m10.angle =       0.2026363      -0.0967084      0.08877064
+sbs.gem.m11.position =       -0.253017      0.00127821        0.507659
+sbs.gem.m11.angle =     -0.03244459     -0.05249703       0.1352444
+sbs.gem.m12.position =       0.2588718     0.002559562       0.5442509
+sbs.gem.m12.angle =       0.1829589       0.5390138       0.1036687
+sbs.gem.m13.position =       0.7694408     0.002851237       0.5055262
+sbs.gem.m13.angle =      -0.4634452        0.603602       0.1160852
+sbs.gem.m14.position =      -0.7666647    9.995822e-05       0.6276393
+sbs.gem.m14.angle =      0.07278035      -0.8141676      0.08532082
+sbs.gem.m15.position =      -0.2546739    0.0001469354       0.5878148
+sbs.gem.m15.angle =      0.05768589       -1.095664     0.006618979
+sbs.gem.m16.position =       0.2574737     0.001664477       0.6321501
+sbs.gem.m16.angle =       0.3348386       0.7986009      0.05598665
+sbs.gem.m17.position =       0.7681625     0.001658565       0.5790717
+sbs.gem.m17.angle =      -0.1788467         1.74202      0.09462239
+sbs.gem.m18.position =       -0.768624     -0.00250588        0.759445
+sbs.gem.m18.angle =      0.07243332       0.2462183     -0.04271377
+sbs.gem.m19.position =      -0.2545661    -0.001732929       0.7187009
+sbs.gem.m19.angle =     -0.02300195       -1.083198      0.02524124
+sbs.gem.m20.position =       0.2594401   -0.0003433763       0.7606285
+sbs.gem.m20.angle =       0.1493133       0.8895623     -0.07751336
+sbs.gem.m21.position =       0.7691444    -0.002807432       0.7071592
+sbs.gem.m21.angle =      -0.3119785        1.834883      0.02615992
+sbs.gem.m22.position =      -0.7679206     0.001474589       0.8779459
+sbs.gem.m22.angle =     -0.04357041       -1.113299      0.09307831
+sbs.gem.m23.position =      -0.2548986     0.001839877       0.8376155
+sbs.gem.m23.angle =      -0.1890936       -1.256588       0.2119995
+sbs.gem.m24.position =       0.2557817     0.001221919       0.8809546
+sbs.gem.m24.angle =       0.4297499       0.9809106      0.07329162
+sbs.gem.m25.position =       0.7674141     0.001530186       0.8258957
+sbs.gem.m25.angle =      -0.2535088         1.92429      0.07318884
+sbs.gem.m26.position =          -0.766              -2           2.873
+sbs.gem.m26.angle =        89.99964               0               0
+sbs.gem.m27.position =          -0.256              -2          2.8357
+sbs.gem.m27.angle =        89.99964               0               0
+sbs.gem.m28.position =           0.256              -2          2.8822
+sbs.gem.m28.angle =        89.99964               0               0
+sbs.gem.m29.position =           0.765              -2          2.8432
+sbs.gem.m29.angle =        89.99964               0               0
+sbs.gem.m30.position =          -0.766              -2           2.973
+sbs.gem.m30.angle =        89.99964               0               0
+sbs.gem.m31.position =          -0.256              -2          2.9357
+sbs.gem.m31.angle =        89.99964               0               0
+sbs.gem.m32.position =           0.256              -2          2.9822
+sbs.gem.m32.angle =        89.99964               0               0
+sbs.gem.m33.position =           0.765              -2          2.9432
+sbs.gem.m33.angle =        89.99964               0               0
+
+
+
+--------[ 2024-04-19 04:00:00 ] # turn filtering back on for runs 122+ (10-15 uA LH2, 8 uA LD2)
+sbs.gem.filterflag1D = 0
+sbs.gem.filterflag2D = 0
+
+# AJRP 2/17/2025:
+# default alignment with 100% field, after fixing front and back layers based on zero-field data:
+
+sbs.gem.m0.position =    -0.002141713     -0.01548308    -0.002211918
+sbs.gem.m0.angle =       0.1677907      0.07055288      -0.1594076
+sbs.gem.m1.position =    -0.002731495     -0.01493489      0.06597573
+sbs.gem.m1.angle =       0.2671522       0.1831089      -0.1878431
+sbs.gem.m2.position =      -0.7635144   -0.0004512094       0.2342269
+sbs.gem.m2.angle =      0.08853744        0.179377     0.001836038
+sbs.gem.m3.position =      -0.2519682   -0.0006252508       0.1894398
+sbs.gem.m3.angle =     0.001816958      0.05381564     -0.01945202
+sbs.gem.m4.position =        0.259899    -0.001077052       0.2321659
+sbs.gem.m4.angle =       0.1200141       0.1031629     -0.02348125
+sbs.gem.m5.position =        0.770834    -0.001612467       0.1873834
+sbs.gem.m5.angle =       0.1040319      -0.3125352      0.09315088
+sbs.gem.m6.position =      -0.7654849   -0.0004380563       0.3135085
+sbs.gem.m6.angle =    -0.001941516     -0.01266919      0.03445443
+sbs.gem.m7.position =      -0.2532374    0.0009269035       0.2794538
+sbs.gem.m7.angle =      0.06333188       -0.104131     -0.05443909
+sbs.gem.m8.position =       0.2592416    -0.001369047       0.3129732
+sbs.gem.m8.angle =      0.09735239      -0.4308398       0.2580358
+sbs.gem.m9.position =       0.7687501    0.0003364336       0.2772365
+sbs.gem.m9.angle =       0.3301987       -0.509101   -0.0001805054
+sbs.gem.m10.position =      -0.7653112   -0.0001917618       0.5425019
+sbs.gem.m10.angle =     -0.00143217      -0.1643609       0.0704554
+sbs.gem.m11.position =      -0.2527068     0.001376043       0.5082158
+sbs.gem.m11.angle =     -0.04657638      -0.5979499       0.1764753
+sbs.gem.m12.position =       0.2587296      0.00256349       0.5465972
+sbs.gem.m12.angle =      0.05841173      -0.5603759       0.1070313
+sbs.gem.m13.position =       0.7699501     0.002885302        0.509299
+sbs.gem.m13.angle =       0.1475217      -0.2180021       0.1017191
+sbs.gem.m14.position =      -0.7662127    0.0001579997       0.6263677
+sbs.gem.m14.angle =      0.04628008      -0.2463362      0.06170555
+sbs.gem.m15.position =      -0.2546089    0.0001598454       0.5866109
+sbs.gem.m15.angle =    -0.009787153      -0.7905113     0.004704292
+sbs.gem.m16.position =       0.2573058     0.001663943       0.6352016
+sbs.gem.m16.angle =       0.1610726      -0.7601175      0.06106773
+sbs.gem.m17.position =       0.7687495     0.001781015       0.5861323
+sbs.gem.m17.angle =     -0.07152286      -0.2034422       0.1312161
+sbs.gem.m18.position =      -0.7666177    -0.003114391       0.7558672
+sbs.gem.m18.angle =      0.03514022        0.191799      0.04183716
+sbs.gem.m19.position =      -0.2544986    -0.001738683       0.7175022
+sbs.gem.m19.angle =     -0.03645274      -0.8296661      0.02221774
+sbs.gem.m20.position =       0.2592651   -0.0003626433       0.7642392
+sbs.gem.m20.angle =       0.0195353      -0.4661414     -0.06864222
+sbs.gem.m21.position =       0.7698194    -0.002619846       0.7120818
+sbs.gem.m21.angle =       0.1320096       0.4869841      0.05673364
+sbs.gem.m22.position =      -0.7672871     0.001533482       0.8756434
+sbs.gem.m22.angle =     -0.05272527      -0.2724242      0.06670993
+sbs.gem.m23.position =      -0.2548986     0.001839877       0.8376155
+sbs.gem.m23.angle =      -0.1890936       -1.256589       0.2119995
+sbs.gem.m24.position =       0.2556408     0.001191273        0.885852
+sbs.gem.m24.angle =       0.1410652       -0.512924      0.08070183
+sbs.gem.m25.position =       0.7681993     0.001769274       0.8286245
+sbs.gem.m25.angle =       0.3187733        1.228395       0.1098484
+sbs.gem.m26.position =          -0.766              -2           2.873
+sbs.gem.m26.angle =        89.99964               0               0
+sbs.gem.m27.position =          -0.256              -2          2.8357
+sbs.gem.m27.angle =        89.99964               0               0
+sbs.gem.m28.position =           0.256              -2          2.8822
+sbs.gem.m28.angle =        89.99964               0               0
+sbs.gem.m29.position =           0.765              -2          2.8432
+sbs.gem.m29.angle =        89.99964               0               0
+sbs.gem.m30.position =          -0.766              -2           2.973
+sbs.gem.m30.angle =        89.99964               0               0
+sbs.gem.m31.position =          -0.256              -2          2.9357
+sbs.gem.m31.angle =        89.99964               0               0
+sbs.gem.m32.position =           0.256              -2          2.9822
+sbs.gem.m32.angle =        89.99964               0               0
+sbs.gem.m33.position =           0.765              -2          2.9432
+sbs.gem.m33.angle =        89.99964               0               0
+
+
+-------[ 2024-04-18 00:00:00 ] # Gain-Match coefficiencts for straight-through running:
+
+
+#Module internal relative gains by APV card: 
+sbs.gem.m0.vgain = 1  1  1  1.00577  1.10624  1.18326  1.25934  1.23622  1.27868  1.20192  1.15598  1.13476  1.14916  1.17803  1.2301  1.19133  1.25542  1.2782  1.31569  1.31602  1.3665  1.25279  1.12558  1.00217  1.01041  0.845655  1  
+sbs.gem.m0.ugain = 1  1  1.00161  0.973514  0.991903  0.992378  0.983841  1.08948  0.976895  0.98567  1.0254  1.0826  1  0.996355  0.984139  1.9962  1.63974  2.20296  2.26497  1.77894  1.18537  1.16389  0.994754  1.04356  1.01851  0.99463  1.08149  1.04444  1.0808  1  1  
+sbs.gem.m1.vgain = 1  1  1.32048  1.36219  1.44311  1.50267  1.45128  1.46846  1.47547  1.47907  1.31541  1.27849  1.28826  1.32917  1.30817  1.26044  1.19198  1.19798  1.27545  1.2663  1.30994  1  1.10061  0.885768  0.910199  0.813293  1  
+sbs.gem.m1.ugain = 1  1  1.4531  1.4179  1.23  1.30144  1.30662  1.23745  1.2351  1.17043  1.20173  1.19903  1.11867  1.17199  1.35542  2.8863  3.16453  2.12531  1  0.945296  0.935737  1.05867  1.08123  1.04333  1.00336  0.974012  1.013  0.985723  0.987107  1  1  
+sbs.gem.m2.vgain = 1  1.12087  1.03699  0.913106  0.843306  0.848878  0.90272  0.866412  0.91627  0.926019  0.935449  0.850461  
+sbs.gem.m2.ugain = 1  1  1  1.07491  4.67896  0.974595  0.960467  1.0012  0.994648  1  
+sbs.gem.m3.vgain = 1.12469  0.926062  0.884961  0.848397  0.863628  0.90664  0.886946  0.87034  0.805786  0.856492  1.04241  0.770763  
+sbs.gem.m3.ugain = 1.12272  0.986908  1.07773  1.03332  1  1.01322  1.06751  1.0466  0.981906  1.12647  
+sbs.gem.m4.vgain = 0.939839  0.967308  0.996793  0.902524  0.9254  0.975789  0.948348  0.98821  0.944151  0.96927  0.962192  1.06482  
+sbs.gem.m4.ugain = 1.05722  1.08988  1  1.57238  0.976336  1.0789  1.21578  1.08111  1.14267  1.05619  
+sbs.gem.m5.vgain = 1  1  1  1  0.918451  0.839285  0.881558  0.837715  0.940558  0.902383  1.13268  1  
+sbs.gem.m5.ugain = 1  1.16793  0.970431  1  1  1  1  1  1  1  
+sbs.gem.m6.vgain = 5.14327  1.0007  0.951642  1.05637  0.925735  0.883722  0.855946  0.884095  0.913419  0.936728  0.951502  0.926705  
+sbs.gem.m6.ugain = 1  1  1.01512  0.979824  0.974389  1.04957  1.06063  1.02057  1  0.876102  
+sbs.gem.m7.vgain = 1.18424  0.94908  1.00357  0.848252  0.862009  0.84274  0.867626  0.816543  1.022  1.01938  1.0248  0.976442  
+sbs.gem.m7.ugain = 0.914487  1.03759  1.02703  0.9427  1.0189  1  0.972552  1.0788  0.922838  0.897977  
+sbs.gem.m8.vgain = 0.886959  0.850248  1.00528  0.995177  0.861505  0.912944  0.92295  0.96096  1.27549  0.960761  1.01999  1.36706  
+sbs.gem.m8.ugain = 0.999491  0.973779  1  1.01623  1.04854  1.01083  1.01521  0.892858  0.940602  1  
+sbs.gem.m9.vgain = 1  0.555818  0.547237  0.464491  0.643032  0.767708  0.832405  0.878136  1  1  1  1  
+sbs.gem.m9.ugain = 1  1.10017  1.11617  1  1  1  1  1  1  1  
+sbs.gem.m10.vgain = 0.920612  0.838165  0.78281  0.87199  0.77243  0.818129  0.815074  0.753394  0.786171  0.784766  0.790105  0.866574  
+sbs.gem.m10.ugain = 1  0.90419  0.84109  0.89559  0.906671  0.968485  1.01462  0.892223  0.943592  1  
+sbs.gem.m11.vgain = 1.70335  1.19582  1.18089  1.06021  1.03259  1.01849  1.08883  1.0486  1.07802  1.00687  1.04453  1.06682  
+sbs.gem.m11.ugain = 1.03862  1.00674  0.98321  0.946448  0.957225  1  1.02166  1.14589  1.96151  2.39154  
+sbs.gem.m12.vgain = 1.06821  1.0448  1.0823  1.03029  1.07478  1.00981  1.12293  1.07763  1.13336  1.04119  1.12889  1.43891  
+sbs.gem.m12.ugain = 0.998169  1  0.979862  0.956498  0.966588  0.982707  1.05922  1.07374  0.975604  0.959859  
+sbs.gem.m13.vgain = 1  1  1  1  1  0.516991  0.535355  0.573359  0.655199  0.662861  0.720059  0.744339  
+sbs.gem.m13.ugain = 1  1.17448  1.20071  1  1  1  1  1  1  1  
+sbs.gem.m14.vgain = 0.739178  0.745008  0.747947  0.742968  0.841222  0.842126  0.822331  0.796749  0.810134  0.840865  0.782423  0.798461  
+sbs.gem.m14.ugain = 0.889289  0.83543  0.946825  0.922015  0.982537  0.95669  0.866262  0.901713  0.951868  1  
+sbs.gem.m15.vgain = 1.05358  0.949458  0.989538  0.913764  0.976543  0.960041  0.969984  0.93962  0.94596  1.01423  0.989875  1.07839  
+sbs.gem.m15.ugain = 0.999202  1.11398  1.10426  2.16601  1.09863  1  0.915164  0.940409  0.947284  1.1202  
+sbs.gem.m16.vgain = 0.876731  0.847658  0.934782  0.812691  0.834385  0.838259  0.793623  0.795594  0.682506  0.69453  0.755305  0.749598  
+sbs.gem.m16.ugain = 1.47233  1  0.985588  0.910748  0.868063  0.861087  0.853103  0.854902  0.86893  1.03195  
+sbs.gem.m17.vgain = 0.780663  0.761718  0.766354  0.830993  0.694799  0.852382  0.794409  1  1  1  1  1  
+sbs.gem.m17.ugain = 1  0.870834  0.953006  1  1  1  1  1  1  1  
+sbs.gem.m18.vgain = 0.698489  0.636961  0.642428  0.661553  1  1  1  1  1  1  1  1  
+sbs.gem.m18.ugain = 1  1  1  1  1.04582  1  0.953478  0.928675  0.935685  0.946877  
+sbs.gem.m19.vgain = 1.10118  0.967676  0.883147  0.870877  0.923176  0.911337  0.855162  0.93664  0.863836  0.894072  0.887641  0.911713  
+sbs.gem.m19.ugain = 2.29923  1.21715  1.34948  1.22837  1.13095  1  1.07166  1.00203  1.0047  0.981842  
+sbs.gem.m20.vgain = 0.94627  0.905254  0.904922  0.903553  0.907602  0.886099  0.931794  0.948311  0.878261  0.981579  1.01004  1.07626  
+sbs.gem.m20.ugain = 0.953456  1  1.03228  0.933454  0.98971  0.925319  1.02148  0.922211  1.09038  0.910502  
+sbs.gem.m21.vgain = 0.596793  0.614044  0.555424  0.589017  0.558371  0.568981  0.512938  0.475956  1  1  1  1  
+sbs.gem.m21.ugain = 1  0.696174  0.737072  1  1  1  1  1  1  1  
+sbs.gem.m22.vgain = 0.522879  0.443347  0.439036  0.427311  0.425795  0.404215  0.389112  0.415256  0.38589  0.407178  0.397152  0.416029  
+sbs.gem.m22.ugain = 0.445747  0.506378  0.577718  0.752563  0.793479  0.989829  1.0398  1.20528  1  0.739167  
+sbs.gem.m23.vgain = 0.980576  0.880287  1.0004  0.921027  0.96709  0.992507  0.933226  0.966877  0.98777  1.04449  0.938903  1.16118  
+sbs.gem.m23.ugain = 0.903819  1.00584  0.92565  0.979271  1  1.3263  1.20447  1.37217  1.33623  1.26913  
+sbs.gem.m24.vgain = 1.08819  1.05521  1.01609  1.09588  1.01434  1.1059  1.06899  1.06592  1.03107  1.03265  1.05207  1.01097  
+sbs.gem.m24.ugain = 1.01078  1  1.00632  0.986093  1.029  1.34983  3.45242  1.48145  1.37236  1.5093  
+sbs.gem.m25.vgain = 1.16543  1.12479  0.979083  1.05073  1  1  1  1  1  1  1  1  
+sbs.gem.m25.ugain = 7.97164  1  0.931796  1  1  1  1  1  1  1  
+
+# Module average gains relative to target ADC peak position of 4000
+sbs.gem.m0.modulegain = 0.828211
+sbs.gem.m1.modulegain = 0.80797
+sbs.gem.m2.modulegain = 1.03754
+sbs.gem.m3.modulegain = 1.04547
+sbs.gem.m4.modulegain = 0.971327
+sbs.gem.m5.modulegain = 1
+sbs.gem.m6.modulegain = 1.00627
+sbs.gem.m7.modulegain = 1.04857
+sbs.gem.m8.modulegain = 1.01476
+sbs.gem.m9.modulegain = 1
+sbs.gem.m10.modulegain = 1.14263
+sbs.gem.m11.modulegain = 0.883764
+sbs.gem.m12.modulegain = 0.9618
+sbs.gem.m13.modulegain = 1
+sbs.gem.m14.modulegain = 1.15563
+sbs.gem.m15.modulegain = 0.960548
+sbs.gem.m16.modulegain = 1.1262
+sbs.gem.m17.modulegain = 1
+sbs.gem.m18.modulegain = 1
+sbs.gem.m19.modulegain = 0.969358
+sbs.gem.m20.modulegain = 1.04879
+sbs.gem.m21.modulegain = 1
+sbs.gem.m22.modulegain = 1.52037
+sbs.gem.m23.modulegain = 0.967579
+sbs.gem.m24.modulegain = 0.905004
+sbs.gem.m25.modulegain = 1
+

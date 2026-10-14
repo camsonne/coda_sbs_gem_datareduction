@@ -1,0 +1,5 @@
+add_executable(test_track test_track.cpp)
+target_include_directories(test_track PRIVATE ${PROJECT_SOURCE_DIR}/tests/codec)
+target_link_libraries(test_track PRIVATE gemfilter_track)
+target_compile_definitions(test_track PRIVATE GF_TEST_DB="${PROJECT_SOURCE_DIR}/tests/seeds/data/DB")
+add_test(NAME track.unit COMMAND test_track)

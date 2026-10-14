@@ -1,0 +1,2935 @@
+# Layer 0: UVaXW (L0)
+# Layer 1: UVaXW (L1)
+# Layer 2: UVaUV (L2)
+# Layer 3: UVaUV (L3)
+# Layer 4: UVaUV (L4)
+# Layer 5: UVaUV (L5)
+# Layer 6: UVaXY (L6)
+# Layer 7: UVaXY (L7)
+
+
+# Start database just before the first cosmic data is collected with the front tracker. 
+-------[ 2024-11-06 00:00:00 ] 
+# Database format: the tracker consists of a collection of modules: 
+# database properties will be organized by module, not by "plane" as in old SBS-offline
+ 
+# Define ALL the independent GEM modules used in the tracker.
+sbs.gemFT.modules = m0   m1   m2   m3   m4   m5   m6 m7 m8 m9   m10 m11 m12 m13
+
+# Define to which layer each individual GEM module belongs to.
+sbs.gemFT.m0.layer = 0
+
+sbs.gemFT.m1.layer = 1
+
+sbs.gemFT.m2.layer = 2
+
+sbs.gemFT.m3.layer = 3
+
+sbs.gemFT.m4.layer = 4
+
+sbs.gemFT.m5.layer = 5
+
+sbs.gemFT.m6.layer = 6
+sbs.gemFT.m7.layer = 6
+sbs.gemFT.m8.layer = 6
+sbs.gemFT.m9.layer = 6
+
+sbs.gemFT.m10.layer = 7
+sbs.gemFT.m11.layer = 7
+sbs.gemFT.m12.layer = 7
+sbs.gemFT.m13.layer = 7
+
+
+# Define APV mapping configurations: 0 = INFN, 1 = UVA X/Y, 2 = UVA U/V or X/W
+sbs.gemFT.m0.apvmap = 2
+
+sbs.gemFT.m1.apvmap = 2
+
+sbs.gemFT.m2.apvmap = 2
+
+sbs.gemFT.m3.apvmap = 2
+
+sbs.gemFT.m4.apvmap = 2
+
+sbs.gemFT.m5.apvmap = 2
+
+sbs.gemFT.m6.apvmap = 1
+sbs.gemFT.m7.apvmap = 1
+sbs.gemFT.m8.apvmap = 1
+sbs.gemFT.m9.apvmap = 1
+
+sbs.gemFT.m10.apvmap = 1
+sbs.gemFT.m11.apvmap = 1
+sbs.gemFT.m12.apvmap = 1
+sbs.gemFT.m13.apvmap = 1
+
+
+# Define initial guess values for GEM detector position and angle based on engineering drawings and tape measurements.
+# Positions in internal GEM coordinate system.
+sbs.gemFT.m0.position =   0     0     0
+
+sbs.gemFT.m1.position =   0     0     0.075  
+
+sbs.gemFT.m2.position =   0     0     0.202
+
+sbs.gemFT.m3.position =   0     0     0.341
+
+sbs.gemFT.m4.position =   0     0     0.484
+
+sbs.gemFT.m5.position =   0     0     0.624
+
+sbs.gemFT.m6.position =  -0.766 0     0.769
+sbs.gemFT.m7.position =  -0.256  0    0.737
+sbs.gemFT.m8.position =   0.256  0    0.769
+sbs.gemFT.m9.position =   0.765  0    0.737
+
+sbs.gemFT.m10.position = -0.766  0    0.897
+sbs.gemFT.m11.position = -0.256  0    0.865
+sbs.gemFT.m12.position =  0.256  0    0.897
+sbs.gemFT.m13.position =  0.765  0    0.865
+
+# Angles: assume zero for ALL.
+sbs.gemFT.m0.angle =      0     0     0
+
+sbs.gemFT.m1.angle =      0     0     0
+
+sbs.gemFT.m2.angle =      0     0     0
+
+sbs.gemFT.m3.angle =      0     0     0
+
+sbs.gemFT.m4.angle =      0     0     0
+
+sbs.gemFT.m5.angle =      0     0     0
+
+sbs.gemFT.m6.angle =      0     0     0
+sbs.gemFT.m7.angle =      0     0     0
+sbs.gemFT.m8.angle =      0     0     0
+sbs.gemFT.m9.angle =      0     0     0
+
+sbs.gemFT.m10.angle =     0     0     0
+sbs.gemFT.m11.angle =     0     0     0
+sbs.gemFT.m12.angle =     0     0     0
+sbs.gemFT.m13.angle =     0     0     0
+
+# Latest alignment from cosmic data run 1393
+sbs.gemFT.m0.position =               0               0               0
+sbs.gemFT.m0.angle =               0               0               0
+sbs.gemFT.m1.position =   -0.0009957384     0.001011903      0.06965553
+sbs.gemFT.m1.angle =      0.02845075      -0.0605504     -0.04546393
+sbs.gemFT.m2.position =    0.0001710436    -0.000459872       0.2034382
+sbs.gemFT.m2.angle =      0.07675341      -0.1198605       0.2436714
+sbs.gemFT.m3.position =     0.001376854     0.006269574        0.343046
+sbs.gemFT.m3.angle =     0.003201721      -0.1511166     -0.09843895
+sbs.gemFT.m4.position =      0.00141488    -0.001440673       0.4885649
+sbs.gemFT.m4.angle =     -0.05024306     -0.08227032       0.2524821
+sbs.gemFT.m5.position =     0.001402999     0.001422435        0.624839
+sbs.gemFT.m5.angle =      0.01876771       -0.159149     -0.03591341
+sbs.gemFT.m6.position =      -0.7697741    0.0004816672       0.7657572
+sbs.gemFT.m6.angle =     -0.02162895       0.1824937     -0.07683021
+sbs.gemFT.m7.position =      -0.2583919   -0.0001352208       0.7264019
+sbs.gemFT.m7.angle =      -0.1592125      -0.1302343    -0.004356149
+sbs.gemFT.m8.position =       0.2535148    -0.002791718       0.7682186
+sbs.gemFT.m8.angle =      0.04485771      -0.1661604      0.02558993
+sbs.gemFT.m9.position =       0.7642502    -0.001526375       0.7271737
+sbs.gemFT.m9.angle =     -0.04115922      -0.4187967     -0.02240447
+sbs.gemFT.m10.position =      -0.7706271     0.002215514       0.8912493
+sbs.gemFT.m10.angle =       0.2008096       0.2114526     -0.04727379
+sbs.gemFT.m11.position =      -0.2581545     0.001260525       0.8495369
+sbs.gemFT.m11.angle =     -0.05719233      -0.1824592       0.1344297
+sbs.gemFT.m12.position =       0.2513865    0.0001291689       0.8957765
+sbs.gemFT.m12.angle =       0.1399312      -0.1401556      0.04210143
+sbs.gemFT.m13.position =       0.7631527     4.82926e-05       0.8530853
+sbs.gemFT.m13.angle =      -0.1626235      -0.1949088    -0.003737309
+
+# Define module sizes. Set to nominal sizes.
+sbs.gemFT.m0.size = 1.5 0.4 0.001
+
+sbs.gemFT.m1.size = 1.5 0.4 0.001
+
+sbs.gemFT.m2.size = 1.5 0.4 0.001
+
+sbs.gemFT.m3.size = 1.5 0.4 0.001
+
+sbs.gemFT.m4.size = 1.5 0.4 0.001
+
+sbs.gemFT.m5.size = 1.5 0.4 0.001
+
+sbs.gemFT.m6.size = 0.512 0.6144 0.001
+sbs.gemFT.m7.size = 0.512 0.6144 0.001
+sbs.gemFT.m8.size = 0.512 0.6144 0.001
+sbs.gemFT.m9.size = 0.512 0.6144 0.001
+
+sbs.gemFT.m10.size = 0.512 0.6144 0.001
+sbs.gemFT.m11.size = 0.512 0.6144 0.001
+sbs.gemFT.m12.size = 0.512 0.6144 0.001
+sbs.gemFT.m13.size = 0.512 0.6144 0.001
+
+
+# Define strip angles as measured w.r.t. +X direction of the internal GEM coordinate system (X-down along the GEM plane, Z-particle motion direction, Y-"left" to form a RH coordinate sys.) 
+# This is where we will account for the orientation of each GEM layer w.r.t to the vertical axis, X.
+# For the UVA X/Y modules, their "X/U" axis coincides with the direction of GEM coordinate system "X" axis. For GEM layers that are oriented so that the beam is hitting the R/O board first, "Y/V" axis is rotaed by -90 degrees w.r.t GEM coordinate sys. "X" axis and for the GEM layers that are oriented so that the beam is hitting the gas window first, "Y/V" axis is rotaded by +90 degrees w.r.t GEM coordinate sys. "X" axis.
+
+#Layer 0 and 1 --> Took directly from GEn-RP DB.
+# Layer 0 (UVAXW) - beam hits gas window first 
+sbs.gemFT.m0.uangle = 180.0
+sbs.gemFT.m0.vangle = 135.0
+
+# Layer 1 (UVAXW) - beam hits r/o board first
+sbs.gemFT.m1.uangle = 180.0
+sbs.gemFT.m1.vangle = -135.0
+
+# Layer 2 (UVAUV) - beam hits r/o board first
+sbs.gemFT.m2.uangle = 150.0 
+sbs.gemFT.m2.vangle = -150.0
+
+# Layer 3 (UVAUV) - beam hits r/o board first
+sbs.gemFT.m3.uangle = 150.0
+sbs.gemFT.m3.vangle = -150.0
+
+# Layer 4 (UVAUV) - beam hits r/o board first
+sbs.gemFT.m4.uangle = 150.0
+sbs.gemFT.m4.vangle = -150.0
+
+# Layer 5 (UVAUV) - beam hits r/o board first
+sbs.gemFT.m5.uangle = 150.0
+sbs.gemFT.m5.vangle = -150.0
+
+# Layer 6 (UVAXY) - beam hits r/o board first
+sbs.gemFT.m6.uangle = 0.0
+sbs.gemFT.m6.vangle = -90.0
+sbs.gemFT.m7.uangle = 0.0
+sbs.gemFT.m7.vangle = -90.0
+sbs.gemFT.m8.uangle = 0.0
+sbs.gemFT.m8.vangle = -90.0
+sbs.gemFT.m9.uangle = 0.0
+sbs.gemFT.m9.vangle = -90.0
+
+# Layer 7 (UVAXY) - beam hits r/o board first
+sbs.gemFT.m10.uangle = 0.0
+sbs.gemFT.m10.vangle = -90.0
+sbs.gemFT.m11.uangle = 0.0
+sbs.gemFT.m11.vangle = -90.0
+sbs.gemFT.m12.uangle = 0.0
+sbs.gemFT.m12.vangle = -90.0
+sbs.gemFT.m13.uangle = 0.0
+sbs.gemFT.m13.vangle = -90.0
+
+
+# Define U/V strip offsets: for X/Y GEMS, strip offsets are zero --> (0,0).
+# UV and XW strip GEMs, the needed offsets are non-zero.
+
+# U offsets:
+sbs.gemFT.m0.uoffset = 0.0176 #Directly from GEn-RP DB.
+
+sbs.gemFT.m1.uoffset = 0.0176 #Directly from GEn-RP DB.
+
+sbs.gemFT.m2.uoffset = 0.0108
+
+sbs.gemFT.m3.uoffset = 0.0108
+
+sbs.gemFT.m4.uoffset = 0.0108
+
+sbs.gemFT.m5.uoffset = 0.0108
+
+sbs.gemFT.m6.uoffset = 0.0
+sbs.gemFT.m7.uoffset = 0.0
+sbs.gemFT.m8.uoffset  = 0.0
+sbs.gemFT.m9.uoffset  = 0.0
+
+sbs.gemFT.m10.uoffset = 0.0
+sbs.gemFT.m11.uoffset = 0.0
+sbs.gemFT.m12.uoffset = 0.0
+sbs.gemFT.m13.uoffset = 0.0
+
+# V offsets
+sbs.gemFT.m0.voffset = 0.0 #Directly from GEn-RP DB.
+
+sbs.gemFT.m1.voffset = 0.0 #Directly from GEn-RP DB.
+
+sbs.gemFT.m2.voffset = 0.0108
+
+sbs.gemFT.m3.voffset = 0.0108
+
+sbs.gemFT.m4.voffset = 0.0108
+
+sbs.gemFT.m5.voffset = 0.0108
+
+sbs.gemFT.m6.voffset = 0.0
+sbs.gemFT.m7.voffset = 0.0
+sbs.gemFT.m8.voffset  = 0.0
+sbs.gemFT.m9.voffset  = 0.0
+
+sbs.gemFT.m10.voffset = 0.0
+sbs.gemFT.m11.voffset = 0.0
+sbs.gemFT.m12.voffset = 0.0
+sbs.gemFT.m13.voffset = 0.0
+
+
+# Define strip counts:
+sbs.gemFT.m0.nstripsu = 3968
+sbs.gemFT.m0.nstripsv = 3456
+
+sbs.gemFT.m1.nstripsu = 3968
+sbs.gemFT.m1.nstripsv = 3456
+
+sbs.gemFT.m2.nstripsu = 3840
+sbs.gemFT.m2.nstripsv = 3840
+
+sbs.gemFT.m3.nstripsu = 3840
+sbs.gemFT.m3.nstripsv = 3840
+
+sbs.gemFT.m4.nstripsu = 3840
+sbs.gemFT.m4.nstripsv = 3840
+
+sbs.gemFT.m5.nstripsu = 3840
+sbs.gemFT.m5.nstripsv = 3840
+
+sbs.gemFT.m6.nstripsu = 1280
+sbs.gemFT.m6.nstripsv = 1536
+sbs.gemFT.m7.nstripsu = 1280
+sbs.gemFT.m7.nstripsv = 1536
+sbs.gemFT.m8.nstripsu = 1280
+sbs.gemFT.m8.nstripsv = 1536
+sbs.gemFT.m9.nstripsu = 1280
+sbs.gemFT.m9.nstripsv = 1536
+
+sbs.gemFT.m10.nstripsu = 1280
+sbs.gemFT.m10.nstripsv = 1536
+sbs.gemFT.m11.nstripsu = 1280
+sbs.gemFT.m11.nstripsv = 1536
+sbs.gemFT.m12.nstripsu = 1280
+sbs.gemFT.m12.nstripsv = 1536
+sbs.gemFT.m13.nstripsu = 1280
+sbs.gemFT.m13.nstripsv = 1536
+
+
+# Define strip pitch. ALL modules have the same strip pitch along both dimensions, 0.4 mm:
+sbs.gemFT.upitch = 0.0004
+sbs.gemFT.vpitch = 0.0004
+
+
+# Define module average gains relative to target ADC peak position of 4000
+#U strips
+sbs.gemFT.m0.ugain = 1  
+sbs.gemFT.m1.ugain = 1   
+sbs.gemFT.m2.ugain = 1  
+sbs.gemFT.m3.ugain = 1   
+sbs.gemFT.m4.ugain = 1   
+sbs.gemFT.m5.ugain = 1   
+sbs.gemFT.m6.ugain = 1   
+sbs.gemFT.m7.ugain = 1   
+sbs.gemFT.m8.ugain = 1   
+sbs.gemFT.m9.ugain = 1  
+sbs.gemFT.m10.ugain = 1  
+sbs.gemFT.m11.ugain = 1   
+sbs.gemFT.m12.ugain = 1   
+sbs.gemFT.m13.ugain = 1   
+
+#V Strips
+sbs.gemFT.m0.vgain = 1  
+sbs.gemFT.m1.vgain = 1   
+sbs.gemFT.m2.vgain = 1   
+sbs.gemFT.m3.vgain = 1   
+sbs.gemFT.m4.vgain = 1   
+sbs.gemFT.m5.vgain = 1   
+sbs.gemFT.m6.vgain = 1  
+sbs.gemFT.m7.vgain = 1   
+sbs.gemFT.m8.vgain = 1  
+sbs.gemFT.m9.vgain = 1   
+sbs.gemFT.m10.vgain = 1   
+sbs.gemFT.m11.vgain = 1  
+sbs.gemFT.m12.vgain = 1  
+sbs.gemFT.m13.vgain = 1 
+
+
+
+################### DECODE INFO ########################################################################
+## Channel maps for decoding explained                                                                ##
+## Each entry corresponds to one APV card                                                             ## 
+## Crate = ROC ID = 2 and 4  for SBS VTP                                                              ##
+## Slot = 11 for BigBite VTP                                                                          ##
+## fiber/mpd is fiber number for an MPD module, this is unique for each module within a VTP/SSP       ##
+## gemid is unique "production ID" of a GEM module, not currently used by analysis but useful         ##
+## for bookkeeping/tracking                                                                           ##
+## adc_ch is the unique adc channel of this APV card within its associated MPD                        ##
+## i2c is the "i2c address" of this APV card (not currently used by analysis)                         ##
+## pos maps APV cards to physical locations on the detector                                           ##
+## invert specifies whether strip index runs from "right-to-left" or "left-to-right" within an APV    ##
+## axis specifies which strip orientation/dimension of the readout strips connected to this APV       ##
+## ORDER of entries in the maps is:                                                                   ##
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis                              ##
+########################################################################################################
+
+#Front Layer (L1 - m0): UVAXW L1 (vtp5)
+## vtpcrate  slot    fiber   gemid    adc_ch   i2c     pos   invert   axis  
+sbs.gemFT.m0.chanmap = 
+     58      11       0     100       0       3       0       0       0
+     58      11       0     100       1       2       1       0       0
+     58      11       0     100       2       1       2       0       0
+     58      11       0     100       3       0       3       0       0
+     58      11       0     100       4       7       4       0       0
+     58      11       0     100       5       6       5       0       0
+     58      11       0     100       6       5       6       0       0
+     58      11       0     100       7       4       7       0       0
+     58      11       0     100       8      11      11       0       0
+     58      11       0     100       9      10      12       0       0
+     58      11       0     100      10       9      13       0       0
+     58      11       0     100      11       8      14       0       0
+     58      11       0     100      12      14      15       0       0
+     58      11       0     100      13      13      16       0       0
+     58      11       0     100      14      12      17       0       0
+     58      11       1     100       0       2      18       0       0
+     58      11       1     100       1       1      19       0       0
+     58      11       1     100       2       0      20       0       0
+     58      11       1     100       4       7      21       0       0
+     58      11       1     100       5       6      22       0       0
+     58      11       1     100       6       5      23       0       0
+     58      11       1     100       7       4      24       0       0
+     58      11       1     100       8      11      25       0       0
+     58      11       1     100       9      10      26       0       0
+     58      11       1     100      10       9      27       0       0
+     58      11       1     100      11       8      28       0       0
+     58      11       1     100      12      14      26       1       1
+     58      11       1     100      13      13      25       1       1
+     58      11       1     100      14      12      24       1       1
+     58      11       2     100       3       0       0       1       1
+     58      11       2     100       2       1       1       1       1
+     58      11       2     100       1       2       2       1       1
+     58      11       2     100       0       3       3       1       1
+     58      11       2     100       7       4       4       1       1
+     58      11       2     100       6       5       5       1       1
+     58      11       2     100       5       6       6       1       1
+     58      11       2     100       4       7       7       1       1
+     58      11       2     100      14      12       8       1       0
+     58      11       2     100      13      13       9       1       0
+     58      11       2     100      12      14      10       1       0
+     58      11       2     100      11       8       8       1       1
+     58      11       2     100      10       9       9       1       1
+     58      11       2     100       9      10      10       1       1
+     58      11       2     100       8      11      11       1       1
+     58      11       3     100       3       0      12       1       1
+     58      11       3     100       2       1      13       1       1
+     58      11       3     100       1       2      14       1       1
+     58      11       3     100       0       3      15       1       1
+     58      11       3     100       7       4      16       1       1
+     58      11       3     100       6       5      17       1       1
+     58      11       3     100       5       6      18       1       1
+     58      11       3     100       4       7      19       1       1
+     58      11       3     100      13      13      29       1       0
+     58      11       3     100      12      14      30       1       0
+     58      11       3     100      11       8      20       1       1
+     58      11       3     100      10       9      21       1       1
+     58      11       3     100       9      10      22       1       1
+     58      11       3     100       8      11      23       1       1
+
+#Front Layer (L1 - m0): UVAXW L1 (vtp5)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m1.chanmap =
+     58      11       4     110       0       3       0       0       0
+     58      11       4     110       1       2       1       0       0
+     58      11       4     110       2       1       2       0       0
+     58      11       4     110       3       0       3       0       0
+     58      11       4     110       4       7       4       0       0
+     58      11       4     110       5       6       5       0       0
+     58      11       4     110       6       5       6       0       0
+     58      11       4     110       7       4       7       0       0
+     58      11       4     110       8      11      11       0       0
+     58      11       4     110       9      10      12       0       0
+     58      11       4     110      10       9      13       0       0
+     58      11       4     110      11       8      14       0       0
+     58      11       4     110      12      14      15       0       0
+     58      11       4     110      13      13      16       0       0
+     58      11       4     110      14      12      17       0       0
+     58      11       5     110       0       2      18       0       0
+     58      11       5     110       1       1      19       0       0
+     58      11       5     110       2       0      20       0       0
+     58      11       5     110       4       7      21       0       0
+     58      11       5     110       5       6      22       0       0
+     58      11       5     110       6       5      23       0       0
+     58      11       5     110       7       4      24       0       0
+     58      11       5     110       8      11      25       0       0
+     58      11       5     110       9      10      26       0       0
+     58      11       5     110      10       9      27       0       0
+     58      11       5     110      11       8      28       0       0
+     58      11       5     110      12      14      26       1       1
+     58      11       5     110      13      13      25       1       1
+     58      11       5     110      14      12      24       1       1
+     58      11       6     110       3       0       0       1       1
+     58      11       6     110       2       1       1       1       1
+     58      11       6     110       1       2       2       1       1
+     58      11       6     110       0       3       3       1       1
+     58      11       6     110       7       4       4       1       1
+     58      11       6     110       6       5       5       1       1
+     58      11       6     110       5       6       6       1       1
+     58      11       6     110       4       7       7       1       1
+     58      11       6     110      14      12       8       1       0
+     58      11       6     110      13      13       9       1       0
+     58      11       6     110      12      14      10       1       0
+     58      11       6     110      11       8       8       1       1
+     58      11       6     110      10       9       9       1       1
+     58      11       6     110       9      10      10       1       1
+     58      11       6     110       8      11      11       1       1
+     58      11       7     110       3       0      12       1       1
+     58      11       7     110       2       1      13       1       1
+     58      11       7     110       1       2      14       1       1
+     58      11       7     110       0       3      15       1       1
+     58      11       7     110       7       4      16       1       1
+     58      11       7     110       6       5      17       1       1
+     58      11       7     110       5       6      18       1       1
+     58      11       7     110       4       7      19       1       1
+     58      11       7     110      13      13      29       1       0
+     58      11       7     110      12      14      30       1       0
+     58      11       7     110      11       8      20       1       1
+     58      11       7     110      10       9      21       1       1
+     58      11       7     110       9      10      22       1       1
+     58      11       7     110       8      11      23       1       1
+
+#Front Layer (L2 - m0): UVAUV L2 (vtp5)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m2.chanmap = 
+     58      11       8     120       0       3      29       1       1 
+     58      11       8     120       1       2      28       1       1 
+     58      11       8     120       2       1      27       1       1 
+     58      11       8     120       3       0      26       1       1 
+     58      11       8     120       4       7      25       1       1 
+     58      11       8     120       5       6      24       1       1 
+     58      11       8     120       6       5      23       1       1 
+     58      11       8     120       7       4      22       1       1 
+     58      11       8     120       8      11      21       1       1 
+     58      11       8     120       9      10      20       1       1 
+     58      11       8     120      10       9      19       1       1 
+     58      11       8     120      11       8      18       1       1 
+     58      11       8     120      12      14      17       1       1 
+     58      11       8     120      13      13      16       1       1 
+     58      11       8     120      14      12      15       1       1 
+     58      11       9     120       0       3      11       1       1 
+     58      11       9     120       1       2      10       1       1 
+     58      11       9     120       2       1       9       1       1 
+     58      11       9     120       3       0       8       1       1 
+     58      11       9     120       4       7       7       1       1 
+     58      11       9     120       5       6       6       1       1 
+     58      11       9     120       6       5       5       1       1 
+     58      11       9     120       7       4       4       1       1 
+     58      11       9     120       8      11       3       1       1 
+     58      11       9     120       9      10       2       1       1 
+     58      11       9     120      10       9       1       1       1 
+     58      11       9     120      11       8       0       1       1 
+     58      11       9     120      12      14      14       1       1 
+     58      11       9     120      13      13      13       1       1 
+     58      11       9     120      14      12      12       1       1 
+     58      11      10     120       0       3      26       0       0 
+     58      11      10     120       1       2      27       0       0 
+     58      11      10     120       2       1      28       0       0 
+     58      11      10     120       3       0      29       0       0 
+     58      11      10     120       4       7      22       0       0 
+     58      11      10     120       5       6      23       0       0 
+     58      11      10     120       6       5      24       0       0 
+     58      11      10     120       7       4      25       0       0 
+     58      11      10     120       8      11      18       0       0 
+     58      11      10     120       9      10      19       0       0 
+     58      11      10     120      10       9      20       0       0 
+     58      11      10     120      11       8      21       0       0 
+     58      11      10     120      12      15      15       0       0 
+     58      11      10     120      13      14      16       0       0 
+     58      11      10     120      14      13      17       0       0 
+     58      11      11     120       0       3       8       0       0 
+     58      11      11     120       1       2       9       0       0 
+     58      11      11     120       2       1      10       0       0 
+     58      11      11     120       3       0      11       0       0 
+     58      11      11     120       4       7       4       0       0 
+     58      11      11     120       5       6       5       0       0 
+     58      11      11     120       6       5       6       0       0 
+     58      11      11     120       7       4       7       0       0 
+     58      11      11     120       8      11       0       0       0 
+     58      11      11     120       9      10       1       0       0 
+     58      11      11     120      10       9       2       0       0 
+     58      11      11     120      11       8       3       0       0 
+     58      11      11     120      12      15      12       0       0 
+     58      11      11     120      13      14      13       0       0 
+     58      11      11     120      14      13      14       0       0 
+
+#Front Layer (L3 - m0): UVAUV L3 (vtp3)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m3.chanmap = 
+     20      11       0     130       0       3      29       1       1 
+     20      11       0     130       1       2      28       1       1 
+     20      11       0     130       2       1      27       1       1 
+     20      11       0     130       3       0      26       1       1 
+     20      11       0     130       4       7      25       1       1 
+     20      11       0     130       5       6      24       1       1 
+     20      11       0     130       6       5      23       1       1 
+     20      11       0     130       7       4      22       1       1 
+     20      11       0     130       8      11      21       1       1 
+     20      11       0     130       9      10      20       1       1 
+     20      11       0     130      10       9      19       1       1 
+     20      11       0     130      11       8      18       1       1 
+     20      11       0     130      12      14      17       1       1 
+     20      11       0     130      13      13      16       1       1 
+     20      11       0     130      14      12      15       1       1 
+     20      11       1     130       0       3      11       1       1 
+     20      11       1     130       1       2      10       1       1 
+     20      11       1     130       2       1       9       1       1 
+     20      11       1     130       3       0       8       1       1 
+     20      11       1     130       4       7       7       1       1 
+     20      11       1     130       5       6       6       1       1 
+     20      11       1     130       6       5       5       1       1 
+     20      11       1     130       7       4       4       1       1 
+     20      11       1     130       8      11       3       1       1 
+     20      11       1     130       9      10       2       1       1 
+     20      11       1     130      10       9       1       1       1 
+     20      11       1     130      11       8       0       1       1 
+     20      11       1     130      12      14      14       1       1 
+     20      11       1     130      13      13      13       1       1 
+     20      11       1     130      14      12      12       1       1 
+     20      11       2     130       0       3      26       0       0 
+     20      11       2     130       1       2      27       0       0 
+     20      11       2     130       2       1      28       0       0 
+     20      11       2     130       3       0      29       0       0 
+     20      11       2     130       4       7      22       0       0 
+     20      11       2     130       5       6      23       0       0 
+     20      11       2     130       6       5      24       0       0 
+     20      11       2     130       7       4      25       0       0 
+     20      11       2     130       8      11      18       0       0 
+     20      11       2     130       9      10      19       0       0 
+     20      11       2     130      10       9      20       0       0 
+     20      11       2     130      11       8      21       0       0 
+     20      11       2     130      12      14      15       0       0 
+     20      11       2     130      13      13      16       0       0 
+     20      11       2     130      14      12      17       0       0 
+     20      11       3     130       0       3       8       0       0 
+     20      11       3     130       1       2       9       0       0 
+     20      11       3     130       2       1      10       0       0 
+     20      11       3     130       3       0      11       0       0 
+     20      11       3     130       4       7       4       0       0 
+     20      11       3     130       5       6       5       0       0 
+     20      11       3     130       6       5       6       0       0 
+     20      11       3     130       7       4       7       0       0 
+     20      11       3     130       8      11       0       0       0 
+     20      11       3     130       9      10       1       0       0 
+     20      11       3     130      10       9       2       0       0 
+     20      11       3     130      11       8       3       0       0 
+     20      11       3     130      12      14      12       0       0 
+     20      11       3     130      13      13      13       0       0 
+     20      11       3     130      14      12      14       0       0 
+
+#Front Layer (L4 - m0): UVAUV L4 (vtp3)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m4.chanmap = 
+     20      11       4     140       0       3      29       1       1 
+     20      11       4     140       1       2      28       1       1 
+     20      11       4     140       2       1      27       1       1 
+     20      11       4     140       3       0      26       1       1 
+     20      11       4     140       4       7      25       1       1 
+     20      11       4     140       5       6      24       1       1 
+     20      11       4     140       6       5      23       1       1 
+     20      11       4     140       7       4      22       1       1 
+     20      11       4     140       8      11      21       1       1 
+     20      11       4     140       9      10      20       1       1 
+     20      11       4     140      10       9      19       1       1 
+     20      11       4     140      11       8      18       1       1 
+     20      11       4     140      12      14      17       1       1 
+     20      11       4     140      13      13      16       1       1 
+     20      11       4     140      14      12      15       1       1 
+     20      11       5     140       0       3      11       1       1 
+     20      11       5     140       1       2      10       1       1 
+     20      11       5     140       2       1       9       1       1 
+     20      11       5     140       3       0       8       1       1 
+     20      11       5     140       4       7       7       1       1 
+     20      11       5     140       5       6       6       1       1 
+     20      11       5     140       6       5       5       1       1 
+     20      11       5     140       7       4       4       1       1 
+     20      11       5     140       8      11       3       1       1 
+     20      11       5     140       9      10       2       1       1 
+     20      11       5     140      10       9       1       1       1 
+     20      11       5     140      11       8       0       1       1 
+     20      11       5     140      12      14      14       1       1 
+     20      11       5     140      13      13      13       1       1 
+     20      11       5     140      14      12      12       1       1 
+     20      11       6     140       0       3      26       0       0 
+     20      11       6     140       1       2      27       0       0 
+     20      11       6     140       2       1      28       0       0 
+     20      11       6     140       3       0      29       0       0 
+     20      11       6     140       4       7      22       0       0 
+     20      11       6     140       5       6      23       0       0 
+     20      11       6     140       6       5      24       0       0 
+     20      11       6     140       7       4      25       0       0 
+     20      11       6     140       8      11      18       0       0 
+     20      11       6     140       9      10      19       0       0 
+     20      11       6     140      10       9      20       0       0 
+     20      11       6     140      11       8      21       0       0 
+     20      11       6     140      12      14      15       0       0 
+     20      11       6     140      13      13      16       0       0 
+     20      11       6     140      14      12      17       0       0 
+     20      11       8     140       0       3       8       0       0 
+     20      11       8     140       1       2       9       0       0 
+     20      11       8     140       2       1      10       0       0 
+     20      11       8     140       3       0      11       0       0 
+     20      11       8     140       4       7       4       0       0 
+     20      11       8     140       5       6       5       0       0 
+     20      11       8     140       6       5       6       0       0 
+     20      11       8     140       7       4       7       0       0 
+     20      11       8     140       8      11       0       0       0 
+     20      11       8     140       9      10       1       0       0 
+     20      11       8     140      10       9       2       0       0 
+     20      11       8     140      11       8       3       0       0 
+     20      11       8     140      12      14      12       0       0 
+     20      11       8     140      13      13      13       0       0 
+     20      11       8     140      14      12      14       0       0 
+
+#Front Layer (L5 - m0): UVAUV L5 (vtp3/4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m5.chanmap = 
+     20      11       9     150       0       3      29       1       1 
+     20      11       9     150       1       2      28       1       1 
+     20      11       9     150       2       1      27       1       1 
+     20      11       9     150       3       0      26       1       1 
+     20      11       9     150       4       7      25       1       1 
+     20      11       9     150       5       6      24       1       1 
+     20      11       9     150       6       5      23       1       1 
+     20      11       9     150       7       4      22       1       1 
+     20      11       9     150       8      11      21       1       1 
+     20      11       9     150       9      10      20       1       1 
+     20      11       9     150      10       9      19       1       1 
+     20      11       9     150      11       8      18       1       1 
+     20      11       9     150      12      14      17       1       1 
+     20      11       9     150      13      13      16       1       1 
+     20      11       9     150      14      12      15       1       1 
+     20      11      10     150       0       3      11       1       1 
+     20      11      10     150       1       2      10       1       1 
+     20      11      10     150       2       1       9       1       1 
+     20      11      10     150       3       0       8       1       1 
+     20      11      10     150       4       7       7       1       1 
+     20      11      10     150       5       6       6       1       1 
+     20      11      10     150       6       5       5       1       1 
+     20      11      10     150       7       4       4       1       1 
+     20      11      10     150       8      11       3       1       1 
+     20      11      10     150       9      10       2       1       1 
+     20      11      10     150      10       9       1       1       1 
+     20      11      10     150      11       8       0       1       1 
+     20      11      10     150      12      14      14       1       1 
+     20      11      10     150      13      13      13       1       1 
+     20      11      10     150      14      12      12       1       1 
+     20      11      11     150       0       3      26       0       0 
+     20      11      11     150       1       2      27       0       0 
+     20      11      11     150       2       1      28       0       0 
+     20      11      11     150       3       0      29       0       0 
+     20      11      11     150       4       7      22       0       0 
+     20      11      11     150       5       6      23       0       0 
+     20      11      11     150       6       5      24       0       0 
+     20      11      11     150       7       4      25       0       0 
+     20      11      11     150       8      11      18       0       0 
+     20      11      11     150       9      10      19       0       0 
+     20      11      11     150      10       9      20       0       0 
+     20      11      11     150      11       8      21       0       0 
+     20      11      11     150      12      14      15       0       0 
+     20      11      11     150      13      13      16       0       0 
+     20      11      11     150      14      12      17       0       0 
+     25      11       0     150       0       3       8       0       0 
+     25      11       0     150       1       2       9       0       0 
+     25      11       0     150       2       1      10       0       0 
+     25      11       0     150       3       0      11       0       0 
+     25      11       0     150       4       7       4       0       0 
+     25      11       0     150       5       6       5       0       0 
+     25      11       0     150       6       5       6       0       0 
+     25      11       0     150       7       4       7       0       0 
+     25      11       0     150       8      11       0       0       0 
+     25      11       0     150       9      10       1       0       0 
+     25      11       0     150      10       9       2       0       0 
+     25      11       0     150      11       8       3       0       0 
+     25      11       0     150      12      14      12       0       0 
+     25      11       0     150      13      13      13       0       0 
+     25      11       0     150      14      12      14       0       0 
+
+#Front Layer (L6 - m0/1/2/3): UVAXY L6 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m6.chanmap = 
+     25      11       1     160       0      15       0       1       1 
+     25      11       1     160       1      14       1       1       1 
+     25      11       1     160       2      13       2       1       1 
+     25      11       1     160       3      12       3       1       1 
+     25      11       1     160       4      11       4       1       1 
+     25      11       1     160       5      10       5       1       1 
+     25      11       1     160       6       9       6       1       1 
+     25      11       1     160       7       8       7       1       1 
+     25      11       1     160       8       7       8       1       1 
+     25      11       1     160       9       6       9       1       1 
+     25      11       1     160      10       5      10       1       1 
+     25      11       1     160      11       4      11       1       1 
+     25      11       5     160      10       4       9       1       0 
+     25      11       5     160      11       3       8       1       0 
+     25      11       5     160      12       2       7       1       0 
+     25      11       5     160      13       1       6       1       0 
+     25      11       5     160      14       0       5       1       0 
+     25      11       6     160       0       4       0       0       0 
+     25      11       6     160       1       3       1       0       0 
+     25      11       6     160       2       2       2       0       0 
+     25      11       6     160       3       1       3       0       0 
+     25      11       6     160       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m7.chanmap = 
+     25      11       2     161       0      15       0       1       1 
+     25      11       2     161       1      14       1       1       1 
+     25      11       2     161       2      13       2       1       1 
+     25      11       2     161       3      12       3       1       1 
+     25      11       2     161       4      11       4       1       1 
+     25      11       2     161       5      10       5       1       1 
+     25      11       2     161       6       9       6       1       1 
+     25      11       2     161       7       8       7       1       1 
+     25      11       2     161       8       7       8       1       1 
+     25      11       2     161       9       6       9       1       1 
+     25      11       2     161      10       5      10       1       1 
+     25      11       2     161      11       4      11       1       1 
+     25      11       5     161       5      12       9       1       0 
+     25      11       5     161       6      11       8       1       0 
+     25      11       5     161       7      10       7       1       0 
+     25      11       5     161       8       9       6       1       0 
+     25      11       5     161       9       8       5       1       0 
+     25      11       6     161       5      12       0       0       0 
+     25      11       6     161       6      11       1       0       0 
+     25      11       6     161       7      10       2       0       0 
+     25      11       6     161       8       9       3       0       0 
+     25      11       6     161       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m8.chanmap = 
+     25      11       3     162       0      15      11       0       1 
+     25      11       3     162       1      14      10       0       1 
+     25      11       3     162       2      13       9       0       1 
+     25      11       3     162       3      12       8       0       1 
+     25      11       3     162       4      11       7       0       1 
+     25      11       3     162       5      10       6       0       1 
+     25      11       3     162       6       9       5       0       1 
+     25      11       3     162       7       8       4       0       1 
+     25      11       3     162       8       7       3       0       1 
+     25      11       3     162       9       6       2       0       1 
+     25      11       3     162      10       5       1       0       1 
+     25      11       3     162      11       4       0       0       1 
+     25      11       5     162       0      20       9       1       0 
+     25      11       5     162       1      19       8       1       0 
+     25      11       5     162       2      18       7       1       0 
+     25      11       5     162       3      17       6       1       0 
+     25      11       5     162       4      16       5       1       0 
+     25      11       6     162      10      20       0       0       0 
+     25      11       6     162      11      19       1       0       0 
+     25      11       6     162      12      18       2       0       0 
+     25      11       6     162      13      17       3       0       0 
+     25      11       6     162      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m9.chanmap = 
+     25      11       4     163       0      15      11       0       1 
+     25      11       4     163       1      14      10       0       1 
+     25      11       4     163       2      13       9       0       1 
+     25      11       4     163       3      12       8       0       1 
+     25      11       4     163       4      11       7       0       1 
+     25      11       4     163       5      10       6       0       1 
+     25      11       4     163       6       9       5       0       1 
+     25      11       4     163       7       8       4       0       1 
+     25      11       4     163       8       7       3       0       1 
+     25      11       4     163       9       6       2       0       1 
+     25      11       4     163      10       5       1       0       1 
+     25      11       4     163      11       4       0       0       1 
+     25      11       7     163       0       4       9       1       0 
+     25      11       7     163       1       3       8       1       0 
+     25      11       7     163       2       2       7       1       0 
+     25      11       7     163       3       1       6       1       0 
+     25      11       7     163       4       0       5       1       0 
+     25      11       7     163       8      12       0       0       0 
+     25      11       7     163       9      11       1       0       0 
+     25      11       7     163      10      10       2       0       0 
+     25      11       7     163      11       9       3       0       0 
+     25      11       7     163      12       8       4       0       0 
+
+#Front Layer (L7 - m0/1/2/3): UVAXY L7 (vtp2)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m10.chanmap = 
+     24      11       0     170       0      15       0       1       1 
+     24      11       0     170       1      14       1       1       1 
+     24      11       0     170       2      13       2       1       1 
+     24      11       0     170       3      12       3       1       1 
+     24      11       0     170       4      11       4       1       1 
+     24      11       0     170       5      10       5       1       1 
+     24      11       0     170       6       9       6       1       1 
+     24      11       0     170       7       8       7       1       1 
+     24      11       0     170       8       7       8       1       1 
+     24      11       0     170       9       6       9       1       1 
+     24      11       0     170      10       5      10       1       1 
+     24      11       0     170      11       4      11       1       1 
+     24      11       4     170      10       4       9       1       0 
+     24      11       4     170      11       3       8       1       0 
+     24      11       4     170      12       2       7       1       0 
+     24      11       4     170      13       1       6       1       0 
+     24      11       4     170      14       0       5       1       0 
+     24      11       5     170       0       4       0       0       0 
+     24      11       5     170       1       3       1       0       0 
+     24      11       5     170       2       2       2       0       0 
+     24      11       5     170       3       1       3       0       0 
+     24      11       5     170       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m11.chanmap = 
+     24      11       1     171       0      15       0       1       1 
+     24      11       1     171       1      14       1       1       1 
+     24      11       1     171       2      13       2       1       1 
+     24      11       1     171       3      12       3       1       1 
+     24      11       1     171       4      11       4       1       1 
+     24      11       1     171       5      10       5       1       1 
+     24      11       1     171       6       9       6       1       1 
+     24      11       1     171       7       8       7       1       1 
+     24      11       1     171       8       7       8       1       1 
+     24      11       1     171       9       6       9       1       1 
+     24      11       1     171      10       5      10       1       1 
+     24      11       1     171      11       4      11       1       1 
+     24      11       4     171       5      12       9       1       0 
+     24      11       4     171       6      11       8       1       0 
+     24      11       4     171       7      10       7       1       0 
+     24      11       4     171       8       9       6       1       0 
+     24      11       4     171       9       8       5       1       0 
+     24      11       5     171       5      12       0       0       0 
+     24      11       5     171       6      11       1       0       0 
+     24      11       5     171       7      10       2       0       0 
+     24      11       5     171       8       9       3       0       0 
+     24      11       5     171       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m12.chanmap = 
+     24      11       2     172       0      15      11       0       1 
+     24      11       2     172       1      14      10       0       1 
+     24      11       2     172       2      13       9       0       1 
+     24      11       2     172       3      12       8       0       1 
+     24      11       2     172       4      11       7       0       1 
+     24      11       2     172       5      10       6       0       1 
+     24      11       2     172       6       9       5       0       1 
+     24      11       2     172       7       8       4       0       1 
+     24      11       2     172       8       7       3       0       1 
+     24      11       2     172       9       6       2       0       1 
+     24      11       2     172      10       5       1       0       1 
+     24      11       2     172      11       4       0       0       1 
+     24      11       4     172       0      20       9       1       0 
+     24      11       4     172       1      19       8       1       0 
+     24      11       4     172       2      18       7       1       0 
+     24      11       4     172       3      17       6       1       0 
+     24      11       4     172       4      16       5       1       0 
+     24      11       5     172      10      20       0       0       0 
+     24      11       5     172      11      19       1       0       0 
+     24      11       5     172      12      18       2       0       0 
+     24      11       5     172      13      17       3       0       0 
+     24      11       5     172      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m13.chanmap = 
+     24      11       3     173       0      15      11       0       1 
+     24      11       3     173       1      14      10       0       1 
+     24      11       3     173       2      13       9       0       1 
+     24      11       3     173       3      12       8       0       1 
+     24      11       3     173       4      11       7       0       1 
+     24      11       3     173       5      10       6       0       1 
+     24      11       3     173       6       9       5       0       1 
+     24      11       3     173       7       8       4       0       1 
+     24      11       3     173       8       7       3       0       1 
+     24      11       3     173       9       6       2       0       1 
+     24      11       3     173      10       5       1       0       1 
+     24      11       3     173      11       4       0       0       1 
+     24      11       6     173       0       4       9       1       0 
+     24      11       6     173       1       3       8       1       0 
+     24      11       6     173       2       2       7       1       0 
+     24      11       6     173       3       1       6       1       0 
+     24      11       6     173       4       0       5       1       0 
+     24      11       6     173       8      12       0       0       0 
+     24      11       6     173       9      11       1       0       0 
+     24      11       6     173      10      10       2       0       0 
+     24      11       6     173      11       9       3       0       0 
+     24      11       6     173      12       8       4       0       0 
+
+
+# ###################### BEGIN TIME-DEPENDENT CLUSTERING PARAMETERS #############
+
+##SUGGESTED INITIAL VALUES:
+# gridbinwidthx = 0.01
+# gridbinwidthy = 0.01
+# gridedgetolerancex = 0.003
+# gridedgetolerancey = 0.003
+# threshold_sample = 75.
+# threshold_stripsum = 300.
+# threshold_clustersum = 600.
+# maxhitcombos = 25000
+# maxhitcombos_inner = 25000
+# maxhitcombos_total = 1,000,000,000 (this is not actually the most relevant limit for the tracking algorithm and I am using an even higher limit for BigBite analysis)
+# max2Dhits = 100,000
+# filterflag1D = 0
+# filterflag2D = 1
+# ADCasym_cut = 0.8
+# deltat_cut = 25.0
+# corrcoeff_cut = 0.5 
+
+############ parameters searched by SBSGEMModule::ReadDatabase() #################
+############ offline thresholds: ############
+
+# ped rms is typically ~6 channels, this is the RMS of the AVERAGE. The RMS of individual samples is ped rms * sqrt(6) ~= 14.7
+# 3X this number would be 45. So it is unclear how we can suppress the strips at much lower than 50 ADC and stay above the noise:
+# the average ratio of the six-sample sum over max sample is 4.2. The "effective" threshold with standard zero suppression is that the
+# average should be at least 3 sigma above threshold. Sigma of the AVERAGE is 6, so threshold on the AVERAGE would be 18.
+# Threshold on the SUM would be 18*6 = 108, let's round down to 100. Therefore the implied threshold on the max SAMPLE would be 100/4.2 ~= 25
+# average ratio of cluster sum / max sample is roughly 9. 9*25 = is 231, let's round down to 200
+#sbs.gemFT.threshold_sample = 25.0
+#sbs.gemFT.threshold_stripsum = 100.0
+#sbs.gemFT.threshold_clustersum = 200.0
+
+
+# raising these a bit to improve analysis speed, even at the cost of some efficiency:
+sbs.gemFT.threshold_sample = 50.0
+sbs.gemFT.threshold_stripsum = 200.0
+sbs.gemFT.threshold_clustersum = 300.0
+
+
+sbs.gemFT.ADCasym_cut = 0.8 
+sbs.gemFT.deltat_cut = 30.0
+sbs.gemFT.corrcoeff_cut = 0.5
+# change to "soft hit filtering:
+sbs.gemFT.filterflag1D = 0 # -1 = no filtering: don't require 1D hits to pass any cuts other than basic zero suppression
+sbs.gemFT.filterflag2D = 0  # 1 = "hard" filtering: require 2D hits to pass all cuts
+
+sbs.gemFT.peakprominence_minsigma = 2.0 
+sbs.gemFT.peakprominence_minfraction = 0.0
+
+# limit cluster size growth to +/- 4 strips for cluster charge calculation
+sbs.gemFT.maxnu_charge = 4
+sbs.gemFT.maxnv_charge = 4 
+
+# limit cluster size to +/-3 strips from maximum for cluster position calculation
+sbs.gemFT.maxnu_pos = 3
+sbs.gemFT.maxnv_pos = 3
+
+sbs.gemFT.sigmahitpos = 0.0001
+sbs.gemFT.sigmahitshape = 0.0004
+sbs.gemFT.zerosuppress = 1
+sbs.gemFT.zerosuppress_nsigma = 3.0
+sbs.gemFT.onlinezerosuppress = 1 # note that this parameter only provides a default value, actual behavior is determined by the flags seen in the raw data:
+
+sbs.gemFT.plot_common_mode = 0
+sbs.gemFT.plot_event_info = 1
+
+# when zero suppression is enabled again we will turn this to 1: 
+sbs.gemFT.pedsub_online = 1 # under normal conditions, this should always be 1, unless running normal data taking in pedestal mode:
+sbs.gemFT.max2Dhits = 100000 # per-module
+
+
+
+############### Parameters searched by SBSGEMSpectrometerTracker::ReadDatabase() ######################
+
+# parameters controlling tracking:
+sbs.gemFT.minhitsontrack = 4
+
+sbs.gemFT.maxhitcombos = 25000 # 25000 #10000 #25000 for final &  50000 for first alignments
+sbs.gemFT.maxhitcombos_inner = 25000 # 25000 #25000 for final & 50000 for first alignments
+#sbs.gemFT.maxhitcombos_total = 1.e22
+sbs.gemFT.maxhitcombos_total = 1.e20
+
+sbs.gemFT.tryfasttrack = 0  #May get errors before a good alignment. So may be help to turn off during alignment. 
+
+# typical values after alignment:
+sbs.gemFT.gridbinwidthx = 0.005
+sbs.gemFT.gridbinwidthy = 0.005
+sbs.gemFT.gridedgetolerancex = 0.0015
+sbs.gemFT.gridedgetolerancey = 0.0015
+# min hits = 4
+# chi2 cut by num hits =  4  5  6  7  8
+sbs.gemFT.trackchi2cut = 15 20 25 30 40 
+# temporarily relax chi2 cut until we can validate alignment with cH2 analyzer installed and field on:
+#sbs.gemFT.trackchi2cut = 100.0
+
+# Adjust the grid bins and chi2 here during alignment. Comment them out after the alignment is complete:
+#For alignment with cosmics, we want to start with wider grid bins and a loose chi2 cut for tracking:
+#sbs.gemFT.gridbinwidthx = 0.02 #0.1
+#sbs.gemFT.gridbinwidthy = 0.02 #0.1
+#sbs.gemFT.gridedgetolerancex = 0.004 #0.02
+#sbs.gemFT.gridedgetolerancey = 0.004 #0.02
+#sbs.gemFT.trackchi2cut = 500 #3000.0 #500.0 #40 #3000.0
+
+sbs.gemFT.sigmahitpos = 0.0001
+sbs.gemFT.do_efficiencies = 1
+sbs.gemFT.dump_geometry_info = 1
+sbs.gemFT.dump_rawADCrange = 0
+
+sbs.gemFT.efficiency_bin_width_1D = 0.02
+sbs.gemFT.efficiency_bin_width_2D = 0.04
+
+# these should probably be tighter later on:
+sbs.gemFT.xptar_min = -0.24
+sbs.gemFT.xptar_max = 0.24
+
+sbs.gemFT.yptar_min = -0.12
+sbs.gemFT.yptar_max = 0.12
+
+sbs.gemFT.ytar_min = -0.25
+sbs.gemFT.ytar_max = 0.25
+
+sbs.gemFT.pmin = 0.8
+sbs.gemFT.pmax = 11.0
+
+sbs.gemFT.xpfp_min = -0.35
+sbs.gemFT.xpfp_max = 0.2
+sbs.gemFT.ypfp_min = -0.12
+sbs.gemFT.ypfp_max = 0.12
+
+# # basic flags controlling decoding:
+sbs.gemFT.pedestalmode = 0
+sbs.gemFT.commonmode_flag = 0 # 1 = Danning, 0 = sorting, 2 = histogramming, 3 = online Danning (GMN version), 4 = online Danning (GEN version), 5 = online histogramming (GEP, possibly others)
+sbs.gemFT.chan_cm_flags = 640 # defines the "dummy" reference channel for storing the cm_enable and build_all_samples flags -(40 x 16) "sbsvtp2" and "sbsvtp4"currently has 36 and 20 MPDs respectively right now. 
+sbs.gemFT.commonmode_nstriplo = 10 # for sorting method
+sbs.gemFT.commonmode_nstriphi = 50 # for sorting method... for an occupancy ~40%
+sbs.gemFT.commonmode_niter = 3
+sbs.gemFT.commonmode_minstrips = 20
+
+# histogramming-method parameters: 
+sbs.gemFT.commonmode_binwidth_nsigma = 7.0 # +/- 3.5 * DB sigma
+sbs.gemFT.commonmode_scanrange_nsigma = 5.0 
+sbs.gemFT.commonmode_stepsize_nsigma = 0.75
+
+sbs.gemFT.commonmode_online_flag = 4 # change to six after CM min is lowered later in the run
+
+# attempt to correct common-mode for negative bias:
+sbs.gemFT.correct_common_mode = 0
+sbs.gemFT.correct_common_mode_minstrips = 20
+sbs.gemFT.correct_common_mode_nsigma = 2.0
+
+sbs.gemFT.use_commonmode_rolling_average = 1
+sbs.gemFT.commonmode_nevents_lookback = 5
+
+sbs.gemFT.plot_common_mode = 0
+sbs.gemFT.pedsub_online = 1 # normally this should always be set to 1
+sbs.gemFT.dump_geometry_info = 1
+sbs.gemFT.efficiency_bin_width_1D = 0.02
+sbs.gemFT.efficiency_bin_width_2D = 0.02
+sbs.gemFT.commonmode_range_nsigma = 5.0
+
+
+# these may need adjusting:
+sbs.gemFT.usestriptimingcut = 0
+sbs.gemFT.useTSchi2cut = 0
+sbs.gemFT.maxstrip_t0 = 75.0
+sbs.gemFT.maxstrip_tsigma = 8.0
+sbs.gemFT.HitTimeMean = 75.0
+sbs.gemFT.HitTimeSigma = 8.0
+sbs.gemFT.maxstrip_tcut = 3.0
+sbs.gemFT.addstrip_tcut = 35.0
+sbs.gemFT.addstrip_ccor_cut = 0.4
+sbs.gemFT.suppressfirstlast = 0
+
+# these may need further adjustment
+sbs.gemFT.m0.maxstrip_t0 = 83.7782 83.7662
+sbs.gemFT.m1.maxstrip_t0 = 80.6337 81.8633
+sbs.gemFT.m2.maxstrip_t0 = 83.7419 80.688
+sbs.gemFT.m3.maxstrip_t0 = 98.7344 99.0261
+sbs.gemFT.m4.maxstrip_t0 = 93.4017 93.0929
+sbs.gemFT.m5.maxstrip_t0 = 92.4741 92.4173
+sbs.gemFT.m6.maxstrip_t0 = 82.7149 84.3668
+sbs.gemFT.m7.maxstrip_t0 = 85.1353 86.2296
+sbs.gemFT.m8.maxstrip_t0 = 86.4541 86.7113
+sbs.gemFT.m9.maxstrip_t0 = 84.6175 85.2227
+sbs.gemFT.m10.maxstrip_t0 = 83.0052 85.9831
+sbs.gemFT.m11.maxstrip_t0 = 86.8208 87.2786
+sbs.gemFT.m12.maxstrip_t0 = 86.6978 86.4472
+sbs.gemFT.m13.maxstrip_t0 = 86.5327 86.1458
+
+sbs.gemFT.m0.maxstrip_tsigma = 10.9615 10.6395
+sbs.gemFT.m1.maxstrip_tsigma = 9.74764 9.70207
+sbs.gemFT.m2.maxstrip_tsigma = 10.4214 10.311
+sbs.gemFT.m3.maxstrip_tsigma = 11.3473 10.6098
+sbs.gemFT.m4.maxstrip_tsigma = 13.2849 12.9765
+sbs.gemFT.m5.maxstrip_tsigma = 13.0221 13.0013
+sbs.gemFT.m6.maxstrip_tsigma = 11.0911 8.76953
+sbs.gemFT.m7.maxstrip_tsigma = 11.1259 10.1934
+sbs.gemFT.m8.maxstrip_tsigma = 11.0281 11.7115
+sbs.gemFT.m9.maxstrip_tsigma = 12.8526 11.0249
+sbs.gemFT.m10.maxstrip_tsigma = 11.7913 9.29483
+sbs.gemFT.m11.maxstrip_tsigma = 11.3901 11.3289
+sbs.gemFT.m12.maxstrip_tsigma = 11.1624 10.909
+sbs.gemFT.m13.maxstrip_tsigma = 14.4234 10.3702
+
+sbs.gemFT.modulegain = 1
+
+sbs.gemFT.plot_event_info = 0
+
+
+---------[ 2024-11-06 00:00:00 ] # Cosmic Data Analysis
+
+sbs.gemFT.useopticsconstraint = 0
+sbs.gemFT.useslopeconstraint = 0
+sbs.gemFT.useconstraint = 0
+sbs.gemFT.dump_geometry_info = 1
+
+----------[ 2025-04-01 00:00:00 ] # beam is here;
+
+sbs.gemFT.corrcoeff_cut 0.5
+sbs.gemFT.ADCasym_cut 0.8
+sbs.gemFT.deltat_cut = 30.0
+sbs.gemFT.addstrip_ccor_cut 0.4
+sbs.gemFT.addstrip_tcut = 35.0
+
+sbs.gemFT.filterflag1D = 0
+sbs.gemFT.filterflag2D = 0
+
+# the following alignment is with straight-through data. May need to redo internal alignment with field on:
+sbs.gemFT.m0.position =    -0.001932362   -0.0003591936    -0.002307403
+sbs.gemFT.m0.angle =      -0.7983061       0.9590332     -0.01747824
+sbs.gemFT.m1.position =    -0.001913404     0.000823821      0.06874338
+sbs.gemFT.m1.angle =      -0.6382976        1.008438     -0.06385858
+sbs.gemFT.m2.position =     0.000851998   -0.0003678009        0.206978
+sbs.gemFT.m2.angle =      -0.7222915       0.8497933        0.213498
+sbs.gemFT.m3.position =     0.004077568     0.006554923       0.3470948
+sbs.gemFT.m3.angle =      -0.6753706       0.7598813      -0.1402578
+sbs.gemFT.m4.position =     0.006128578   -0.0009202213       0.4947328
+sbs.gemFT.m4.angle =      -0.5984619       0.8365959       0.2059162
+sbs.gemFT.m5.position =     0.007972974     0.002203814       0.6325678
+sbs.gemFT.m5.angle =      -0.4775893       0.7440084      -0.0854228
+sbs.gemFT.m6.position =      -0.7602041     0.003309311       0.7840352
+sbs.gemFT.m6.angle =      -0.7919315        1.991173      -0.1532671
+sbs.gemFT.m7.position =      -0.2500344     0.002184353       0.7353187
+sbs.gemFT.m7.angle =      -0.8255559        1.284388      -0.0550896
+sbs.gemFT.m8.position =       0.2620323   -0.0007733266       0.7732588
+sbs.gemFT.m8.angle =       0.4108828       0.1486468     -0.03469309
+sbs.gemFT.m9.position =       0.7703713    0.0002598675        0.719828
+sbs.gemFT.m9.angle =      -0.8623823      -0.9602807     -0.02184911
+sbs.gemFT.m10.position =       -0.759236      0.00420754       0.9097422
+sbs.gemFT.m10.angle =      -0.6852898         1.48039     -0.09843636
+sbs.gemFT.m11.position =      -0.2483006     0.002802626       0.8614761
+sbs.gemFT.m11.angle =       -0.683251       0.8420315      0.08265745
+sbs.gemFT.m12.position =       0.2617361     0.001272297       0.9044328
+sbs.gemFT.m12.angle =       0.5068662       0.3355708     -0.03995951
+sbs.gemFT.m13.position =       0.7710533    0.0009659418        0.844378
+sbs.gemFT.m13.angle =       -1.553839      -0.3341202      0.06093349
+
+sbs.gemFT.usestriptimingcut = 0
+
+sbs.gemFT.useopticsconstraint = 1
+sbs.gemFT.xptar_min = -0.2
+sbs.gemFT.xptar_max = 0.2
+sbs.gemFT.yptar_min = -0.07
+sbs.gemFT.yptar_max = 0.07
+sbs.gemFT.ytar_min = -0.13
+sbs.gemFT.ytar_max = 0.05
+sbs.gemFT.pmin = 2.5
+sbs.gemFT.pmax = 5.0
+
+sbs.gemFT.useslopeconstraint = 1
+sbs.gemFT.constraintwidth_theta = 0.02
+sbs.gemFT.constraintwidth_phi = 0.03
+
+sbs.gemFT.xpfp_min = -0.3
+sbs.gemFT.xpfp_max = 0.1
+sbs.gemFT.ypfp_min = -0.07
+sbs.gemFT.ypfp_max = 0.07
+
+sbs.gemFT.useconstraint = 1
+sbs.gemFT.suppressfirstlast = -1
+
+sbs.gemFT.multitracksearch = 1
+
+# APV Gain Match results for ADCcut = 700
+#Module internal relative gains by APV card: 
+sbs.gemFT.m0.vgain = 1  1  0.944037  0.956591  1.20213  1.23951  1.16138  1.21417  1.2169  1.16785  1.1184  1.08422  1.1275  1.11048  1.17867  1.15362  1.1109  1.15191  1.1484  1.23451  1.29082  1.15123  1.21253  1  1  1  1  
+sbs.gemFT.m0.ugain = 1  1  1.12497  1.09724  0.9921  0.996654  1.00161  1.15733  0.97441  0.971636  0.995455  1.0743  1  0.985439  0.988414  1.88667  1.64144  2.12402  1.08983  1.2644  1.19343  1.49877  1.299  1.28454  1.29254  0.96897  1.08035  1  1  1  1  
+sbs.gemFT.m1.vgain = 1  1  1  1  1.15771  1.20629  1.20406  1.23004  1.56584  1.24749  1.10558  1.0893  1.12198  1.27762  1.24311  1.19523  1.25529  1.20227  1.31412  1.28006  1.43821  1.27402  1.1346  0.936474  1  1  1  
+sbs.gemFT.m1.ugain = 1  1  0.981252  1.08181  1.00387  1.12327  1.09397  1.04885  1.06014  1.02104  1.05523  1.05981  1  1.05428  1.18031  1.01859  1.05851  1.18658  0.95262  0.928828  0.918149  1.03549  1.07235  1.0957  1.04131  1.04909  1.14585  1.06499  1  1  1  
+sbs.gemFT.m2.vgain = 1  1  1  1.21783  1.26536  1.15181  1.24604  1.24799  1.30613  1.22252  1.14428  1.17411  1.23033  1.11705  1.09853  1.10061  1.20137  1.1089  1.28476  1.19236  1.24005  1.1211  1.34853  1.08236  1.06582  1.04765  0.959026  1.06421  1  1  
+sbs.gemFT.m2.ugain = 1  1  0.964041  1.03446  1.05826  0.912316  1.03324  1.00766  1.07297  1.0338  1.08625  0.977997  1  1.05358  1.03796  0.979435  0.96382  0.96548  0.921933  0.968153  0.965875  0.935597  0.851489  0.901165  0.86264  0.810204  0.813836  1  1  1  
+sbs.gemFT.m3.vgain = 1  1  1  1.0961  1.11759  1.14157  1.16013  1.13493  1.01851  1.15246  1.09211  1.05131  1.09304  1.03696  1.13395  1  1.21702  1.19427  1.77009  1.45308  1.41113  1.40609  1.12181  1.20295  1.14618  1.14229  1.04501  1.16363  1  1  
+sbs.gemFT.m3.ugain = 1  1  1.25888  1  0.95658  1.02137  1.04073  0.983161  1.03562  0.972286  1  1.08363  0.987941  0.991994  1.02425  1.10304  1.0174  1.06691  1.03418  1.07167  1.10299  0.998475  0.994904  0.998948  0.997644  1.01652  0.993041  1  1  1  
+sbs.gemFT.m4.vgain = 1  1  1  1.09794  1.18724  1.09204  1.07711  1.07414  1.48288  1.06858  1.05238  0.972934  1.06717  1.04945  1.0091  1.00832  0.962468  1.00372  0.96478  0.981687  0.929058  0.994138  0.936321  0.937228  0.935791  0.90009  1.04047  0.855056  0.743923  1  
+sbs.gemFT.m4.ugain = 1  1  0.936842  0.994095  1.08923  1.00752  1.02442  1.04102  1.10192  0.985956  1.00773  1.07092  1  1.00604  1.02098  0.981478  1.03116  0.973237  1.17255  0.934781  0.92229  1.00199  1.02439  0.980066  0.945297  0.99069  0.913047  0.827187  1  1  
+sbs.gemFT.m5.vgain = 1  1  1  0.990908  0.993454  0.945208  1.22456  1.03841  1.03721  0.942928  1.00563  1.0132  1.03446  0.968956  0.992667  1.01516  1.01303  1.01815  0.970948  0.933563  0.936709  0.931742  1.88577  0.957398  0.8842  0.92533  1.00095  0.897211  0.730949  1  
+sbs.gemFT.m5.ugain = 1  0.714235  0.740856  0.778426  0.873066  0.842077  0.866213  0.877326  0.938459  0.933327  0.933227  0.908247  1  0.940806  0.975445  0.930631  0.930959  0.915184  0.895085  0.842756  0.922731  1.01078  0.839105  0.887288  0.816684  0.823108  0.857203  0.816525  1  1  
+sbs.gemFT.m6.vgain = 1  1  0.771894  0.753842  0.767637  0.77027  0.734374  0.732474  0.785887  0.729991  0.739336  1  
+sbs.gemFT.m6.ugain = 1  1  1  1  0.962954  1.00138  1.00005  0.965644  1.06248  1  
+sbs.gemFT.m7.vgain = 1  1  0.785335  0.766775  0.75207  0.660087  0.703366  0.642716  0.659284  0.690329  0.665886  1  
+sbs.gemFT.m7.ugain = 1.07333  1.04857  0.956992  1.0244  1  1.12316  0.949304  1.1636  1.08851  1.01771  
+sbs.gemFT.m8.vgain = 1  0.973119  0.960586  0.980319  1.05623  0.990696  1.02334  0.980567  1.0248  1.04439  1.09879  1  
+sbs.gemFT.m8.ugain = 0.855189  1  0.98136  0.883307  0.877414  1.18133  1.26935  1.22148  1.03879  1.00317  
+sbs.gemFT.m9.vgain = 1  1  0.858916  0.849165  0.810998  0.8453  0.789451  0.780711  0.812213  0.675926  1  1  
+sbs.gemFT.m9.ugain = 1  1.04595  0.996073  0.944545  1  1  1  1  1  1  
+sbs.gemFT.m10.vgain = 1  1  0.54955  0.526835  0.505921  0.486828  0.452879  0.491702  0.451127  0.486046  0.492185  1  
+sbs.gemFT.m10.ugain = 1  1  1  0.756586  0.755213  0.981427  1.16327  1.28482  1  0.698826  
+sbs.gemFT.m11.vgain = 1  1.08197  1.04048  0.933184  0.957902  0.966814  0.934033  0.977181  0.983774  1.02823  0.902339  1  
+sbs.gemFT.m11.ugain = 0.875844  0.988677  0.922818  0.984618  1  1.08931  1.03114  1.09965  1.13989  1.08447  
+sbs.gemFT.m12.vgain = 1  1.0971  1.03605  1.11832  1.03646  1.08374  1.10371  1.10834  1.06564  1.06456  1.17583  1  
+sbs.gemFT.m12.ugain = 1.02415  1  1.03164  0.994685  1.04716  1.20129  1.27135  1.38923  1.22509  1.3541  
+sbs.gemFT.m13.vgain = 1  1  0.994643  1.04471  1.39519  1.04271  1.00902  1.02858  1.48148  1.11734  1  1  
+sbs.gemFT.m13.ugain = 1  1.01938  0.959068  1.0308  1  1  1  1  1  1  
+
+# Module average gains relative to target ADC peak position of 4000
+sbs.gemFT.m0.modulegain = 0.858813
+sbs.gemFT.m1.modulegain = 0.878367
+sbs.gemFT.m2.modulegain = 0.923685
+sbs.gemFT.m3.modulegain = 0.89859
+sbs.gemFT.m4.modulegain = 0.982053
+sbs.gemFT.m5.modulegain = 1.03871
+sbs.gemFT.m6.modulegain = 1.13758
+sbs.gemFT.m7.modulegain = 1.15386
+sbs.gemFT.m8.modulegain = 0.981972
+sbs.gemFT.m9.modulegain = 1.10627
+sbs.gemFT.m10.modulegain = 1.34688
+sbs.gemFT.m11.modulegain = 1.0034
+sbs.gemFT.m12.modulegain = 0.898609
+sbs.gemFT.m13.modulegain = 0.957415
+
+
+---------[ 2025-04-13 18:06:00 ] # getting ready for zero-field running
+
+sbs.gemFT.useopticsconstraint = 0
+sbs.gemFT.multitracksearch = 0
+sbs.gemFT.usestriptimingcut = 0
+
+--------[ 2025-04-14 17:19:00 ] # done with zero-field, back to field-on running
+
+# turn on GEM strip timing cuts now
+
+sbs.gemFT.useopticsconstraint = 1
+sbs.gemFT.multitracksearch = 1
+sbs.gemFT.usestriptimingcut = 1
+
+# ###################### END TIME-DEPENDENT CLUSTERING PARAMETERS #############
+
+
+---------[ 2025-04-01 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1610.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1610.dat
+
+---------[ 2025-04-03 00:00:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run2022.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run2022.dat
+
+---------[ 2025-04-10 00:00:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run2373.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run2373.dat
+
+#sbs.gemFT.m0.position =               0               0               0
+#sbs.gemFT.m0.angle =               0               0               0
+#sbs.gemFT.m1.position =   -0.0008336496     0.001018079      0.06878698
+#sbs.gemFT.m1.angle =      0.02103172      0.07351981     -0.04104446
+#sbs.gemFT.m2.position =    4.358345e-05    -0.000463983       0.2032454
+#sbs.gemFT.m2.angle =      0.01991634    -0.004759987       0.2389661
+#sbs.gemFT.m3.position =      0.00135852     0.006116189        0.342399
+#sbs.gemFT.m3.angle =     -0.05940786       -0.100179      -0.1091786
+#sbs.gemFT.m4.position =     0.001460831    -0.001688749       0.4881087
+#sbs.gemFT.m4.angle =     -0.05403745    -0.005666608       0.2463039
+#sbs.gemFT.m5.position =     0.001423451     0.001153484       0.6243896
+#sbs.gemFT.m5.angle =      0.09106874     -0.07950782     -0.03454482
+#sbs.gemFT.m6.position =      -0.7703566     0.001161632       0.7667669
+#sbs.gemFT.m6.angle =     -0.04498925       -0.192106      -0.0496584
+#sbs.gemFT.m7.position =      -0.2585421    0.0006449532       0.7270895
+#sbs.gemFT.m7.angle =     -0.09400208     -0.09350986    -0.007079323
+#sbs.gemFT.m8.position =       0.2535343    -0.001932672       0.7676596
+#sbs.gemFT.m8.angle =       0.1536059     -0.03682355      0.03503232
+#sbs.gemFT.m9.position =       0.7643235   -0.0005873266       0.7235441
+#sbs.gemFT.m9.angle =       0.3848762        0.533978     -0.05171388
+#sbs.gemFT.m10.position =      -0.7710844     0.001735025       0.8917725
+#sbs.gemFT.m10.angle =      0.06818171       -0.395571    -0.003016754
+#sbs.gemFT.m11.position =      -0.2585492    0.0009531311       0.8509929
+#sbs.gemFT.m11.angle =       0.1116634        -0.31473       0.1398682
+#sbs.gemFT.m12.position =       0.2515058   -0.0001339646       0.8952383
+#sbs.gemFT.m12.angle =       0.1887156      0.05264619      0.02910754
+#sbs.gemFT.m13.position =       0.7632681   -0.0002482181       0.8484636
+#sbs.gemFT.m13.angle =       0.9247449        1.344922      0.02679168
+
+# commenting out this alignment for the moment as it conflicts with the straight-through alignment above:
+
+#sbs.gemFT.m0.position =               0               0               0
+#sbs.gemFT.m0.angle =               0               0               0
+#sbs.gemFT.m1.position =   -0.0009173771     0.001019598      0.06967993
+#sbs.gemFT.m1.angle =       0.1439534      0.06034109     -0.04328964
+#sbs.gemFT.m2.position =    -5.34083e-06   -0.0004822511       0.2054367
+#sbs.gemFT.m2.angle =      0.02895003     -0.05004185       0.2424414
+#sbs.gemFT.m3.position =     0.001346636     0.006121691       0.3430991
+#sbs.gemFT.m3.angle =      0.00924138      -0.1013992      -0.1043065
+#sbs.gemFT.m4.position =     0.001428236    -0.001682155       0.4879819
+#sbs.gemFT.m4.angle =      0.03990827    -0.001574395       0.2499458
+#sbs.gemFT.m5.position =     0.001426607     0.001130195         0.62326
+#sbs.gemFT.m5.angle =       0.1274139     -0.03013652     -0.03545656
+#sbs.gemFT.m6.position =      -0.7705369     0.001245864       0.7676737
+#sbs.gemFT.m6.angle =     -0.04799105      -0.4107818     -0.05799628
+#sbs.gemFT.m7.position =      -0.2585368    0.0006673735       0.7272509
+#sbs.gemFT.m7.angle =      -0.1991421      -0.2629867     -0.01120628
+#sbs.gemFT.m8.position =        0.253571    -0.001909652       0.7669486
+#sbs.gemFT.m8.angle =       0.2770992     -0.04107091      0.03427627
+#sbs.gemFT.m9.position =       0.7644662   -0.0005611277       0.7219584
+#sbs.gemFT.m9.angle =      0.06052417       0.8573126     -0.02862148
+#sbs.gemFT.m10.position =      -0.7711676     0.001819085       0.8913972
+#sbs.gemFT.m10.angle =     -0.06331675      -0.7761763     -0.02179226
+#sbs.gemFT.m11.position =      -0.2585314    0.0009681283       0.8514354
+#sbs.gemFT.m11.angle =     -0.05938334      -0.5431311        0.130554
+#sbs.gemFT.m12.position =       0.2515385   -0.0001544467       0.8945397
+#sbs.gemFT.m12.angle =       0.2676447     -0.06944926       0.0393532
+#sbs.gemFT.m13.position =       0.7636643   -0.0003147328       0.8441324
+#sbs.gemFT.m13.angle =       0.3840019        2.081788     -0.01874216
+
+---------[ 2025-04-15 10:20:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run2735.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run2735.dat
+
+---------[ 2025-04-16 16:16:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run2818.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run2818.dat
+
+
+#I'm going to put some timestamped entries here to handle runs taken without zero suppression: 
+
+---------[ 2025-04-22 14:00:00 ] # runs without pedestal subtraction, starting run 3175:
+sbs.gemFT.pedsub_online = 0
+
+---------[ 2025-04-22 19:55:00 ] # online pedestal subtraction again starting run 3183
+sbs.gemFT.pedsub_online = 1
+
+---------[ 2025-04-22 22:30:00 ] # run 3188:
+sbs.gemFT.pedsub_online = 0
+
+---------[ 2025-04-23 01:04:00 ] # back to online zero suppression starting with run 3192
+sbs.gemFT.pedsub_online = 1 
+
+---------[ 2025-04-17 15:00:00 ] 
+
+# start production data with analyzer in; realign to account for difference between field-on/field-off. First layer of front tracker was fixed in this alignment:
+
+
+# sbs.gemFT.m0.position =    -0.002192969   -0.0003452624     0.001014518
+# sbs.gemFT.m0.angle =       -1.299408        0.927087     -0.01436749
+# sbs.gemFT.m1.position =    -0.002105199    0.0008065975      0.07082575
+# sbs.gemFT.m1.angle =      -0.8516164        1.003855     -0.06197564
+# sbs.gemFT.m2.position =    0.0004498966   -0.0003978733       0.2101962
+# sbs.gemFT.m2.angle =       -1.073536       0.8227393       0.2178734
+# sbs.gemFT.m3.position =     0.003821412     0.006564228       0.3496131
+# sbs.gemFT.m3.angle =       -1.115179       0.7206547      -0.1359436
+# sbs.gemFT.m4.position =     0.005952468    -0.000938697       0.4961346
+# sbs.gemFT.m4.angle =      -0.8890403        0.812602        0.210324
+# sbs.gemFT.m5.position =     0.007839961     0.002209031       0.6340678
+# sbs.gemFT.m5.angle =       -0.973361       0.7324572     -0.08435505
+# sbs.gemFT.m6.position =      -0.7628112     0.003393371       0.7926007
+# sbs.gemFT.m6.angle =       -1.046356       0.2588486      -0.1187663
+# sbs.gemFT.m7.position =      -0.2510401     0.002238799       0.7445862
+# sbs.gemFT.m7.angle =       -1.357213       0.4032532     -0.06891023
+# sbs.gemFT.m8.position =       0.2619563   -0.0007499247       0.7767765
+# sbs.gemFT.m8.angle =      -0.7051154        0.339835     -0.02120029
+# sbs.gemFT.m9.position =        0.772186    0.0001901603       0.7266947
+# sbs.gemFT.m9.angle =      -0.6260749         1.23612     -0.04166257
+# sbs.gemFT.m10.position =      -0.7616801     0.004302916       0.9180964
+# sbs.gemFT.m10.angle =       -1.022046     -0.03887218     -0.08659501
+# sbs.gemFT.m11.position =      -0.2494009     0.002830733       0.8710197
+# sbs.gemFT.m11.angle =       -1.226832      0.06433925      0.06220228
+# sbs.gemFT.m12.position =       0.2616985     0.001268103       0.9066948
+# sbs.gemFT.m12.angle =       -0.751813       0.1560721      -0.0238541
+# sbs.gemFT.m13.position =       0.7730414    0.0006709589       0.8541257
+# sbs.gemFT.m13.angle =      -0.3963464        1.577535     -0.02565919
+
+#NAVV 9/22/26 - Results after improving internal and front-to-back alignments using LH2 data
+#Modules 0 and 11 were fixed in the final iteration 
+sbs.gemFT.m0.position =    -0.002192969   -0.0003452624     0.001014518
+sbs.gemFT.m0.angle =       -1.299408        0.927087     -0.01436749
+sbs.gemFT.m1.position =    -0.002259472    0.0008373434      0.07213433
+sbs.gemFT.m1.angle =       -1.087897        1.040758     -0.06193919
+sbs.gemFT.m2.position =    0.0003292298    -0.000338765       0.2099319
+sbs.gemFT.m2.angle =       -1.058379        1.108541       0.2173393
+sbs.gemFT.m3.position =     0.003614392     0.006638138       0.3489471
+sbs.gemFT.m3.angle =       -1.075343        1.212314      -0.1320195
+sbs.gemFT.m4.position =     0.005641447   -0.0008148783       0.4954855
+sbs.gemFT.m4.angle =      -0.9496195         1.47835       0.2154413
+sbs.gemFT.m5.position =     0.007507569     0.002351737       0.6321395
+sbs.gemFT.m5.angle =      -0.8818648        1.563196     -0.07610464
+sbs.gemFT.m6.position =      -0.7619157     0.003427874       0.7998824
+sbs.gemFT.m6.angle =      -0.8963751        1.447084      -0.1092929
+sbs.gemFT.m7.position =      -0.2507754     0.002352944       0.7424814
+sbs.gemFT.m7.angle =       -1.141504        1.462771     -0.06088154
+sbs.gemFT.m8.position =       0.2614162   -0.0005371953       0.7696726
+sbs.gemFT.m8.angle =      -0.8835115        1.440646     -0.01476966
+sbs.gemFT.m9.position =        0.771213    0.0003784747       0.7080575
+sbs.gemFT.m9.angle =      -0.4063061        2.508663     -0.06213124
+sbs.gemFT.m10.position =      -0.7605798     0.004370959       0.9256061
+sbs.gemFT.m10.angle =      -0.8925837        1.386314     -0.07903467
+sbs.gemFT.m11.position =      -0.2487789     0.002962527       0.8661082
+sbs.gemFT.m11.angle =       -1.086948        1.172176      0.06063274
+sbs.gemFT.m12.position =       0.2610646     0.001503211       0.8980379
+sbs.gemFT.m12.angle =       -1.083357        1.438599     -0.01684067
+sbs.gemFT.m13.position =       0.7718534     0.000907829       0.8325154
+sbs.gemFT.m13.angle =      -0.2622014        2.395276     -0.05038973
+
+
+---------[ 2025-05-05 16:30:00 ] # Start of GEP3.
+
+# these should probably be tighter later on:
+sbs.gemFT.xptar_min = -0.2
+sbs.gemFT.xptar_max = 0.22
+
+sbs.gemFT.yptar_min = -0.07
+sbs.gemFT.yptar_max = 0.08
+
+sbs.gemFT.ytar_min = -0.12
+sbs.gemFT.ytar_max = 0.07
+
+sbs.gemFT.pmin = 5.0
+sbs.gemFT.pmax = 8.5
+
+sbs.gemFT.xpfp_min = -0.32
+sbs.gemFT.xpfp_max = 0.12
+sbs.gemFT.ypfp_min = -0.07
+sbs.gemFT.ypfp_max = 0.07
+
+
+sbs.gemFT.useconstraint = 1
+sbs.gemFT.useopticsconstraint = 1
+sbs.gemFT.useslopeconstraint = 1
+sbs.gemFT.multitracksearch = 1
+sbs.gemFT.constraintwidth_theta = 0.02
+sbs.gemFT.constraintwidth_phi = 0.03
+
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run3523.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run3523.dat
+
+# ADR 05/15/1015 - Alignment done with the C-foil zero-field data.
+#sbs.gemFT.m0.position =     -0.00219297    -0.000345262      0.00101452
+#sbs.gemFT.m0.angle =       -1.299239       0.9271718      -0.0143656
+#sbs.gemFT.m1.position =    -0.002183667    0.0008298996      0.07352498
+#sbs.gemFT.m1.angle =        -1.25173       0.9048246     -0.06193852
+#sbs.gemFT.m2.position =    0.0005504134   -0.0003954236       0.2114166
+#sbs.gemFT.m2.angle =       -1.281136       0.8096431       0.2197113
+#sbs.gemFT.m3.position =     0.003827713     0.006556713       0.3505416
+#sbs.gemFT.m3.angle =       -1.088909       0.7166432      -0.1327161
+#sbs.gemFT.m4.position =     0.005847327   -0.0009349071       0.4974426
+#sbs.gemFT.m4.angle =       -1.001455       0.7808765       0.2149094
+#sbs.gemFT.m5.position =     0.007737537     0.002210702       0.6345626
+#sbs.gemFT.m5.angle =      -0.8699718       0.7098801      -0.0807945
+#sbs.gemFT.m6.position =      -0.7626978      0.00337103       0.7927764
+#sbs.gemFT.m6.angle =      -0.9858524     -0.02053263      -0.1155293
+#sbs.gemFT.m7.position =      -0.2509987     0.002234779       0.7457513
+#sbs.gemFT.m7.angle =       -1.311323       0.2261716     -0.06225881
+#sbs.gemFT.m8.position =       0.2619393   -0.0007479413       0.7778468
+#sbs.gemFT.m8.angle =      -0.4656286        0.698087     -0.02121591
+#sbs.gemFT.m9.position =       0.7723005    0.0001915626        0.727553
+#sbs.gemFT.m9.angle =      -0.6008874         1.15795     -0.04183991
+#sbs.gemFT.m10.position =      -0.7617779     0.004315554        0.918922
+#sbs.gemFT.m10.angle =      -0.9353633       -0.269773     -0.07893804
+#sbs.gemFT.m11.position =      -0.2493704     0.002847479       0.8725333
+#sbs.gemFT.m11.angle =       -1.175703      -0.1987966      0.06839085
+#sbs.gemFT.m12.position =       0.2616626     0.001297144       0.9074854
+#sbs.gemFT.m12.angle =       -0.271353       0.5942308     -0.02373584
+#sbs.gemFT.m13.position =       0.7731784    0.0006394542       0.8538343
+#sbs.gemFT.m13.angle =       -0.221331          1.7311     -0.04389869
+
+# # AJRP 5/21/2025 - new C foil internal alignment (not much difference with previous):
+# sbs.gemFT.m0.position =    -0.002236895   -0.0003641498     0.005023093
+# sbs.gemFT.m0.angle =       -1.258189       0.7996755    0.0005412109
+# sbs.gemFT.m1.position =    -0.002169534    0.0008273605      0.07784921
+# sbs.gemFT.m1.angle =       -1.351836       0.8040262      -0.0511277
+# sbs.gemFT.m2.position =    0.0005508111    -0.000405414       0.2147153
+# sbs.gemFT.m2.angle =       -1.303328       0.7305499       0.2290222
+# sbs.gemFT.m3.position =     0.003831191     0.006552392       0.3533852
+# sbs.gemFT.m3.angle =        -1.10794       0.6831443      -0.1249339
+# sbs.gemFT.m4.position =     0.005857544   -0.0009332395       0.4998596
+# sbs.gemFT.m4.angle =       -1.010452       0.7857165       0.2201688
+# sbs.gemFT.m5.position =     0.007756903     0.002214294       0.6364908
+# sbs.gemFT.m5.angle =      -0.8699978       0.7595489     -0.07704093
+# sbs.gemFT.m6.position =      -0.7626472     0.003355265       0.7949689
+# sbs.gemFT.m6.angle =      -0.9886132      -0.0726405      -0.1141179
+# sbs.gemFT.m7.position =      -0.2509537     0.002224828       0.7477752
+# sbs.gemFT.m7.angle =       -1.307987       0.2477452     -0.05869785
+# sbs.gemFT.m8.position =       0.2619625    -0.000732541       0.7792866
+# sbs.gemFT.m8.angle =       -0.363151       0.8887597     -0.01799294
+# sbs.gemFT.m9.position =        0.772379    0.0001934413       0.7283976
+# sbs.gemFT.m9.angle =      -0.5906835        1.177212     -0.04963096
+# sbs.gemFT.m10.position =      -0.7615791     0.004310186        0.920294
+# sbs.gemFT.m10.angle =      -0.9029836      -0.3368155     -0.07853411
+# sbs.gemFT.m11.position =      -0.2493087     0.002841845       0.8742801
+# sbs.gemFT.m11.angle =       -1.149593      -0.1725326      0.07218308
+# sbs.gemFT.m12.position =       0.2616862     0.001305409       0.9084051
+# sbs.gemFT.m12.angle =     -0.07055208       0.8699576     -0.02315095
+# sbs.gemFT.m13.position =       0.7732667     0.000599356       0.8534869
+# sbs.gemFT.m13.angle =      -0.1796167        1.814057      -0.0587588
+
+#NAVV 9/22/26 - Results after improving internal and front-to-back alignments using LH2 data
+#Modules 0 and 11 were fixed in the final iteration 
+sbs.gemFT.m0.position =    -0.002236895   -0.0003641498     0.005023093
+sbs.gemFT.m0.angle =       -1.258189       0.7996755    0.0005412109
+sbs.gemFT.m1.position =    -0.002312811    0.0008035131       0.0766928
+sbs.gemFT.m1.angle =       -1.026565        0.830174      -0.0498342
+sbs.gemFT.m2.position =    0.0001861867   -0.0004383173       0.2159745
+sbs.gemFT.m2.angle =      -0.9050539       0.6848294       0.2297963
+sbs.gemFT.m3.position =     0.003366788     0.006524413       0.3565179
+sbs.gemFT.m3.angle =      -0.8337954       0.6165563       -0.122382
+sbs.gemFT.m4.position =     0.005227567   -0.0009422147       0.5043733
+sbs.gemFT.m4.angle =      -0.6496713       0.7299756       0.2264738
+sbs.gemFT.m5.position =     0.007019584     0.002178753       0.6425546
+sbs.gemFT.m5.angle =       -0.509667        0.668755      -0.0685445
+sbs.gemFT.m6.position =      -0.7626848     0.003175812       0.7977505
+sbs.gemFT.m6.angle =      -0.4496655       0.3107975      -0.1085964
+sbs.gemFT.m7.position =      -0.2516291     0.002091442       0.7515619
+sbs.gemFT.m7.angle =      -0.7855476       0.5648415     -0.04754576
+sbs.gemFT.m8.position =       0.2609422   -0.0007459039       0.7871867
+sbs.gemFT.m8.angle =      -0.4313468        0.350618    -0.005189584
+sbs.gemFT.m9.position =       0.7706534    0.0002353697       0.7261376
+sbs.gemFT.m9.angle =        1.048237        3.167511     -0.05925801
+sbs.gemFT.m10.position =       -0.761814     0.004027877       0.9246911
+sbs.gemFT.m10.angle =      -0.3593783      0.01518327      -0.0789242
+sbs.gemFT.m11.position =      -0.2501582     0.002672635       0.8789952
+sbs.gemFT.m11.angle =      -0.5761503       0.1727349      0.08781254
+sbs.gemFT.m12.position =       0.2605297     0.001279348       0.9173505
+sbs.gemFT.m12.angle =      -0.5021772       0.1661281    -0.006245362
+sbs.gemFT.m13.position =        0.771501    0.0007293854       0.8580268
+sbs.gemFT.m13.angle =        1.593745        1.999554     -0.04623353
+
+
+sbs.gemFT.filterflag1D = -1
+sbs.gemFT.filterflag2D = -1
+
+#JTM-New Gain Coefficinets for start of Kin3 (from 5/9 optics data)
+#Module internal relative gains by APV card: 
+sbs.gemFT.m0.vgain = 1  1  1  1  1.24323  1.29883  1.22117  1.29691  1.30775  1.2498  1.17983  1.17267  1.26873  1.32352  1.19916  1.29791  1.23799  1.28195  1.29243  1.31889  1.46842  1.28206  1.22019  1.11412  1  1  1  
+sbs.gemFT.m0.ugain = 1  1  1  1.07036  0.981957  0.99765  1  1.1483  0.99841  1.0112  1.01738  1.1118  1.01838  1.04414  1.04345  2.43026  1.72488  2.88622  1.1711  1.35777  1.30601  1.38841  1.21271  1.24567  1.28015  1.08084  1.24027  1  1  1  1  
+sbs.gemFT.m1.vgain = 1  1  1  1.12389  1.1797  1.26449  1.19861  1.23021  1.44721  1.22254  1.10002  1.05764  1.07166  1.19538  1.25395  1  1  1  1  1  1  1  1  1  1  1  1  
+sbs.gemFT.m1.ugain = 1  1  1  1.01589  0.950141  1  1.00371  0.946844  1.03853  0.984133  1.02022  0.95624  0.946081  0.988171  1.04911  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  
+sbs.gemFT.m2.vgain = 1  1  1  1.28477  1.38952  1.28167  1.36664  1.38579  1.44914  1.33478  1.27843  1.30786  1.35874  1.24233  1.22881  1.0899  1.16509  1.14314  1.10827  1.08717  1.12866  1.08035  1.349  1.11307  1.12628  1.1458  1.05036  1  1  1  
+sbs.gemFT.m2.ugain = 1  1  1  1  1.13926  1.00753  1.15799  1.11159  1.19575  1.16183  1.24752  1.09343  1.11282  1.17479  1.17516  1.02619  1.00636  1  0.958383  1.01364  1.00405  0.989591  0.901475  0.967606  0.890938  0.863663  0.899552  1  1  1  
+sbs.gemFT.m3.vgain = 1  1  1  1.178  1.14788  1.14876  1.16821  1.16047  1.03715  1.19385  1.11414  1.07017  1.09855  1.06723  1.12568  1  1.23854  1.19144  1.84592  1.47502  1.45844  1.4347  1.12225  1.2392  1.13943  1.16143  1.09183  1  1  1  
+sbs.gemFT.m3.ugain = 1  1  1  1  0.945667  1.03917  1.07447  1  1.04868  0.984014  1.02919  1.0911  0.993344  1.00844  1.05153  1.13501  1.02085  1.07753  1.03206  1.07918  1.1108  0.991817  0.981351  0.994274  0.978398  0.99471  1.0012  0.876187  1  1  
+sbs.gemFT.m4.vgain = 1  1  1.04247  1.06841  1.21008  1.12206  1.07524  1.07595  1.53026  1.08658  1.05499  0.969388  1.10506  1.05185  1.00438  1.00307  0.904884  0.926585  0.921822  0.92613  0.856354  0.936999  0.903635  0.916817  0.952438  0.862191  1.01929  1  1  1  
+sbs.gemFT.m4.ugain = 1  1  1  1.04467  1.01422  0.966591  1  1.03797  1.08142  1.03439  0.968035  1.01768  1.01827  1.01009  1.04664  0.938093  0.970758  0.922574  1.01468  0.864739  0.856446  0.920097  0.922031  0.917025  0.909245  0.911601  0.848679  0.782722  1  1  
+sbs.gemFT.m5.vgain = 1  1  1.06612  1.13765  1.24809  1.21546  1.68667  1.28706  1.29869  1.17062  1.18834  1.17702  1.25684  1.11113  1.15995  1.16843  1.17204  1.15824  1.09874  1.04658  1.0498  1.01971  2.16742  1.07658  1.00899  1.01162  1.13107  1.00155  1  1  
+sbs.gemFT.m5.ugain = 1  1  1  1  0.985701  0.932115  0.956604  0.964948  0.974983  0.978958  0.9706  0.931417  0.998821  0.943846  0.97047  1.07568  1.05307  1.03644  1  0.925821  1.00467  1.04956  0.939385  0.970079  0.934972  0.90664  0.939178  0.834573  0.73429  1  
+sbs.gemFT.m6.vgain = 1  1  0.726045  0.727818  0.773244  0.756826  0.716953  0.726004  0.737149  0.718305  1  1  
+sbs.gemFT.m6.ugain = 1  1  1  1  1  1.02346  1  0.970825  1.06826  0.990002  
+sbs.gemFT.m7.vgain = 1  0.77  0.729139  0.728278  0.721181  0.622437  0.647773  0.607527  0.613511  0.670408  0.689487  1  
+sbs.gemFT.m7.ugain = 0.985628  1.03754  0.964111  1.02797  0.998045  1.12635  0.944005  1.1501  1.06736  1  
+sbs.gemFT.m8.vgain = 1  1.05146  0.949821  0.993118  1.10139  1.00269  1.0252  0.979678  1.03099  1.03981  1.01943  1  
+sbs.gemFT.m8.ugain = 0.867491  1.03537  0.987906  0.906054  0.910279  1.20352  1.33023  1.2794  1.06084  1  
+sbs.gemFT.m9.vgain = 1  0.8486  0.824482  0.783019  0.723397  0.78389  0.755527  0.759642  0.727562  0.654902  1  1  
+sbs.gemFT.m9.ugain = 1  1.03921  0.987014  1  1  1  1  1  1  1  
+sbs.gemFT.m10.vgain = 1  0.472516  0.449312  0.43765  0.424843  0.40099  0.363  0.407741  0.397761  0.417208  1  1  
+sbs.gemFT.m10.ugain = 1  1  1  1  0.676455  0.904779  1  1.13077  0.868704  0.566445  
+sbs.gemFT.m11.vgain = 1  0.99854  1.04296  0.914893  0.946053  0.9611  0.911045  0.963897  0.969292  1.00991  0.906899  1  
+sbs.gemFT.m11.ugain = 0.884249  0.991668  0.93205  0.971942  1  1.08631  1.00814  1.09832  1.16684  1.10647  
+sbs.gemFT.m12.vgain = 1  0.78256  0.74007  0.818062  0.748938  0.786221  0.813293  0.806332  0.781506  0.78436  0.894369  1  
+sbs.gemFT.m12.ugain = 0.768893  0.732794  0.754223  0.731154  0.783596  0.913318  0.973762  1.04012  0.924858  1  
+sbs.gemFT.m13.vgain = 1  1.07685  0.978319  1.01369  1.33103  0.988786  0.984972  0.967096  1.60069  1.11274  1  1  
+sbs.gemFT.m13.ugain = 1  1.02636  0.91765  1  1  1  1  1  1  1  
+
+# Module average gains relative to target ADC peak position of 4000
+sbs.gemFT.m0.modulegain = 0.803001
+sbs.gemFT.m1.modulegain = 0.90784
+sbs.gemFT.m2.modulegain = 0.863634
+sbs.gemFT.m3.modulegain = 0.887635
+sbs.gemFT.m4.modulegain = 0.99851
+sbs.gemFT.m5.modulegain = 0.909284
+sbs.gemFT.m6.modulegain = 1.14396
+sbs.gemFT.m7.modulegain = 1.17404
+sbs.gemFT.m8.modulegain = 0.97015
+sbs.gemFT.m9.modulegain = 1.12008
+sbs.gemFT.m10.modulegain = 1.49183
+sbs.gemFT.m11.modulegain = 1.00461
+sbs.gemFT.m12.modulegain = 1.19608
+sbs.gemFT.m13.modulegain = 0.969645
+
+
+
+---------[ 2025-05-09 10:30:00 ] # Start C-foil Zero field runs.
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run3572.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run3572.dat
+
+sbs.gemFT.useopticsconstraint = 0
+sbs.gemFT.useelasticconstraint = 0
+sbs.gemFT.useslopeconstraint = 0
+sbs.gemFT.multitracksearch = 0
+sbs.gemFT.usestriptimingcut = 0
+sbs.gemFT.dump_geometry_info = 1
+
+sbs.gemFT.minhitsontrack = 4
+#   chi2 cut for nhits = 4    5    6    7    8
+sbs.gemFT.trackchi2cut = 10.0 20.0 30.0 40.0 50.0 
+
+
+---------[ 2025-05-09 20:00:00 ] # Begin production running on LH2.
+sbs.gemFT.useopticsconstraint = 1
+sbs.gemFT.useslopeconstraint = 1
+sbs.gemFT.multitracksearch = 1
+sbs.gemFT.usestriptimingcut = 1
+sbs.gemFT.useelasticconstraint = 1
+sbs.gemFT.dump_geometry_info = 0
+
+sbs.gemFT.minhitsontrack = 4
+#   chi2 cut for nhits = 4    5    6    7    8
+sbs.gemFT.trackchi2cut = 10.0 20.0 30.0 40.0 50.0 
+
+---------[ 2025-05-23 17:00:00 ] # Start C-foil zero-field runs taken after GEM work in Hall. FPP L0 L1 and L4 L5 were pulled out.
+sbs.gemFT.useopticsconstraint = 0
+sbs.gemFT.useslopeconstraint = 0
+sbs.gemFT.useelasticconstraint = 0
+sbs.gemFT.multitracksearch = 0
+sbs.gemFT.usestriptimingcut = 0
+sbs.gemFT.dump_geometry_info = 1
+
+sbs.gemFT.trackchi2cut = 30.0
+
+# ADR 6/4/2025 - new C foil internal alignment after the Hall work in 5/23/2025. FT was not moved and results are not much different to the previous alignment:
+# sbs.gemFT.m0.position =      -0.0022369     -0.00036415      0.00502309
+# sbs.gemFT.m0.angle =       -1.257946       0.7992647    0.0005411054
+# sbs.gemFT.m1.position =    -0.002265194    0.0007917635      0.07786703
+# sbs.gemFT.m1.angle =       -1.426366       0.8320934     -0.04433291
+# sbs.gemFT.m2.position =    0.0005446825   -0.0003887713        0.215573
+# sbs.gemFT.m2.angle =       -1.390684       0.7070758       0.2329765
+# sbs.gemFT.m3.position =     0.003801107     0.006557074       0.3545363
+# sbs.gemFT.m3.angle =       -1.199645        0.657682      -0.1225277
+# sbs.gemFT.m4.position =     0.005818726   -0.0009219661       0.5010956
+# sbs.gemFT.m4.angle =       -1.069212       0.7700268       0.2237405
+# sbs.gemFT.m5.position =     0.007708947     0.002225421       0.6379182
+# sbs.gemFT.m5.angle =      -0.8773407       0.7423647     -0.07278594
+# sbs.gemFT.m6.position =       -0.762689     0.003306672       0.7965693
+# sbs.gemFT.m6.angle =      -0.9476139     -0.05164289      -0.1020087
+# sbs.gemFT.m7.position =      -0.2509634      0.00220726       0.7489353
+# sbs.gemFT.m7.angle =        -1.28469       0.1881764     -0.05187122
+# sbs.gemFT.m8.position =       0.2618947   -0.0007084945       0.7804896
+# sbs.gemFT.m8.angle =      -0.3826047       0.8674216     -0.01469593
+# sbs.gemFT.m9.position =       0.7723072    0.0002291313       0.7300039
+# sbs.gemFT.m9.angle =      -0.5272954        1.156329     -0.05911903
+# sbs.gemFT.m10.position =      -0.7615725     0.004237384       0.9216153
+# sbs.gemFT.m10.angle =      -0.8776847      -0.4339881     -0.07133304
+# sbs.gemFT.m11.position =      -0.2492617     0.002797322       0.8750507
+# sbs.gemFT.m11.angle =       -1.065186      -0.1956649      0.08009959
+# sbs.gemFT.m12.position =       0.2616163     0.001318415       0.9096996
+# sbs.gemFT.m12.angle =      -0.1481864       0.8391139     -0.02066269
+# sbs.gemFT.m13.position =       0.7732439    0.0006903553       0.8551133
+# sbs.gemFT.m13.angle =        -0.21104        1.855113     -0.05117343
+
+#NAVV 9/22/26 - Results after improving internal and front-to-back alignments using Field-On Multifoil data
+#Modules 0 and 11 were fixed in the final iteration 
+sbs.gemFT.m0.position =    -0.002236895   -0.0003641498     0.005023093
+sbs.gemFT.m0.angle =       -1.258189       0.7996755    0.0005412108
+sbs.gemFT.m1.position =    -0.002152164    0.0008430801      0.07527431
+sbs.gemFT.m1.angle =       -1.103425       0.8490982     -0.05072091
+sbs.gemFT.m2.position =    0.0004193737   -0.0003972315       0.2127724
+sbs.gemFT.m2.angle =      -0.9468778       0.8202636       0.2258865
+sbs.gemFT.m3.position =     0.003489682     0.006509067       0.3544586
+sbs.gemFT.m3.angle =       -0.872432       0.6416999      -0.1194654
+sbs.gemFT.m4.position =     0.005352347   -0.0009648039       0.5026057
+sbs.gemFT.m4.angle =      -0.7196974       0.6630703       0.2334873
+sbs.gemFT.m5.position =     0.007082912     0.002155632       0.6416877
+sbs.gemFT.m5.angle =      -0.5113997       0.4967968     -0.05659363
+sbs.gemFT.m6.position =      -0.7630676     0.002947184        0.796006
+sbs.gemFT.m6.angle =      -0.5301729       0.2283721      -0.1029639
+sbs.gemFT.m7.position =      -0.2515161     0.001986559       0.7490421
+sbs.gemFT.m7.angle =      -0.6382524       0.4630368     -0.03550577
+sbs.gemFT.m8.position =       0.2610428   -0.0007424567       0.7852948
+sbs.gemFT.m8.angle =      -0.2293116       0.4414804        0.008546
+sbs.gemFT.m9.position =       0.7711723    0.0003425486       0.7353773
+sbs.gemFT.m9.angle =      -0.1870915       0.7483137      -0.0371406
+sbs.gemFT.m10.position =      -0.7620791     0.003763018       0.9222344
+sbs.gemFT.m10.angle =      -0.4181043      -0.0907841     -0.06139243
+sbs.gemFT.m11.position =      -0.2499013     0.002507561       0.8751217
+sbs.gemFT.m11.angle =      -0.4404326       0.1912368       0.1020832
+sbs.gemFT.m12.position =       0.2605992      0.00127218        0.915915
+sbs.gemFT.m12.angle =      -0.0628412       0.4138852      0.01023819
+sbs.gemFT.m13.position =       0.7718401    0.0008123735       0.8634469
+sbs.gemFT.m13.angle =     0.003270403       0.8539595     -0.01892496
+
+
+---------[ 2025-05-23 20:00:00 ] # Begin production running on LH2 with field ON.
+sbs.gemFT.useopticsconstraint = 1
+sbs.gemFT.useslopeconstraint = 1
+sbs.gemFT.multitracksearch = 1
+sbs.gemFT.usestriptimingcut = 1
+sbs.gemFT.useelasticconstraint = 1
+sbs.gemFT.dump_geometry_info = 0
+
+#   chi2 cut for nhits = 4    5    6    7    8
+sbs.gemFT.trackchi2cut = 10.0 20.0 30.0 40.0 50.0
+
+---------[ 2025-05-11 08:30:00 ]
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run3611.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run3611.dat
+
+---------[ 2025-05-12 11:30:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run3647.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run3647.dat
+
+---------[ 2025-05-14 12:00:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run3710.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run3710.dat
+
+---------[ 2025-05-16 10:00:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run3760.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run3760.dat
+
+#JTM-Backplane replacement, new gain coefficients generated by 5/23 optics data
+#Module internal relative gains by APV card: 
+sbs.gemFT.m0.vgain = 1  1  1  0.85319  0.936288  0.971334  0.92302  0.977551  0.987735  0.946041  0.881815  0.859693  0.979298  0.989882  0.896706  0.969092  0.903797  0.933271  0.933071  0.977156  1.04301  0.916585  0.854343  0.793406  0.864777  1  1  
+sbs.gemFT.m0.ugain = 1  1  1  0.838091  0.778752  0.76868  0.772362  0.914003  0.768494  0.782866  0.790879  0.842929  0.774008  0.777429  0.77971  1.76294  1.39255  2.02438  0.866726  1  0.948282  1.14178  0.990857  0.985417  0.990356  0.755081  0.885249  0.878704  1  1  1  
+sbs.gemFT.m1.vgain = 1  1  1  1.25594  1.34743  1.41554  1.37488  1.4226  1.79883  1.45788  1.29196  1.25513  1.31139  1.49554  1.43164  1.3579  1.43462  1.31875  1.427  1.38384  1.53166  1.31964  1.15846  0.941171  1.0439  1  1  
+sbs.gemFT.m1.ugain = 1  1  1  1.28113  1.15597  1.2381  1.24405  1.1974  1.20357  1.14869  1.19775  1.19972  1.11749  1.18981  1.39802  1.16375  1.16057  2.05337  1.04393  1  0.981195  1.09534  1.1178  1.10251  1.05321  1.04422  1.0877  1.04744  0.9723  1  1  
+sbs.gemFT.m2.vgain = 1  1  1  1.14843  1.2163  1.12428  1.19509  1.19112  1.27273  1.17809  1.10944  1.14172  1.18926  1.0956  1.07511  0.975116  1.03562  1.01922  1.02073  1.02048  1.01339  1.00723  1.18064  0.993713  1.00401  0.990507  0.928869  0.9429  1  1  
+sbs.gemFT.m2.ugain = 1  1  1  0.99796  1.00024  0.867837  0.992812  0.956507  1.02938  0.985692  1.05292  0.937487  0.948124  0.998174  1  0.951401  0.929812  0.923276  0.883721  0.922595  0.923938  0.909281  0.822214  0.875246  0.834422  0.7899  0.826594  0.764057  1  1  
+sbs.gemFT.m3.vgain = 1  1  1.09172  1.09185  1.08124  1.08937  1.11008  1.1043  0.985879  1.13069  1.04198  1.0204  1.04334  0.998189  1.0669  1  1.1321  1.11091  1.73324  1.38536  1.34543  1.33472  1.05613  1.1361  1.07955  1.08622  0.992711  1.14568  1  1  
+sbs.gemFT.m3.ugain = 1  1  1  1  0.906322  0.970016  0.996151  0.93558  0.983557  0.925674  0.961344  1.05627  0.919247  0.933146  0.971411  1.02918  0.94162  0.998446  0.960461  1  1.02537  0.928275  0.917087  0.922449  0.915988  0.92846  0.929419  0.807685  0.70511  1  
+sbs.gemFT.m4.vgain = 1  1  1.0014  1.05296  1.18941  1.10854  1.05889  1.05804  1.51341  1.04514  1.04317  0.947698  1.06331  1.05105  0.995622  0.985744  0.919739  0.942606  0.916477  0.920396  0.863606  0.936506  0.897707  0.917365  0.937998  0.891653  1.01846  0.849037  0.84877  1  
+sbs.gemFT.m4.ugain = 1  1  0.934461  1.02809  1.05369  0.978918  0.998114  1.03621  1.06042  1.00594  0.962121  1.02444  0.970806  0.974076  1  0.96505  0.991622  0.914354  1.04826  0.880588  0.860365  0.9301  0.941518  0.92913  0.907779  0.93143  0.875602  0.804008  0.747965  1  
+sbs.gemFT.m5.vgain = 1  1  1.11439  1.19039  1.25853  1.2853  1.87096  1.34923  1.35938  1.23373  1.27936  1.28046  1.34805  1.24231  1.26826  1.25684  1.25251  1.2507  1.18183  1.13352  1.14081  1.11655  2.3309  1.17427  1.10836  1.15587  1.24257  1.11306  0.924423  1  
+sbs.gemFT.m5.ugain = 1  1  0.99089  1.39333  1.11839  1.04681  1.04435  1.06048  1.10382  1.09326  1.10367  1.07517  1.14872  1.0591  1.10431  1.17818  1.1622  1.10934  1.07384  1  1.08787  1.16425  1.02706  1.05494  1.01592  1.0104  1.02559  0.931394  0.823488  1  
+sbs.gemFT.m6.vgain = 1  0.717036  0.722158  0.707406  0.727602  0.733209  0.69118  0.67618  0.734322  0.702094  0.71614  1  
+sbs.gemFT.m6.ugain = 1  1  1  1  0.926163  0.960771  0.968965  0.928404  1  0.933826  
+sbs.gemFT.m7.vgain = 1  0.805804  0.766789  0.744527  0.731506  0.649137  0.683018  0.635651  0.644165  0.691021  0.671867  1  
+sbs.gemFT.m7.ugain = 1.03953  1.07231  0.977672  1.05289  1.02443  1.14106  0.965381  1.16518  1.06812  1  
+sbs.gemFT.m8.vgain = 1  1.01737  0.952278  0.980902  1.04659  0.983238  0.997809  0.961136  1.00546  1.01661  1.02721  1  
+sbs.gemFT.m8.ugain = 0.833997  1  0.974531  0.870425  0.870194  1.16969  1.26921  1.24792  1.0391  0.982515  
+sbs.gemFT.m9.vgain = 1  0.859904  0.842194  0.819014  0.769209  0.811358  0.799821  0.785529  0.764768  0.696658  0.72158  1  
+sbs.gemFT.m9.ugain = 1  1.03913  1.01359  1.10022  1  1  1  1  1  1  
+sbs.gemFT.m10.vgain = 1  0.446311  0.434856  0.418072  0.398279  0.382121  0.355952  0.389491  0.364674  0.399454  0.37995  1  
+sbs.gemFT.m10.ugain = 1  1  1  0.6457  0.635666  0.824256  0.913259  1  0.761049  0.587407  
+sbs.gemFT.m11.vgain = 1  1.02411  1.06411  0.930952  0.976095  1.00504  0.940488  0.982062  0.989555  1.04212  0.9171  1  
+sbs.gemFT.m11.ugain = 0.901142  1.0191  0.943534  1  1.02985  1.11716  1.05644  1.14803  1.19656  1.14045  
+sbs.gemFT.m12.vgain = 1  0.766894  0.738509  0.819886  0.749976  0.787122  0.806625  0.805037  0.766667  0.768088  0.853843  1  
+sbs.gemFT.m12.ugain = 0.758719  0.73276  0.755836  0.727554  0.768966  0.904099  0.966501  1.02836  0.918933  1  
+sbs.gemFT.m13.vgain = 1  1.03869  0.974306  1.02395  1.37563  1.00756  0.987736  0.984661  1.61733  1.10438  1.24433  1  
+sbs.gemFT.m13.ugain = 1  1.04049  0.94413  1.03827  1  1  1  1  1  1  
+
+# Module average gains relative to target ADC peak position of 4000
+sbs.gemFT.m0.modulegain = 1.05516
+sbs.gemFT.m1.modulegain = 0.778623
+sbs.gemFT.m2.modulegain = 0.98785
+sbs.gemFT.m3.modulegain = 0.938681
+sbs.gemFT.m4.modulegain = 1.02
+sbs.gemFT.m5.modulegain = 0.836774
+sbs.gemFT.m6.modulegain = 1.19508
+sbs.gemFT.m7.modulegain = 1.14926
+sbs.gemFT.m8.modulegain = 0.998048
+sbs.gemFT.m9.modulegain = 1.10689
+sbs.gemFT.m10.modulegain = 1.59766
+sbs.gemFT.m11.modulegain = 0.979486
+sbs.gemFT.m12.modulegain = 1.22193
+sbs.gemFT.m13.modulegain = 0.954193
+
+
+---------[ 2025-05-21 16:00:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run3977.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run3977.dat
+
+---------[ 2025-05-22 15:00:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run4012.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run4012.dat
+
+---------[ 2025-05-22 17:30:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run4020.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run4020.dat
+
+---------[ 2025-05-28 16:00:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run4138.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run4138.dat
+
+---------[ 2025-06-18 16:50:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run4740.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run4740.dat
+
+---------[ 2025-06-18 20:30:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run4739.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run4739.dat
+
+#JTM - Changes in common-mode basline (Coefficients from 7/11 optics data)
+#Module internal relative gains by APV card: 
+sbs.gemFT.m0.vgain = 1  1  1  1.01392  1.17438  1.21296  1.14851  1.19632  1.21645  1.15341  1.12413  1.08079  1.19294  1.18125  1.09123  1.16764  1.11369  1.13917  1.14668  1.19848  1.28536  1.12986  1.05003  0.964203  0.99869  1  1  
+sbs.gemFT.m0.ugain = 1  1  1.09195  1.07009  1.00296  0.99629  1  1.12935  1  1.00434  1.04184  1.05281  0.996546  0.988652  0.995078  2.24901  1.67503  2.55232  1.08349  1.22301  1.17777  1.38262  1.21675  1.23585  1.25082  0.949191  1.08798  1.09223  1.20241  1  1  
+sbs.gemFT.m1.vgain = 1  1  0.907295  1.02388  1.12522  1.17397  1.13658  1.15583  1.45615  1.16827  1.04932  1.02877  1.08394  1.22208  1.17226  1.11268  1.19759  1.11738  1.21806  1.18227  1.29393  1.13891  1.0145  0.844623  0.866775  1  1  
+sbs.gemFT.m1.ugain = 1  1  1.00747  1.05205  0.973636  1.04622  1.03348  1  1.00552  0.963961  0.986815  0.991559  0.947383  0.986287  1.15708  0.962567  0.978367  0.955348  0.888385  0.855611  0.852896  0.930691  0.963627  0.967445  0.937746  0.930345  0.964326  0.948501  0.950539  1  1  
+sbs.gemFT.m2.vgain = 1  1  1.18851  1.22035  1.32249  1.19923  1.2796  1.23449  1.3307  1.24689  1.16175  1.15165  1.23348  1.12808  1.09424  0.99978  1.05189  1.02983  1.03433  1.01693  1.03462  1.00406  1.22028  1.03563  1.03579  1.03179  0.973218  0.940635  1  1  
+sbs.gemFT.m2.ugain = 1  1  1.036  1.04835  1.02233  0.924329  1.0228  1.00477  1.03185  1  1.04531  0.954577  0.967265  1.0004  1.0093  0.964467  0.949982  0.950236  0.914662  0.951471  0.941469  0.95348  0.867479  0.920333  0.886131  0.834852  0.868775  0.794898  0.735273  1  
+sbs.gemFT.m3.vgain = 1  1  1.06135  1.1148  1.10359  1.1222  1.14258  1.12161  0.99968  1.1482  1.06275  1.03448  1.04652  1.01568  1.07086  1  1.13127  1.09004  1.82614  1.48005  1.43657  1.38107  1.09518  1.19125  1.13593  1.14283  1.04391  1.20485  1.05866  1  
+sbs.gemFT.m3.ugain = 1  1  1.14753  1  0.938011  0.988421  1.00854  0.957206  1  0.942861  0.964667  1.02914  0.93493  0.954105  0.986732  1.04433  0.967026  1.02275  1.00102  1.04538  1.06984  0.962145  0.968486  0.973114  0.969661  0.991179  0.984689  0.849481  0.775777  1  
+sbs.gemFT.m4.vgain = 1  1  1.00115  1.02927  1.19563  1.12398  1.07215  1.0735  1.18411  1.0676  1.03209  0.95798  1.07205  1.05136  0.989835  0.973876  0.930907  0.960528  0.936526  0.930457  0.896018  0.937047  0.936772  0.941292  0.947326  0.91738  1  0.83902  0.78012  1  
+sbs.gemFT.m4.ugain = 1  1  0.919414  1.01406  1.01014  0.951807  0.973867  1.00172  1.03884  1.00077  0.929531  1  0.924013  0.932011  0.961395  0.922398  0.943683  0.902225  1.0253  0.853391  0.845114  0.901155  0.903471  0.88814  0.876598  0.919704  0.851557  0.7874  0.754409  1  
+sbs.gemFT.m5.vgain = 1  1  1.0374  1.12148  1.2244  1.21065  1.73236  1.22825  1.2294  1.13732  1.12692  1.12347  1.21316  1.12016  1.12657  1.12777  1.13392  1.13711  1.09065  1.05159  1.05272  1.03245  2.15446  1.07461  1.0236  1.06656  1.15769  1.00778  0.850077  0.885949  
+sbs.gemFT.m5.ugain = 1  1  0.955787  1.41305  1.09666  1.0284  1.01353  1  0.9811  1.00266  0.979037  0.946973  1.00162  0.925934  0.970292  1.03405  1.02592  0.987709  0.952786  0.91011  0.975995  1.0437  0.962823  0.969822  0.949056  0.952005  0.96526  0.868911  0.772627  1  
+sbs.gemFT.m6.vgain = 1  0.82336  0.800514  0.791993  0.81797  0.815379  0.78514  0.771575  0.818083  0.786181  0.791488  1  
+sbs.gemFT.m6.ugain = 1  1  1  0.965195  0.980731  1.02782  1.03391  0.992676  1.07913  1  
+sbs.gemFT.m7.vgain = 1  0.847922  0.804511  0.777163  0.76799  0.683675  0.716586  0.674675  0.681878  0.730447  0.705456  1  
+sbs.gemFT.m7.ugain = 0.974926  0.995355  0.91885  0.972954  0.961887  1.07726  0.925686  1.13133  1.04201  1  
+sbs.gemFT.m8.vgain = 1  0.952208  0.917259  0.944101  0.979739  0.935056  0.951067  0.924176  0.953542  0.964385  0.958102  1  
+sbs.gemFT.m8.ugain = 0.785453  0.893073  0.858077  0.807739  0.800847  1.10155  1.21325  1.17688  1  0.944524  
+sbs.gemFT.m9.vgain = 1  0.902643  0.888129  0.849847  0.817566  0.86255  0.850724  0.839811  0.834508  0.789125  0.811453  1  
+sbs.gemFT.m9.ugain = 1  1.02829  0.997796  0.988184  1  1  1  1  1  1  
+sbs.gemFT.m10.vgain = 1  0.602938  0.578662  0.560434  0.543365  0.519366  0.492987  0.52593  0.491621  0.525354  0.498942  1  
+sbs.gemFT.m10.ugain = 1  1  1  0.667765  0.693252  0.89027  1  1.0781  0.836371  0.649769  
+sbs.gemFT.m11.vgain = 1  1.04691  1.08359  0.938261  0.986675  1.00975  0.951308  1.00876  1.01802  1.0624  0.958629  1  
+sbs.gemFT.m11.ugain = 0.879568  0.992682  0.927716  0.97356  1  1.10018  1.04833  1.14611  1.19477  1.13976  
+sbs.gemFT.m12.vgain = 1  0.769456  0.74294  0.810711  0.750028  0.773046  0.79733  0.797713  0.762662  0.77053  0.854022  1  
+sbs.gemFT.m12.ugain = 0.717336  0.702925  0.723608  0.705314  0.735209  0.885061  0.953532  1.01851  0.91456  1  
+sbs.gemFT.m13.vgain = 1  1.11954  1.04657  1.09004  1.5204  1.06075  1.04276  1.0249  1.66703  1.14862  1.29319  1  
+sbs.gemFT.m13.ugain = 1  1.04193  0.956732  1.08014  1  1  1  1  1  1  
+
+# Module average gains relative to target ADC peak position of 4000
+sbs.gemFT.m0.modulegain = 0.852249
+sbs.gemFT.m1.modulegain = 0.938727
+sbs.gemFT.m2.modulegain = 0.951617
+sbs.gemFT.m3.modulegain = 0.93005
+sbs.gemFT.m4.modulegain = 1.02516
+sbs.gemFT.m5.modulegain = 0.922058
+sbs.gemFT.m6.modulegain = 1.0969
+sbs.gemFT.m7.modulegain = 1.15605
+sbs.gemFT.m8.modulegain = 1.04979
+sbs.gemFT.m9.modulegain = 1.08347
+sbs.gemFT.m10.modulegain = 1.39866
+sbs.gemFT.m11.modulegain = 0.975389
+sbs.gemFT.m12.modulegain = 1.23166
+sbs.gemFT.m13.modulegain = 0.915294
+
+---------[ 2025-06-19 19:22:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run4780.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run4780.dat
+
+---------[ 2025-07-14 15:04:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run5265.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run5265.dat
+
+---------[ 2025-07-28 14:00:00 ] 
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run5514.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run5514.dat
+
+######################################################################################
+#                                                                                    #
+#      begin time-dependent clustering parameters/thresholds/tracking cuts/etc       # 
+#                                                                                    # 
+######################################################################################
+
+---------[ 2025-04-17 15:30:00 ] # start Kin. 1 production (note this is before gain matching! may need to revisit the thresholds in particular)
+
+sbs.gemFT.maxhitcombos = 10000
+sbs.gemFT.maxhitcombos_inner = 25000
+
+sbs.gemFT.gridbinwidthx = 0.005
+sbs.gemFT.gridbinwidthy = 0.005
+sbs.gemFT.gridedgetolerancex = 0.0015
+sbs.gemFT.gridedgetolerancey = 0.0015
+
+sbs.gemFT.filterflag1D = -1
+sbs.gemFT.filterflag2D = -1
+
+sbs.gemFT.minhighqualityhitsontrack = 2
+
+sbs.gemFT.peakprominence_minsigma = 2.0
+sbs.gemFT.peakprominence_minfraction = 0.0
+
+sbs.gemFT.corrcoeff_cut = 0.5
+sbs.gemFT.deltat_cut = 4.5 # sigmas
+sbs.gemFT.ADCasym_cut = 0.8
+
+sbs.gemFT.maxstrip_tcut = 3.5 3.5	   
+sbs.gemFT.addstrip_tcut = 35.0
+sbs.gemFT.addstrip_ccor_cut = 0.4
+
+sbs.gemFT.maxstrip_tcut_deconv = 3.5 3.5 
+sbs.gemFT.threshold_sample_deconv = 0.0
+sbs.gemFT.deltat_cut_deconv = 4.5
+
+sbs.gemFT.corrcoeff_cut_deconv = 0.0
+sbs.gemFT.clustering_flag = 0
+sbs.gemFT.deconvolution_flag = 0
+
+sbs.gemFT.zerosuppress_nsigma = 3.5
+sbs.gemFT.suppressfirstlast = -1
+
+sbs.gemFT.m0.maxstrip_t0 =      83.0818      82.9203
+sbs.gemFT.m1.maxstrip_t0 =       79.826      80.8074
+sbs.gemFT.m2.maxstrip_t0 =      82.8442       79.802
+sbs.gemFT.m3.maxstrip_t0 =      98.7682      98.7307
+sbs.gemFT.m4.maxstrip_t0 =      91.5375      91.5234
+sbs.gemFT.m5.maxstrip_t0 =      91.4447      91.1161
+sbs.gemFT.m6.maxstrip_t0 =      82.2096      82.7195
+sbs.gemFT.m7.maxstrip_t0 =       84.666       86.044
+sbs.gemFT.m8.maxstrip_t0 =      85.6592      85.8982
+sbs.gemFT.m9.maxstrip_t0 =      82.3841       82.621
+sbs.gemFT.m10.maxstrip_t0 =      82.0208      84.3921
+sbs.gemFT.m11.maxstrip_t0 =      86.2123       86.606
+sbs.gemFT.m12.maxstrip_t0 =      85.6183      85.3891
+sbs.gemFT.m13.maxstrip_t0 =      85.1743      86.3117
+
+sbs.gemFT.m0.maxstrip_tsigma =      9.33796      8.79084
+sbs.gemFT.m1.maxstrip_tsigma =       8.3603      8.60012
+sbs.gemFT.m2.maxstrip_tsigma =      8.81292      8.60756
+sbs.gemFT.m3.maxstrip_tsigma =      9.45209      9.09991
+sbs.gemFT.m4.maxstrip_tsigma =      11.7739       11.441
+sbs.gemFT.m5.maxstrip_tsigma =      11.7472      11.9063
+sbs.gemFT.m6.maxstrip_tsigma =      9.63487      8.18771
+sbs.gemFT.m7.maxstrip_tsigma =      9.27229      8.61445
+sbs.gemFT.m8.maxstrip_tsigma =      9.32419      9.43314
+sbs.gemFT.m9.maxstrip_tsigma =      9.23073      8.75488
+sbs.gemFT.m10.maxstrip_tsigma =      9.83168      8.39278
+sbs.gemFT.m11.maxstrip_tsigma =      9.71111      9.15944
+sbs.gemFT.m12.maxstrip_tsigma =      8.98486      9.13184
+sbs.gemFT.m13.maxstrip_tsigma =      9.23929      9.02402
+
+sbs.gemFT.m0.maxstrip_t0_deconv =      41.6612      39.9843
+sbs.gemFT.m1.maxstrip_t0_deconv =      33.6431      35.9169
+sbs.gemFT.m2.maxstrip_t0_deconv =      40.1781      32.8662
+sbs.gemFT.m3.maxstrip_t0_deconv =      73.5268      71.1386
+sbs.gemFT.m4.maxstrip_t0_deconv =      62.8918       61.204
+sbs.gemFT.m5.maxstrip_t0_deconv =      63.2692      60.4418
+sbs.gemFT.m6.maxstrip_t0_deconv =      39.4963      42.3166
+sbs.gemFT.m7.maxstrip_t0_deconv =      44.1332      48.8744
+sbs.gemFT.m8.maxstrip_t0_deconv =      45.8763      49.0449
+sbs.gemFT.m9.maxstrip_t0_deconv =      38.4787      41.3416
+sbs.gemFT.m10.maxstrip_t0_deconv =      38.4056      43.6409
+sbs.gemFT.m11.maxstrip_t0_deconv =      46.6078      51.1071
+sbs.gemFT.m12.maxstrip_t0_deconv =      45.7463      48.0565
+sbs.gemFT.m13.maxstrip_t0_deconv =      44.2142      51.1385
+
+sbs.gemFT.m0.maxstrip_tsigma_deconv =      20.8808       18.014
+sbs.gemFT.m1.maxstrip_tsigma_deconv =      17.3409       17.381
+sbs.gemFT.m2.maxstrip_tsigma_deconv =      17.9376       18.384
+sbs.gemFT.m3.maxstrip_tsigma_deconv =      17.5574      17.7507
+sbs.gemFT.m4.maxstrip_tsigma_deconv =      25.6545      24.8886
+sbs.gemFT.m5.maxstrip_tsigma_deconv =      25.7344      26.6701
+sbs.gemFT.m6.maxstrip_tsigma_deconv =      20.3694      17.3662
+sbs.gemFT.m7.maxstrip_tsigma_deconv =      19.0769      17.0799
+sbs.gemFT.m8.maxstrip_tsigma_deconv =       19.139      19.4386
+sbs.gemFT.m9.maxstrip_tsigma_deconv =      19.4467      18.5025
+sbs.gemFT.m10.maxstrip_tsigma_deconv =      20.7537      16.7914
+sbs.gemFT.m11.maxstrip_tsigma_deconv =       20.534       18.895
+sbs.gemFT.m12.maxstrip_tsigma_deconv =      18.4629      18.9862
+sbs.gemFT.m13.maxstrip_tsigma_deconv =      19.4335      18.8351
+
+sbs.gemFT.m0.HitTimeMean =      82.5804      82.6233
+sbs.gemFT.m1.HitTimeMean =      79.0971      80.4956
+sbs.gemFT.m2.HitTimeMean =      82.1052      79.3786
+sbs.gemFT.m3.HitTimeMean =      97.3215      97.5118
+sbs.gemFT.m4.HitTimeMean =      91.1383      91.3424
+sbs.gemFT.m5.HitTimeMean =      90.9653      90.9483
+sbs.gemFT.m6.HitTimeMean =      82.2774       82.273
+sbs.gemFT.m7.HitTimeMean =      84.3143      85.2123
+sbs.gemFT.m8.HitTimeMean =      85.3724      85.7426
+sbs.gemFT.m9.HitTimeMean =      82.5583       82.258
+sbs.gemFT.m10.HitTimeMean =      81.8987      83.3484
+sbs.gemFT.m11.HitTimeMean =      85.9463      86.2429
+sbs.gemFT.m12.HitTimeMean =       85.275      85.2203
+sbs.gemFT.m13.HitTimeMean =      84.9619      86.1348
+
+sbs.gemFT.m0.HitTimeSigma =      8.83084      8.42661
+sbs.gemFT.m1.HitTimeSigma =      8.21742      8.40156
+sbs.gemFT.m2.HitTimeSigma =      8.33847      8.36582
+sbs.gemFT.m3.HitTimeSigma =        9.142      8.86635
+sbs.gemFT.m4.HitTimeSigma =      10.8083      10.4078
+sbs.gemFT.m5.HitTimeSigma =      10.8806      10.7831
+sbs.gemFT.m6.HitTimeSigma =       9.0142       7.6713
+sbs.gemFT.m7.HitTimeSigma =      8.61798      8.04214
+sbs.gemFT.m8.HitTimeSigma =      8.89371      8.85773
+sbs.gemFT.m9.HitTimeSigma =      8.54508      8.36563
+sbs.gemFT.m10.HitTimeSigma =       8.9785      7.92438
+sbs.gemFT.m11.HitTimeSigma =      9.05692       8.4579
+sbs.gemFT.m12.HitTimeSigma =       8.5095       8.3394
+sbs.gemFT.m13.HitTimeSigma =       8.7631       8.0778
+
+sbs.gemFT.m0.HitTimeMeanDeconv =      38.9239      38.2937
+sbs.gemFT.m1.HitTimeMeanDeconv =      30.3204      34.2566
+sbs.gemFT.m2.HitTimeMeanDeconv =      36.7148      31.0431
+sbs.gemFT.m3.HitTimeMeanDeconv =      69.2791      67.9482
+sbs.gemFT.m4.HitTimeMeanDeconv =      60.5088      59.9047
+sbs.gemFT.m5.HitTimeMeanDeconv =      61.0131      59.4218
+sbs.gemFT.m6.HitTimeMeanDeconv =      37.6396      38.9665
+sbs.gemFT.m7.HitTimeMeanDeconv =       42.017      45.1591
+sbs.gemFT.m8.HitTimeMeanDeconv =      43.8638      46.0369
+sbs.gemFT.m9.HitTimeMeanDeconv =      37.3451      37.9419
+sbs.gemFT.m10.HitTimeMeanDeconv =       36.367      39.4195
+sbs.gemFT.m11.HitTimeMeanDeconv =      44.2925      47.8715
+sbs.gemFT.m12.HitTimeMeanDeconv =      43.9308      44.8009
+sbs.gemFT.m13.HitTimeMeanDeconv =      42.4402      47.9949
+
+sbs.gemFT.m0.HitTimeSigmaDeconv =      21.4567       18.092
+sbs.gemFT.m1.HitTimeSigmaDeconv =      17.5596      17.6182
+sbs.gemFT.m2.HitTimeSigmaDeconv =      17.9415      18.4469
+sbs.gemFT.m3.HitTimeSigmaDeconv =      17.7319      17.6449
+sbs.gemFT.m4.HitTimeSigmaDeconv =      24.9773      23.6931
+sbs.gemFT.m5.HitTimeSigmaDeconv =       25.254      25.3196
+sbs.gemFT.m6.HitTimeSigmaDeconv =      19.6262      16.8851
+sbs.gemFT.m7.HitTimeSigmaDeconv =      18.8099      17.0869
+sbs.gemFT.m8.HitTimeSigmaDeconv =      19.4686        19.65
+sbs.gemFT.m9.HitTimeSigmaDeconv =      19.7254      18.5138
+sbs.gemFT.m10.HitTimeSigmaDeconv =      19.9724      16.4938
+sbs.gemFT.m11.HitTimeSigmaDeconv =      20.1866      18.4531
+sbs.gemFT.m12.HitTimeSigmaDeconv =      18.6007      18.9023
+sbs.gemFT.m13.HitTimeSigmaDeconv =      19.9056      18.5318
+
+sbs.gemFT.m0.deltat_sigma =      6.71597
+sbs.gemFT.m1.deltat_sigma =      5.17419
+sbs.gemFT.m2.deltat_sigma =      5.98333
+sbs.gemFT.m3.deltat_sigma =      8.19912
+sbs.gemFT.m4.deltat_sigma =       7.1943
+sbs.gemFT.m5.deltat_sigma =      6.64342
+sbs.gemFT.m6.deltat_sigma =      5.29499
+sbs.gemFT.m7.deltat_sigma =      5.90692
+sbs.gemFT.m8.deltat_sigma =      6.44526
+sbs.gemFT.m9.deltat_sigma =      5.44012
+sbs.gemFT.m10.deltat_sigma =      5.26802
+sbs.gemFT.m11.deltat_sigma =       6.3634
+sbs.gemFT.m12.deltat_sigma =      6.26726
+sbs.gemFT.m13.deltat_sigma =      6.12946
+
+sbs.gemFT.m0.deltat_sigma_deconv =      20.1368
+sbs.gemFT.m1.deltat_sigma_deconv =      15.4602
+sbs.gemFT.m2.deltat_sigma_deconv =      17.2177
+sbs.gemFT.m3.deltat_sigma_deconv =      14.1574
+sbs.gemFT.m4.deltat_sigma_deconv =      15.3364
+sbs.gemFT.m5.deltat_sigma_deconv =      13.4521
+sbs.gemFT.m6.deltat_sigma_deconv =      14.7771
+sbs.gemFT.m7.deltat_sigma_deconv =      15.4606
+sbs.gemFT.m8.deltat_sigma_deconv =      17.0777
+sbs.gemFT.m9.deltat_sigma_deconv =      14.5076
+sbs.gemFT.m10.deltat_sigma_deconv =      14.2335
+sbs.gemFT.m11.deltat_sigma_deconv =      16.3018
+sbs.gemFT.m12.deltat_sigma_deconv =      16.4526
+sbs.gemFT.m13.deltat_sigma_deconv =      17.4588
+
+sbs.gemFT.m0.sigma_tcorr =      8.04341
+sbs.gemFT.m1.sigma_tcorr =      8.15596
+sbs.gemFT.m2.sigma_tcorr =      8.00087
+sbs.gemFT.m3.sigma_tcorr =      7.93613
+sbs.gemFT.m4.sigma_tcorr =       9.4455
+sbs.gemFT.m5.sigma_tcorr =      9.83817
+sbs.gemFT.m6.sigma_tcorr =      7.91565
+sbs.gemFT.m7.sigma_tcorr =      7.71842
+sbs.gemFT.m8.sigma_tcorr =      7.90774
+sbs.gemFT.m9.sigma_tcorr =      8.20252
+sbs.gemFT.m10.sigma_tcorr =      8.01373
+sbs.gemFT.m11.sigma_tcorr =        7.939
+sbs.gemFT.m12.sigma_tcorr =       7.6627
+sbs.gemFT.m13.sigma_tcorr =      7.61775
+
+sbs.gemFT.m0.threshold_sample =      42.3161
+sbs.gemFT.m1.threshold_sample =      46.2619
+sbs.gemFT.m2.threshold_sample =      43.3721
+sbs.gemFT.m3.threshold_sample =      49.3146
+sbs.gemFT.m4.threshold_sample =        48.66
+sbs.gemFT.m5.threshold_sample =      44.0948
+sbs.gemFT.m6.threshold_sample =      35.7422
+sbs.gemFT.m7.threshold_sample =      36.8665
+sbs.gemFT.m8.threshold_sample =      44.5165
+sbs.gemFT.m9.threshold_sample =      46.3072
+sbs.gemFT.m10.threshold_sample =      31.2724
+sbs.gemFT.m11.threshold_sample =      45.4846
+sbs.gemFT.m12.threshold_sample =       44.904
+sbs.gemFT.m13.threshold_sample =      41.6241
+
+sbs.gemFT.m0.threshold_stripsum =      120.778
+sbs.gemFT.m1.threshold_stripsum =      139.096
+sbs.gemFT.m2.threshold_stripsum =       127.34
+sbs.gemFT.m3.threshold_stripsum =      113.792
+sbs.gemFT.m4.threshold_stripsum =      133.891
+sbs.gemFT.m5.threshold_stripsum =      113.655
+sbs.gemFT.m6.threshold_stripsum =      109.558
+sbs.gemFT.m7.threshold_stripsum =      97.3405
+sbs.gemFT.m8.threshold_stripsum =      140.981
+sbs.gemFT.m9.threshold_stripsum =      155.695
+sbs.gemFT.m10.threshold_stripsum =      91.8353
+sbs.gemFT.m11.threshold_stripsum =      146.072
+sbs.gemFT.m12.threshold_stripsum =      146.226
+sbs.gemFT.m13.threshold_stripsum =      138.838
+
+sbs.gemFT.m0.threshold_clustersum =      140.859
+sbs.gemFT.m1.threshold_clustersum =      239.479
+sbs.gemFT.m2.threshold_clustersum =      213.808
+sbs.gemFT.m3.threshold_clustersum =      231.582
+sbs.gemFT.m4.threshold_clustersum =      223.189
+sbs.gemFT.m5.threshold_clustersum =      226.098
+sbs.gemFT.m6.threshold_clustersum =      259.299
+sbs.gemFT.m7.threshold_clustersum =      194.626
+sbs.gemFT.m8.threshold_clustersum =      252.206
+sbs.gemFT.m9.threshold_clustersum =      299.294
+sbs.gemFT.m10.threshold_clustersum =      203.895
+sbs.gemFT.m11.threshold_clustersum =      272.889
+sbs.gemFT.m12.threshold_clustersum =      271.537
+sbs.gemFT.m13.threshold_clustersum =      269.728
+
+sbs.gemFT.m0.threshold_maxcombo_deconv =      45.5848
+sbs.gemFT.m1.threshold_maxcombo_deconv =      49.3682
+sbs.gemFT.m2.threshold_maxcombo_deconv =      48.9675
+sbs.gemFT.m3.threshold_maxcombo_deconv =      42.8558
+sbs.gemFT.m4.threshold_maxcombo_deconv =      44.5801
+sbs.gemFT.m5.threshold_maxcombo_deconv =      51.9469
+sbs.gemFT.m6.threshold_maxcombo_deconv =      36.3296
+sbs.gemFT.m7.threshold_maxcombo_deconv =      38.9839
+sbs.gemFT.m8.threshold_maxcombo_deconv =       36.155
+sbs.gemFT.m9.threshold_maxcombo_deconv =       38.337
+sbs.gemFT.m10.threshold_maxcombo_deconv =       34.148
+sbs.gemFT.m11.threshold_maxcombo_deconv =      35.8884
+sbs.gemFT.m12.threshold_maxcombo_deconv =      36.0561
+sbs.gemFT.m13.threshold_maxcombo_deconv =      33.0948
+
+sbs.gemFT.m0.threshold_clustersum_deconv =      85.5308
+sbs.gemFT.m1.threshold_clustersum_deconv =      87.3408
+sbs.gemFT.m2.threshold_clustersum_deconv =      86.8812
+sbs.gemFT.m3.threshold_clustersum_deconv =      82.8861
+sbs.gemFT.m4.threshold_clustersum_deconv =      79.7508
+sbs.gemFT.m5.threshold_clustersum_deconv =      88.2093
+sbs.gemFT.m6.threshold_clustersum_deconv =      58.2894
+sbs.gemFT.m7.threshold_clustersum_deconv =      63.8279
+sbs.gemFT.m8.threshold_clustersum_deconv =      62.0181
+sbs.gemFT.m9.threshold_clustersum_deconv =      56.3374
+sbs.gemFT.m10.threshold_clustersum_deconv =      59.2947
+sbs.gemFT.m11.threshold_clustersum_deconv =      61.4367
+sbs.gemFT.m12.threshold_clustersum_deconv =      61.0386
+sbs.gemFT.m13.threshold_clustersum_deconv =      49.8126
+
+sbs.gemFT.m0.ADCasym_sigma =     0.194792
+sbs.gemFT.m1.ADCasym_sigma =     0.171144
+sbs.gemFT.m2.ADCasym_sigma =     0.165116
+sbs.gemFT.m3.ADCasym_sigma =     0.190098
+sbs.gemFT.m4.ADCasym_sigma =     0.186845
+sbs.gemFT.m5.ADCasym_sigma =     0.175467
+sbs.gemFT.m6.ADCasym_sigma =     0.120547
+sbs.gemFT.m7.ADCasym_sigma =      0.14726
+sbs.gemFT.m8.ADCasym_sigma =     0.170143
+sbs.gemFT.m9.ADCasym_sigma =     0.131873
+sbs.gemFT.m10.ADCasym_sigma =     0.170079
+sbs.gemFT.m11.ADCasym_sigma =     0.143312
+sbs.gemFT.m12.ADCasym_sigma =     0.165432
+sbs.gemFT.m13.ADCasym_sigma =     0.142377
+
+
+----------[ 2025-04-21 14:00:00 ] # GEM latency setting changed for several FT layers
+# these settings should apply until the end of Kin. 1:
+
+sbs.gemFT.filterflag1D = -1
+sbs.gemFT.filterflag2D = -1
+
+sbs.gemFT.m4.suppressfirstlast = -1
+sbs.gemFT.m5.suppressfirstlast = -1
+
+# this will disable any suppression of "small" local maxima overlapping higher peaks in the 1D clustering:
+sbs.gemFT.peakprominence_minsigma = 2.0
+sbs.gemFT.peakprominence_minfraction = 0.1
+
+sbs.gemFT.corrcoeff_cut = 0.5
+sbs.gemFT.deltat_cut = 4.5 # sigmas
+sbs.gemFT.ADCasym_cut = 0.8
+
+sbs.gemFT.maxstrip_tcut = 3.0 3.0	   
+sbs.gemFT.addstrip_tcut = 35.0
+sbs.gemFT.addstrip_ccor_cut = 0.4
+
+sbs.gemFT.maxstrip_tcut_deconv = 3.5 3.5 
+sbs.gemFT.threshold_sample_deconv = 0.0
+sbs.gemFT.deltat_cut_deconv = 4.5
+
+sbs.gemFT.corrcoeff_cut_deconv = 0.0
+sbs.gemFT.clustering_flag = 0
+sbs.gemFT.deconvolution_flag = 0
+
+sbs.gemFT.zerosuppress_nsigma = 3.5
+sbs.gemFT.suppressfirstlast = -1
+
+sbs.gemFT.m4.zerosuppress_nsigma = 3.5
+sbs.gemFT.m5.zerosuppress_nsigma = 3.5
+
+sbs.gemFT.minhighqualityhitsontrack = 2
+sbs.gemFT.sigmatrackt0 = 5.0
+sbs.gemFT.cuttrackt0 = 20.0
+
+
+# updating these after gain matching:
+
+sbs.gemFT.m0.maxstrip_t0 =      82.5336      82.0193
+sbs.gemFT.m1.maxstrip_t0 =      78.8462      80.1707
+sbs.gemFT.m2.maxstrip_t0 =      82.0954      78.3764
+sbs.gemFT.m3.maxstrip_t0 =      87.0381      86.3467
+sbs.gemFT.m4.maxstrip_t0 =      69.9375      69.2227
+sbs.gemFT.m5.maxstrip_t0 =      70.4816      68.9264
+sbs.gemFT.m6.maxstrip_t0 =      81.4933      82.1576
+sbs.gemFT.m7.maxstrip_t0 =      83.7571      85.2323
+sbs.gemFT.m8.maxstrip_t0 =      85.1663       85.591
+sbs.gemFT.m9.maxstrip_t0 =      81.5541      82.2095
+sbs.gemFT.m10.maxstrip_t0 =      80.7205      83.4148
+sbs.gemFT.m11.maxstrip_t0 =      85.6103      86.1513
+sbs.gemFT.m12.maxstrip_t0 =      85.1409       84.908
+sbs.gemFT.m13.maxstrip_t0 =      84.8249      85.6407
+
+sbs.gemFT.m0.maxstrip_tsigma =      9.43153      8.51638
+sbs.gemFT.m1.maxstrip_tsigma =      7.99202      8.14753
+sbs.gemFT.m2.maxstrip_tsigma =      8.21236      8.62645
+sbs.gemFT.m3.maxstrip_tsigma =       8.5676      8.64668
+sbs.gemFT.m4.maxstrip_tsigma =      11.2954      10.5262
+sbs.gemFT.m5.maxstrip_tsigma =       11.341      11.8092
+sbs.gemFT.m6.maxstrip_tsigma =      9.86183      8.08197
+sbs.gemFT.m7.maxstrip_tsigma =      9.09613      8.12763
+sbs.gemFT.m8.maxstrip_tsigma =       8.8772      8.89561
+sbs.gemFT.m9.maxstrip_tsigma =       8.6849      8.45074
+sbs.gemFT.m10.maxstrip_tsigma =      9.77211      8.05531
+sbs.gemFT.m11.maxstrip_tsigma =        9.682      8.95976
+sbs.gemFT.m12.maxstrip_tsigma =      8.65701      8.64512
+sbs.gemFT.m13.maxstrip_tsigma =      9.18214      9.12018
+
+sbs.gemFT.m0.maxstrip_t0_deconv =      40.6194      37.9935
+sbs.gemFT.m1.maxstrip_t0_deconv =      31.8941       34.675
+sbs.gemFT.m2.maxstrip_t0_deconv =      38.5881      30.3332
+sbs.gemFT.m3.maxstrip_t0_deconv =      48.4938      44.7612
+sbs.gemFT.m4.maxstrip_t0_deconv =      21.7161      18.9476
+sbs.gemFT.m5.maxstrip_t0_deconv =      23.0454      18.8457
+sbs.gemFT.m6.maxstrip_t0_deconv =      37.8491      40.9762
+sbs.gemFT.m7.maxstrip_t0_deconv =       42.167      46.9979
+sbs.gemFT.m8.maxstrip_t0_deconv =      44.5783      48.1066
+sbs.gemFT.m9.maxstrip_t0_deconv =       37.555      40.2731
+sbs.gemFT.m10.maxstrip_t0_deconv =      35.6681      41.6539
+sbs.gemFT.m11.maxstrip_t0_deconv =       44.857      50.1795
+sbs.gemFT.m12.maxstrip_t0_deconv =      44.9196      46.8058
+sbs.gemFT.m13.maxstrip_t0_deconv =      42.2936      50.3789
+
+sbs.gemFT.m0.maxstrip_tsigma_deconv =      21.9387      17.4232
+sbs.gemFT.m1.maxstrip_tsigma_deconv =      16.4771      16.2964
+sbs.gemFT.m2.maxstrip_tsigma_deconv =      16.8899      17.8723
+sbs.gemFT.m3.maxstrip_tsigma_deconv =      17.6007      17.7657
+sbs.gemFT.m4.maxstrip_tsigma_deconv =      24.2593      21.6228
+sbs.gemFT.m5.maxstrip_tsigma_deconv =      24.0303      24.8628
+sbs.gemFT.m6.maxstrip_tsigma_deconv =      20.2848      16.6795
+sbs.gemFT.m7.maxstrip_tsigma_deconv =      18.8026      16.6653
+sbs.gemFT.m8.maxstrip_tsigma_deconv =      18.8129      18.8174
+sbs.gemFT.m9.maxstrip_tsigma_deconv =       18.322      17.9065
+sbs.gemFT.m10.maxstrip_tsigma_deconv =      20.7368      16.3571
+sbs.gemFT.m11.maxstrip_tsigma_deconv =      20.4925      18.4866
+sbs.gemFT.m12.maxstrip_tsigma_deconv =      17.8886      18.1252
+sbs.gemFT.m13.maxstrip_tsigma_deconv =      18.7748      19.0716
+
+sbs.gemFT.m0.HitTimeMean =      82.0289      81.6591
+sbs.gemFT.m1.HitTimeMean =      77.9786      79.7633
+sbs.gemFT.m2.HitTimeMean =      81.2524      77.9144
+sbs.gemFT.m3.HitTimeMean =      86.1731      85.7102
+sbs.gemFT.m4.HitTimeMean =      68.6225      68.3035
+sbs.gemFT.m5.HitTimeMean =      69.2109      67.6747
+sbs.gemFT.m6.HitTimeMean =      81.5727       81.599
+sbs.gemFT.m7.HitTimeMean =      83.4661      84.3673
+sbs.gemFT.m8.HitTimeMean =      84.7955      85.3718
+sbs.gemFT.m9.HitTimeMean =      81.3072       81.706
+sbs.gemFT.m10.HitTimeMean =      80.8892      82.3211
+sbs.gemFT.m11.HitTimeMean =      85.2792      85.7444
+sbs.gemFT.m12.HitTimeMean =      84.7075      84.5468
+sbs.gemFT.m13.HitTimeMean =      84.4495      85.6119
+
+sbs.gemFT.m0.HitTimeSigma =      8.91135       8.0015
+sbs.gemFT.m1.HitTimeSigma =      7.74279      7.75358
+sbs.gemFT.m2.HitTimeSigma =      7.61622      8.35883
+sbs.gemFT.m3.HitTimeSigma =      7.92716      8.06574
+sbs.gemFT.m4.HitTimeSigma =      13.4651      12.1953
+sbs.gemFT.m5.HitTimeSigma =      13.3611       14.286
+sbs.gemFT.m6.HitTimeSigma =      8.84441      7.43438
+sbs.gemFT.m7.HitTimeSigma =      8.44817      7.57844
+sbs.gemFT.m8.HitTimeSigma =      8.38982      8.18636
+sbs.gemFT.m9.HitTimeSigma =      8.59361      8.12832
+sbs.gemFT.m10.HitTimeSigma =      9.10432      7.70834
+sbs.gemFT.m11.HitTimeSigma =      8.75153      8.00662
+sbs.gemFT.m12.HitTimeSigma =      8.17628      7.98678
+sbs.gemFT.m13.HitTimeSigma =      8.57383      8.03419
+
+sbs.gemFT.m0.HitTimeMeanDeconv =      37.6662      36.2552
+sbs.gemFT.m1.HitTimeMeanDeconv =      28.4074      32.8632
+sbs.gemFT.m2.HitTimeMeanDeconv =      34.8946      28.4676
+sbs.gemFT.m3.HitTimeMeanDeconv =      44.7076      42.2862
+sbs.gemFT.m4.HitTimeMeanDeconv =      23.4183      22.0069
+sbs.gemFT.m5.HitTimeMeanDeconv =      25.0858      23.2222
+sbs.gemFT.m6.HitTimeMeanDeconv =      35.8394      37.5226
+sbs.gemFT.m7.HitTimeMeanDeconv =      40.0119      43.2157
+sbs.gemFT.m8.HitTimeMeanDeconv =      42.3643      44.6316
+sbs.gemFT.m9.HitTimeMeanDeconv =      35.4691       36.851
+sbs.gemFT.m10.HitTimeMeanDeconv =      34.3787      37.4041
+sbs.gemFT.m11.HitTimeMeanDeconv =      42.4217      46.7757
+sbs.gemFT.m12.HitTimeMeanDeconv =      42.4374      43.2067
+sbs.gemFT.m13.HitTimeMeanDeconv =      40.0693      47.3198
+
+sbs.gemFT.m0.HitTimeSigmaDeconv =      22.5882      17.2256
+sbs.gemFT.m1.HitTimeSigmaDeconv =      16.1662      16.1761
+sbs.gemFT.m2.HitTimeSigmaDeconv =      16.5834      17.6939
+sbs.gemFT.m3.HitTimeSigmaDeconv =       17.343      17.4864
+sbs.gemFT.m4.HitTimeSigmaDeconv =      25.0213      23.2449
+sbs.gemFT.m5.HitTimeSigmaDeconv =      24.7427      25.2802
+sbs.gemFT.m6.HitTimeSigmaDeconv =      19.6607      16.1644
+sbs.gemFT.m7.HitTimeSigmaDeconv =      18.3011      16.3492
+sbs.gemFT.m8.HitTimeSigmaDeconv =      19.1464       18.929
+sbs.gemFT.m9.HitTimeSigmaDeconv =      18.1968      17.1964
+sbs.gemFT.m10.HitTimeSigmaDeconv =      19.7201      16.1425
+sbs.gemFT.m11.HitTimeSigmaDeconv =       19.751      17.7159
+sbs.gemFT.m12.HitTimeSigmaDeconv =      18.2898      18.3109
+sbs.gemFT.m13.HitTimeSigmaDeconv =      19.1927      17.8254
+
+sbs.gemFT.m0.deltat_sigma =      5.75497
+sbs.gemFT.m1.deltat_sigma =       3.9407
+sbs.gemFT.m2.deltat_sigma =      5.08486
+sbs.gemFT.m3.deltat_sigma =       4.6145
+sbs.gemFT.m4.deltat_sigma =       4.8299
+sbs.gemFT.m5.deltat_sigma =       4.1469
+sbs.gemFT.m6.deltat_sigma =      4.70192
+sbs.gemFT.m7.deltat_sigma =      4.68797
+sbs.gemFT.m8.deltat_sigma =      5.67929
+sbs.gemFT.m9.deltat_sigma =      4.47493
+sbs.gemFT.m10.deltat_sigma =      4.49018
+sbs.gemFT.m11.deltat_sigma =      5.45137
+sbs.gemFT.m12.deltat_sigma =      5.27154
+sbs.gemFT.m13.deltat_sigma =      5.48267
+
+sbs.gemFT.m0.deltat_sigma_deconv =      20.5869
+sbs.gemFT.m1.deltat_sigma_deconv =      12.8905
+sbs.gemFT.m2.deltat_sigma_deconv =      15.3789
+sbs.gemFT.m3.deltat_sigma_deconv =      13.0768
+sbs.gemFT.m4.deltat_sigma_deconv =      18.5501
+sbs.gemFT.m5.deltat_sigma_deconv =      14.7882
+sbs.gemFT.m6.deltat_sigma_deconv =      13.6024
+sbs.gemFT.m7.deltat_sigma_deconv =      13.9397
+sbs.gemFT.m8.deltat_sigma_deconv =      15.7338
+sbs.gemFT.m9.deltat_sigma_deconv =      13.3956
+sbs.gemFT.m10.deltat_sigma_deconv =      12.8904
+sbs.gemFT.m11.deltat_sigma_deconv =      15.6733
+sbs.gemFT.m12.deltat_sigma_deconv =      14.8677
+sbs.gemFT.m13.deltat_sigma_deconv =      16.1058
+
+sbs.gemFT.m0.sigma_tcorr =      8.04747
+sbs.gemFT.m1.sigma_tcorr =      7.68112
+sbs.gemFT.m2.sigma_tcorr =      7.82733
+sbs.gemFT.m3.sigma_tcorr =      7.72036
+sbs.gemFT.m4.sigma_tcorr =      11.7298
+sbs.gemFT.m5.sigma_tcorr =      12.6121
+sbs.gemFT.m6.sigma_tcorr =      7.76881
+sbs.gemFT.m7.sigma_tcorr =      7.71433
+sbs.gemFT.m8.sigma_tcorr =       7.9844
+sbs.gemFT.m9.sigma_tcorr =      7.96554
+sbs.gemFT.m10.sigma_tcorr =      8.19763
+sbs.gemFT.m11.sigma_tcorr =      8.15928
+sbs.gemFT.m12.sigma_tcorr =      7.70508
+sbs.gemFT.m13.sigma_tcorr =      8.03289
+
+sbs.gemFT.m0.threshold_sample =      46.4923
+sbs.gemFT.m1.threshold_sample =      43.1615
+sbs.gemFT.m2.threshold_sample =       42.564
+sbs.gemFT.m3.threshold_sample =      45.6093
+sbs.gemFT.m4.threshold_sample =      47.1131
+sbs.gemFT.m5.threshold_sample =      47.6436
+sbs.gemFT.m6.threshold_sample =      41.6572
+sbs.gemFT.m7.threshold_sample =      40.3338
+sbs.gemFT.m8.threshold_sample =      44.6176
+sbs.gemFT.m9.threshold_sample =      44.6217
+sbs.gemFT.m10.threshold_sample =      33.3364
+sbs.gemFT.m11.threshold_sample =      43.8212
+sbs.gemFT.m12.threshold_sample =      44.1339
+sbs.gemFT.m13.threshold_sample =      46.5051
+
+sbs.gemFT.m0.threshold_stripsum =      181.883
+sbs.gemFT.m1.threshold_stripsum =       234.54
+sbs.gemFT.m2.threshold_stripsum =      210.019
+sbs.gemFT.m3.threshold_stripsum =      185.319
+sbs.gemFT.m4.threshold_stripsum =      181.404
+sbs.gemFT.m5.threshold_stripsum =      220.729
+sbs.gemFT.m6.threshold_stripsum =      157.836
+sbs.gemFT.m7.threshold_stripsum =      160.715
+sbs.gemFT.m8.threshold_stripsum =      181.663
+sbs.gemFT.m9.threshold_stripsum =      165.851
+sbs.gemFT.m10.threshold_stripsum =      147.545
+sbs.gemFT.m11.threshold_stripsum =       171.15
+sbs.gemFT.m12.threshold_stripsum =      179.995
+sbs.gemFT.m13.threshold_stripsum =      178.566
+
+sbs.gemFT.m0.threshold_clustersum =      315.439
+sbs.gemFT.m1.threshold_clustersum =      374.372
+sbs.gemFT.m2.threshold_clustersum =      356.238
+sbs.gemFT.m3.threshold_clustersum =       321.47
+sbs.gemFT.m4.threshold_clustersum =      351.705
+sbs.gemFT.m5.threshold_clustersum =      397.674
+sbs.gemFT.m6.threshold_clustersum =      261.683
+sbs.gemFT.m7.threshold_clustersum =      283.376
+sbs.gemFT.m8.threshold_clustersum =      299.771
+sbs.gemFT.m9.threshold_clustersum =      275.129
+sbs.gemFT.m10.threshold_clustersum =      236.127
+sbs.gemFT.m11.threshold_clustersum =      300.486
+sbs.gemFT.m12.threshold_clustersum =      311.472
+sbs.gemFT.m13.threshold_clustersum =      279.209
+
+sbs.gemFT.m0.threshold_maxcombo_deconv =      36.5684
+sbs.gemFT.m1.threshold_maxcombo_deconv =      47.5373
+sbs.gemFT.m2.threshold_maxcombo_deconv =      45.1406
+sbs.gemFT.m3.threshold_maxcombo_deconv =      41.3505
+sbs.gemFT.m4.threshold_maxcombo_deconv =      25.6445
+sbs.gemFT.m5.threshold_maxcombo_deconv =      17.7041
+sbs.gemFT.m6.threshold_maxcombo_deconv =      32.4128
+sbs.gemFT.m7.threshold_maxcombo_deconv =      32.4416
+sbs.gemFT.m8.threshold_maxcombo_deconv =      34.0418
+sbs.gemFT.m9.threshold_maxcombo_deconv =      36.8457
+sbs.gemFT.m10.threshold_maxcombo_deconv =      30.8633
+sbs.gemFT.m11.threshold_maxcombo_deconv =      33.4157
+sbs.gemFT.m12.threshold_maxcombo_deconv =      33.8128
+sbs.gemFT.m13.threshold_maxcombo_deconv =      33.7534
+
+sbs.gemFT.m0.threshold_clustersum_deconv =      54.1677
+sbs.gemFT.m1.threshold_clustersum_deconv =      86.6676
+sbs.gemFT.m2.threshold_clustersum_deconv =      75.2629
+sbs.gemFT.m3.threshold_clustersum_deconv =      68.0266
+sbs.gemFT.m4.threshold_clustersum_deconv =      40.0
+sbs.gemFT.m5.threshold_clustersum_deconv =      40.0
+sbs.gemFT.m6.threshold_clustersum_deconv =      51.7584
+sbs.gemFT.m7.threshold_clustersum_deconv =      52.3369
+sbs.gemFT.m8.threshold_clustersum_deconv =      55.2621
+sbs.gemFT.m9.threshold_clustersum_deconv =      57.6115
+sbs.gemFT.m10.threshold_clustersum_deconv =       52.532
+sbs.gemFT.m11.threshold_clustersum_deconv =      55.6092
+sbs.gemFT.m12.threshold_clustersum_deconv =      55.1944
+sbs.gemFT.m13.threshold_clustersum_deconv =      57.2906
+
+sbs.gemFT.m0.ADCasym_sigma =     0.130573
+sbs.gemFT.m1.ADCasym_sigma =     0.111496
+sbs.gemFT.m2.ADCasym_sigma =     0.116115
+sbs.gemFT.m3.ADCasym_sigma =     0.107838
+sbs.gemFT.m4.ADCasym_sigma =     0.120904
+sbs.gemFT.m5.ADCasym_sigma =     0.104535
+sbs.gemFT.m6.ADCasym_sigma =     0.105226
+sbs.gemFT.m7.ADCasym_sigma =     0.109554
+sbs.gemFT.m8.ADCasym_sigma =     0.123512
+sbs.gemFT.m9.ADCasym_sigma =     0.111813
+sbs.gemFT.m10.ADCasym_sigma =     0.121418
+sbs.gemFT.m11.ADCasym_sigma =     0.110936
+sbs.gemFT.m12.ADCasym_sigma =     0.117732
+sbs.gemFT.m13.ADCasym_sigma =     0.110436
+
+----------[ 2025-05-09 20:00:01 ] # start Kin. 3:
+
+sbs.gemFT.maxhitcombos_total = 1.e20
+
+sbs.gemFT.m0.threshold_sample = 100.0
+sbs.gemFT.m0.threshold_stripsum = 300.0
+sbs.gemFT.m0.threshold_clustersum = 400.0
+
+sbs.gemFT.m1.threshold_sample = 100.0
+sbs.gemFT.m1.threshold_stripsum = 300.0
+sbs.gemFT.m1.threshold_clustersum = 400.0
+
+sbs.gemFT.m2.threshold_sample = 100.0
+sbs.gemFT.m2.threshold_stripsum = 300.0
+sbs.gemFT.m2.threshold_clustersum = 400.0
+
+sbs.gemFT.m3.threshold_sample = 100.0
+sbs.gemFT.m3.threshold_stripsum = 300.0
+sbs.gemFT.m3.threshold_clustersum = 400.0
+
+sbs.gemFT.m4.threshold_sample = 100.0
+sbs.gemFT.m4.threshold_stripsum = 300.0
+sbs.gemFT.m4.threshold_clustersum = 400.0
+
+sbs.gemFT.m5.threshold_sample = 100.0
+sbs.gemFT.m5.threshold_stripsum = 300.0
+sbs.gemFT.m5.threshold_clustersum = 400.0
+
+#sbs.gemFT.filterflag1D = 3 # flag + 1 = 4, bits = 100, this SHOULD lead to hard filtering by cluster ADC sum and no cluster size filtering
+
+
+#sbs.gemFT.filterflag2D = 13 # We want bits = 1110 = 14 = flag + 1, so flag = 13 
+sbs.gemFT.filterflag1D = -1
+sbs.gemFT.filterflag2D = -1
+
+sbs.gemFT.corrcoeff_cut = 0.4
+
+sbs.gemFT.suppressfirstlast = -1
+sbs.gemFT.m4.suppressfirstlast = -1
+sbs.gemFT.m5.suppressfirstlast = -1
+sbs.gemFT.m4.maxstrip_t0 = 85. 85. 
+sbs.gemFT.m5.maxstrip_t0 = 85. 85. 
+
+sbs.gemFT.zerosuppress_nsigma = 3.5
+sbs.gemFT.m0.zerosuppress_nsigma = 3.5
+sbs.gemFT.m1.zerosuppress_nsigma = 3.5
+sbs.gemFT.m2.zerosuppress_nsigma = 3.5
+sbs.gemFT.m3.zerosuppress_nsigma = 3.5
+sbs.gemFT.m4.zerosuppress_nsigma = 3.5
+sbs.gemFT.m5.zerosuppress_nsigma = 3.5
+
+sbs.gemFT.addstrip_tcut = 30.0
+sbs.gemFT.addstrip_ccor_cut = 0.4
+
+sbs.gemFT.minhighqualityhitsontrack = 2
+sbs.gemFT.ADCasym_cut = 0.75
+sbs.gemFT.deltat_cut = 25.0 # this should be in units of sigma
+
+sbs.gemFT.use_enhanced_chi2 = 1
+
+sbs.gemFT.trackchi2cut_hitquality = 12.0
+
+sbs.gemFT.minhitsontrack = 4
+sbs.gemFT.trackchi2cut = 10.0 15.0 20.0 25.0 30.0
+sbs.gemFT.minhighqualityhitsontrack = 2
+
+sbs.gemFT.useelasticconstraint = 1
+sbs.gemFT.dpp0 = 0.016
+sbs.gemFT.dppcut = 0.1 # loose cuts initially
+sbs.gemFT.dthtar0 = 0.0
+sbs.gemFT.dthtarcut = 0.02
+sbs.gemFT.dphtar0 = 0.0
+sbs.gemFT.dphtarcut = 0.015
+
+
+---------[ 2025-05-29 20:40:00 ] # Multi-foil optics runs. SBS current 1756.5 A (same as production). Beam currents 1-1.5 uA. Used 4 foil and 2 foil optics targets with the corresponding run numbers 4200 and 4203. 
+sbs.gemFT.multitracksearch=0
+sbs.gemFT.useelasticconstraint = 0
+sbs.gemFT.useopticsconstraint = 1
+sbs.gemFT.pmin = 2.5
+
+sbs.gemFT.useslopeconstraint=0
+sbs.gemFT.constraintwidth_theta = 0.06
+sbs.gemFT.constraintwidth_phi = 0.06
+
+sbs.gemFT.usestriptimingcut = 0
+sbs.gemFT.suppressfirstlast = 0
+sbs.gemFT.use_enhanced_chi2 = 0
+sbs.gemFT.cuttrackt0 = 200.0
+
+---------[ 2025-05-30 00:45:00 ] # Back to production running.
+
+sbs.gemFT.usestriptimingcut = 1
+sbs.gemFT.suppressfirstlast = -1
+sbs.gemFT.use_enhanced_chi2 = 1
+sbs.gemFT.cuttrackt0 = 20.0
+
+sbs.gemFT.multitracksearch=1
+sbs.gemFT.pmin = 5.0
+sbs.gemFT.useslopeconstraint=1
+
+sbs.gemFT.useelasticconstraint = 1
+sbs.gemFT.constraintwidth_theta = 0.02
+sbs.gemFT.constraintwidth_phi = 0.03
+
+
+#######################################################################################
+#                                                                                     #
+#  DEFINE TIME-DEPENDENT RAW ADC MIN VALUES TO AVOID NEGATIVE SATURATION IN OFFLINE   #
+#  COMMON-MODE CALCULATION                                                            #
+#                                                                                     #
+#######################################################################################                 
+
+--------[ 2025-04-01 00:00:00 ] # values from run 4482 (before baseline shift):
+sbs.gemFT.m0.rawADCminU = 
+        190         190         270         298         254         190         274         270 
+          0         238           0         218         234         246         274         258 
+        274         274         325         235         310         474         512         420 
+        372         246         198         188         128         112         136 
+
+sbs.gemFT.m0.rawADCminV = 
+        266         198         262         218         174         250         234         274 
+        262         302         270         342         258         262         246         226 
+        282         266         242         218         202         222         238         306 
+        142         184         368 
+
+sbs.gemFT.m1.rawADCminU = 
+        182         142         246         254         314         214         198         306 
+        246         250         222         290         214         298         286         200 
+        246         142         298         362         318         226         302         290 
+        250         254         230         182         254         274         214 
+
+sbs.gemFT.m1.rawADCminV = 
+        302         230         286         218         290         162         234         326 
+        274         298         358         306         254         258         278         270 
+        278         250         362         314         358         278         282         302 
+        262         250         106 
+
+sbs.gemFT.m2.rawADCminU = 
+        190         242         274         225         194         290         118         230 
+        210         218         250         214         238         302         240         266 
+        178         270         250         202         310         322         202         214 
+        158         222         154         300         290         144 
+
+sbs.gemFT.m2.rawADCminV = 
+        222         -52         330         274         278         242         182         290 
+        194         274         210         230         250         246         202         322 
+        218         298         278         278         354         318         290         330 
+        -28         262         274         355         230         152 
+
+sbs.gemFT.m3.rawADCminU = 
+        262         250         254           0         198          98         302         254 
+        230         218         250         254         330         214         246         218 
+        234         258         258         310         274         226         246         230 
+        238         222         302         250         200         116 
+
+sbs.gemFT.m3.rawADCminV = 
+         82         270         206         254         270         278         290         190 
+        218         242         278         266         242         230         266           0 
+        210         406         294         390         278         246         214         278 
+        350         390         294         325         250         272 
+
+sbs.gemFT.m4.rawADCminU = 
+          0         278         298         370         190         314         266         322 
+        302         245         330         334         210         235         270         338 
+        294         330         298         246         278         334         294         262 
+        306         370         294         246         322         300 
+
+sbs.gemFT.m4.rawADCminV = 
+        270         274         238         242         302         306         314         230 
+        558         282         200         226         146         402         338         362 
+        346         334         334         238         286         226         310         278 
+        362         354         314         294         120         140 
+
+sbs.gemFT.m5.rawADCminU = 
+        302         226         306         294         318         226         298         310 
+        290         194         266         210         234         130         234         286 
+        238         318         290         258         242         330         214         218 
+        226         214         246         170         194         112 
+
+sbs.gemFT.m5.rawADCminV = 
+        222         194         250         278         270         194         234         200 
+        200         270         280         250         258         326         198         290 
+        262         238         290         274         310         258        1106         194 
+        258         290         218         234         315         410 
+
+sbs.gemFT.m6.rawADCminU = 
+        228         204         152         188         196         168         180         184 
+        184         358 
+
+sbs.gemFT.m6.rawADCminV = 
+        244         220         236         232         224         204         208         196 
+        232         228         184         160 
+
+sbs.gemFT.m7.rawADCminU = 
+         56         242         124         -52         176          36         104           0 
+        124         152 
+
+sbs.gemFT.m7.rawADCminV = 
+        100         256         230         190         160         136         256         136 
+        148         172         168           0 
+
+sbs.gemFT.m8.rawADCminU = 
+        246         218         182         156         104         132         116          64 
+        214         254 
+
+sbs.gemFT.m8.rawADCminV = 
+        196         124         304         216         136         200         180         184 
+        116         234         172         276 
+
+sbs.gemFT.m9.rawADCminU = 
+        186          64          68         104         140         288         252         200 
+        312         168 
+
+sbs.gemFT.m9.rawADCminV = 
+        188         256         172         152         140         268         124         230 
+         52          52         266         164 
+
+sbs.gemFT.m10.rawADCminU = 
+        184         112         140         172         190         174         234         250 
+        194         174 
+
+sbs.gemFT.m10.rawADCminV = 
+        194         210         190         274         382         282         330         150 
+        206         218         358         140 
+
+sbs.gemFT.m11.rawADCminU = 
+        190         338         148         206         -52         242          84         244 
+        170         174 
+
+sbs.gemFT.m11.rawADCminV = 
+        140         380         204         212          64         160         228         164 
+         96         176         212         104 
+
+sbs.gemFT.m12.rawADCminU = 
+        282         218         152         100          28         136         108         116 
+        262         282 
+
+sbs.gemFT.m12.rawADCminV = 
+        124         132         140         120         164         172         220         180 
+         92         192         148         140 
+
+sbs.gemFT.m13.rawADCminU = 
+         80         234          84         188         116         128         202         160 
+        152         144 
+
+sbs.gemFT.m13.rawADCminV = 
+        392         264         452         192         372         168         372         292 
+        428         216         340         384 
+
+                                      
+
+--------[ 2025-06-18 16:50:00 ] # values determined from run 5326:
+
+sbs.gemFT.m0.rawADCminU = 
+        210         218         318         338         270         218         290         334 
+          0         350         270         258         278         278         298         290 
+        310         266         370         298         378         426         604         488 
+        504         274         330         334         384         408         396 
+
+sbs.gemFT.m0.rawADCminV = 
+        294         262         310         274         222         258         254         350 
+        318         334         298         378         290         306         278         262 
+        298         282         310         242         230         222         278         342 
+        246         528         668 
+
+sbs.gemFT.m1.rawADCminU = 
+        218         206         306         286         346         218         246         354 
+        310         318         258         338         246         326         302         238 
+        250          52         330         382         338         270         322         302 
+        274         282         266         190         188         228         230 
+
+sbs.gemFT.m1.rawADCminV = 
+        216         250         318         254         338         198         286         370 
+        286         318         366         350         302         306         346         322 
+        314         298         398         318         374         318         322         354 
+        168         148         142 
+
+sbs.gemFT.m2.rawADCminU = 
+        144         282         338         254         226         338         286         290 
+        246         294         254         258         294         346         294         290 
+        194         294         286         222         346         358         258         250 
+        190         238         170         512         212         436 
+
+sbs.gemFT.m2.rawADCminV = 
+        208         286         386         306         314         270         222         330 
+        246         362         278         258         286         274         254         354 
+        282         334         330         326         394         286         322         374 
+        262         338         212         352         364         440 
+
+sbs.gemFT.m3.rawADCminU = 
+        208         176         318           0         266         130         330         278 
+        270         246         262         314         378         238         262         258 
+        282         282         306         386         350         266         226         144 
+        298         258         342         256         540         520 
+
+sbs.gemFT.m3.rawADCminV = 
+        242         314         274         176         310         322         334         238 
+        270         294         310         318         274         282         290           0 
+        270         446         342         470         314         306         278         338 
+        386         442         208         300         512         536 
+
+sbs.gemFT.m4.rawADCminU = 
+          0         224         244         410         234         350         282         338 
+        350         234         402         370         218         258         306         370 
+        334         362         334         302         306         386         322         298 
+        314         430         346         266         268         224 
+
+sbs.gemFT.m4.rawADCminV = 
+        200         274         176         290         354         244         370         282 
+        586         318         234         254         246         442         378         382 
+        378         362         386         254         286         282         346         278 
+        390         312           0         318         392         412 
+
+sbs.gemFT.m5.rawADCminU = 
+        380         238         224         382         354         242         342         378 
+        294         238         282         230         274         290         282         306 
+        278         334         318         294         290         346         234         262 
+        226         230         180         210         104         152 
+
+sbs.gemFT.m5.rawADCminV = 
+        176         148         310         200         294         226         258         226 
+        242         286         294         282         306         370         246         294 
+        300         294         350         318         346         278         286         218 
+        310         212         278         270         260         524 
+
+sbs.gemFT.m6.rawADCminU = 
+        264         500         436         472         476         500         496         220 
+        404         384 
+
+sbs.gemFT.m6.rawADCminV = 
+        508         452         508         516         472         292         240         600 
+        464         560         204         452 
+
+sbs.gemFT.m7.rawADCminU = 
+        108         278         372         180         392         232         340         248 
+        272         220 
+
+sbs.gemFT.m7.rawADCminV = 
+        208         528         254         184         392         408         484         192 
+        372         444         192           0 
+
+sbs.gemFT.m8.rawADCminU = 
+        180         258         222         196         160         300         328         308 
+        294         338 
+
+sbs.gemFT.m8.rawADCminV = 
+        580         310         600         468         252         416         208         452 
+        232         286         464         508 
+
+sbs.gemFT.m9.rawADCminU = 
+        112         152         236         320         368         544         524         384 
+        512         326 
+
+sbs.gemFT.m9.rawADCminV = 
+        500         288         280         340         420         524         328         238 
+         84         180         352         408 
+
+sbs.gemFT.m10.rawADCminU = 
+        524         512         172         452         152         226         188         196 
+        132         116 
+
+sbs.gemFT.m10.rawADCminV = 
+        210         144         250         358         316         346         382         198 
+        282         294         308         220 
+
+sbs.gemFT.m11.rawADCminU = 
+        136         390         212         144         116         282         156         368 
+        274         136 
+
+sbs.gemFT.m11.rawADCminV = 
+        216         624         440         236         156         352         372         408 
+        368         452         600         352 
+
+sbs.gemFT.m12.rawADCminU = 
+        220         246         200         316         220         348         364         344 
+        220         220 
+
+sbs.gemFT.m12.rawADCminV = 
+        416         368         244         172         444         468         456         396 
+        140         220         324         372 
+
+sbs.gemFT.m13.rawADCminU = 
+        276         184         360         404         164         380         164         444 
+        396         376 
+
+sbs.gemFT.m13.rawADCminV = 
+        628         440         640         460         568         380         596         420 
+        640         412         564         620 
+
+---------[ 2025-07-21 22:50:00 ] # thresholds based on 3550 V data for run 5415:
+
+sbs.gemFT.minhitsontrack = 4
+
+sbs.gemFT.maxhitcombos_total = 1.e24
+
+sbs.gemFT.m0.threshold_sample =          84.082
+sbs.gemFT.m0.threshold_stripsum =          210.21
+sbs.gemFT.m0.threshold_clustersum =          336.33
+sbs.gemFT.m1.threshold_sample =           100.2
+sbs.gemFT.m1.threshold_stripsum =           250.5
+sbs.gemFT.m1.threshold_clustersum =           400.8
+sbs.gemFT.m2.threshold_sample =          84.849
+sbs.gemFT.m2.threshold_stripsum =          212.12
+sbs.gemFT.m2.threshold_clustersum =          339.39
+sbs.gemFT.m3.threshold_sample =          77.758
+sbs.gemFT.m3.threshold_stripsum =          194.39
+sbs.gemFT.m3.threshold_clustersum =          311.03
+sbs.gemFT.m4.threshold_sample =          93.136
+sbs.gemFT.m4.threshold_stripsum =          232.84
+sbs.gemFT.m4.threshold_clustersum =          372.55
+sbs.gemFT.m5.threshold_sample =          90.515
+sbs.gemFT.m5.threshold_stripsum =          226.29
+sbs.gemFT.m5.threshold_clustersum =          362.06
+sbs.gemFT.m6.threshold_sample =           62.55
+sbs.gemFT.m6.threshold_stripsum =          156.38
+sbs.gemFT.m6.threshold_clustersum =           250.2
+sbs.gemFT.m7.threshold_sample =          79.341
+sbs.gemFT.m7.threshold_stripsum =          198.35
+sbs.gemFT.m7.threshold_clustersum =          317.36
+sbs.gemFT.m8.threshold_sample =          87.426
+sbs.gemFT.m8.threshold_stripsum =          218.56
+sbs.gemFT.m8.threshold_clustersum =           349.7
+sbs.gemFT.m9.threshold_sample =          78.232
+sbs.gemFT.m9.threshold_stripsum =          195.58
+sbs.gemFT.m9.threshold_clustersum =          312.93
+sbs.gemFT.m10.threshold_sample =          72.468
+sbs.gemFT.m10.threshold_stripsum =          181.17
+sbs.gemFT.m10.threshold_clustersum =          289.87
+sbs.gemFT.m11.threshold_sample =          79.172
+sbs.gemFT.m11.threshold_stripsum =          197.93
+sbs.gemFT.m11.threshold_clustersum =          316.69
+sbs.gemFT.m12.threshold_sample =          83.204
+sbs.gemFT.m12.threshold_stripsum =          208.01
+sbs.gemFT.m12.threshold_clustersum =          332.82
+sbs.gemFT.m13.threshold_sample =          67.804
+sbs.gemFT.m13.threshold_stripsum =          169.51
+sbs.gemFT.m13.threshold_clustersum =          271.22
+
+---------[ 2025-07-11 8:30:00 ] # Start C-foil zero-field runs taken on 7/11/2025. Single-foil, 2-foil, and 4-foil runs.
+sbs.gemFT.useopticsconstraint = 0
+sbs.gemFT.useslopeconstraint = 0
+sbs.gemFT.useelasticconstraint = 0
+sbs.gemFT.multitracksearch = 0
+sbs.gemFT.usestriptimingcut = 0
+sbs.gemFT.dump_geometry_info = 1
+
+
+---------[ 2025-07-11 15:55:00 ] # Back to production running on LH2 with field ON.
+sbs.gemFT.useopticsconstraint = 1
+sbs.gemFT.useslopeconstraint = 1
+sbs.gemFT.multitracksearch = 1
+sbs.gemFT.usestriptimingcut = 1
+sbs.gemFT.useelasticconstraint = 1
+sbs.gemFT.dump_geometry_info = 0
+
+

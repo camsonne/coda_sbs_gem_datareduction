@@ -1,0 +1,113 @@
+#Random seed
+Rseed 0
+#global trigger jitter for all detectors in ns
+TriggerJitter 3.0 
+#list of detectors to digitize
+detectors_list hcal bbps bbsh grinch bbhodo bbgem 
+
+## parameters for bbps
+refindex_bbps 1.65
+NChan_bbps 52 
+gatewidth_bbps 200 
+gain_bbps 3.714e6
+nstages_bbps 10
+ped_bbps 300.0 
+pedsigma_bbps 3.0 
+trigoffset_bbps 18.2 
+threshold_bbps 22.0e-3 
+ADCconv_bbps 40 
+#ADCbits_bbps 12 
+TDCconv_bbps 0.12
+TDCbits_bbps 12 
+sigmapulse_bbps 40.0 
+
+## parameters for bbsh
+refindex_bbsh 1.6477
+NChan_bbsh 189
+gatewidth_bbsh 200 
+gain_bbsh 1.836e6
+nstages_bbsh 10
+ped_bbsh 300.0 
+pedsigma_bbsh 3.0 
+trigoffset_bbsh 18.5 
+threshold_bbsh 22.e-3 
+ADCconv_bbsh 40 
+#ADCbits_bbsh 12 
+TDCconv_bbsh 0.12 
+TDCbits_bbsh 12 
+sigmapulse_bbsh 40.0 
+
+## parameters for grinch
+NChan_grinch 510 
+gatewidth_grinch 100 
+gain_grinch 7.0e6
+nstages_grinch 11
+ped_grinch 500.0 
+pedsigma_grinch 3.0
+trigoffset_grinch 15.3 
+threshold_grinch 3.e-3 
+ADCconv_grinch 100 
+#ADCbits_grinch 12 
+TDCconv_grinch 1.0 
+TDCbits_grinch 16 
+sigmapulse_grinch 3.75 
+
+## parameters for bbhodo
+NChan_bbhodo 180 
+gatewidth_bbhodo 100 
+gain_bbhodo 1.0e5
+nstages_bbhodo 10
+ped_bbhodo 500.0 
+pedsigma_bbhodo 3.0
+trigoffset_bbhodo 18.6 
+threshold_bbhodo 3.e-3 
+ADCconv_bbhodo 100 
+#ADCbits_bbhodo 12 
+TDCconv_bbhodo 0.1 
+TDCbits_bbhodo 19 
+sigmapulse_bbhodo 1.6 
+
+## parameters for hcal
+NChan_hcal 288
+gatewidth_hcal 200 
+#gain_hcal 1.0e6
+gain_hcal 4.788e+06 3.545e+06 3.968e+06 4.587e+06 323300 273500 260700 1.445e+06 4.187e+06 5.217e+06 5.776e+06 5.387e+06 9.877e+06 8.186e+06 5.024e+06 3.1e+06 1.111e+06 442400 193800 427600 3.584e+06 4.187e+06 4.098e+06 3.926e+06 3.822e+06 8.319e+06 4.278e+06 5.161e+06 753200 537300 256300 552200 3.642e+06 5.161e+06 9.513e+06 3.801e+06 4.347e+06 4.301e+06 3.947e+06 3.761e+06 264300 201200 189200 186700 4.865e+06 3.47e+06 4.033e+06 4.489e+06 5.839e+06 4.164e+06 4.418e+06 4.255e+06 311300 259000 218400 142600 4.538e+06 6.677e+06 4.865e+06 4.441e+06 3.947e+06 5.359e+06 4.813e+06 3.822e+06 348400 157900 186000 427600 4.209e+06 4.892e+06 3.863e+06 4.418e+06 9.162e+06 3.884e+06 3.801e+06 3.415e+06 424700 207500 2.688e+06 567500 8.013e+06 8.275e+06 9.513e+06 2.016e+07 8.872e+06 4.418e+06 4.324e+06 3.721e+06 231400 141100 155800 195800 3.603e+06 4.513e+06 3.863e+06 3.545e+06 4.098e+06 4.278e+06 3.396e+06 3.36e+06 392600 356900 201200 309200 3.622e+06 5.301e+06 3.545e+06 4.661e+06 4.076e+06 3.781e+06 5.273e+06 2.923e+06 216100 185400 148500 135500 3.622e+06 3.863e+06 4.737e+06 8.637e+06 6.396e+06 5.902e+06 2.892e+06 3.271e+06 141100 181000 174400 100300 4.513e+06 4.37e+06 4.347e+06 3.781e+06 4.347e+06 3.926e+06 3.926e+06 3.968e+06 294800 197800 252900 239400 5.746e+06 4.394e+06 3.342e+06 4.892e+06 4.513e+06 5.052e+06 4.611e+06 3.603e+06 352000 528200 496800 2.887e+06 8.591e+06 6.57e+06 7.97e+06 9.877e+06 5.273e+06 4.538e+06 4.076e+06 4.12e+06 263400 143600 705900 187900 3.989e+06 5.416e+06 4.164e+06 4.711e+06 3.863e+06 3.863e+06 1.237e+07 4.164e+06 284000 272600 134500 286900 5.052e+06 4.255e+06 4.054e+06 6.932e+06 3.661e+06 4.441e+06 4.971e+06 5.245e+06 203300 149500 282000 227500 4.418e+06 3.489e+06 5.189e+06 3.863e+06 9.462e+06 3.721e+06 4.971e+06 3.508e+06 725400 371800 151600 659400 4.465e+06 4.611e+06 4.636e+06 4.865e+06 5.245e+06 3.36e+06 3.947e+06 3.236e+06 403500 122700 130900 204000 6.095e+06 3.622e+06 5.902e+06 4.918e+06 4.611e+06 3.761e+06 4.054e+06 2.8e+06 156300 165700 278200 125700 4.347e+06 3.324e+06 7.97e+06 3.781e+06 4.465e+06 4.164e+06 3.681e+06 4.12e+06 857400 233000 206100 226700 4.441e+06 4.187e+06 3.035e+06 4.098e+06 4.418e+06 4.164e+06 4.324e+06 3.545e+06 440900 388600 111500 373000 5.024e+06 2.935e+07 4.324e+06 6.5e+06 2.986e+06 3.47e+06 3.396e+06 3.622e+06 183500 108200 82610 182900 3.134e+06 2.892e+06 4.098e+06 6.465e+06 3.168e+06 4.033e+06 3.219e+06 3.018e+06 360500 315600 80660 189900 3.324e+06 3.254e+06 3.342e+06 7.513e+06 4.788e+06 4.076e+06 4.011e+06 4.011e+06 1.198e+06 298900 124000 199200 4.636e+06 4.587e+06 5.997e+06 4.489e+06 
+nstages_hcal 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 12 12 12 12 8 8 8 8 12 12 12 12 
+ped_hcal 300.0 
+pedsigma_hcal 1.0
+trigoffset_hcal 81.0 
+threshold_hcal 22.e-3 
+ADCconv_hcal 40.0 
+TDCconv_hcal 0.12 
+TDCbits_hcal 16 
+FADC_ADCbits 12 
+FADC_sampsize 4.0 
+sigmapulse_hcal 40.0 
+zhitresp_hcal 5.242 11.39 10.41
+
+## parameters for GEMs
+# number of planes/modules/readout
+NPlanes_bbgem 16 
+# data acquisition window for bbgem in ns
+gatewidth_bbgem 400 
+nlayers_bbgem 5
+#bbgem_layer_z 0.85 1.0 1.15 1.30 2.33223544
+#bbgem_layer_z 0.0468175 0.1968175 0.3468175 0.4968175 1.5550219
+bbgem_layer_z 0.0 0.137 0.274 0.411 1.5517
+#1.52905294 
+#number of strips for each plane/module
+layer_bbgem 1 1 2 2 3 3 4 4 5 5 5 5 5 5 5 5 
+nstrips_bbgem 3840 3840 3840 3840 3840 3840 3840 3840 1280 1536 1280 1536 1280 1536 1280 1536 
+#offset in transport coordinate for each plane/module in meters
+offset_bbgem 0. 0. 0. 0. 0. 0. 0. 0. -0.768 0. -0.256 0. 0.256 0. 0.768 0. 
+#strip angle for all BB GEM readouts in degrees
+RO_angle_bbgem -30.0 30.0 -30.0 30.0 -30.0 30.0 -30.0 30.0 0.0 90.0 0.0 90.0 0.0 90.0 0.0 90.0 
+#trigger offsets for all planes in ns
+triggeroffset_bbgem 120.8 121.28 121.74 122.2 126. 126. 126. 126.
+gain_bbgem 20.
+#zero suppression threshold for GEMs in ADC channels
+ZsupThr_bbgem 240.
+#common mode value/array for GEMs in ADC channels
+commonmode_array_bbgem 1500.
+
+endconfig

@@ -1,0 +1,1301 @@
+## DB for GEp front tracker. Two XZ layers in front, followed by four UV layers and two XY layers.
+# Layer 0: UVaXW (L0)
+# Layer 1: UVaXW (L1)
+# Layer 2: UVaUV (L2)
+# Layer 3: UVaUV (L3)
+# Layer 4: UVaUV (L4)
+# Layer 5: UVaUV (L5)
+# Layer 6: UVaXY (L6)
+# Layer 7: UVaXY (L7)
+
+
+# Start database just before the first cosmic data is collected with the front tracker. 
+-------[ 2024-11-06 00:00:00 ] 
+# Database format: the tracker consists of a collection of modules: 
+# database properties will be organized by module, not by "plane" as in old SBS-offline
+ 
+# Define ALL the independent GEM modules used in the tracker.
+sbs.gemFT.modules = m0   m1   m2   m3   m4   m5   m6 m7 m8 m9   m10 m11 m12 m13
+
+# Define to which layer each individual GEM module belongs to.
+sbs.gemFT.m0.layer = 0
+
+sbs.gemFT.m1.layer = 1
+
+sbs.gemFT.m2.layer = 2
+
+sbs.gemFT.m3.layer = 3
+
+sbs.gemFT.m4.layer = 4
+
+sbs.gemFT.m5.layer = 5
+
+sbs.gemFT.m6.layer = 6
+sbs.gemFT.m7.layer = 6
+sbs.gemFT.m8.layer = 6
+sbs.gemFT.m9.layer = 6
+
+sbs.gemFT.m10.layer = 7
+sbs.gemFT.m11.layer = 7
+sbs.gemFT.m12.layer = 7
+sbs.gemFT.m13.layer = 7
+
+
+# Define APV mapping configurations: 0 = INFN, 1 = UVA X/Y, 2 = UVA U/V or X/W
+sbs.gemFT.m0.apvmap = 2
+
+sbs.gemFT.m1.apvmap = 2
+
+sbs.gemFT.m2.apvmap = 2
+
+sbs.gemFT.m3.apvmap = 2
+
+sbs.gemFT.m4.apvmap = 2
+
+sbs.gemFT.m5.apvmap = 2
+
+sbs.gemFT.m6.apvmap = 1
+sbs.gemFT.m7.apvmap = 1
+sbs.gemFT.m8.apvmap = 1
+sbs.gemFT.m9.apvmap = 1
+
+sbs.gemFT.m10.apvmap = 1
+sbs.gemFT.m11.apvmap = 1
+sbs.gemFT.m12.apvmap = 1
+sbs.gemFT.m13.apvmap = 1
+
+
+# Define initial guess values for GEM detector position and angle based on engineering drawings and tape measurements.
+# Positions in internal GEM coordinate system.
+sbs.gemFT.m0.position =   0     0     0
+
+sbs.gemFT.m1.position =   0     0     0.075  
+
+sbs.gemFT.m2.position =   0     0     0.202
+
+sbs.gemFT.m3.position =   0     0     0.341
+
+sbs.gemFT.m4.position =   0     0     0.484
+
+sbs.gemFT.m5.position =   0     0     0.624
+
+sbs.gemFT.m6.position =  -0.766 0     0.769
+sbs.gemFT.m7.position =  -0.256  0    0.737
+sbs.gemFT.m8.position =   0.256  0    0.769
+sbs.gemFT.m9.position =   0.765  0    0.737
+
+sbs.gemFT.m10.position = -0.766  0    0.897
+sbs.gemFT.m11.position = -0.256  0    0.865
+sbs.gemFT.m12.position =  0.256  0    0.897
+sbs.gemFT.m13.position =  0.765  0    0.865
+
+# Angles: assume zero for ALL.
+sbs.gemFT.m0.angle =      0     0     0
+
+sbs.gemFT.m1.angle =      0     0     0
+
+sbs.gemFT.m2.angle =      0     0     0
+
+sbs.gemFT.m3.angle =      0     0     0
+
+sbs.gemFT.m4.angle =      0     0     0
+
+sbs.gemFT.m5.angle =      0     0     0
+
+sbs.gemFT.m6.angle =      0     0     0
+sbs.gemFT.m7.angle =      0     0     0
+sbs.gemFT.m8.angle =      0     0     0
+sbs.gemFT.m9.angle =      0     0     0
+
+sbs.gemFT.m10.angle =     0     0     0
+sbs.gemFT.m11.angle =     0     0     0
+sbs.gemFT.m12.angle =     0     0     0
+sbs.gemFT.m13.angle =     0     0     0
+
+
+# Define module sizes. Set to nominal sizes.
+sbs.gemFT.m0.size = 1.5 0.4 0.001
+
+sbs.gemFT.m1.size = 1.5 0.4 0.001
+
+sbs.gemFT.m2.size = 1.5 0.4 0.001
+
+sbs.gemFT.m3.size = 1.5 0.4 0.001
+
+sbs.gemFT.m4.size = 1.5 0.4 0.001
+
+sbs.gemFT.m5.size = 1.5 0.4 0.001
+
+sbs.gemFT.m6.size = 0.512 0.6144 0.001
+sbs.gemFT.m7.size = 0.512 0.6144 0.001
+sbs.gemFT.m8.size = 0.512 0.6144 0.001
+sbs.gemFT.m9.size = 0.512 0.6144 0.001
+
+sbs.gemFT.m10.size = 0.512 0.6144 0.001
+sbs.gemFT.m11.size = 0.512 0.6144 0.001
+sbs.gemFT.m12.size = 0.512 0.6144 0.001
+sbs.gemFT.m13.size = 0.512 0.6144 0.001
+
+
+# Define strip angles as measured w.r.t. +X direction of the internal GEM coordinate system (X-down along the GEM plane, Z-particle motion direction, Y-"left" to form a RH coordinate sys.) 
+# This is where we will account for the orientation of each GEM layer w.r.t to the vertical axis, X.
+# For the UVA X/Y modules, their "X/U" axis coincides with the direction of GEM coordinate system "X" axis. For GEM layers that are oriented so that the beam is hitting the R/O board first, "Y/V" axis is rotaed by -90 degrees w.r.t GEM coordinate sys. "X" axis and for the GEM layers that are oriented so that the beam is hitting the gas window first, "Y/V" axis is rotaded by +90 degrees w.r.t GEM coordinate sys. "X" axis.
+
+#Layer 0 and 1 --> Took directly from GEn-RP DB.
+# Layer 0 (UVAXW) - beam hits gas window first 
+sbs.gemFT.m0.uangle = 180.0
+sbs.gemFT.m0.vangle = 135.0
+
+# Layer 1 (UVAXW) - beam hits r/o board first
+sbs.gemFT.m1.uangle = 180.0
+sbs.gemFT.m1.vangle = -135.0
+
+# Layer 2 (UVAUV) - beam hits r/o board first
+sbs.gemFT.m2.uangle = 150.0 
+sbs.gemFT.m2.vangle = -150.0
+
+# Layer 3 (UVAUV) - beam hits r/o board first
+sbs.gemFT.m3.uangle = 150.0
+sbs.gemFT.m3.vangle = -150.0
+
+# Layer 4 (UVAUV) - beam hits r/o board first
+sbs.gemFT.m4.uangle = 150.0
+sbs.gemFT.m4.vangle = -150.0
+
+# Layer 5 (UVAUV) - beam hits r/o board first
+sbs.gemFT.m5.uangle = 150.0
+sbs.gemFT.m5.vangle = -150.0
+
+# Layer 6 (UVAXY) - beam hits r/o board first
+sbs.gemFT.m6.uangle = 0.0
+sbs.gemFT.m6.vangle = -90.0
+sbs.gemFT.m7.uangle = 0.0
+sbs.gemFT.m7.vangle = -90.0
+sbs.gemFT.m8.uangle = 0.0
+sbs.gemFT.m8.vangle = -90.0
+sbs.gemFT.m9.uangle = 0.0
+sbs.gemFT.m9.vangle = -90.0
+
+# Layer 7 (UVAXY) - beam hits r/o board first
+sbs.gemFT.m10.uangle = 0.0
+sbs.gemFT.m10.vangle = -90.0
+sbs.gemFT.m11.uangle = 0.0
+sbs.gemFT.m11.vangle = -90.0
+sbs.gemFT.m12.uangle = 0.0
+sbs.gemFT.m12.vangle = -90.0
+sbs.gemFT.m13.uangle = 0.0
+sbs.gemFT.m13.vangle = -90.0
+
+
+# Define U/V strip offsets: for X/Y GEMS, strip offsets are zero --> (0,0).
+# UV and XW strip GEMs, the needed offsets are non-zero.
+
+# U offsets:
+sbs.gemFT.m0.uoffset = 0.0176 #Directly from GEn-RP DB.
+
+sbs.gemFT.m1.uoffset = 0.0176 #Directly from GEn-RP DB.
+
+sbs.gemFT.m2.uoffset = 0.0108
+
+sbs.gemFT.m3.uoffset = 0.0108
+
+sbs.gemFT.m4.uoffset = 0.0108
+
+sbs.gemFT.m5.uoffset = 0.0108
+
+sbs.gemFT.m6.uoffset = 0.0
+sbs.gemFT.m7.uoffset = 0.0
+sbs.gemFT.m8.uoffset  = 0.0
+sbs.gemFT.m9.uoffset  = 0.0
+
+sbs.gemFT.m10.uoffset = 0.0
+sbs.gemFT.m11.uoffset = 0.0
+sbs.gemFT.m12.uoffset = 0.0
+sbs.gemFT.m13.uoffset = 0.0
+
+# V offsets
+sbs.gemFT.m0.voffset = 0.0 #Directly from GEn-RP DB.
+
+sbs.gemFT.m1.voffset = 0.0 #Directly from GEn-RP DB.
+
+sbs.gemFT.m2.voffset = 0.0108
+
+sbs.gemFT.m3.voffset = 0.0108
+
+sbs.gemFT.m4.voffset = 0.0108
+
+sbs.gemFT.m5.voffset = 0.0108
+
+sbs.gemFT.m6.voffset = 0.0
+sbs.gemFT.m7.voffset = 0.0
+sbs.gemFT.m8.voffset  = 0.0
+sbs.gemFT.m9.voffset  = 0.0
+
+sbs.gemFT.m10.voffset = 0.0
+sbs.gemFT.m11.voffset = 0.0
+sbs.gemFT.m12.voffset = 0.0
+sbs.gemFT.m13.voffset = 0.0
+
+
+# Define strip counts:
+sbs.gemFT.m0.nstripsu = 3968
+sbs.gemFT.m0.nstripsv = 3456
+
+sbs.gemFT.m1.nstripsu = 3968
+sbs.gemFT.m1.nstripsv = 3456
+
+sbs.gemFT.m2.nstripsu = 3840
+sbs.gemFT.m2.nstripsv = 3840
+
+sbs.gemFT.m3.nstripsu = 3840
+sbs.gemFT.m3.nstripsv = 3840
+
+sbs.gemFT.m4.nstripsu = 3840
+sbs.gemFT.m4.nstripsv = 3840
+
+sbs.gemFT.m5.nstripsu = 3840
+sbs.gemFT.m5.nstripsv = 3840
+
+sbs.gemFT.m6.nstripsu = 1280
+sbs.gemFT.m6.nstripsv = 1536
+sbs.gemFT.m7.nstripsu = 1280
+sbs.gemFT.m7.nstripsv = 1536
+sbs.gemFT.m8.nstripsu = 1280
+sbs.gemFT.m8.nstripsv = 1536
+sbs.gemFT.m9.nstripsu = 1280
+sbs.gemFT.m9.nstripsv = 1536
+
+sbs.gemFT.m10.nstripsu = 1280
+sbs.gemFT.m10.nstripsv = 1536
+sbs.gemFT.m11.nstripsu = 1280
+sbs.gemFT.m11.nstripsv = 1536
+sbs.gemFT.m12.nstripsu = 1280
+sbs.gemFT.m12.nstripsv = 1536
+sbs.gemFT.m13.nstripsu = 1280
+sbs.gemFT.m13.nstripsv = 1536
+
+
+# Define strip pitch. ALL modules have the same strip pitch along both dimensions, 0.4 mm:
+sbs.gemFT.upitch = 0.0004
+sbs.gemFT.vpitch = 0.0004
+
+
+# Define module average gains relative to target ADC peak position of 4000
+#U strips
+sbs.gemFT.m0.ugain = 1  
+sbs.gemFT.m1.ugain = 1   
+sbs.gemFT.m2.ugain = 1  
+sbs.gemFT.m3.ugain = 1   
+sbs.gemFT.m4.ugain = 1   
+sbs.gemFT.m5.ugain = 1   
+sbs.gemFT.m6.ugain = 1   
+sbs.gemFT.m7.ugain = 1   
+sbs.gemFT.m8.ugain = 1   
+sbs.gemFT.m9.ugain = 1  
+sbs.gemFT.m10.ugain = 1  
+sbs.gemFT.m11.ugain = 1   
+sbs.gemFT.m12.ugain = 1   
+sbs.gemFT.m13.ugain = 1   
+
+#V Strips
+sbs.gemFT.m0.vgain = 1  
+sbs.gemFT.m1.vgain = 1   
+sbs.gemFT.m2.vgain = 1   
+sbs.gemFT.m3.vgain = 1   
+sbs.gemFT.m4.vgain = 1   
+sbs.gemFT.m5.vgain = 1   
+sbs.gemFT.m6.vgain = 1  
+sbs.gemFT.m7.vgain = 1   
+sbs.gemFT.m8.vgain = 1  
+sbs.gemFT.m9.vgain = 1   
+sbs.gemFT.m10.vgain = 1   
+sbs.gemFT.m11.vgain = 1  
+sbs.gemFT.m12.vgain = 1  
+sbs.gemFT.m13.vgain = 1 
+
+
+
+################### DECODE INFO ########################################################################
+## Channel maps for decoding explained                                                                ##
+## Each entry corresponds to one APV card                                                             ## 
+## Crate = ROC ID = 2 and 4  for SBS VTP                                                              ##
+## Slot = 11 for BigBite VTP                                                                          ##
+## fiber/mpd is fiber number for an MPD module, this is unique for each module within a VTP/SSP       ##
+## gemid is unique "production ID" of a GEM module, not currently used by analysis but useful         ##
+## for bookkeeping/tracking                                                                           ##
+## adc_ch is the unique adc channel of this APV card within its associated MPD                        ##
+## i2c is the "i2c address" of this APV card (not currently used by analysis)                         ##
+## pos maps APV cards to physical locations on the detector                                           ##
+## invert specifies whether strip index runs from "right-to-left" or "left-to-right" within an APV    ##
+## axis specifies which strip orientation/dimension of the readout strips connected to this APV       ##
+## ORDER of entries in the maps is:                                                                   ##
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis                              ##
+########################################################################################################
+
+#Front Layer (L1 - m0): UVAXW L1 (vtp5)
+## vtpcrate  slot    fiber   gemid    adc_ch   i2c     pos   invert   axis  
+sbs.gemFT.m0.chanmap = 
+     58      11       0     100       0       3       0       0       0
+     58      11       0     100       1       2       1       0       0
+     58      11       0     100       2       1       2       0       0
+     58      11       0     100       3       0       3       0       0
+     58      11       0     100       4       7       4       0       0
+     58      11       0     100       5       6       5       0       0
+     58      11       0     100       6       5       6       0       0
+     58      11       0     100       7       4       7       0       0
+     58      11       0     100       8      11      11       0       0
+     58      11       0     100       9      10      12       0       0
+     58      11       0     100      10       9      13       0       0
+     58      11       0     100      11       8      14       0       0
+     58      11       0     100      12      14      15       0       0
+     58      11       0     100      13      13      16       0       0
+     58      11       0     100      14      12      17       0       0
+     58      11       1     100       0       2      18       0       0
+     58      11       1     100       1       1      19       0       0
+     58      11       1     100       2       0      20       0       0
+     58      11       1     100       4       7      21       0       0
+     58      11       1     100       5       6      22       0       0
+     58      11       1     100       6       5      23       0       0
+     58      11       1     100       7       4      24       0       0
+     58      11       1     100       8      11      25       0       0
+     58      11       1     100       9      10      26       0       0
+     58      11       1     100      10       9      27       0       0
+     58      11       1     100      11       8      28       0       0
+     58      11       1     100      12      14      26       1       1
+     58      11       1     100      13      13      25       1       1
+     58      11       1     100      14      12      24       1       1
+     58      11       2     100       3       0       0       1       1
+     58      11       2     100       2       1       1       1       1
+     58      11       2     100       1       2       2       1       1
+     58      11       2     100       0       3       3       1       1
+     58      11       2     100       7       4       4       1       1
+     58      11       2     100       6       5       5       1       1
+     58      11       2     100       5       6       6       1       1
+     58      11       2     100       4       7       7       1       1
+     58      11       2     100      14      12       8       1       0
+     58      11       2     100      13      13       9       1       0
+     58      11       2     100      12      14      10       1       0
+     58      11       2     100      11       8       8       1       1
+     58      11       2     100      10       9       9       1       1
+     58      11       2     100       9      10      10       1       1
+     58      11       2     100       8      11      11       1       1
+     58      11       3     100       3       0      12       1       1
+     58      11       3     100       2       1      13       1       1
+     58      11       3     100       1       2      14       1       1
+     58      11       3     100       0       3      15       1       1
+     58      11       3     100       7       4      16       1       1
+     58      11       3     100       6       5      17       1       1
+     58      11       3     100       5       6      18       1       1
+     58      11       3     100       4       7      19       1       1
+     58      11       3     100      13      13      29       1       0
+     58      11       3     100      12      14      30       1       0
+     58      11       3     100      11       8      20       1       1
+     58      11       3     100      10       9      21       1       1
+     58      11       3     100       9      10      22       1       1
+     58      11       3     100       8      11      23       1       1
+
+#Front Layer (L1 - m0): UVAXW L1 (vtp5)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m1.chanmap =
+     58      11       4     110       0       3       0       0       0
+     58      11       4     110       1       2       1       0       0
+     58      11       4     110       2       1       2       0       0
+     58      11       4     110       3       0       3       0       0
+     58      11       4     110       4       7       4       0       0
+     58      11       4     110       5       6       5       0       0
+     58      11       4     110       6       5       6       0       0
+     58      11       4     110       7       4       7       0       0
+     58      11       4     110       8      11      11       0       0
+     58      11       4     110       9      10      12       0       0
+     58      11       4     110      10       9      13       0       0
+     58      11       4     110      11       8      14       0       0
+     58      11       4     110      12      14      15       0       0
+     58      11       4     110      13      13      16       0       0
+     58      11       4     110      14      12      17       0       0
+     58      11       5     110       0       2      18       0       0
+     58      11       5     110       1       1      19       0       0
+     58      11       5     110       2       0      20       0       0
+     58      11       5     110       4       7      21       0       0
+     58      11       5     110       5       6      22       0       0
+     58      11       5     110       6       5      23       0       0
+     58      11       5     110       7       4      24       0       0
+     58      11       5     110       8      11      25       0       0
+     58      11       5     110       9      10      26       0       0
+     58      11       5     110      10       9      27       0       0
+     58      11       5     110      11       8      28       0       0
+     58      11       5     110      12      14      26       1       1
+     58      11       5     110      13      13      25       1       1
+     58      11       5     110      14      12      24       1       1
+     58      11       6     110       3       0       0       1       1
+     58      11       6     110       2       1       1       1       1
+     58      11       6     110       1       2       2       1       1
+     58      11       6     110       0       3       3       1       1
+     58      11       6     110       7       4       4       1       1
+     58      11       6     110       6       5       5       1       1
+     58      11       6     110       5       6       6       1       1
+     58      11       6     110       4       7       7       1       1
+     58      11       6     110      14      12       8       1       0
+     58      11       6     110      13      13       9       1       0
+     58      11       6     110      12      14      10       1       0
+     58      11       6     110      11       8       8       1       1
+     58      11       6     110      10       9       9       1       1
+     58      11       6     110       9      10      10       1       1
+     58      11       6     110       8      11      11       1       1
+     58      11       7     110       3       0      12       1       1
+     58      11       7     110       2       1      13       1       1
+     58      11       7     110       1       2      14       1       1
+     58      11       7     110       0       3      15       1       1
+     58      11       7     110       7       4      16       1       1
+     58      11       7     110       6       5      17       1       1
+     58      11       7     110       5       6      18       1       1
+     58      11       7     110       4       7      19       1       1
+     58      11       7     110      13      13      29       1       0
+     58      11       7     110      12      14      30       1       0
+     58      11       7     110      11       8      20       1       1
+     58      11       7     110      10       9      21       1       1
+     58      11       7     110       9      10      22       1       1
+     58      11       7     110       8      11      23       1       1
+
+#Front Layer (L2 - m0): UVAUV L2 (vtp5)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m2.chanmap = 
+     58      11       8     120       0       3      29       1       1 
+     58      11       8     120       1       2      28       1       1 
+     58      11       8     120       2       1      27       1       1 
+     58      11       8     120       3       0      26       1       1 
+     58      11       8     120       4       7      25       1       1 
+     58      11       8     120       5       6      24       1       1 
+     58      11       8     120       6       5      23       1       1 
+     58      11       8     120       7       4      22       1       1 
+     58      11       8     120       8      11      21       1       1 
+     58      11       8     120       9      10      20       1       1 
+     58      11       8     120      10       9      19       1       1 
+     58      11       8     120      11       8      18       1       1 
+     58      11       8     120      12      14      17       1       1 
+     58      11       8     120      13      13      16       1       1 
+     58      11       8     120      14      12      15       1       1 
+     58      11       9     120       0       3      11       1       1 
+     58      11       9     120       1       2      10       1       1 
+     58      11       9     120       2       1       9       1       1 
+     58      11       9     120       3       0       8       1       1 
+     58      11       9     120       4       7       7       1       1 
+     58      11       9     120       5       6       6       1       1 
+     58      11       9     120       6       5       5       1       1 
+     58      11       9     120       7       4       4       1       1 
+     58      11       9     120       8      11       3       1       1 
+     58      11       9     120       9      10       2       1       1 
+     58      11       9     120      10       9       1       1       1 
+     58      11       9     120      11       8       0       1       1 
+     58      11       9     120      12      14      14       1       1 
+     58      11       9     120      13      13      13       1       1 
+     58      11       9     120      14      12      12       1       1 
+     58      11      10     120       0       3      26       0       0 
+     58      11      10     120       1       2      27       0       0 
+     58      11      10     120       2       1      28       0       0 
+     58      11      10     120       3       0      29       0       0 
+     58      11      10     120       4       7      22       0       0 
+     58      11      10     120       5       6      23       0       0 
+     58      11      10     120       6       5      24       0       0 
+     58      11      10     120       7       4      25       0       0 
+     58      11      10     120       8      11      18       0       0 
+     58      11      10     120       9      10      19       0       0 
+     58      11      10     120      10       9      20       0       0 
+     58      11      10     120      11       8      21       0       0 
+     58      11      10     120      12      15      15       0       0 
+     58      11      10     120      13      14      16       0       0 
+     58      11      10     120      14      13      17       0       0 
+     58      11      11     120       0       3       8       0       0 
+     58      11      11     120       1       2       9       0       0 
+     58      11      11     120       2       1      10       0       0 
+     58      11      11     120       3       0      11       0       0 
+     58      11      11     120       4       7       4       0       0 
+     58      11      11     120       5       6       5       0       0 
+     58      11      11     120       6       5       6       0       0 
+     58      11      11     120       7       4       7       0       0 
+     58      11      11     120       8      11       0       0       0 
+     58      11      11     120       9      10       1       0       0 
+     58      11      11     120      10       9       2       0       0 
+     58      11      11     120      11       8       3       0       0 
+     58      11      11     120      12      15      12       0       0 
+     58      11      11     120      13      14      13       0       0 
+
+#Front Layer (L3 - m0): UVAUV L3 (vtp3)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m3.chanmap = 
+     20      11       0     130       0       3      29       1       1 
+     20      11       0     130       1       2      28       1       1 
+     20      11       0     130       2       1      27       1       1 
+     20      11       0     130       3       0      26       1       1 
+     20      11       0     130       4       7      25       1       1 
+     20      11       0     130       5       6      24       1       1 
+     20      11       0     130       6       5      23       1       1 
+     20      11       0     130       7       4      22       1       1 
+     20      11       0     130       8      11      21       1       1 
+     20      11       0     130       9      10      20       1       1 
+     20      11       0     130      10       9      19       1       1 
+     20      11       0     130      11       8      18       1       1 
+     20      11       0     130      12      14      17       1       1 
+     20      11       0     130      13      13      16       1       1 
+     20      11       0     130      14      12      15       1       1 
+     20      11       1     130       0       3      11       1       1 
+     20      11       1     130       1       2      10       1       1 
+     20      11       1     130       2       1       9       1       1 
+     20      11       1     130       3       0       8       1       1 
+     20      11       1     130       4       7       7       1       1 
+     20      11       1     130       5       6       6       1       1 
+     20      11       1     130       6       5       5       1       1 
+     20      11       1     130       7       4       4       1       1 
+     20      11       1     130       8      11       3       1       1 
+     20      11       1     130       9      10       2       1       1 
+     20      11       1     130      10       9       1       1       1 
+     20      11       1     130      11       8       0       1       1 
+     20      11       1     130      12      14      14       1       1 
+     20      11       1     130      13      13      13       1       1 
+     20      11       1     130      14      12      12       1       1 
+     20      11       2     130       0       3      26       0       0 
+     20      11       2     130       1       2      27       0       0 
+     20      11       2     130       2       1      28       0       0 
+     20      11       2     130       3       0      29       0       0 
+     20      11       2     130       4       7      22       0       0 
+     20      11       2     130       5       6      23       0       0 
+     20      11       2     130       6       5      24       0       0 
+     20      11       2     130       7       4      25       0       0 
+     20      11       2     130       8      11      18       0       0 
+     20      11       2     130       9      10      19       0       0 
+     20      11       2     130      10       9      20       0       0 
+     20      11       2     130      11       8      21       0       0 
+     20      11       2     130      12      14      15       0       0 
+     20      11       2     130      13      13      16       0       0 
+     20      11       2     130      14      12      17       0       0 
+     20      11       3     130       0       3       8       0       0 
+     20      11       3     130       1       2       9       0       0 
+     20      11       3     130       2       1      10       0       0 
+     20      11       3     130       3       0      11       0       0 
+     20      11       3     130       4       7       4       0       0 
+     20      11       3     130       5       6       5       0       0 
+     20      11       3     130       6       5       6       0       0 
+     20      11       3     130       7       4       7       0       0 
+     20      11       3     130       8      11       0       0       0 
+     20      11       3     130       9      10       1       0       0 
+     20      11       3     130      10       9       2       0       0 
+     20      11       3     130      11       8       3       0       0 
+     20      11       3     130      12      14      12       0       0 
+     20      11       3     130      13      13      13       0       0 
+     20      11       3     130      14      12      14       0       0 
+
+#Front Layer (L4 - m0): UVAUV L4 (vtp3)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m4.chanmap = 
+     20      11       4     140       0       3      29       1       1 
+     20      11       4     140       1       2      28       1       1 
+     20      11       4     140       2       1      27       1       1 
+     20      11       4     140       3       0      26       1       1 
+     20      11       4     140       4       7      25       1       1 
+     20      11       4     140       5       6      24       1       1 
+     20      11       4     140       6       5      23       1       1 
+     20      11       4     140       7       4      22       1       1 
+     20      11       4     140       8      11      21       1       1 
+     20      11       4     140       9      10      20       1       1 
+     20      11       4     140      10       9      19       1       1 
+     20      11       4     140      11       8      18       1       1 
+     20      11       4     140      12      14      17       1       1 
+     20      11       4     140      13      13      16       1       1 
+     20      11       4     140      14      12      15       1       1 
+     20      11       5     140       0       3      11       1       1 
+     20      11       5     140       1       2      10       1       1 
+     20      11       5     140       2       1       9       1       1 
+     20      11       5     140       3       0       8       1       1 
+     20      11       5     140       4       7       7       1       1 
+     20      11       5     140       5       6       6       1       1 
+     20      11       5     140       6       5       5       1       1 
+     20      11       5     140       7       4       4       1       1 
+     20      11       5     140       8      11       3       1       1 
+     20      11       5     140       9      10       2       1       1 
+     20      11       5     140      10       9       1       1       1 
+     20      11       5     140      11       8       0       1       1 
+     20      11       5     140      12      14      14       1       1 
+     20      11       5     140      13      13      13       1       1 
+     20      11       5     140      14      12      12       1       1 
+     20      11       6     140       0       3      26       0       0 
+     20      11       6     140       1       2      27       0       0 
+     20      11       6     140       2       1      28       0       0 
+     20      11       6     140       3       0      29       0       0 
+     20      11       6     140       4       7      22       0       0 
+     20      11       6     140       5       6      23       0       0 
+     20      11       6     140       6       5      24       0       0 
+     20      11       6     140       7       4      25       0       0 
+     20      11       6     140       8      11      18       0       0 
+     20      11       6     140       9      10      19       0       0 
+     20      11       6     140      10       9      20       0       0 
+     20      11       6     140      11       8      21       0       0 
+     20      11       6     140      12      14      15       0       0 
+     20      11       6     140      13      13      16       0       0 
+     20      11       6     140      14      12      17       0       0 
+     20      11       8     140       0       3       8       0       0 
+     20      11       8     140       1       2       9       0       0 
+     20      11       8     140       2       1      10       0       0 
+     20      11       8     140       3       0      11       0       0 
+     20      11       8     140       4       7       4       0       0 
+     20      11       8     140       5       6       5       0       0 
+     20      11       8     140       6       5       6       0       0 
+     20      11       8     140       7       4       7       0       0 
+     20      11       8     140       8      11       0       0       0 
+     20      11       8     140       9      10       1       0       0 
+     20      11       8     140      10       9       2       0       0 
+     20      11       8     140      11       8       3       0       0 
+     20      11       8     140      12      14      12       0       0 
+     20      11       8     140      13      13      13       0       0 
+     20      11       8     140      14      12      14       0       0 
+
+#Front Layer (L5 - m0): UVAUV L5 (vtp3/4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m5.chanmap = 
+     20      11       9     150       0       3      29       1       1 
+     20      11       9     150       1       2      28       1       1 
+     20      11       9     150       2       1      27       1       1 
+     20      11       9     150       3       0      26       1       1 
+     20      11       9     150       4       7      25       1       1 
+     20      11       9     150       5       6      24       1       1 
+     20      11       9     150       6       5      23       1       1 
+     20      11       9     150       7       4      22       1       1 
+     20      11       9     150       8      11      21       1       1 
+     20      11       9     150       9      10      20       1       1 
+     20      11       9     150      10       9      19       1       1 
+     20      11       9     150      11       8      18       1       1 
+     20      11       9     150      12      14      17       1       1 
+     20      11       9     150      13      13      16       1       1 
+     20      11       9     150      14      12      15       1       1 
+     20      11      10     150       0       3      11       1       1 
+     20      11      10     150       1       2      10       1       1 
+     20      11      10     150       2       1       9       1       1 
+     20      11      10     150       3       0       8       1       1 
+     20      11      10     150       4       7       7       1       1 
+     20      11      10     150       5       6       6       1       1 
+     20      11      10     150       6       5       5       1       1 
+     20      11      10     150       7       4       4       1       1 
+     20      11      10     150       8      11       3       1       1 
+     20      11      10     150       9      10       2       1       1 
+     20      11      10     150      10       9       1       1       1 
+     20      11      10     150      11       8       0       1       1 
+     20      11      10     150      12      14      14       1       1 
+     20      11      10     150      13      13      13       1       1 
+     20      11      10     150      14      12      12       1       1 
+     20      11      11     150       0       3      26       0       0 
+     20      11      11     150       1       2      27       0       0 
+     20      11      11     150       2       1      28       0       0 
+     20      11      11     150       3       0      29       0       0 
+     20      11      11     150       4       7      22       0       0 
+     20      11      11     150       5       6      23       0       0 
+     20      11      11     150       6       5      24       0       0 
+     20      11      11     150       7       4      25       0       0 
+     20      11      11     150       8      11      18       0       0 
+     20      11      11     150       9      10      19       0       0 
+     20      11      11     150      10       9      20       0       0 
+     20      11      11     150      11       8      21       0       0 
+     20      11      11     150      12      14      15       0       0 
+     20      11      11     150      13      13      16       0       0 
+     20      11      11     150      14      12      17       0       0 
+     25      11       0     150       0       3       8       0       0 
+     25      11       0     150       1       2       9       0       0 
+     25      11       0     150       2       1      10       0       0 
+     25      11       0     150       3       0      11       0       0 
+     25      11       0     150       4       7       4       0       0 
+     25      11       0     150       5       6       5       0       0 
+     25      11       0     150       6       5       6       0       0 
+     25      11       0     150       7       4       7       0       0 
+     25      11       0     150       8      11       0       0       0 
+     25      11       0     150       9      10       1       0       0 
+     25      11       0     150      10       9       2       0       0 
+     25      11       0     150      11       8       3       0       0 
+     25      11       0     150      12      14      12       0       0 
+     25      11       0     150      13      13      13       0       0 
+     25      11       0     150      14      12      14       0       0 
+
+#Front Layer (L6 - m0/1/2/3): UVAXY L6 (vtp4)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m6.chanmap = 
+     25      11       1     160       0      15       0       1       1 
+     25      11       1     160       1      14       1       1       1 
+     25      11       1     160       2      13       2       1       1 
+     25      11       1     160       3      12       3       1       1 
+     25      11       1     160       4      11       4       1       1 
+     25      11       1     160       5      10       5       1       1 
+     25      11       1     160       6       9       6       1       1 
+     25      11       1     160       7       8       7       1       1 
+     25      11       1     160       8       7       8       1       1 
+     25      11       1     160       9       6       9       1       1 
+     25      11       1     160      10       5      10       1       1 
+     25      11       1     160      11       4      11       1       1 
+     25      11       5     160      10       4       9       1       0 
+     25      11       5     160      11       3       8       1       0 
+     25      11       5     160      12       2       7       1       0 
+     25      11       5     160      13       1       6       1       0 
+     25      11       5     160      14       0       5       1       0 
+     25      11       6     160       0       4       0       0       0 
+     25      11       6     160       1       3       1       0       0 
+     25      11       6     160       2       2       2       0       0 
+     25      11       6     160       3       1       3       0       0 
+     25      11       6     160       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m7.chanmap = 
+     25      11       2     161       0      15       0       1       1 
+     25      11       2     161       1      14       1       1       1 
+     25      11       2     161       2      13       2       1       1 
+     25      11       2     161       3      12       3       1       1 
+     25      11       2     161       4      11       4       1       1 
+     25      11       2     161       5      10       5       1       1 
+     25      11       2     161       6       9       6       1       1 
+     25      11       2     161       7       8       7       1       1 
+     25      11       2     161       8       7       8       1       1 
+     25      11       2     161       9       6       9       1       1 
+     25      11       2     161      10       5      10       1       1 
+     25      11       2     161      11       4      11       1       1 
+     25      11       5     161       5      12       9       1       0 
+     25      11       5     161       6      11       8       1       0 
+     25      11       5     161       7      10       7       1       0 
+     25      11       5     161       8       9       6       1       0 
+     25      11       5     161       9       8       5       1       0 
+     25      11       6     161       5      12       0       0       0 
+     25      11       6     161       6      11       1       0       0 
+     25      11       6     161       7      10       2       0       0 
+     25      11       6     161       8       9       3       0       0 
+     25      11       6     161       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m8.chanmap = 
+     25      11       3     162       0      15      11       0       1 
+     25      11       3     162       1      14      10       0       1 
+     25      11       3     162       2      13       9       0       1 
+     25      11       3     162       3      12       8       0       1 
+     25      11       3     162       4      11       7       0       1 
+     25      11       3     162       5      10       6       0       1 
+     25      11       3     162       6       9       5       0       1 
+     25      11       3     162       7       8       4       0       1 
+     25      11       3     162       8       7       3       0       1 
+     25      11       3     162       9       6       2       0       1 
+     25      11       3     162      10       5       1       0       1 
+     25      11       3     162      11       4       0       0       1 
+     25      11       5     162       0      20       9       1       0 
+     25      11       5     162       1      19       8       1       0 
+     25      11       5     162       2      18       7       1       0 
+     25      11       5     162       3      17       6       1       0 
+     25      11       5     162       4      16       5       1       0 
+     25      11       6     162      10      20       0       0       0 
+     25      11       6     162      11      19       1       0       0 
+     25      11       6     162      12      18       2       0       0 
+     25      11       6     162      13      17       3       0       0 
+     25      11       6     162      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m9.chanmap = 
+     25      11       4     163       0      15      11       0       1 
+     25      11       4     163       1      14      10       0       1 
+     25      11       4     163       2      13       9       0       1 
+     25      11       4     163       3      12       8       0       1 
+     25      11       4     163       4      11       7       0       1 
+     25      11       4     163       5      10       6       0       1 
+     25      11       4     163       6       9       5       0       1 
+     25      11       4     163       7       8       4       0       1 
+     25      11       4     163       8       7       3       0       1 
+     25      11       4     163       9       6       2       0       1 
+     25      11       4     163      10       5       1       0       1 
+     25      11       4     163      11       4       0       0       1 
+     25      11       7     163       0       4       9       1       0 
+     25      11       7     163       1       3       8       1       0 
+     25      11       7     163       2       2       7       1       0 
+     25      11       7     163       3       1       6       1       0 
+     25      11       7     163       4       0       5       1       0 
+     25      11       7     163       8      12       0       0       0 
+     25      11       7     163       9      11       1       0       0 
+     25      11       7     163      10      10       2       0       0 
+     25      11       7     163      11       9       3       0       0 
+     25      11       7     163      12       8       4       0       0 
+
+#Front Layer (L7 - m0/1/2/3): UVAXY L7 (vtp2)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m10.chanmap = 
+     24      11       0     170       0      15       0       1       1 
+     24      11       0     170       1      14       1       1       1 
+     24      11       0     170       2      13       2       1       1 
+     24      11       0     170       3      12       3       1       1 
+     24      11       0     170       4      11       4       1       1 
+     24      11       0     170       5      10       5       1       1 
+     24      11       0     170       6       9       6       1       1 
+     24      11       0     170       7       8       7       1       1 
+     24      11       0     170       8       7       8       1       1 
+     24      11       0     170       9       6       9       1       1 
+     24      11       0     170      10       5      10       1       1 
+     24      11       0     170      11       4      11       1       1 
+     24      11       4     170      10       4       9       1       0 
+     24      11       4     170      11       3       8       1       0 
+     24      11       4     170      12       2       7       1       0 
+     24      11       4     170      13       1       6       1       0 
+     24      11       4     170      14       0       5       1       0 
+     24      11       5     170       0       4       0       0       0 
+     24      11       5     170       1       3       1       0       0 
+     24      11       5     170       2       2       2       0       0 
+     24      11       5     170       3       1       3       0       0 
+     24      11       5     170       4       0       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m11.chanmap = 
+     24      11       1     171       0      15       0       1       1 
+     24      11       1     171       1      14       1       1       1 
+     24      11       1     171       2      13       2       1       1 
+     24      11       1     171       3      12       3       1       1 
+     24      11       1     171       4      11       4       1       1 
+     24      11       1     171       5      10       5       1       1 
+     24      11       1     171       6       9       6       1       1 
+     24      11       1     171       7       8       7       1       1 
+     24      11       1     171       8       7       8       1       1 
+     24      11       1     171       9       6       9       1       1 
+     24      11       1     171      10       5      10       1       1 
+     24      11       1     171      11       4      11       1       1 
+     24      11       4     171       5      12       9       1       0 
+     24      11       4     171       6      11       8       1       0 
+     24      11       4     171       7      10       7       1       0 
+     24      11       4     171       8       9       6       1       0 
+     24      11       4     171       9       8       5       1       0 
+     24      11       5     171       5      12       0       0       0 
+     24      11       5     171       6      11       1       0       0 
+     24      11       5     171       7      10       2       0       0 
+     24      11       5     171       8       9       3       0       0 
+     24      11       5     171       9       8       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m12.chanmap = 
+     24      11       2     172       0      15      11       0       1 
+     24      11       2     172       1      14      10       0       1 
+     24      11       2     172       2      13       9       0       1 
+     24      11       2     172       3      12       8       0       1 
+     24      11       2     172       4      11       7       0       1 
+     24      11       2     172       5      10       6       0       1 
+     24      11       2     172       6       9       5       0       1 
+     24      11       2     172       7       8       4       0       1 
+     24      11       2     172       8       7       3       0       1 
+     24      11       2     172       9       6       2       0       1 
+     24      11       2     172      10       5       1       0       1 
+     24      11       2     172      11       4       0       0       1 
+     24      11       4     172       0      20       9       1       0 
+     24      11       4     172       1      19       8       1       0 
+     24      11       4     172       2      18       7       1       0 
+     24      11       4     172       3      17       6       1       0 
+     24      11       4     172       4      16       5       1       0 
+     24      11       5     172      10      20       0       0       0 
+     24      11       5     172      11      19       1       0       0 
+     24      11       5     172      12      18       2       0       0 
+     24      11       5     172      13      17       3       0       0 
+     24      11       5     172      14      16       4       0       0 
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m13.chanmap = 
+     24      11       3     173       0      15      11       0       1 
+     24      11       3     173       1      14      10       0       1 
+     24      11       3     173       2      13       9       0       1 
+     24      11       3     173       3      12       8       0       1 
+     24      11       3     173       4      11       7       0       1 
+     24      11       3     173       5      10       6       0       1 
+     24      11       3     173       6       9       5       0       1 
+     24      11       3     173       7       8       4       0       1 
+     24      11       3     173       8       7       3       0       1 
+     24      11       3     173       9       6       2       0       1 
+     24      11       3     173      10       5       1       0       1 
+     24      11       3     173      11       4       0       0       1 
+     24      11       6     173       0       4       9       1       0 
+     24      11       6     173       1       3       8       1       0 
+     24      11       6     173       2       2       7       1       0 
+     24      11       6     173       3       1       6       1       0 
+     24      11       6     173       4       0       5       1       0 
+     24      11       6     173       8      12       0       0       0 
+     24      11       6     173       9      11       1       0       0 
+     24      11       6     173      10      10       2       0       0 
+     24      11       6     173      11       9       3       0       0 
+     24      11       6     173      12       8       4       0       0 
+
+
+# ###################### BEGIN TIME-DEPENDENT CLUSTERING PARAMETERS #############
+
+##SUGGESTED INITIAL VALUES:
+# gridbinwidthx = 0.01
+# gridbinwidthy = 0.01
+# gridedgetolerancex = 0.003
+# gridedgetolerancey = 0.003
+# threshold_sample = 75.
+# threshold_stripsum = 300.
+# threshold_clustersum = 600.
+# maxhitcombos = 25000
+# maxhitcombos_inner = 25000
+# maxhitcombos_total = 1,000,000,000 (this is not actually the most relevant limit for the tracking algorithm and I am using an even higher limit for BigBite analysis)
+# max2Dhits = 100,000
+# filterflag1D = 0
+# filterflag2D = 1
+# ADCasym_cut = 0.8
+# deltat_cut = 25.0
+# corrcoeff_cut = 0.5 
+
+############ parameters searched by SBSGEMModule::ReadDatabase() #################
+############ offline thresholds: ############
+sbs.gemFT.threshold_sample = 100.0
+sbs.gemFT.threshold_stripsum = 300.
+sbs.gemFT.threshold_clustersum = 600.
+
+
+sbs.gemFT.ADCasym_cut = 0.8 
+sbs.gemFT.deltat_cut = 25.0
+sbs.gemFT.corrcoeff_cut = 0.5
+sbs.gemFT.filterflag1D = 1 # -1 = no filtering: don't require 1D hits to pass any cuts other than basic zero suppression
+sbs.gemFT.filterflag2D = -1  # 1 = "hard" filtering: require 2D hits to pass all cuts
+
+sbs.gemFT.peakprominence_minsigma = 3.0 
+sbs.gemFT.peakprominence_minfraction = 0.15
+
+# limit cluster size growth to +/- 4 strips for cluster charge calculation
+sbs.gemFT.maxnu_charge = 4
+sbs.gemFT.maxnv_charge = 4 
+
+# limit cluster size to +/-3 strips from maximum for cluster position calculation
+sbs.gemFT.maxnu_pos = 3
+sbs.gemFT.maxnv_pos = 3
+
+sbs.gemFT.sigmahitpos = 0.0001
+sbs.gemFT.sigmahitshape = 0.0004
+sbs.gemFT.zerosuppress = 1
+sbs.gemFT.zerosuppress_nsigma = 5.0
+sbs.gemFT.onlinezerosuppress = 1 # note that this parameter only provides a default value, actual behavior is determined by the flags seen in the raw data:
+
+sbs.gemFT.plot_common_mode = 0
+sbs.gemFT.plot_event_info = 1
+
+# when zero suppression is enabled again we will turn this to 1: 
+sbs.gemFT.pedsub_online = 1 # under normal conditions, this should always be 1, unless running normal data taking in pedestal mode:
+sbs.gemFT.max2Dhits = 100000 # per-module
+
+
+
+############### Parameters searched by SBSGEMSpectrometerTracker::ReadDatabase() ######################
+
+# parameters controlling tracking:
+sbs.gemFT.minhitsontrack = 3
+
+sbs.gemFT.maxhitcombos = 25000 # 25000 #10000 #25000 for final &  50000 for first alignments
+sbs.gemFT.maxhitcombos_inner = 25000 # 25000 #25000 for final & 50000 for first alignments
+#sbs.gemFT.maxhitcombos_total = 1.e22
+sbs.gemFT.maxhitcombos_total = 1.e15
+
+sbs.gemFT.tryfasttrack = 0  #May get errors before a good alignment. So may be help to turn off during alignment. 
+
+# typical values after alignment:
+sbs.gemFT.gridbinwidthx = 0.01
+sbs.gemFT.gridbinwidthy = 0.01
+sbs.gemFT.gridedgetolerancex = 0.0025
+sbs.gemFT.gridedgetolerancey = 0.0025
+sbs.gemFT.trackchi2cut = 150
+
+# Adjust the grid bins and chi2 here during alignment. Comment them out after the alignment is complete:
+#For alignment with cosmics, we want to start with wider grid bins and a loose chi2 cut for tracking:
+#sbs.gemFT.gridbinwidthx = 0.02 #0.1
+#sbs.gemFT.gridbinwidthy = 0.02 #0.1
+#sbs.gemFT.gridedgetolerancex = 0.004 #0.02
+#sbs.gemFT.gridedgetolerancey = 0.004 #0.02
+#sbs.gemFT.trackchi2cut = 500 #3000.0 #500.0 #40 #3000.0
+
+sbs.gemFT.sigmahitpos = 0.0001
+sbs.gemFT.do_efficiencies = 1
+sbs.gemFT.dump_geometry_info = 1
+
+sbs.gemFT.efficiency_bin_width_1D = 0.02
+sbs.gemFT.efficiency_bin_width_2D = 0.04
+
+# these should probably be tighter later on:
+sbs.gemFT.xptar_min = -0.24
+sbs.gemFT.xptar_max = 0.24
+
+sbs.gemFT.yptar_min = -0.12
+sbs.gemFT.yptar_max = 0.12
+
+sbs.gemFT.ytar_min = -0.25
+sbs.gemFT.ytar_max = 0.25
+
+sbs.gemFT.pmin = 0.8
+sbs.gemFT.pmax = 11.0
+
+sbs.gemFT.xpfp_min = -0.35
+sbs.gemFT.xpfp_max = 0.2
+sbs.gemFT.ypfp_min = -0.12
+sbs.gemFT.ypfp_max = 0.12
+
+# # basic flags controlling decoding:
+sbs.gemFT.pedestalmode = 0
+sbs.gemFT.commonmode_flag = 2 # 1 = Danning, 0 = sorting, 2 = histogramming
+sbs.gemFT.chan_cm_flags = 640 # defines the "dummy" reference channel for storing the cm_enable and build_all_samples flags -(40 x 16) "sbsvtp2" and "sbsvtp4"currently has 36 and 20 MPDs respectively right now. 
+sbs.gemFT.commonmode_nstriplo = 20 # for sorting method
+sbs.gemFT.commonmode_nstriphi = 20 # for sorting method
+sbs.gemFT.commonmode_niter = 3
+sbs.gemFT.commonmode_minstrips = 20
+
+# histogramming-method parameters: 
+sbs.gemFT.commonmode_binwidth_nsigma = 2.0
+sbs.gemFT.commonmode_scanrange_nsigma = 5.0
+sbs.gemFT.commonmode_stepsize_nsigma = 0.25
+
+# attempt to correct common-mode for negative bias:
+sbs.gemFT.correct_common_mode = 0
+sbs.gemFT.correct_common_mode_minstrips = 15
+sbs.gemFT.correct_common_mode_nsigma = 2.0
+
+sbs.gemFT.use_commonmode_rolling_average = 1
+sbs.gemFT.commonmode_nevents_lookback = 10
+
+sbs.gemFT.plot_common_mode = 0
+sbs.gemFT.pedsub_online = 1 # normally this should always be set to 1
+sbs.gemFT.dump_geometry_info = 1
+sbs.gemFT.efficiency_bin_width_1D = 0.02
+sbs.gemFT.efficiency_bin_width_2D = 0.02
+sbs.gemFT.commonmode_range_nsigma = 5.0
+
+
+# these may need adjusting:
+sbs.gemFT.usestriptimingcut = 0
+sbs.gemFT.useTSchi2cut = 0
+sbs.gemFT.maxstrip_t0 = 75.0
+sbs.gemFT.maxstrip_tsigma = 8.0
+sbs.gemFT.HitTimeMean = 75.0
+sbs.gemFT.HitTimeSigma = 8.0
+sbs.gemFT.maxstrip_tcut = 3.5
+sbs.gemFT.addstrip_tcut = 35.0
+sbs.gemFT.addstrip_ccor_cut = 0.4
+sbs.gemFT.suppressfirstlast = 0
+
+sbs.gemFT.modulegain = 1
+
+sbs.gemFT.plot_event_info = 0
+
+
+---------[ 2024-11-06 00:00:00 ] # Cosmic Data Analysis
+
+sbs.gemFT.useopticsconstraint = 0
+sbs.gemFT.useslopeconstraint = 0
+sbs.gemFT.useconstraint = 0
+sbs.gemFT.dump_geometry_info = 1
+
+# ###################### END TIME-DEPENDENT CLUSTERING PARAMETERS #############
+
+
+
+---------[ 2024-11-06 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1610.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1610.dat
+
+---------[ 2025-01-31 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run647.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run647.dat
+
+sbs.gemFT.m0.position =               0               0               0
+sbs.gemFT.m0.angle =               0               0               0
+sbs.gemFT.m1.position =   -0.0008436755    0.0009539232      0.06975309
+sbs.gemFT.m1.angle =      0.08824137     -0.03297124     -0.04138409
+sbs.gemFT.m2.position =    0.0003104065    -0.000656989        0.203445
+sbs.gemFT.m2.angle =       0.1127062     -0.08139076        0.246825
+sbs.gemFT.m3.position =     0.001381425     0.006044097       0.3433876
+sbs.gemFT.m3.angle =       0.0489437      -0.1315038     -0.09922729
+sbs.gemFT.m4.position =     0.001472217    -0.001733144       0.4885645
+sbs.gemFT.m4.angle =     -0.01343875     -0.06600104       0.2468569
+sbs.gemFT.m5.position =     0.001503435     0.001098491       0.6245277
+sbs.gemFT.m5.angle =      0.02565955        -0.13428     -0.04785934
+sbs.gemFT.m6.position =      -0.7698734     0.001915694       0.7656186
+sbs.gemFT.m6.angle =     -0.02875682       0.1690202      -0.1154371
+sbs.gemFT.m7.position =      -0.2583325     0.001197362       0.7261945
+sbs.gemFT.m7.angle =      -0.1033693     -0.08331285      -0.0219412
+sbs.gemFT.m8.position =       0.2535473    -0.001625363       0.7681714
+sbs.gemFT.m8.angle =      0.05553922      -0.1773941      0.02102868
+sbs.gemFT.m9.position =       0.7642679   -0.0007868564       0.7285291
+sbs.gemFT.m9.angle =      -0.2419833      -0.8044419      -0.1138261
+sbs.gemFT.m10.position =      -0.7705928     0.001992548         0.89194
+sbs.gemFT.m10.angle =       0.1220223       0.4576639      -0.1238769
+sbs.gemFT.m11.position =      -0.2581448    0.0006484264       0.8495086
+sbs.gemFT.m11.angle =     -0.02295652      -0.2180179      0.09248354
+sbs.gemFT.m12.position =       0.2514656   -0.0006345478       0.8956643
+sbs.gemFT.m12.angle =      0.02732267      -0.2402396    0.0005344914
+sbs.gemFT.m13.position =        0.765126     0.002118285       0.8655325
+sbs.gemFT.m13.angle =          2.0085       -3.977551       0.8914648
+
+---------[ 2025-02-3 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run679.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run679.dat
+
+sbs.gemFT.m0.position =               0               0               0
+sbs.gemFT.m0.angle =               0               0               0
+sbs.gemFT.m1.position =   -0.0009063434    0.0009410312      0.06978462
+sbs.gemFT.m1.angle =      0.08127089      -0.0346656     -0.04401022
+sbs.gemFT.m2.position =    0.0002632677   -0.0006523525       0.2034948
+sbs.gemFT.m2.angle =       0.1094275     -0.08201244       0.2446774
+sbs.gemFT.m3.position =      0.00135914       0.0060656       0.3432893
+sbs.gemFT.m3.angle =      0.06569785      -0.1387956      -0.1006799
+sbs.gemFT.m4.position =     0.001430841    -0.001729122       0.4886667
+sbs.gemFT.m4.angle =     -0.00857765     -0.06517951       0.2455073
+sbs.gemFT.m5.position =     0.001455814     0.001066598       0.6246969
+sbs.gemFT.m5.angle =      0.02261928      -0.1384515     -0.05270425
+sbs.gemFT.m6.position =       -0.769878     0.002041196       0.7662983
+sbs.gemFT.m6.angle =      0.06960857       0.3350437      -0.1252416
+sbs.gemFT.m7.position =      -0.2583289     0.001143562       0.7262917
+sbs.gemFT.m7.angle =     -0.07852895     -0.05650117     -0.01537209
+sbs.gemFT.m8.position =       0.2535021    -0.001590731       0.7682564
+sbs.gemFT.m8.angle =      0.08739566      -0.2081161    -0.003521814
+sbs.gemFT.m9.position =       0.7642959   -0.0007314528       0.7287938
+sbs.gemFT.m9.angle =      -0.2006087      -0.8470781      -0.1010134
+sbs.gemFT.m10.position =      -0.7704774      0.00185262       0.8912717
+sbs.gemFT.m10.angle =       0.4309301       0.3782725       -0.077941
+sbs.gemFT.m11.position =      -0.2581483    0.0007306955       0.8495825
+sbs.gemFT.m11.angle =      0.01748848      -0.2555407       0.1113633
+sbs.gemFT.m12.position =       0.2512677   -0.0005235493       0.8959009
+sbs.gemFT.m12.angle =      0.08618213      -0.2885708    -0.008434703
+sbs.gemFT.m13.position =       0.7634073    -0.003259911       0.8592308
+sbs.gemFT.m13.angle =       -1.365353       -1.006356       -0.709706
+
+---------[ 2025-02-7 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run744.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run744.dat
+
+
+---------[ 2025-02-14 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run971.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run971.dat
+
+---------[ 2025-02-17 00:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1030.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1030.dat
+
+---------[ 2025-02-18 16:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1058.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1058.dat
+
+---------[ 2025-02-20 15:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1091.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1091.dat
+
+---------[ 2025-02-22 10:21:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1095.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1095.dat
+
+---------[ 2025-02-28 15:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1153.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1153.dat
+
+---------[ 2025-03-06 12:00:00 ] # Cosmic Data Analysis
+#Front Layer (L2 - m0): UVAUV L2 (vtp5)
+## vtpcrate  slot  fiber  gemid  adc_ch   i2c   pos     invert   axis 
+sbs.gemFT.m2.chanmap = 
+     58      11       8     120       0       3      29       1       1 
+     58      11       8     120       1       2      28       1       1 
+     58      11       8     120       2       1      27       1       1 
+     58      11       8     120       3       0      26       1       1 
+     58      11       8     120       4       7      25       1       1 
+     58      11       8     120       5       6      24       1       1 
+     58      11       8     120       6       5      23       1       1 
+     58      11       8     120       7       4      22       1       1 
+     58      11       8     120       8      11      21       1       1 
+     58      11       8     120       9      10      20       1       1 
+     58      11       8     120      10       9      19       1       1 
+     58      11       8     120      11       8      18       1       1 
+     58      11       8     120      12      14      17       1       1 
+     58      11       8     120      13      13      16       1       1 
+     58      11       8     120      14      12      15       1       1 
+     58      11       9     120       0       3      11       1       1 
+     58      11       9     120       1       2      10       1       1 
+     58      11       9     120       2       1       9       1       1 
+     58      11       9     120       3       0       8       1       1 
+     58      11       9     120       4       7       7       1       1 
+     58      11       9     120       5       6       6       1       1 
+     58      11       9     120       6       5       5       1       1 
+     58      11       9     120       7       4       4       1       1 
+     58      11       9     120       8      11       3       1       1 
+     58      11       9     120       9      10       2       1       1 
+     58      11       9     120      10       9       1       1       1 
+     58      11       9     120      11       8       0       1       1 
+     58      11       9     120      12      14      14       1       1 
+     58      11       9     120      13      13      13       1       1 
+     58      11       9     120      14      12      12       1       1 
+     58      11      10     120       0       3      26       0       0 
+     58      11      10     120       1       2      27       0       0 
+     58      11      10     120       2       1      28       0       0 
+     58      11      10     120       3       0      29       0       0 
+     58      11      10     120       4       7      22       0       0 
+     58      11      10     120       5       6      23       0       0 
+     58      11      10     120       6       5      24       0       0 
+     58      11      10     120       7       4      25       0       0 
+     58      11      10     120       8      11      18       0       0 
+     58      11      10     120       9      10      19       0       0 
+     58      11      10     120      10       9      20       0       0 
+     58      11      10     120      11       8      21       0       0 
+     58      11      10     120      12      15      15       0       0 
+     58      11      10     120      13      14      16       0       0 
+     58      11      10     120      14      13      17       0       0 
+     58      11      11     120       0       3       8       0       0 
+     58      11      11     120       1       2       9       0       0 
+     58      11      11     120       2       1      10       0       0 
+     58      11      11     120       3       0      11       0       0 
+     58      11      11     120       4       7       4       0       0 
+     58      11      11     120       5       6       5       0       0 
+     58      11      11     120       6       5       6       0       0 
+     58      11      11     120       7       4       7       0       0 
+     58      11      11     120       8      11       0       0       0 
+     58      11      11     120       9      10       1       0       0 
+     58      11      11     120      10       9       2       0       0 
+     58      11      11     120      11       8       3       0       0 
+     58      11      11     120      12      15      12       0       0 
+     58      11      11     120      13      14      13       0       0 
+     58      11      11     120      14      13      14       0       0 
+
+
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1253.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1253.dat
+
+---------[ 2025-03-10 18:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1285.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1285.dat
+
+sbs.gemFT.m0.position =               0               0               0
+sbs.gemFT.m0.angle =               0               0               0
+sbs.gemFT.m1.position =   -0.0009957384     0.001011903      0.06965553
+sbs.gemFT.m1.angle =      0.02845075      -0.0605504     -0.04546393
+sbs.gemFT.m2.position =    0.0001710436    -0.000459872       0.2034382
+sbs.gemFT.m2.angle =      0.07675341      -0.1198605       0.2436714
+sbs.gemFT.m3.position =     0.001376854     0.006269574        0.343046
+sbs.gemFT.m3.angle =     0.003201721      -0.1511166     -0.09843895
+sbs.gemFT.m4.position =      0.00141488    -0.001440673       0.4885649
+sbs.gemFT.m4.angle =     -0.05024306     -0.08227032       0.2524821
+sbs.gemFT.m5.position =     0.001402999     0.001422435        0.624839
+sbs.gemFT.m5.angle =      0.01876771       -0.159149     -0.03591341
+sbs.gemFT.m6.position =      -0.7697741    0.0004816672       0.7657572
+sbs.gemFT.m6.angle =     -0.02162895       0.1824937     -0.07683021
+sbs.gemFT.m7.position =      -0.2583919   -0.0001352208       0.7264019
+sbs.gemFT.m7.angle =      -0.1592125      -0.1302343    -0.004356149
+sbs.gemFT.m8.position =       0.2535148    -0.002791718       0.7682186
+sbs.gemFT.m8.angle =      0.04485771      -0.1661604      0.02558993
+sbs.gemFT.m9.position =       0.7642502    -0.001526375       0.7271737
+sbs.gemFT.m9.angle =     -0.04115922      -0.4187967     -0.02240447
+sbs.gemFT.m10.position =      -0.7706271     0.002215514       0.8912493
+sbs.gemFT.m10.angle =       0.2008096       0.2114526     -0.04727379
+sbs.gemFT.m11.position =      -0.2581545     0.001260525       0.8495369
+sbs.gemFT.m11.angle =     -0.05719233      -0.1824592       0.1344297
+sbs.gemFT.m12.position =       0.2513865    0.0001291689       0.8957765
+sbs.gemFT.m12.angle =       0.1399312      -0.1401556      0.04210143
+sbs.gemFT.m13.position =       0.7631527     4.82926e-05       0.8530853
+sbs.gemFT.m13.angle =      -0.1626235      -0.1949088    -0.003737309
+
+---------[ 2025-03-11 14:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1332.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1332.dat
+
+---------[ 2025-03-12 16:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1383.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1383.dat
+
+---------[ 2025-03-18 23:13:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1555.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1555.dat
+
+---------[ 2025-03-21 12:18:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1642.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1642.dat
+
+---------[ 2025-03-26 12:00:00 ] # Cosmic Data Analysis
+sbs.gemFT.pedfile = gemped/daq_ped_sbs_gemFT_run1773.dat
+sbs.gemFT.cmfile = gemped/db_cmr_sbs_gemFT_run1773.dat
+
+#########################################################

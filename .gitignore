@@ -1,0 +1,14 @@
+build/
+build-*/
+_deps/
+*.evio
+*.evio.*
+*.sdg
+*.root
+*.truth.tsv
+metrics*.csv
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+.idea/

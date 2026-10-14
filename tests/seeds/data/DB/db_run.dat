@@ -1,0 +1,335 @@
+# Sample run database
+--------[ 2017-07-26 17:50:14 ]
+
+ebeam = 11.0
+
+sbs.theta = -30
+sbs.pcentral = -1
+sbs.phi = 0
+sbs.colldist = 1.5
+sbs.off_x = 0
+sbs.off_y = 0
+sbs.off_z = 0
+
+bb.magdist = 1.55
+bb.theta    = 33.0                                                              
+bb.pcentral = 2.0 
+
+L.theta     = 30.0
+L.pcentral  = -1
+
+sbs.magdist = 2.25
+
+--------[ 2021-10-10 00:00:00 ] # SBS-1 kinematics for GMN:
+
+# The minimal required information in this file (for now) is the beam energy and
+# the spectrometer central angles and central momenta:
+
+ebeam = 1.916
+
+# as far as I can see only central angle and central momentum are required run parameters
+# for THaSpectrometer
+# note that pcentral is meaningless for SBS and BB, but as far as I know they are required for
+# THaSpectrometer, so I just set them to the momentum of elastically scattered electrons (protons) for
+# BB (SBS) respectively
+
+# SBS on beam right:
+sbs.theta = -33.5
+sbs.pcentral = 1.5
+sbs.magdist = 2.25
+sbs.hcaldist = 13.5
+
+# BB on beam left:
+bb.theta = 51.0
+bb.pcentral = 1.09
+bb.colldist = 1.4779
+bb.magdist = 1.8518 # from survey
+# bb.magdist = 1.85 # nominal
+# bb.magdist = 1.8470 # from zero-field alignment
+
+
+--------[ 2021-10-18 16:00:00 ] ## Starting SBS-4 kinematics for GMN
+
+#ebeam = 3.7278
+# Provakar's new estimate of the beam energy:
+ebeam = 3.7393 
+
+sbs.theta = -31.9
+sbs.pcentral = 2.373 # elastic proton momentum
+sbs.magdist = 2.25
+sbs.hcaldist = 11.0
+
+# pcentral chosen for elastic
+# note BB field production setting is 750 A most of the time
+bb.theta = 36.0
+bb.pcentral = 2.122 
+# bb.magdist = 1.80 # nominal
+# bb.magdist = 1.7956 # from zero-field alignment
+bb.magdist = 1.7988 # from survey
+
+---------[ 2021-10-25 16:00:00 ] ## Starting SBS-5 kinematics for GMN (note we never took any real data here due to magnet "incident")
+
+ebeam = 7.38 # to be adjusted when we find out what the actual beam energy is according to HALLA:p
+
+sbs.theta = -24.7
+sbs.pcentral = 4.31
+sbs.magdist = 2.25
+sbs.hcaldist = 11.0 # NOTE: this number is a placeholder. We never actually got any data here
+
+# pcentral chosen for elastic:
+
+bb.theta = 27.5 
+bb.pcentral = 3.91
+bb.magdist = 1.90
+
+#LOL
+
+--------[ 2021-11-12 00:00:00 ] ## Starting SBS-7 kinematics for GMN:
+
+#ebeam = 7.906
+ebeam = 7.9308
+
+sbs.pcentral = 6.2
+sbs.theta = -16.1
+sbs.magdist = 2.25
+sbs.hcaldist = 14.0
+
+bb.theta = 40.0 
+bb.pcentral = 2.67
+#bb.magdist = 1.85 # nominal
+bb.magdist = 1.84896 # from survey
+#bb.magdist = 1.86159 # from zero-field alignment
+
+--------[ 2021-11-23 00:00:00 ] ## starting SBS-11 kinematics for GMN
+
+#ebeam = 9.859 
+ebeam = 9.889
+sbs.theta = -13.3 
+sbs.pcentral = 8.1
+sbs.magdist = 2.25
+sbs.hcaldist = 14.5
+
+bb.theta = 42.0
+#bb.magdist = 1.55 # meters, nominal
+bb.magdist = 1.55146 # meters, from survey
+#bb.magdist = 1.5649 # meters, from zero-field alignment
+bb.pcentral = 2.67
+
+--------[ 2022-01-06 12:00:00 ] ## starting SBS-14 kinematics for GMN:
+
+#ebeam = 5.9648
+ebeam = 5.9828
+sbs.theta = -17.3 # degrees
+sbs.pcentral = 4.8 # GeV
+sbs.magdist = 2.25
+sbs.hcaldist = 14.0
+
+# note: SBS distance = 2.25 m
+# note also: HCAL distance = 14.0 meters 
+
+bb.theta = 46.5 # degrees
+#bb.magdist = 1.85 # meters, nominal:
+#bb.magdist = 1.8784 # meters, from zero-field alignment
+bb.magdist = 1.84787 # meters, from survey
+bb.pcentral = 2.0 # GeV
+
+--------[ 2022-01-21 12:00:00 ] ## starting SBS-8 kinematics:
+
+#ebeam = 5.9648
+ebeam = 5.9826
+sbs.theta = -29.9
+sbs.pcentral = 3.22
+sbs.magdist = 2.25
+sbs.hcaldist = 11.0
+
+# note HCAL distance = 11 m
+
+bb.theta = 26.5
+#bb.magdist = 2.00 # meters, nominal
+bb.magdist = 1.97473 # meters, according to survey
+#bb.magdist = 1.9594 # meters, according to straight-through analysis
+bb.pcentral = 3.6 # GeV
+
+--------[ 2022-02-01 12:00:00 ] ## starting SBS-9 kinematics:
+
+# very, very preliminary settings:
+
+#ebeam = 4.015 # to be refined later
+ebeam = 4.0268
+sbs.theta = -22.5
+sbs.pcentral = 3.22
+sbs.magdist = 2.25
+sbs.hcaldist = 11.0
+
+# note HCAL distance = 11 m
+
+bb.theta = 49.0
+#bb.magdist = 1.55: from survey or from nominal distance
+# new estimate for magnet distance based on zero-field alignment results for z sieve:
+# bb.magdist = 1.559
+bb.magdist = 1.550 # survey matches nominal, to within its precision
+bb.pcentral = 1.63
+
+
+---------[ 2022-09-01 00:00:00 ] # start of GEN-1 commissioning kinematics at 1-pass:
+
+# beam energy to be refined by HALLA:p once we start up:
+# according to HALLA Tiefenback energy we actually have 2.2 GeV at one pass
+ebeam = 2.2056
+
+sbs.theta = -34.7
+sbs.pcentral = 1.6
+# with tracking in SBS we will also need to add sbs magnet distance as a required parameter
+sbs.magdist = 2.80 
+sbs.hcaldist = 17.0 
+
+bb.theta = 47.5
+bb.pcentral = 1.22
+
+# to be refined from survey results later
+bb.magdist = 1.63
+
+---------[ 2022-10-14 20:00:00 ] # start of GEN-2 production kinematics at 2-pass:
+
+# beam energy to be refined by HALLA:p once we start up:
+# according to HALLA Tiefenback energy we actually have 2.2 GeV at one pass
+ebeam = 4.291
+
+sbs.theta = -34.7
+sbs.pcentral = 1.6
+# with tracking in SBS we will also need to add sbs magnet distance as a required parameter
+sbs.magdist = 2.80 
+sbs.hcaldist = 17.0 
+
+bb.theta = 29.5
+bb.pcentral = 2.66
+
+# to be refined from survey results later
+bb.magdist = 1.63
+
+
+---------[ 2022-11-08 20:00:00 ] # start of GEN-3 production kinematics at 3-pass:
+
+# beam energy to be refined by HALLA:p once we start up:
+ebeam = 6.373
+
+sbs.theta = -22.1
+# this parameter appears to be the KE from above, not the momentum. p_p = 4.435 GeV/c
+sbs.pcentral = 3.6
+# with tracking in SBS we will also need to add sbs magnet distance as a required parameter
+sbs.magdist = 2.80 
+sbs.hcaldist = 17.0 
+
+bb.theta = 36.5
+bb.pcentral = 2.78
+
+# to be refined from survey results later
+bb.magdist = 1.625 # survey shows BigBite magnet 5 mm upstream of ideal position
+
+---------[ 2023-01-01 00:00:00 ] # start of GEN-4 production kinematics at 4-pass:
+
+# beam energy initial estimate (update when we see what we actually get): 
+ebeam = 8.451
+
+sbs.theta = -18.0
+sbs.pcentral = 6.1
+sbs.magdist = 2.80
+sbs.hcaldist = 17.0
+
+bb.theta = 35.0
+bb.pcentral = 3.21
+bb.magdist = 1.63
+
+---------[ 2023-11-01 00:00:00 ] # start of pion A_LL 
+
+ebeam = 6.37
+
+sbs.theta = -32.0
+sbs.pcentral = 2.5
+sbs.magdist = 2.80
+sbs.hcaldist = 11.0
+
+bb.theta = 32.0
+bb.pcentral = 2.0
+bb.magdist = 1.63
+
+--------[ 2024-04-01 00:00:00 ] # start of GEN-RP:
+
+# initial guess at beam energy from HALLA:p
+#ebeam = 4.287
+# 1.003 * 4.287 = 4.2999, might as well round to 4.3
+ebeam = 4.300
+
+# nominal kinematics:
+sbs.theta = -24.6916
+sbs.pcentral = 3.3
+sbs.magdist = 2.25
+sbs.hcaldist = 9.007 # from survey
+
+bb.theta = 42.544
+bb.pcentral = 2.0
+bb.magdist = 1.5515 # from survey
+
+--------[ 2024-05-14 18:00:00 ] # start of Pion-K_LL
+
+# initial guess at beam energy from HALLA:p
+ebeam = 6.368
+
+# nominal kinematics:
+sbs.theta = -24.7
+sbs.pcentral = 3.3
+sbs.magdist = 2.25
+sbs.hcaldist = 9.007 # from survey
+
+bb.theta = 42.5
+bb.pcentral = 2.0
+bb.magdist = 1.5515
+
+
+###############################################################################
+###                               GEP-1                                     ###
+###############################################################################
+--------[ 2024-10-01 00:00:00 ] # start of GEP
+
+# nominal beam energy for spring 2025 run:
+#ebeam = 6.476
+# estimate beam energy from HALLA:p after beam startup.
+ebeam = 6.466 
+experiment = gep
+
+# nominal kinematics for SBS:
+sbs.theta = -25.7
+sbs.pcentral = 3.88
+sbs.magdist = 1.6
+sbs.hcaldist = 10.0 
+
+# AJRP: deleted irrelevant BigBite entries
+
+# nominal kinematics for ECAL
+
+earm.theta = 29.46
+earm.pcentral = 3.42
+# changing ecal dist from nominal to"effective distance" of 8.14 m to remove incident-angle correlation
+earm.ecaldist = 8.14
+
+###############################################################################
+###                               GEP-3                                     ###
+###############################################################################
+
+--------[ 2025-05-05 00:00:00 ] # Start GEP Kin. 3
+
+ebeam = 10.688
+experiment = gep
+
+sbs.theta = -18.6
+sbs.pcentral = 6.8
+sbs.magdist = 1.628 # might need to change to 1.62 pending survey results
+sbs.hcaldist = 10.0 # might need to change pending survey results
+
+earm.theta = 27.0
+earm.pcentral = 4.8
+
+# I'm told ECAL dist is 6.011 m, plus we'll add 13.3 cm for the "effective z"
+# (this comes from Monte Carlo)
+earm.ecaldist = 6.144
+

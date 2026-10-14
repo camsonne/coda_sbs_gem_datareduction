@@ -1,0 +1,120 @@
+diff -ru a/src/SBSDigGEMPlane.cxx b/src/SBSDigGEMPlane.cxx
+--- a/src/SBSDigGEMPlane.cxx	2026-10-07 11:56:56
++++ b/src/SBSDigGEMPlane.cxx	2026-10-07 11:56:56
+@@ -32,6 +32,7 @@
+ {
+   memset(fStripADCsum, 0, fNStrips*sizeof(Int_t));
+   memset(fStripADC, 0, fNStrips*fNSamples*sizeof(Short_t));
++  fStripSig.assign(fNStrips, 0);
+ }
+ 
+ //ClassImp(SBSDigGEMPlane);
+diff -ru a/src/SBSDigGEMPlane.h b/src/SBSDigGEMPlane.h
+--- a/src/SBSDigGEMPlane.h	2026-10-07 11:56:56
++++ b/src/SBSDigGEMPlane.h	2026-10-07 11:56:56
+@@ -25,6 +25,8 @@
+   Int_t GetNStrips(){return fNStrips;};
+   Short_t GetADC(int strip, int samp){return fStripADC[strip*fNSamples+samp];};
+   Int_t GetADCSum(int strip){return fStripADCsum[strip];};
++  void SetSig(int strip){if(strip>=0 && strip<fNStrips)fStripSig[strip] = 1;};
++  Int_t IsSig(int strip){return (strip>=0 && strip<fNStrips) ? fStripSig[strip] : 0;};
+   void SetADC(int strip, int samp, int adc){
+     if(strip<fNStrips){
+       fStripADCsum[strip]+= adc-fStripADC[strip*fNSamples+samp];
+@@ -49,6 +51,7 @@
+   Double_t fStripThr;//threshold for ADC sum
+   Int_t* fStripADCsum;
+   Short_t* fStripADC;
++  std::vector<char> fStripSig;  // gemfilter patch
+   double fdX;
+   double fXoffset;
+   double fROangle;
+diff -ru a/src/SBSDigGEMSimDig.cxx b/src/SBSDigGEMSimDig.cxx
+--- a/src/SBSDigGEMSimDig.cxx	2026-10-07 11:56:56
++++ b/src/SBSDigGEMSimDig.cxx	2026-10-07 11:56:56
+@@ -994,6 +994,7 @@
+ #endif
+ 
+ 	gemdet->GEMPlanes[ic*2+ipl].AddADC(iL+j, b, dadc);
++	if(fCurrentHitIsSignal && dadc!=0)gemdet->GEMPlanes[ic*2+ipl].SetSig(iL+j);
+ 	
+ 	//cross talk here
+ 	if(xt_factor>0){
+@@ -1206,6 +1207,7 @@
+ 				   fADCbits );
+ 
+ 	gemdet->GEMPlanes[ic*2+ipl].AddADC(iL+j, b, dadc);
++	if(fCurrentHitIsSignal && dadc!=0)gemdet->GEMPlanes[ic*2+ipl].SetSig(iL+j);
+ 	
+ 	if(xt_factor>0){
+ 	  if(iL+j+isLeft*fNCStripApart>=0 && iL+j+isLeft*fNCStripApart<GEMstrips){
+@@ -1240,6 +1242,7 @@
+   
+   for(size_t ih = 0; ih<gemdet->fGEMhits.size(); ih++){
+     is_background = (gemdet->fGEMhits[ih].source!=0);
++    fCurrentHitIsSignal = !is_background;  // gemfilter patch
+     //cout << (bkgdonly) << " " << (!is_background) << " " << (bkgdonly && !is_background) << endl;
+     //if(bkgdonly && !is_background)continue;
+     UInt_t igem = gemdet->fGEMhits[ih].module;
+@@ -1483,6 +1486,7 @@
+ 	      T->Earm_BBGEM_Dig.adc_5->push_back(gemdet->GEMPlanes[i].GetADC(j, 5));
+ 	      */
+ 		T->Earm_BBGEM_Dig.samp->push_back(k);
++		T->Earm_BBGEM_Dig.sig->push_back(gemdet->GEMPlanes[i].IsSig(j));
+ 		T->Earm_BBGEM_Dig.adc->push_back(gemdet->GEMPlanes[i].GetADC(j, k));
+ 	      }
+ 	      //}
+diff -ru a/src/SBSDigGEMSimDig.h b/src/SBSDigGEMSimDig.h
+--- a/src/SBSDigGEMSimDig.h	2026-10-07 11:56:55
++++ b/src/SBSDigGEMSimDig.h	2026-10-07 11:56:56
+@@ -95,6 +95,7 @@
+   
+   //zero suppression and common mode
+   Bool_t fDoZeroSup;
++  Bool_t fCurrentHitIsSignal = false;  // gemfilter patch
+   Double_t fZeroSup;
+   Bool_t fDoCommonMode;
+   std::vector<Double_t> fCommonModeArray;
+diff -ru a/src/g4sbs_data.cxx b/src/g4sbs_data.cxx
+--- a/src/g4sbs_data.cxx	2026-10-07 11:56:56
++++ b/src/g4sbs_data.cxx	2026-10-07 11:56:56
+@@ -458,6 +458,8 @@
+     */
+     b_adc = tree->Branch(Form("%s.adc", prefix), &adc);
+     b_samp = tree->Branch(Form("%s.samp", prefix), &samp);
++    sig = new std::vector<int>;
++    b_sig = tree->Branch(Form("%s.sig", prefix), &sig);
+     return true;
+   }
+   
+@@ -477,6 +479,7 @@
+       */
+       adc->clear();
+       samp->clear();
++      if(sig)sig->clear();
+     }
+   }
+   
+diff -ru a/src/g4sbs_data.h b/src/g4sbs_data.h
+--- a/src/g4sbs_data.h	2026-10-07 11:56:56
++++ b/src/g4sbs_data.h	2026-10-07 11:56:56
+@@ -344,6 +344,7 @@
+     */
+     std::vector<Int_t> *adc;
+     std::vector<Int_t> *samp;
++    std::vector<Int_t> *sig;   // gemfilter patch: 1 if a signal-source (non-background) hit contributed
+     
+     TBranch *b_nstrips;   //!
+     TBranch *b_module;   //!
+@@ -358,9 +359,10 @@
+     */
+     TBranch *b_adc;   //!
+     TBranch *b_samp;   //!
++    TBranch *b_sig;   //!
+     
+   DigGEMData_t() : nstrips(0), module(0), strip(0), //adc_0(0), adc_1(0), adc_2(0), adc_3(0), adc_4(0), adc_5(0), b_nstrips(0), b_module(0), b_strip(0), b_adc_0(0), b_adc_1(0), b_adc_2(0), b_adc_3(0), b_adc_4(0), b_adc_5(0)
+-      adc(0), samp(0), b_nstrips(0), b_module(0), b_strip(0), b_adc(0), b_samp(0){};
++      adc(0), samp(0), sig(0), b_nstrips(0), b_module(0), b_strip(0), b_adc(0), b_samp(0), b_sig(0){};
+       
+     virtual ~DigGEMData_t(){};
+     virtual bool SetupBranches(TTree *t, const char *prefix);
