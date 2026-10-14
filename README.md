@@ -27,7 +27,7 @@ Design principles:
 | item | status |
 |---|---|
 | Build + unit/integration tests (CTest, 8 suites) | pass on macOS (Apple clang 17); Linux via CI |
-| Strip reduction / CPU on **synthetic** events ([docs/bench_synthetic.csv](docs/bench_synthetic.csv), 5–40 % occupancy) | road mode: ×15.7–17.4 SBS arm, ×5.9–6.2 BigBite, signal retention 1.000, 65–85 ns CPU per input strip (full chain); track mode: SBS arm ×76–78 at 5–10 %, ×33–37 at 20–30 %, falls back to road at 40 %; BigBite gains only at 5 % (×16, retention 0.994) |
+| Strip reduction / CPU on **synthetic** events ([docs/bench_synthetic.csv](docs/bench_synthetic.csv), 5–40 % occupancy) | road mode: ×15.7–17.4 SBS arm, ×5.9–6.2 BigBite, signal retention 1.000, CPU per input strip 64–85 ns SBS arm (`sbs_pipeline`, full chain) and 39–42 ns BigBite (`bb_filter`); track mode: SBS arm ×76–78 at 5–10 %, ×33–37 at 20–30 %, falls back to road at 40 %; BigBite gains only at 5 % (×16, retention 0.994) |
 | Raw GMn / GEn-II / GEp EVIO | **not yet validated** |
 | Live ET chain (EB → GEMFILTER → ER) | **not yet run**; test script `tests/coda/et_live_test.sh` (`-DGEMFILTER_LIVE_ET_TEST=ON`) |
 
