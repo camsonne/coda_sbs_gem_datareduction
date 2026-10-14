@@ -7,15 +7,15 @@
 set -u
 B=$(cd "$1" && pwd); DB=$(cd "$2" && pwd); NB=${3:-200}; OCC=${4:-0.15}
 W=$(mktemp -d /tmp/gfet.XXXX); ETF=/tmp/gf_et_$$; PORT=${GF_ET_PORT:-23911}
-T(){ perl -e 'alarm shift; exec @ARGV' "$@"; }
+T(){ perl -e 'alarm shift; exec @ARGV' "$@"; }   # foreground only: backgrounded, $! would be a subshell
 cd "$W"
 "$B/tools/gemfilter_bench" --synth "$DB" in.evio "$NB" "$OCC" || exit 1
 NEV=$((NB + 3))
-T 300 "$B/bin/et_start" -f "$ETF" -n 128 -s 1500000 -d -p "$PORT" -u $((PORT+1)) > et_start.log 2>&1 & EP=$!
+perl -e 'alarm shift; exec @ARGV' 300 "$B/bin/et_start" -f "$ETF" -n 128 -s 1500000 -d -p "$PORT" -u $((PORT+1)) > et_start.log 2>&1 & EP=$!
 sleep 2
-T 280 "$B/tools/gf_et_drain" -f "$ETF" -o out.evio -n "$NEV" --timeout 30 > drain.log 2>&1 & DP=$!
+perl -e 'alarm shift; exec @ARGV' 280 "$B/tools/gf_et_drain" -f "$ETF" -o out.evio -n "$NEV" --timeout 30 > drain.log 2>&1 & DP=$!
 sleep 1
-T 270 "$B/bin/gemfilter_et" -f "$ETF" -p gem:in.evio.cfg --er-station ER -t 4 --stats 5 --udp-port $((PORT+1)) > filter.log 2>&1 & FP=$!
+perl -e 'alarm shift; exec @ARGV' 270 "$B/bin/gemfilter_et" -f "$ETF" -p gem:in.evio.cfg --er-station ER -t 4 --stats 5 --udp-port $((PORT+1)) > filter.log 2>&1 & FP=$!
 sleep 2
 T 200 "$B/tools/gf_et_feed" -f "$ETF" -i in.evio > feed.log 2>&1
 wait $DP; RC=$?

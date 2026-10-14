@@ -12,7 +12,8 @@
 set -u
 B=$(cd "$1" && pwd); S=$(cd "$2" && pwd); DB=$(cd "$3" && pwd); NB=${4:-60}
 W=$(mktemp -d /tmp/gfkl.XXXX); P=$W/prefix; ETF=/tmp/gfkl_et_$$; PORT=${GF_ET_PORT_BASE:-23931}
-T() { perl -e 'alarm shift; exec @ARGV' "$@"; }
+T() { perl -e 'alarm shift; exec @ARGV' "$@"; }   # foreground only: backgrounded, $! would be a subshell
+# background form: run as  perl ... & ; $! is then the PID of the exec'd program itself
 nfail=0
 ok()  { echo "ok    $*"; }
 bad() { echo "FAIL  $*"; nfail=$((nfail + 1)); }
@@ -34,18 +35,22 @@ CTL=$P/bin/gemfilter_ctl; HOOK=$P/bin/gf_rc_hook.sh
 cleanup() {
   "$CTL" stop > /dev/null 2>&1
   [ -n "${DP:-}" ] && kill "$DP" 2>/dev/null
-  [ -n "${EP:-}" ] && kill "$EP" 2>/dev/null
+  if [ -n "${EP:-}" ]; then
+    kill "$EP" 2>/dev/null
+    for i in 1 2 3 4 5 6 7 8 9 10; do kill -0 "$EP" 2>/dev/null || break; sleep 0.5; done
+    kill -KILL "$EP" 2>/dev/null
+  fi
   wait 2>/dev/null; rm -f "$ETF"
 }
 trap cleanup EXIT
 
-T 380 "$P/bin/et_start" -f "$ETF" -n 256 -s 1500000 -d -p "$PORT" -u $((PORT + 1)) > "$W/et_start.log" 2>&1 & EP=$!
+perl -e 'alarm shift; exec @ARGV' 380 "$P/bin/et_start" -f "$ETF" -n 256 -s 1500000 -d -p "$PORT" -u $((PORT + 1)) > "$W/et_start.log" 2>&1 & EP=$!
 sleep 2
 kill -0 $EP 2>/dev/null && ok "et_start running" || { cat "$W/et_start.log"; echo "FAIL et_start"; exit 1; }
 "$P/bin/gf_et_status" -f "$ETF" --udp-port $((PORT + 1)); expect_rc 0 $? "gf_et_status probes the ET system"
 
 # ---------------- A: normal run-control cycle
-T 200 "$P/bin/gf_et_drain" -f "$ETF" -o "$W/outA.evio" -n $NEV --timeout 60 --station ER > "$W/drainA.log" 2>&1 & DP=$!
+perl -e 'alarm shift; exec @ARGV' 200 "$P/bin/gf_et_drain" -f "$ETF" -o "$W/outA.evio" -n $NEV --timeout 60 --station ER > "$W/drainA.log" 2>&1 & DP=$!
 sleep 1
 "$HOOK" prestart TEST 1 s; expect_rc 0 $? "A: prestart hook"
 "$CTL" status > "$W/stA.txt" 2>&1; expect_rc 0 $? "A: status after prestart"
@@ -67,7 +72,7 @@ grep -q '^end: ' "$W/log/runs/run_1.txt" && ok "A: end recorded" || bad "A: end 
 export GF_ER_STATION=ER_B
 "$CTL" start > /dev/null; expect_rc 0 $? "B: filters started before the ER"
 sleep 2
-T 200 "$P/bin/gf_et_drain" -f "$ETF" -o "$W/outB.evio" -n $NEV --timeout 60 --station ER_B --position 1 > "$W/drainB.log" 2>&1 & DP=$!
+perl -e 'alarm shift; exec @ARGV' 200 "$P/bin/gf_et_drain" -f "$ETF" -o "$W/outB.evio" -n $NEV --timeout 60 --station ER_B --position 1 > "$W/drainB.log" 2>&1 & DP=$!
 sleep 2
 "$CTL" status > "$W/stB0.txt" 2>&1; expect_rc 2 $? "B: status detects ER upstream of the filters"
 "$HOOK" prestart TEST 2 s; expect_rc 0 $? "B: prestart hook"
@@ -81,7 +86,7 @@ n=$(nstatus "$W/outB.evio")
 [ "$n" -eq $((2 * NB)) ] && ok "B: $n status banks" || bad "B: $n status banks, want $((2 * NB))"
 
 # ---------------- C: BB filter crash
-T 200 "$P/bin/gf_et_drain" -f "$ETF" -o "$W/outC.evio" -n $NEV --timeout 60 --station ER_B > "$W/drainC.log" 2>&1 & DP=$!
+perl -e 'alarm shift; exec @ARGV' 200 "$P/bin/gf_et_drain" -f "$ETF" -o "$W/outC.evio" -n $NEV --timeout 60 --station ER_B > "$W/drainC.log" 2>&1 & DP=$!
 sleep 1
 kill -KILL "$(cat "$W/run/bb.pid")"; sleep 1
 "$CTL" status bb > /dev/null 2>&1; [ $? -ne 0 ] && ok "C: status reports BB down" || bad "C: status after kill"
