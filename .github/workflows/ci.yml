@@ -34,3 +34,32 @@ jobs:
 
       - name: Test
         run: ctest --test-dir build --output-on-failure
+
+  deploy-kit:
+    # CODA deployment kit with live ET tests (GitHub runners allow et_start to bind its ports):
+    # install_gemfilter.sh --mode fetch --live-test runs every CTest suite including
+    # coda.et_live and deploy.kit_live, then the preflight runs on the installed prefix.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install cmake ninja numpy uproot awkward
+
+      - name: Build, test (incl. live ET) and install
+        run: deploy/coda/install_gemfilter.sh --prefix "$RUNNER_TEMP/gf" --mode fetch --live-test -j 4
+
+      - name: Preflight on the installed prefix
+        run: |
+          source "$RUNNER_TEMP/gf/etc/setup_gemfilter.sh"
+          export GF_DB_DIR=$PWD/tests/seeds/data/DB GF_DB_DATE="2024-10-01 00:00:00" GF_SBS_SEED=vtp
+          export EXPID=ci SESSION=ci GF_LOG_DIR=$RUNNER_TEMP/gflog GF_RUN_DIR=$RUNNER_TEMP/gfrun
+          gemfilter_check
+          gemfilter_ctl cmd
+          cat "$RUNNER_TEMP/gf/share/gemfilter/build_info.txt"

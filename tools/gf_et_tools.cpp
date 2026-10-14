@@ -2,7 +2,7 @@
 //
 //   gf_et_feed  -f <ET file> -i <in.evio>  [-n max] [--rate Hz]     (producer at GrandCentral,
 //               each CODA event framed as a one-event EVIO v4 buffer, as written by the CODA EB)
-//   gf_et_drain -f <ET file> -o <out.evio> [-n expected] [--station ER] [--timeout s]
+//   gf_et_drain -f <ET file> -o <out.evio> [-n expected] [--station ER] [--position P] [--timeout s]
 //               (blocking station at the END of the chain = stands in for the CODA ER)
 //
 // Use on a DAQ test machine: et_start -> gf_et_drain (ER) -> gemfilter_et (position 1) -> gf_et_feed.
@@ -86,7 +86,8 @@ int drain(int argc, char** argv) {
   std::string f = arg(argc, argv, "-f", ""), out = arg(argc, argv, "-o", ""), name = arg(argc, argv, "--station", "ER");
   long expect = std::stol(arg(argc, argv, "-n", "0"));
   double tmo = std::stod(arg(argc, argv, "--timeout", "30"));
-  if (f.empty() || out.empty()) { std::fprintf(stderr, "usage: gf_et_drain -f ETfile -o out.evio [-n N]\n"); return 2; }
+  const int pos = std::stoi(arg(argc, argv, "--position", "-1"));   // -1 = ET_END
+  if (f.empty() || out.empty()) { std::fprintf(stderr, "usage: gf_et_drain -f ETfile -o out.evio [-n N] [--station ER] [--position P] [--timeout s]\n"); return 2; }
   std::signal(SIGINT, on_sig); std::signal(SIGTERM, on_sig);
   et_sys_id id = openEt(f);
   et_statconfig sc;
@@ -94,7 +95,7 @@ int drain(int argc, char** argv) {
   et_station_config_setblock(sc, ET_STATION_BLOCKING);
   et_station_config_setselect(sc, ET_STATION_SELECT_ALL);
   et_stat_id stat;
-  int st = et_station_create_at(id, &stat, name.c_str(), sc, ET_END, ET_END);
+  int st = et_station_create_at(id, &stat, name.c_str(), sc, pos < 0 ? ET_END : pos, ET_END);
   et_station_config_destroy(sc);
   if (st != ET_OK && st != ET_ERROR_EXISTS) { std::fprintf(stderr, "station create failed: %d\n", st); return 1; }
   et_att_id att;

@@ -29,10 +29,21 @@ Design principles:
 | Build + unit/integration tests (CTest, 8 suites) | pass on macOS (Apple clang 17); Linux via CI |
 | Strip reduction / CPU on **synthetic** events ([docs/bench_synthetic.csv](docs/bench_synthetic.csv), 5–40 % occupancy) | road mode: ×15.7–17.4 SBS arm, ×5.9–6.2 BigBite, signal retention 1.000, CPU per input strip 64–85 ns SBS arm (`sbs_pipeline`, full chain) and 39–42 ns BigBite (`bb_filter`); track mode: SBS arm ×76–78 at 5–10 %, ×33–37 at 20–30 %, falls back to road at 40 %; BigBite gains only at 5 % (×16, retention 0.994) |
 | Raw GMn / GEn-II / GEp EVIO | **not yet validated** |
-| Live ET chain (EB → GEMFILTER → ER) | **not yet run**; test script `tests/coda/et_live_test.sh` (`-DGEMFILTER_LIVE_ET_TEST=ON`) |
+| Live ET chain (EB → GEMFILTER → ER) | `coda.et_live` and `deploy.kit_live` run in CI (`deploy-kit` job, real `et_start`, ET from GitHub); not yet on a CODA 3.10 EB |
+| CODA deployment kit for SIDIS (two stations BB + SBS, run-control hook, preflight) | [deploy/coda/README.md](deploy/coda/README.md); not yet commissioned on the DAQ |
 
 Open items to check on real data (MPD trigger-number width, VTP cluster energy units, EVIO v4/v6 framing in ET,
 status-bank tag collisions, SIDIS DB, no-seed fraction) are listed in [docs/DESIGN.md §7](docs/DESIGN.md).
+
+## Deploying on the SBS DAQ (SIDIS)
+```
+source $CODA/.setup
+deploy/coda/install_gemfilter.sh --prefix /home/coda/gemfilter --mode coda --live-test
+source /home/coda/gemfilter/etc/setup_gemfilter.sh && gemfilter_check
+```
+Then edit `etc/gemfilter_sidis.env` and attach `gf_rc_hook.sh` to the Prestart, Go, End and Reset
+transitions in jcedit. The full guide and commissioning checklist are in
+[deploy/coda/README.md](deploy/coda/README.md).
 
 ## Documentation
 * [docs/DESIGN.md](docs/DESIGN.md) — algorithm, CODA integration, configuration, synthetic performance, validation plan, open items

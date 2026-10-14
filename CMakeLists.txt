@@ -88,3 +88,18 @@ if(EXISTS ${PROJECT_SOURCE_DIR}/docs)
   install(DIRECTORY ${PROJECT_SOURCE_DIR}/docs/ DESTINATION ${CMAKE_INSTALL_DOCDIR}
           FILES_MATCHING PATTERN "*.md")
 endif()
+
+# CODA deployment kit (deploy/coda): control scripts, run-control hook, preflight, setup files,
+# site configuration example and the SIDIS filter-config templates.
+if(EXISTS ${PROJECT_SOURCE_DIR}/deploy/coda)
+  install(PROGRAMS deploy/coda/gemfilter_ctl deploy/coda/gemfilter_check deploy/coda/gf_rc_hook.sh
+                   deploy/coda/install_gemfilter.sh
+          DESTINATION ${CMAKE_INSTALL_BINDIR})
+  install(FILES deploy/coda/gf_common.sh DESTINATION ${CMAKE_INSTALL_DATADIR}/gemfilter)
+  install(FILES deploy/coda/setup_gemfilter.sh deploy/coda/setup_gemfilter.csh
+                deploy/coda/gemfilter_sidis.env.example
+          DESTINATION ${CMAKE_INSTALL_SYSCONFDIR})
+  install(DIRECTORY config/sidis/ DESTINATION ${CMAKE_INSTALL_DATADIR}/gemfilter/sidis
+          FILES_MATCHING PATTERN "*.cfg.in")
+  install(FILES deploy/coda/README.md DESTINATION ${CMAKE_INSTALL_DOCDIR}/deploy OPTIONAL)
+endif()

@@ -30,6 +30,8 @@ R"(usage: gemfilter_file -i <in.evio> [options]
   -n, --max-events N      process at most N events (0 = all)
   --skip N                skip first N events
   --list-banks            print (ROC, bank tag) inventory of physics events and exit
+  --check                 build the processor from -p (loads DB/config), print its hash and exit;
+                          no -i needed (used by deploy/coda/gemfilter_check)
   -q, --quiet             no summary line
 )";
 }
@@ -37,7 +39,16 @@ R"(usage: gemfilter_file -i <in.evio> [options]
 int main(int argc, char** argv) {
   try {
     cli::Args a(argc, argv, {"--no-status", "--no-status-prescaled", "--list-banks", "-q",
-                             "--quiet", "-h", "--help"});
+                             "--quiet", "--check", "-h", "--help"});
+    if (a.has("--check")) {
+      // Validate the processor spec (loads the DB, geometry, crate map) without any input file.
+      auto factory = make_processor_factory(a.str("-p", "--processor", "passthrough"));
+      PolicyConfig pc;
+      FilterPolicy policy(factory(), pc);
+      std::cout << "gemfilter_file: config OK processor=" << policy.processor().name()
+                << " config_hash=0x" << std::hex << policy.config_hash() << std::dec << '\n';
+      return 0;
+    }
     if (a.has("-h", "--help") || !a.has("-i", "--input")) {
       usage();
       return a.has("-h", "--help") ? 0 : 2;

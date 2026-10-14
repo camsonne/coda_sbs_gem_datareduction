@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+# gemfilter_check - preflight for the gemfilter SIDIS deployment on the EB host.
+# Run as the DAQ account after sourcing the CODA setup, before the first run (and after any
+# change to gemfilter_sidis.env, the SBS-replay DB or the CODA configuration).
+#   gemfilter_check [--live]      --live: also probe the running ET system and stations
+# Prints PASS/WARN/FAIL lines; exit 1 if any FAIL.
+set -u
+GF_PREFIX=${GF_PREFIX:-$(cd "$(dirname "$0")/.." && pwd)}
+# shellcheck disable=SC1091
+. "$GF_PREFIX/share/gemfilter/gf_common.sh" || exit 1
+live=0; [ "${1:-}" = "--live" ] && live=1
+nfail=0; nwarn=0
+pass() { echo "PASS  $*"; }
+warn() { echo "WARN  $*"; nwarn=$((nwarn + 1)); }
+fail() { echo "FAIL  $*"; nfail=$((nfail + 1)); }
+
+echo "gemfilter_check: prefix=$GF_PREFIX env=$GF_ENV_FILE host=$(hostname)"
+[ -f "$GF_ENV_FILE" ] && pass "site config $GF_ENV_FILE" || fail "site config $GF_ENV_FILE missing (copy gemfilter_sidis.env.example)"
+
+# --- CODA environment
+for v in CODA EXPID SESSION; do
+  if [ -n "$(eval echo "\${$v:-}")" ]; then pass "\$$v=$(eval echo "\${$v}")"; else warn "\$$v not set (source the CODA setup first)"; fi
+done
+[ -n "${EXPID:-}" ] && [ "$GF_EXPID" != "${EXPID:-}" ] && warn "GF_EXPID=$GF_EXPID differs from \$EXPID=$EXPID"
+
+# --- binaries
+for b in gemfilter_et gemfilter_file gf_et_status gemfilter_ctl gf_rc_hook.sh; do
+  [ -x "$GF_BIN/$b" ] && pass "binary $b" || fail "binary $GF_BIN/$b missing"
+done
+
+# --- ET library: must be the one the EB's ET system was created with (shared-memory layout)
+bi="$GF_PREFIX/share/gemfilter/build_info.txt"
+if [ -f "$bi" ]; then
+  mode=$(sed -n 's/^et_mode=//p' "$bi"); etlib=$(sed -n 's/^et_library=//p' "$bi")
+  if [ "$mode" = "coda" ]; then
+    pass "built against CODA ET ($etlib)"
+    if [ -n "${CODA:-}" ]; then
+      case "$etlib" in "$CODA"/*) pass "ET library is under the current \$CODA";;
+        *) warn "ET library $etlib is not under \$CODA=$CODA: rebuild with install_gemfilter.sh --mode coda";; esac
+    fi
+  else
+    warn "built with ET/evio from source ($mode, $(sed -n 's/^et_version=//p' "$bi")): fine for tests; for production" \
+         "rebuild with install_gemfilter.sh --mode coda so the ET version matches the EB"
+  fi
+else
+  warn "no build_info.txt (not installed with install_gemfilter.sh?)"
+fi
+
+# --- names
+len=$(printf %s "$GF_ET_FILE" | wc -c | tr -d ' ')
+[ "$len" -le 99 ] && pass "ET file name length $len <= 99 ($GF_ET_FILE)" || fail "ET file name $GF_ET_FILE is $len chars (> 99, et_open fails)"
+for a in $GF_ARMS; do
+  s=$(gf_station "$a"); l=$(printf %s "$s" | wc -c | tr -d ' ')
+  [ "$l" -le 47 ] && pass "station name $s" || fail "station name $s longer than 47 chars"
+  case "$a" in bb|sbs) ;; *) fail "unknown arm '$a' in GF_ARMS (bb|sbs)";; esac
+done
+[ "$GF_BLOCKING" = "1" ] && pass "blocking stations (no event bypasses the filter)" \
+                         || warn "GF_BLOCKING=0: events bypass the filter when its cue ($GF_CUE) is full"
+[ "$GF_RESTORE" = "out" ] && pass "restore=out (events of a dead filter go on to the ER)" \
+                          || warn "GF_RESTORE=$GF_RESTORE (out recommended)"
+
+# --- DB and filter configs
+[ -d "$GF_DB_DIR" ] && pass "DB dir $GF_DB_DIR" || fail "DB dir $GF_DB_DIR not found"
+for a in $GF_ARMS; do
+  cfg=$(gf_render "$a") || { fail "render $a config"; continue; }
+  if out=$("$GF_BIN/gemfilter_file" --check -p "gem:$cfg" 2>&1); then
+    pass "$a config loads: $(echo "$out" | sed 's/.*config OK //')  [$cfg]"
+  else
+    fail "$a config: $(echo "$out" | tail -1)"
+  fi
+done
+case "$GF_DB_DATE" in 2023-06-01*) warn "GF_DB_DATE=$GF_DB_DATE is the GEn-II placeholder; set the SIDIS DB date when it exists";; esac
+
+# --- CPU
+ncpu=$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 0)
+need=0; for a in $GF_ARMS; do need=$((need + $(gf_threads "$a"))); done
+if [ "$ncpu" -gt 0 ]; then
+  [ "$need" -lt "$ncpu" ] && pass "threads $need < $ncpu cores" \
+                          || warn "filter threads ($need) >= cores ($ncpu): the EB shares this host"
+fi
+
+# --- writable dirs
+for d in "$GF_RUN_DIR" "$GF_LOG_DIR"; do
+  mkdir -p "$d" 2>/dev/null && [ -w "$d" ] && pass "writable $d" || fail "cannot write $d"
+done
+
+# --- live probe
+if [ $live -eq 1 ]; then
+  # shellcheck disable=SC2046
+  out=$("$GF_BIN/gf_et_status" $(gf_et_args) --timeout 2 --station "$(gf_all_stations)" --er-station "$GF_ER_STATION" 2>/dev/null); rc=$?
+  echo "$out" | sed 's/^/      /'
+  case $rc in
+    0) pass "ET: all filter stations attached and upstream of $GF_ER_STATION";;
+    1) warn "ET: a filter station is missing or unattached (gemfilter_ctl ensure)";;
+    2) fail "ET: ordering problem or ER station '$GF_ER_STATION' not found (check GF_ER_STATION)";;
+    3) warn "ET: system $GF_ET_FILE not reachable (EB not downloaded?)";;
+  esac
+fi
+echo "gemfilter_check: $nfail FAIL, $nwarn WARN"
+[ $nfail -eq 0 ]

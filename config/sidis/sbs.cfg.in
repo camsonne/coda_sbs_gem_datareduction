@@ -1,0 +1,23 @@
+# gemfilter SIDIS - SBS hadron arm, HCal seeded (rendered by deploy/coda/gemfilter_ctl render).
+# @...@ fields are filled from gemfilter_sidis.env.  Do not edit the rendered copy.
+db_dir = @GF_DB_DIR@
+date = @GF_DB_DATE@
+arm = sbs
+gem_tracker = @GF_SBS_TRACKER@
+gem_bank_tags = @GF_GEM_BANKS@
+seed_source = @GF_SBS_SEED@
+calo = sbs.hcal
+calo_ps = none
+vtp_roc = @GF_SBS_VTP_ROC@
+vtp_bank_tag = @GF_SBS_VTP_TAG@
+max_seeds = 3
+no_seed = @GF_NO_SEED@
+mode = @GF_SBS_MODE@
+road_width_scale = @GF_SBS_ROAD_SCALE@
+road_margin = 0.005
+# used only when mode = track
+min_layers = 4
+min_layers_confident = 7
+max_hits2d_track = 400
+keep_margin_strips = 3
+keep_track_tol = 0.004

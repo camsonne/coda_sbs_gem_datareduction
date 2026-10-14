@@ -1,0 +1,130 @@
+#!/usr/bin/env bash
+# gemfilter_ctl - manage the gemfilter ET stations of one CODA configuration (SBS SIDIS).
+#
+#   gemfilter_ctl render  [arm...]   write the filter configs to $GF_RUN_DIR from the templates
+#   gemfilter_ctl start   [arm...]   start the filter processes that are not running
+#   gemfilter_ctl ensure  [arm...]   start missing filters, restart misplaced ones, wait for attach
+#   gemfilter_ctl stop    [arm...]   stop (SIGINT -> drain in-flight events -> SIGTERM -> SIGKILL)
+#   gemfilter_ctl restart [arm...]
+#   gemfilter_ctl status  [arm...]   process + ET station state; exit 0 only if all are in place
+#   gemfilter_ctl cmd     [arm...]   print the gemfilter_et command lines (dry run)
+#
+# arm = bb | sbs (default: all of $GF_ARMS).  Configuration: $GF_PREFIX/etc/gemfilter_sidis.env.
+# Exit codes (status/ensure): 0 in place, 1 a filter is not running or not attached,
+# 2 a filter station is not upstream of the ER station / ER missing, 3 ET system not reachable.
+set -u
+GF_PREFIX=${GF_PREFIX:-$(cd "$(dirname "$0")/.." && pwd)}
+# shellcheck disable=SC1091
+. "$GF_PREFIX/share/gemfilter/gf_common.sh" || exit 1
+
+cmd=${1:-status}; [ $# -gt 0 ] && shift
+arms=${*:-$GF_ARMS}
+mkdir -p "$GF_RUN_DIR" "$GF_LOG_DIR"
+
+render() {
+  local a
+  for a in $arms; do gf_render "$a" >/dev/null || return 1; done
+}
+
+start_one() {
+  local arm=$1 p log
+  p=$(gf_pid "$arm")
+  if [ -n "$p" ]; then gf_log "$arm: already running (pid $p)"; return 0; fi
+  gf_render "$arm" >/dev/null || return 1
+  "$GF_BIN/gemfilter_file" --check -p "gem:$(gf_cfg "$arm")" >/dev/null 2>"$GF_RUN_DIR/$arm.check" || {
+    gf_log "$arm: config check FAILED: $(tail -1 "$GF_RUN_DIR/$arm.check")"; return 1; }
+  log=$(gf_logfile "$arm")
+  { echo "==== $(gf_ts) start: $(gf_cmdline "$arm")"; } >> "$log"
+  # shellcheck disable=SC2046
+  nohup $(gf_cmdline "$arm") >> "$log" 2>&1 < /dev/null &
+  echo $! > "$(gf_pidfile "$arm")"
+  sleep 0.3
+  if [ -z "$(gf_pid "$arm")" ]; then
+    gf_log "$arm: gemfilter_et exited immediately, see $log"; tail -5 "$log" >&2; return 1
+  fi
+  gf_log "$arm: started pid $(cat "$(gf_pidfile "$arm")") station $(gf_station "$arm") log $log"
+}
+
+stop_one() {
+  local arm=$1 p i
+  p=$(gf_pid "$arm")
+  if [ -z "$p" ]; then rm -f "$(gf_pidfile "$arm")"; gf_log "$arm: not running"; return 0; fi
+  kill -INT "$p" 2>/dev/null
+  for i in $(seq 1 50); do kill -0 "$p" 2>/dev/null || break; sleep 0.2; done
+  if kill -0 "$p" 2>/dev/null; then kill -TERM "$p" 2>/dev/null; sleep 2; fi
+  if kill -0 "$p" 2>/dev/null; then kill -KILL "$p" 2>/dev/null; gf_log "$arm: killed pid $p"; fi
+  rm -f "$(gf_pidfile "$arm")"
+  gf_log "$arm: stopped (pid $p)"
+}
+
+# station state for the given arms; prints gf_et_status lines; returns its exit code
+et_state() {
+  local st="" a
+  for a in "$@"; do st="$st${st:+,}$(gf_station "$a")"; done
+  # shellcheck disable=SC2046
+  "$GF_BIN/gf_et_status" $(gf_et_args) --timeout "${GF_PROBE_TIMEOUT_S:-2}" --station "$st" \
+      --er-station "$GF_ER_STATION" 2>/dev/null
+}
+
+status() {
+  local a p rc=0 out
+  for a in $arms; do
+    p=$(gf_pid "$a")
+    if [ -n "$p" ]; then echo "process arm=$a pid=$p station=$(gf_station "$a") running=1"
+    else echo "process arm=$a station=$(gf_station "$a") running=0"; rc=1; fi
+  done
+  # shellcheck disable=SC2086
+  out=$(et_state $arms); local erc=$?
+  echo "$out"
+  [ $erc -gt $rc ] && rc=$erc
+  return $rc
+}
+
+# arms whose station is missing/unattached (1) or downstream of the ER (2), from gf_et_status
+misplaced() {
+  local a line pos erpos
+  # shellcheck disable=SC2086
+  erpos=$(et_state $arms | sed -n "s/^station=$GF_ER_STATION exists=1 position=\([0-9-]*\).*/\1/p")
+  for a in $arms; do
+    line=$(et_state "$a" | grep "^station=$(gf_station "$a") ")
+    case "$line" in *"exists=1"*"attachments=0"*|*"exists=0"*|"") echo "$a"; continue;; esac
+    pos=$(echo "$line" | sed -n 's/.* position=\([0-9-]*\).*/\1/p')
+    if [ -n "$erpos" ] && [ -n "$pos" ] && [ "$pos" -ge "$erpos" ]; then echo "$a"; fi
+  done
+}
+
+ensure() {
+  local a t0 rc wait=${GF_ATTACH_WAIT_S:-30} bad
+  for a in $arms; do start_one "$a" || gf_log "$a: start failed, continuing with the other arms"; done
+  t0=$(date +%s)
+  while :; do
+    status >/dev/null; rc=$?
+    [ $rc -eq 0 ] && break
+    [ $rc -eq 3 ] && { gf_log "ET system $GF_ET_FILE not reachable yet"; }
+    if [ $rc -eq 2 ]; then
+      bad=$(misplaced)
+      if [ -n "$bad" ]; then
+        gf_log "stations not upstream of $GF_ER_STATION: $bad -> restarting them (re-runs --fix-position)"
+        for a in $bad; do stop_one "$a"; start_one "$a"; done
+      fi
+    fi
+    [ $(( $(date +%s) - t0 )) -ge "$wait" ] && break
+    sleep 1
+  done
+  status; rc=$?
+  [ $rc -eq 0 ] && gf_log "all filters in place: $(gf_all_stations) upstream of $GF_ER_STATION" \
+                || gf_log "filters NOT in place after ${wait}s (rc=$rc)"
+  return $rc
+}
+
+case "$cmd" in
+  render)  render && for a in $arms; do gf_cfg "$a"; done ;;
+  start)   rc=0; for a in $arms; do start_one "$a" || rc=1; done; exit $rc ;;
+  stop)    for a in $(echo "$arms" | awk '{for(i=NF;i>0;i--) printf "%s ", $i}'); do stop_one "$a"; done ;;
+  restart) for a in $arms; do stop_one "$a"; done; rc=0; for a in $arms; do start_one "$a" || rc=1; done; exit $rc ;;
+  status)  status; exit $? ;;
+  ensure)  ensure; exit $? ;;
+  cmd)     render || exit 1; for a in $arms; do gf_cmdline "$a"; done ;;
+  -h|--help|help) sed -n '2,16p' "$0" ;;
+  *) echo "unknown command '$cmd'" >&2; sed -n '2,16p' "$0" >&2; exit 4 ;;
+esac
