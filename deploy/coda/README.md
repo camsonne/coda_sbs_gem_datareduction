@@ -129,9 +129,9 @@ Without `GF_STRICT=1` the hook always exits 0. If a filter cannot be put in plac
 | check | where | result |
 |---|---|---|
 | `deploy.kit_static`: syntax, rendering, `--check` of both arms, preflight error paths, hook without ET, strict mode, enable switch | macOS sandbox + CI | pass |
-| `deploy.kit_live` A: prestart hook → BB=1, SBS=2, ER=3; all events reach the ER; ×16 reduction; 2 status banks per event | CI ubuntu-latest, real `et_start` (GitHub ET) | see CI |
-| `deploy.kit_live` B: ER created upstream → status rc 2 → hook restarts the filters in front | CI | see CI |
-| `deploy.kit_live` C: BB filter SIGKILL → events still reach the ER, SBS still filters, next prestart restarts BB | CI | see CI |
+| `deploy.kit_live` A: prestart hook → BB=1, SBS=2, ER=3; all events reach the ER; ×14.5 reduction; 2 status banks per event | CI ubuntu-latest, real `et_start` (GitHub ET 16.5) | pass (6df74e2): 63/63 events, 50.6 → 3.5 MB, 120 status banks for 60 blocks |
+| `deploy.kit_live` B: ER created upstream → status rc 2 → hook restarts the filters in front | CI | pass: rc 2 detected, final BB=1 SBS=2 ER=3 |
+| `deploy.kit_live` C: BB filter SIGKILL → events still reach the ER, SBS still filters, next prestart restarts BB | CI | pass: 63/63 events, 60 status banks (SBS only) |
 | BB station on SBS-arm data in series (file mode) | sandbox | all foreign strips kept, +60 B and 0.16 ms CPU per CODA event |
 | real CODA 3.10 EB/ER, `$CODA` ET library, jcedit Supervisor processes | **not yet**: DAQ host | — |
 | SIDIS DB, SIDIS crate map / ROC ids, ER station name, ET file name | **not yet** | defaults are GMn/GEn-II based |
